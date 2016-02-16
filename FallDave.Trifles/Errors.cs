@@ -1,20 +1,27 @@
-/*
- * Written in 2015-2016 by David McFall
- *
- * To the extent possible under law, the author(s) have dedicated all copyright
- * and related and neighboring rights to this software to the public domain
- * worldwide. This software is distributed without any warranty.
- *
- * You should have received a copy of the CC0 Public Domain Dedication along
- * with this software. If not, see
- * <http://creativecommons.org/publicdomain/zero/1.0/>.
- */
-
-using System;
-using System.Collections.Generic;
+//-----------------------------------------------------------------------
+// <copyright file="Errors.cs" company="falldave">
+//
+// Written in 2015-2016 by David McFall
+//
+// To the extent possible under law, the author(s) have dedicated all copyright
+// and related and neighboring rights to this software to the public domain
+// worldwide. This software is distributed without any warranty.
+//
+// You should have received a copy of the CC0 Public Domain Dedication along
+// with this software. If not, see
+// [http://creativecommons.org/publicdomain/zero/1.0/].
+//
+// </copyright>
+//-----------------------------------------------------------------------
 
 namespace FallDave.Trifles
 {
+    using System;
+    using System.Collections.Generic;
+
+    /// <summary>
+    /// Internal utility for generating exceptions.
+    /// </summary>
     internal class Errors
     {
         public static T Require<T>(T value, string paramName)
@@ -23,6 +30,7 @@ namespace FallDave.Trifles
             {
                 throw new ArgumentNullException(paramName);
             }
+
             return value;
         }
 
@@ -36,7 +44,4 @@ namespace FallDave.Trifles
             return new InvalidOperationException(usingPredicate ? "This sequence contains more than one matching element." : "This sequence contains more than one element.");
         }
     }
-
-
 }
-

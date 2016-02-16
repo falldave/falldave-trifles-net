@@ -1,26 +1,38 @@
-/*
- * Written in 2015-2016 by David McFall
- *
- * To the extent possible under law, the author(s) have dedicated all copyright
- * and related and neighboring rights to this software to the public domain
- * worldwide. This software is distributed without any warranty.
- *
- * You should have received a copy of the CC0 Public Domain Dedication along
- * with this software. If not, see
- * <http://creativecommons.org/publicdomain/zero/1.0/>.
- */
-
-using System;
-using System.Collections.Generic;
+//-----------------------------------------------------------------------
+// <copyright file="Opt.cs" company="falldave">
+//
+// Written in 2015-2016 by David McFall
+//
+// To the extent possible under law, the author(s) have dedicated all copyright
+// and related and neighboring rights to this software to the public domain
+// worldwide. This software is distributed without any warranty.
+//
+// You should have received a copy of the CC0 Public Domain Dedication along
+// with this software. If not, see
+// [http://creativecommons.org/publicdomain/zero/1.0/].
+//
+// </copyright>
+//-----------------------------------------------------------------------
 
 namespace FallDave.Trifles
 {
+    using System;
+    using System.Collections.Generic;
+
     /// <summary>
     /// Option type that is a value type with immutable instances; a basic implementation of <see cref="IOpt{T}"/>.
     /// </summary>
     public struct Opt<T> : IOpt<T>
     {
+        /// <summary>
+        /// If true, this option contains <see cref="value"/>. Otherwise, this option contains no value.
+        /// </summary>
         private readonly bool hasValue;
+
+        /// <summary>
+        /// If <see cref="hasValue"/>, this is the value contained by this option.
+        /// Otherwise, this should contain <c>default(</c><typeparamref name="T"/><c>)</c>. 
+        /// </summary>
         private readonly T value;
 
         // The parameterless constructor simply yields an empty Opt.
@@ -80,6 +92,7 @@ namespace FallDave.Trifles
                 {
                     throw Errors.MoreThanOneElement();
                 }
+
                 tmpHasValue = true;
                 tmpValue = item;
             }
@@ -129,7 +142,6 @@ namespace FallDave.Trifles
 
         #endregion
 
-
         #region IEnumerable<T> implementation
 
         public IEnumerator<T> GetEnumerator()
@@ -142,7 +154,6 @@ namespace FallDave.Trifles
 
         #endregion
 
-
         #region IEnumerable implementation
 
         System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
@@ -151,7 +162,6 @@ namespace FallDave.Trifles
         }
 
         #endregion
-
 
         /// <summary>
         /// Retrieves the value contained in this option, if any.
@@ -195,6 +205,7 @@ namespace FallDave.Trifles
             {
                 return value;
             }
+
             throw Errors.NoElements();
         }
 
@@ -230,9 +241,8 @@ namespace FallDave.Trifles
             {
                 return value;
             }
+
             throw new ArgumentOutOfRangeException("index");
         }
     }
-
 }
-

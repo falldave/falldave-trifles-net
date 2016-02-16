@@ -1,192 +1,44 @@
-﻿/*
- * Written in 2015-2016 by David McFall
- *
- * To the extent possible under law, the author(s) have dedicated all copyright
- * and related and neighboring rights to this software to the public domain
- * worldwide. This software is distributed without any warranty.
- *
- * You should have received a copy of the CC0 Public Domain Dedication along
- * with this software. If not, see
- * <http://creativecommons.org/publicdomain/zero/1.0/>.
- */
-
-using System;
-using System.Collections.Generic;
+﻿//-----------------------------------------------------------------------
+// <copyright file="EnumerableExtensions.cs" company="falldave">
+//
+// Written in 2015-2016 by David McFall
+//
+// To the extent possible under law, the author(s) have dedicated all copyright
+// and related and neighboring rights to this software to the public domain
+// worldwide. This software is distributed without any warranty.
+//
+// You should have received a copy of the CC0 Public Domain Dedication along
+// with this software. If not, see
+// [http://creativecommons.org/publicdomain/zero/1.0/].
+//
+// </copyright>
+//-----------------------------------------------------------------------
 
 namespace FallDave.Trifles
 {
+    using System;
+    using System.Collections.Generic;
+
+    /// <summary>
+    /// Utility extensions applicable to <see cref="IEnumerable{T}"/> instances.
+    /// </summary>
     public static class EnumerableExtensions
     {
-        // A sort of mutable Opt builder.
-        // Initially hasValue = false, valueBuffer = default(T).
-        // When Value is set to a value, hasValue becomes true and cannot be reverted to false.
-        private struct OptInit<T>
-        {
-            private bool hasValue;
-            private T valueBuffer;
-
-            public bool HasValue
-            {
-                get { return hasValue; }
-            }
-
-            public T Value
-            {
-                get
-                {
-                    return hasValue ? valueBuffer : default(T);
-                }
-                set
-                {
-                    hasValue = true;
-                    valueBuffer = value;
-                }
-            }
-
-            public Opt<T> AsOpt()
-            {
-                return new Opt<T>(hasValue, Value);
-            }
-        }
-
-        // If the given predicate is null, it is changed to an always-true predicate.
-        // Returns whether the initial predicate was non-null. In exception messages
-        // this is the difference between say "no elements" and "no matching elements".
-        private static bool SetUpPredicate<T>(ref Func<T, bool> predicate)
-        {
-            var usingPredicate = true;
-            if (predicate == null)
-            {
-                usingPredicate = false;
-                predicate = item => true;
-            }
-            return usingPredicate;
-        }
-
-        #region *AsInit for Single, First, Last, ElementAt.
-
-        private static OptInit<T> SingleAsInit<T>(IEnumerable<T> source, Func<T, bool> predicate, bool usingPredicate = false)
-        {
-            var init = new OptInit<T>();
-            if (source is IList<T> && !usingPredicate)
-            {
-                var list = (IList<T>)source;
-                switch (list.Count)
-                {
-                    case 0:
-                        // do nothing
-                        break;
-                    case 1:
-                        // use element
-                        init.Value = list[0];
-                        break;
-                    default:
-                        throw Errors.MoreThanOneElement();
-                }
-            }
-            else
-            {
-                foreach (var item in source)
-                {
-                    if (predicate(item))
-                    {
-                        if (init.HasValue)
-                        {
-                            throw Errors.MoreThanOneElement(usingPredicate);
-                        }
-                        else
-                        {
-                            init.Value = item;
-                        }
-                    }
-                }
-            }
-            return init;
-        }
-
-        private static OptInit<T> FirstAsInit<T>(IEnumerable<T> source, Func<T, bool> predicate, bool usingPredicate = false)
-        {
-            var init = new OptInit<T>();
-            if (source is IList<T> && !usingPredicate)
-            {
-                var list = (IList<T>)source;
-                if (list.Count > 0)
-                {
-                    init.Value = list[0];
-                }
-            }
-            else
-            {
-                foreach (var item in source)
-                {
-                    if (predicate(item))
-                    {
-                        init.Value = item;
-                        break;
-                    }
-                }
-            }
-            return init;
-        }
-
-        private static OptInit<T> LastAsInit<T>(IEnumerable<T> source, Func<T, bool> predicate, bool usingPredicate = false)
-        {
-            var init = new OptInit<T>();
-            if (source is IList<T> && !usingPredicate)
-            {
-                var list = (IList<T>)source;
-                var count = list.Count;
-                if (count > 0)
-                {
-                    init.Value = list[count - 1];
-                }
-            }
-            else
-            {
-                foreach (var item in source)
-                {
-                    if (predicate(item))
-                    {
-                        init.Value = item;
-                    }
-                }
-            }
-            return init;
-        }
-
-        private static OptInit<T> ElementAtAsInit<T>(IEnumerable<T> source, int index)
-        {
-            var init = new OptInit<T>();
-            if (source is IList<T>)
-            {
-                var list = (IList<T>)source;
-                var count = list.Count;
-                if (index > 0 && index < count)
-                {
-                    init.Value = list[index];
-                }
-            }
-            else
-            {
-                var leftToSkip = index;
-
-                foreach (var item in source)
-                {
-                    if (leftToSkip == 0)
-                    {
-                        init.Value = item;
-                        break;
-                    }
-                    leftToSkip--;
-                }
-            }
-            return init;
-        }
-
-        #endregion
-
         #region Opt<T>-returning *AsFixedOpt methods
 
+        /// <summary>
+        /// Returns a fixed option containing the only element of a sequence (after any filtering),
+        /// or an empty fixed option if the sequence is empty;
+        /// this method throws an exception if there is more than one element in the sequence.
+        /// </summary>
+        /// <para>The computation of the result of this method is performed immediately, not deferred.</para>
+        /// <typeparam name="T">The type of the contained value of the option.</typeparam>
+        /// <param name="source">An enumerable from which to extract the element.</param>
+        /// <param name="predicate">A predicate by which to filter <paramref name="source"/>; if <c>null</c>, no filtering is performed.</param>
+        /// <returns>An <see cref="Opt{T}"/> containing the single element of the sequence (after any filtering), or no elements otherwise.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="source"/> is <c>null</c>.</exception>
+        /// <exception cref="InvalidOperationException">The sequence contains more than one element.</exception>
+        /// <exception cref="InvalidOperationException">The sequence contains more than one matching element.</exception>
         public static Opt<T> SingleAsFixedOpt<T>(this IEnumerable<T> source, Func<T, bool> predicate = null)
         {
             Errors.Require(source, "source");
@@ -194,6 +46,16 @@ namespace FallDave.Trifles
             return SingleAsInit(source, predicate, usingPredicate).AsOpt();
         }
 
+        /// <summary>
+        /// Returns a fixed option containing the first element of a sequence (after any filtering),
+        /// or an empty fixed option if the sequence is empty.
+        /// </summary>
+        /// <para>The computation of the result of this method is performed immediately, not deferred.</para>
+        /// <typeparam name="T">The type of the contained value of the option.</typeparam>
+        /// <param name="source">An enumerable from which to extract the element.</param>
+        /// <param name="predicate">A predicate by which to filter <paramref name="source"/>; if <c>null</c>, no filtering is performed.</param>
+        /// <returns>An <see cref="Opt{T}"/> containing the first element of the sequence (after any filtering), or no elements otherwise.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="source"/> is <c>null</c>.</exception>
         public static Opt<T> FirstAsFixedOpt<T>(this IEnumerable<T> source, Func<T, bool> predicate = null)
         {
             Errors.Require(source, "source");
@@ -201,6 +63,16 @@ namespace FallDave.Trifles
             return FirstAsInit(source, predicate, usingPredicate).AsOpt();
         }
 
+        /// <summary>
+        /// Returns a fixed option containing the last element of a sequence (after any filtering),
+        /// or an empty fixed option if the sequence is empty.
+        /// </summary>
+        /// <para>The computation of the result of this method is performed immediately, not deferred.</para>
+        /// <typeparam name="T">The type of the contained value of the option.</typeparam>
+        /// <param name="source">An enumerable from which to extract the element.</param>
+        /// <param name="predicate">A predicate by which to filter <paramref name="source"/>; if <c>null</c>, no filtering is performed.</param>
+        /// <returns>An <see cref="Opt{T}"/> containing the last element of the sequence (after any filtering), or no elements otherwise.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="source"/> is <c>null</c>.</exception>
         public static Opt<T> LastAsFixedOpt<T>(this IEnumerable<T> source, Func<T, bool> predicate = null)
         {
             Errors.Require(source, "source");
@@ -208,6 +80,17 @@ namespace FallDave.Trifles
             return LastAsInit(source, predicate, usingPredicate).AsOpt();
         }
 
+        // Returns the element at a specified index in a sequence or a default value if the index is out of range.
+
+        /// <summary>
+        /// Returns a fixed option containing the element at the specified index of a sequence,
+        /// or an empty fixed option if the index is out of range.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source">An enumerable from which to extract the element.</param>
+        /// <param name="index">The index of the element to retrieve.</param>
+        /// <returns>An <see cref="Opt{T}"/> containing the last element of the sequence (after any filtering), or no elements otherwise.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="source"/> is <c>null</c>.</exception>
         public static Opt<T> ElementAtAsFixedOpt<T>(this IEnumerable<T> source, int index)
         {
             Errors.Require(source, "source");
@@ -293,9 +176,190 @@ namespace FallDave.Trifles
 
         #endregion
 
+        #region *AsInit for Single, First, Last, ElementAt.
+
+        private static OptInit<T> SingleAsInit<T>(IEnumerable<T> source, Func<T, bool> predicate, bool usingPredicate = false)
+        {
+            var init = new OptInit<T>();
+            if (source is IList<T> && !usingPredicate)
+            {
+                var list = (IList<T>)source;
+                switch (list.Count)
+                {
+                    case 0:
+                        // do nothing
+                        break;
+                    case 1:
+                        // use element
+                        init.Value = list[0];
+                        break;
+                    default:
+                        throw Errors.MoreThanOneElement();
+                }
+            }
+            else
+            {
+                foreach (var item in source)
+                {
+                    if (predicate(item))
+                    {
+                        if (init.HasValue)
+                        {
+                            throw Errors.MoreThanOneElement(usingPredicate);
+                        }
+                        else
+                        {
+                            init.Value = item;
+                        }
+                    }
+                }
+            }
+
+            return init;
+        }
+
+        private static OptInit<T> FirstAsInit<T>(IEnumerable<T> source, Func<T, bool> predicate, bool usingPredicate = false)
+        {
+            var init = new OptInit<T>();
+            if (source is IList<T> && !usingPredicate)
+            {
+                var list = (IList<T>)source;
+                if (list.Count > 0)
+                {
+                    init.Value = list[0];
+                }
+            }
+            else
+            {
+                foreach (var item in source)
+                {
+                    if (predicate(item))
+                    {
+                        init.Value = item;
+                        break;
+                    }
+                }
+            }
+
+            return init;
+        }
+
+        private static OptInit<T> LastAsInit<T>(IEnumerable<T> source, Func<T, bool> predicate, bool usingPredicate = false)
+        {
+            var init = new OptInit<T>();
+            if (source is IList<T> && !usingPredicate)
+            {
+                var list = (IList<T>)source;
+                var count = list.Count;
+                if (count > 0)
+                {
+                    init.Value = list[count - 1];
+                }
+            }
+            else
+            {
+                foreach (var item in source)
+                {
+                    if (predicate(item))
+                    {
+                        init.Value = item;
+                    }
+                }
+            }
+
+            return init;
+        }
+
+        private static OptInit<T> ElementAtAsInit<T>(IEnumerable<T> source, int index)
+        {
+            var init = new OptInit<T>();
+            if (source is IList<T>)
+            {
+                var list = (IList<T>)source;
+                var count = list.Count;
+                if (index > 0 && index < count)
+                {
+                    init.Value = list[index];
+                }
+            }
+            else
+            {
+                var leftToSkip = index;
+
+                foreach (var item in source)
+                {
+                    if (leftToSkip == 0)
+                    {
+                        init.Value = item;
+                        break;
+                    }
+
+                    leftToSkip--;
+                }
+            }
+
+            return init;
+        }
+
+        #endregion
+
+        // If the given predicate is null, it is changed to an always-true predicate.
+        // Returns whether the initial predicate was non-null. In exception messages
+        // this is the difference between say "no elements" and "no matching elements".
+        private static bool SetUpPredicate<T>(ref Func<T, bool> predicate)
+        {
+            var usingPredicate = true;
+            if (predicate == null)
+            {
+                usingPredicate = false;
+                predicate = item => true;
+            }
+
+            return usingPredicate;
+        }
+
+        #region OptInit
+
+        // A sort of mutable Opt builder.
+        // Initially hasValue = false, valueBuffer = default(T).
+        // When Value is set to a value, hasValue becomes true and cannot be reverted to false.
+        private struct OptInit<T>
+        {
+            /// <summary>
+            /// If true, the value is <see cref="valueBuffer"/>. If false, there is no value.
+            /// </summary>
+            private bool hasValue;
+
+            /// <summary>
+            /// Contains the value of this option, if any. Otherwise, should contain <c>default(</c><typeparamref name="T"/><c>)</c>.
+            /// </summary>
+            private T valueBuffer;
+
+            public bool HasValue
+            {
+                get { return hasValue; }
+            }
+
+            public T Value
+            {
+                get
+                {
+                    return hasValue ? valueBuffer : default(T);
+                }
+
+                set
+                {
+                    hasValue = true;
+                    valueBuffer = value;
+                }
+            }
+
+            public Opt<T> AsOpt()
+            {
+                return new Opt<T>(hasValue, Value);
+            }
+        }
+
+        #endregion
     }
 }
-
-
-
-
