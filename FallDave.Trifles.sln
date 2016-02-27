@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FallDave.Trifles", "FallDav
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FallDave.Trifles.Xml", "FallDave.Trifles.Xml\FallDave.Trifles.Xml.csproj", "{186C5D0E-866E-413F-ACAB-06F3564A1815}"
 EndProject
+Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "Help", "Help\Help.shfbproj", "{49A89E67-1687-44B3-90D6-3D839EEA7039}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{186C5D0E-866E-413F-ACAB-06F3564A1815}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{186C5D0E-866E-413F-ACAB-06F3564A1815}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{186C5D0E-866E-413F-ACAB-06F3564A1815}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49A89E67-1687-44B3-90D6-3D839EEA7039}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49A89E67-1687-44B3-90D6-3D839EEA7039}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49A89E67-1687-44B3-90D6-3D839EEA7039}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49A89E67-1687-44B3-90D6-3D839EEA7039}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
