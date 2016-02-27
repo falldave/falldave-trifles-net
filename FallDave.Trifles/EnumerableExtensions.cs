@@ -18,12 +18,65 @@ namespace FallDave.Trifles
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
 
     /// <summary>
     /// Utility extensions applicable to <see cref="IEnumerable{T}"/> instances.
     /// </summary>
     public static class EnumerableExtensions
     {
+        /// <summary>
+        /// Produces an option whose contents are the result of applying, in a deferred fashion, the specified selector function to the contents of this option.
+        /// </summary>
+        /// <typeparam name="TSource"></typeparam>
+        /// <typeparam name="TResult"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="selector"></param>
+        /// <returns></returns>
+        public static IOpt<TResult> Select<TSource, TResult>(this IOpt<TSource> source, Func<TSource, TResult> selector)
+        {
+            IEnumerable<TSource> sourcex = source;
+            return sourcex.Select(selector).SingleOpt();
+        }
+
+        /// <summary>
+        /// Produces a fixed option whose contents are the result of eagerly applying the specified selector function to the contents of this option.
+        /// </summary>
+        /// <typeparam name="TSource"></typeparam>
+        /// <typeparam name="TResult"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="selector"></param>
+        /// <returns></returns>
+        public static Opt<TResult> SelectFix<TSource, TResult>(this IOpt<TSource> source, Func<TSource, TResult> selector)
+        {
+            return source.Fix().SelectFix(selector);
+        }
+
+        /// <summary>
+        /// Produces an option whose contents are the result of filtering, in a deferred fashion, the contents of this option according to the specified predicate.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
+        public static IOpt<T> Where<T>(this IOpt<T> source, Func<T, bool> predicate)
+        {
+            IEnumerable<T> sourcex = source;
+            return sourcex.SingleOpt(predicate);
+        }
+
+        /// <summary>
+        /// Produces a fixed option whose contents are the result of eagerly filtering the contents of this option according to the specified predicate.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
+        public static Opt<T> WhereFix<T>(this IOpt<T> source, Func<T, bool> predicate)
+        {
+            return source.Fix().WhereFix(predicate);
+        }
+
         #region Opt<T>-returning *AsFixedOpt methods
 
         /// <summary>
@@ -39,7 +92,7 @@ namespace FallDave.Trifles
         /// <exception cref="ArgumentNullException"><paramref name="source"/> is <c>null</c>.</exception>
         /// <exception cref="InvalidOperationException">The sequence contains more than one element.</exception>
         /// <exception cref="InvalidOperationException">The sequence contains more than one matching element.</exception>
-        public static Opt<T> SingleAsFixedOpt<T>(this IEnumerable<T> source, Func<T, bool> predicate = null)
+        public static Opt<T> SingleFixOpt<T>(this IEnumerable<T> source, Func<T, bool> predicate = null)
         {
             Errors.Require(source, "source");
             var usingPredicate = SetUpPredicate(ref predicate);
@@ -56,7 +109,7 @@ namespace FallDave.Trifles
         /// <param name="predicate">A predicate by which to filter <paramref name="source"/>; if <c>null</c>, no filtering is performed.</param>
         /// <returns>An <see cref="Opt{T}"/> containing the first element of the sequence (after any filtering), or no elements otherwise.</returns>
         /// <exception cref="ArgumentNullException"><paramref name="source"/> is <c>null</c>.</exception>
-        public static Opt<T> FirstAsFixedOpt<T>(this IEnumerable<T> source, Func<T, bool> predicate = null)
+        public static Opt<T> FirstFixOpt<T>(this IEnumerable<T> source, Func<T, bool> predicate = null)
         {
             Errors.Require(source, "source");
             var usingPredicate = SetUpPredicate(ref predicate);
@@ -73,14 +126,13 @@ namespace FallDave.Trifles
         /// <param name="predicate">A predicate by which to filter <paramref name="source"/>; if <c>null</c>, no filtering is performed.</param>
         /// <returns>An <see cref="Opt{T}"/> containing the last element of the sequence (after any filtering), or no elements otherwise.</returns>
         /// <exception cref="ArgumentNullException"><paramref name="source"/> is <c>null</c>.</exception>
-        public static Opt<T> LastAsFixedOpt<T>(this IEnumerable<T> source, Func<T, bool> predicate = null)
+        public static Opt<T> LastFixOpt<T>(this IEnumerable<T> source, Func<T, bool> predicate = null)
         {
             Errors.Require(source, "source");
             var usingPredicate = SetUpPredicate(ref predicate);
             return LastAsInit(source, predicate, usingPredicate).AsOpt();
         }
-
-        // Returns the element at a specified index in a sequence or a default value if the index is out of range.
+        
 
         /// <summary>
         /// Returns a fixed option containing the element at the specified index of a sequence,
@@ -91,7 +143,7 @@ namespace FallDave.Trifles
         /// <param name="index">The index of the element to retrieve.</param>
         /// <returns>An <see cref="Opt{T}"/> containing the last element of the sequence (after any filtering), or no elements otherwise.</returns>
         /// <exception cref="ArgumentNullException"><paramref name="source"/> is <c>null</c>.</exception>
-        public static Opt<T> ElementAtAsFixedOpt<T>(this IEnumerable<T> source, int index)
+        public static Opt<T> ElementAtFixOpt<T>(this IEnumerable<T> source, int index)
         {
             Errors.Require(source, "source");
             return ElementAtAsInit(source, index).AsOpt();
@@ -101,24 +153,43 @@ namespace FallDave.Trifles
 
         #region TryGet* methods
 
+        /// <summary>
+        /// Gets the single value (or single matching value) contained in the given sequence.
+        /// </summary>
+        /// <typeparam name="T">The type of value contained by the sequence.</typeparam>
+        /// <param name="source">The sequence to use as the source.</param>
+        /// <param name="value">Set to the single value, if available; otherwise, set to <c>default(</c><typeparamref name="T"/><c>)</c>.</param>
+        /// <param name="predicate">A predicate function by which to filter the source sequence. If <c>null</c>, no filter is used.</param>
+        /// <returns><c>true</c> if <paramref name="source"/> (after any filtering) contains one element, or <c>false</c> if empty.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="source"/> is <c>null</c>.</exception>
+        /// <exception cref="InvalidOperationException">At the time of evaluation, the source sequence contains more than one element.</exception>
         public static bool TryGetSingle<T>(this IEnumerable<T> source, out T value, Func<T, bool> predicate = null)
         {
-            return source.SingleAsFixedOpt(predicate).TryGetValue(out value);
+            return source.SingleFixOpt(predicate).TryGetValue(out value);
         }
 
+        /// <summary>
+        /// Gets the first value (or first matching value) contained in the given sequence.
+        /// </summary>
+        /// <typeparam name="T">The type of value contained by the sequence.</typeparam>
+        /// <param name="source">The sequence to use as the source.</param>
+        /// <param name="value">Set to the first value, if available; otherwise, set to <c>default(</c><typeparamref name="T"/><c>)</c>.</param>
+        /// <param name="predicate">A predicate function by which to filter the source sequence. If <c>null</c>, no filter is used.</param>
+        /// <returns><c>true</c> if <paramref name="source"/> contains one element, or <c>false</c> if the sequence was empty.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="source"/> is <c>null</c>.</exception>
         public static bool TryGetFirst<T>(this IEnumerable<T> source, out T value, Func<T, bool> predicate = null)
         {
-            return source.FirstAsFixedOpt(predicate).TryGetValue(out value);
+            return source.FirstFixOpt(predicate).TryGetValue(out value);
         }
 
         public static bool TryGetLast<T>(this IEnumerable<T> source, out T value, Func<T, bool> predicate = null)
         {
-            return source.LastAsFixedOpt(predicate).TryGetValue(out value);
+            return source.LastFixOpt(predicate).TryGetValue(out value);
         }
 
         public static bool TryGetElementAt<T>(this IEnumerable<T> source, int index, out T value)
         {
-            return source.ElementAtAsFixedOpt(index).TryGetValue(out value);
+            return source.ElementAtFixOpt(index).TryGetValue(out value);
         }
 
         #endregion
@@ -133,9 +204,9 @@ namespace FallDave.Trifles
         /// <param name="predicate">A predicate function by which to filter the source sequence. If <c>null</c>, no filter is used.</param>
         /// <typeparam name="T">The type of value contained by the sequence.</typeparam>
         /// <exception cref="InvalidOperationException">At the time of evaluation, the source sequence contains more than one element.</exception>
-        public static IOpt<T> TakeSingleAsOpt<T>(IEnumerable<T> source, Func<T, bool> predicate = null)
+        public static IOpt<T> SingleOpt<T>(this IEnumerable<T> source, Func<T, bool> predicate = null)
         {
-            return new DeferredOpt<T>(() => source.SingleAsFixedOpt(predicate));
+            return new DeferredOpt<T>(() => source.SingleFixOpt(predicate));
         }
 
         /// <summary>
@@ -145,9 +216,9 @@ namespace FallDave.Trifles
         /// <param name="source">The sequence to use as the source.</param>
         /// <param name="predicate">A predicate function by which to filter the source sequence. If <c>null</c>, no filter is used.</param>
         /// <typeparam name="T">The type of value contained by the sequence.</typeparam>
-        public static IOpt<T> TakeFirstAsOpt<T>(IEnumerable<T> source, Func<T, bool> predicate = null)
+        public static IOpt<T> FirstOpt<T>(this IEnumerable<T> source, Func<T, bool> predicate = null)
         {
-            return new DeferredOpt<T>(() => source.FirstAsFixedOpt(predicate));
+            return new DeferredOpt<T>(() => source.FirstFixOpt(predicate));
         }
 
         /// <summary>
@@ -157,9 +228,9 @@ namespace FallDave.Trifles
         /// <param name="source">The sequence to use as the source.</param>
         /// <param name="predicate">A predicate function by which to filter the source sequence. If <c>null</c>, no filter is used.</param>
         /// <typeparam name="T">The type of value contained by the sequence.</typeparam>
-        public static IOpt<T> TakeLastAsOpt<T>(IEnumerable<T> source, Func<T, bool> predicate = null)
+        public static IOpt<T> LastOpt<T>(this IEnumerable<T> source, Func<T, bool> predicate = null)
         {
-            return new DeferredOpt<T>(() => source.LastAsFixedOpt(predicate));
+            return new DeferredOpt<T>(() => source.LastFixOpt(predicate));
         }
 
         /// <summary>
@@ -169,9 +240,9 @@ namespace FallDave.Trifles
         /// <param name="source">The sequence to use as the source.</param>
         /// <param name="index">The index of the value to retrieve.</param>
         /// <typeparam name="T">The type of value contained by the sequence.</typeparam>
-        public static IOpt<T> TakeElementAtAsOpt<T>(IEnumerable<T> source, int index)
+        public static IOpt<T> ElementAtOpt<T>(this IEnumerable<T> source, int index)
         {
-            return new DeferredOpt<T>(() => source.ElementAtAsFixedOpt(index));
+            return new DeferredOpt<T>(() => source.ElementAtFixOpt(index));
         }
 
         #endregion
@@ -303,9 +374,9 @@ namespace FallDave.Trifles
 
         #endregion
 
-        // If the given predicate is null, it is changed to an always-true predicate.
-        // Returns whether the initial predicate was non-null. In exception messages
-        // this is the difference between say "no elements" and "no matching elements".
+        // If the given predicate is null, it is changed to an always-true predicate. Returns
+        // whether the initial predicate was non-null. In exception messages this is the difference
+        // between say "no elements" and "no matching elements".
         private static bool SetUpPredicate<T>(ref Func<T, bool> predicate)
         {
             var usingPredicate = true;

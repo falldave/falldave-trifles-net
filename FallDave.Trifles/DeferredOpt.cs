@@ -13,7 +13,6 @@
 //
 // </copyright>
 //-----------------------------------------------------------------------
-
 namespace FallDave.Trifles
 {
     using System;
@@ -23,7 +22,7 @@ namespace FallDave.Trifles
     /// An option (<see cref="IOpt{T}"/>) whose <see cref="Fix()"/> method is implemented in terms of a given function.
     /// </summary>
     /// <typeparam name="T">The type of the contained value of the option.</typeparam>
-    public class DeferredOpt<T> : AbstractOpt<T>
+    internal class DeferredOpt<T> : IOpt<T>
     {
         /// <summary>
         /// A function that returns the current value of the option as an <see cref="Opt{T}"/>. 
@@ -42,9 +41,44 @@ namespace FallDave.Trifles
         #region IOpt<T> implementation
 
         /// <inheritdoc />
-        public override Opt<T> Fix()
+        public Opt<T> Fix()
         {
             return getCurrentFixedValue();
+        }
+
+        #endregion
+
+        #region IEnumerable<T> implementation
+
+        /// <summary>
+        /// Creates a new enumerator for a sequence representing this option.
+        /// </summary>
+        /// <returns>
+        /// An enumerator for a sequence representing this option, which is
+        /// either a single-element sequence, if this option contains a value,
+        /// or a zero-element sequence, if this option contains no value.
+        /// </returns>
+        public virtual IEnumerator<T> GetEnumerator()
+        {
+            return Fix().GetEnumerator();
+        }
+
+        #endregion
+
+        #region IEnumerable implementation
+
+        /// <summary>
+        /// Creates a new enumerator for a sequence representing this option.
+        /// </summary>
+        /// <returns>
+        /// An enumerator for a sequence representing this option, which is
+        /// either a single-element sequence, if this option contains a value,
+        /// or a zero-element sequence, if this option contains no value.
+        /// </returns>
+        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+        {
+            System.Collections.IEnumerable ie = Fix();
+            return ie.GetEnumerator();
         }
 
         #endregion

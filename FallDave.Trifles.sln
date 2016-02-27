@@ -1,7 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FallDave.Trifles", "FallDave.Trifles\FallDave.Trifles.csproj", "{EB6357F1-8D1E-4C38-8112-2AD089875571}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FallDave.Trifles.Xml", "FallDave.Trifles.Xml\FallDave.Trifles.Xml.csproj", "{186C5D0E-866E-413F-ACAB-06F3564A1815}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,5 +17,12 @@ Global
 		{EB6357F1-8D1E-4C38-8112-2AD089875571}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB6357F1-8D1E-4C38-8112-2AD089875571}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB6357F1-8D1E-4C38-8112-2AD089875571}.Release|Any CPU.Build.0 = Release|Any CPU
+		{186C5D0E-866E-413F-ACAB-06F3564A1815}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{186C5D0E-866E-413F-ACAB-06F3564A1815}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{186C5D0E-866E-413F-ACAB-06F3564A1815}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{186C5D0E-866E-413F-ACAB-06F3564A1815}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal

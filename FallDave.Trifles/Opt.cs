@@ -19,6 +19,29 @@ namespace FallDave.Trifles
     using System;
     using System.Collections.Generic;
 
+    public static class Opt
+    {
+        public static Opt<T> Empty<T>(T typeExample = default(T))
+        {
+            return new Opt<T>();
+        }
+
+        public static Opt<T> Full<T>(T value)
+        {
+            return new Opt<T>(value);
+        }
+
+        public static Opt<T> FullIfNotNull<T>(T value)
+        {
+            return (value == null) ? Empty<T>() : Full(value);
+        }
+
+        public static Opt<T> Create<T>(bool hasValue, T value = default(T))
+        {
+            return new Opt<T>(hasValue, value);
+        }
+    }
+
     /// <summary>
     /// Option type that is a value type with immutable instances; a basic implementation of <see cref="IOpt{T}"/>.
     /// </summary>
@@ -28,6 +51,38 @@ namespace FallDave.Trifles
         /// If true, this option contains <see cref="value"/>. Otherwise, this option contains no value.
         /// </summary>
         private readonly bool hasValue;
+
+        public Opt<TResult> SelectFix<TResult>(Func<T, TResult> selector)
+        {
+            if(selector == null)            {                throw new ArgumentNullException("selector");            }
+
+            if(!hasValue)
+            {
+                return new Opt<TResult>();
+            }
+            else
+            {
+                return new Opt<TResult>(selector(value));
+            }
+        }
+
+        public Opt<T> WhereFix(Func<T, bool> predicate)
+        {
+            if(predicate == null) { throw new ArgumentNullException("predicate"); }
+            
+            if (hasValue)
+            {
+                // Full, so return self for full.
+                return predicate(value) ? this : new Opt<T>();
+            }
+            else
+            {
+                // Empty; cannot test predicate
+                return this;
+            }            
+        }
+
+       
 
         /// <summary>
         /// If <see cref="hasValue"/>, this is the value contained by this option.

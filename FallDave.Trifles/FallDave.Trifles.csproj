@@ -38,7 +38,11 @@
     <Compile Include="Errors.cs" />
     <Compile Include="DeferredOpt.cs" />
     <Compile Include="EnumerableExtensions.cs" />
-    <Compile Include="AbstractOpt.cs" />
+    <Compile Include="SimpleTypeExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FallDave.Trifles.licenseheader" />
+    <None Include="Settings.StyleCop" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,0 +1,23 @@
+﻿extensions: designer.cs generated.cs
+extensions: .cs .cpp .h
+//-----------------------------------------------------------------------
+// <copyright file="%FileName%" company="falldave">
+//
+// Written in 2015-2016 by David McFall
+//
+// To the extent possible under law, the author(s) have dedicated all copyright
+// and related and neighboring rights to this software to the public domain
+// worldwide. This software is distributed without any warranty.
+//
+// You should have received a copy of the CC0 Public Domain Dedication along
+// with this software. If not, see
+// [http://creativecommons.org/publicdomain/zero/1.0/].
+//
+// </copyright>
+//-----------------------------------------------------------------------
+extensions: .aspx .ascx
+<%-- (license) --%>
+extensions: .vb
+' (license)
+extensions:  .xml .config .xsd
+<!-- (license) -->
