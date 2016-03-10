@@ -24,16 +24,6 @@ namespace FallDave.Trifles
     /// </summary>
     internal class Errors
     {
-        public static T Require<T>(T value, string paramName)
-        {
-            if (value == null)
-            {
-                throw new ArgumentNullException(paramName);
-            }
-
-            return value;
-        }
-
         public static InvalidOperationException NoElements(bool usingPredicate = false)
         {
             throw new InvalidOperationException(usingPredicate ? "This sequence contains no matching elements." : "This sequence contains no elements.");

@@ -19,26 +19,62 @@ namespace FallDave.Trifles
     using System;
     using System.Collections.Generic;
 
+    /// <summary>
+    /// Static methods for creating and manipulating <see cref="Opt{T}"/> option values.
+    /// </summary>
     public static class Opt
     {
+        /// <summary>
+        /// Produces a fixed option that is empty.
+        /// </summary>
+        /// <typeparam name="T">The value type for the new fixed option.</typeparam>
+        /// <param name="typeExample">Ignored value; can be used to infer <typeparamref name="T"/> instead of specifying explicitly.</param>
+        /// <returns>An empty option value.</returns>
         public static Opt<T> Empty<T>(T typeExample = default(T))
         {
             return new Opt<T>();
         }
 
+        /// <summary>
+        /// Produces a fixed option that contains the given value.
+        /// </summary>
+        /// <typeparam name="T">The value type for the new fixed option.</typeparam>
+        /// <param name="value">The value to be contained in the new fixed option.</param>
+        /// <returns>An option value containing <paramref name="value"/>.</returns>
         public static Opt<T> Full<T>(T value)
         {
             return new Opt<T>(value);
         }
 
+        /// <summary>
+        /// Produces a fixed option that contains the given value, or is empty if the given value is null.
+        /// </summary>
+        /// <typeparam name="T">The value type for the new fixed option.</typeparam>
+        /// <param name="value">The value to be contained in the new fixed option, if not null.</param>
+        /// <returns>An option value that contains <paramref name="value"/>, if not <c>null</c>, or nothing, if <paramref name="value"/> is <c>null</c>.</returns>
         public static Opt<T> FullIfNotNull<T>(T value)
         {
-            return (value == null) ? Empty<T>() : Full(value);
+            return Create(value != null, value);
         }
 
+        /// <summary>
+        /// Creates a new fixed option whose element count is set by the given flag.
+        /// </summary>
+        /// <typeparam name="T">The value type for the new fixed option.</typeparam>
+        /// <param name="hasValue">
+        /// <c>true</c> if the new fixed option will contain a value, or <c>false</c> if it will be empty.
+        /// </param>
+        /// <param name="value">
+        /// The value to be contained in the new fixed option (ignored if <paramref
+        /// name="hasValue"/> is <c>false</c>).
+        /// </param>
+        /// <returns>
+        /// A new fixed option equivalent to <c>Opt.Full(value)</c> if <paramref name="hasValue"/>
+        /// is <c>true</c>, or <c><![CDATA[Opt.Empty<T>()]]></c> otherwise.
+        /// </returns>
         public static Opt<T> Create<T>(bool hasValue, T value = default(T))
         {
-            return new Opt<T>(hasValue, value);
+            return hasValue ? Full(value) : Empty<T>();
         }
     }
 
@@ -52,11 +88,23 @@ namespace FallDave.Trifles
         /// </summary>
         private readonly bool hasValue;
 
+        /// <summary>
+        /// If <see cref="hasValue"/>, this is the value contained by this option.
+        /// Otherwise, this should contain <c>default(</c><typeparamref name="T"/><c>)</c>. 
+        /// </summary>
+        private readonly T value;
+
+        /// <summary>
+        /// Selects (immediately, non-deferred) a projection of this option using the given selector and returns a new fixed option containing the result.
+        /// </summary>
+        /// <typeparam name="TResult"></typeparam>
+        /// <param name="selector"></param>
+        /// <returns></returns>
         public Opt<TResult> SelectFix<TResult>(Func<T, TResult> selector)
         {
-            if(selector == null)            {                throw new ArgumentNullException("selector");            }
+            if (selector == null) { throw new ArgumentNullException("selector"); }
 
-            if(!hasValue)
+            if (!hasValue)
             {
                 return new Opt<TResult>();
             }
@@ -66,10 +114,15 @@ namespace FallDave.Trifles
             }
         }
 
+        /// <summary>
+        /// Filters (immediately, non-deferred) this option using the given predicate and returns a new fixed option containing the result.
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
         public Opt<T> WhereFix(Func<T, bool> predicate)
         {
-            if(predicate == null) { throw new ArgumentNullException("predicate"); }
-            
+            if (predicate == null) { throw new ArgumentNullException("predicate"); }
+
             if (hasValue)
             {
                 // Full, so return self for full.
@@ -79,16 +132,12 @@ namespace FallDave.Trifles
             {
                 // Empty; cannot test predicate
                 return this;
-            }            
+            }
         }
 
-       
 
-        /// <summary>
-        /// If <see cref="hasValue"/>, this is the value contained by this option.
-        /// Otherwise, this should contain <c>default(</c><typeparamref name="T"/><c>)</c>. 
-        /// </summary>
-        private readonly T value;
+
+
 
         // The parameterless constructor simply yields an empty Opt.
 
@@ -97,34 +146,12 @@ namespace FallDave.Trifles
         /// </summary>
         /// <param name="value">The value that will be contained by this new instance.</param>
         public Opt(T value)
-            : this(true, value)
         {
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Opt{T}"/> struct optionally containing the given value.
-        /// </summary>
-        /// <param name="hasValue">If <c>true</c>, the instance contains <paramref name="value"/>; otherwise, the instance contains no value.</param>
-        /// <param name="value">The value that will be contained by this new instance if <paramref name="hasValue"/> is <c>true</c>.</param>
-        public Opt(bool hasValue, T value = default(T))
-        {
-            this.hasValue = hasValue;
-            this.value = hasValue ? value : default(T);
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Opt{T}"/> struct to having the current contents of the given option.
-        /// </summary>
-        /// <param name="original">An option from which the instance's contents should be copied.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="original"/> is <c>null</c>.</exception>
-        public Opt(IOpt<T> original)
-        {
-            Errors.Require(original, "original");
-
-            T value;
-            this.hasValue = original.TryGetValue(out value);
+            this.hasValue = true;
             this.value = value;
         }
+        
+
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Opt{T}"/> struct to having the contents of the given sequence.
@@ -136,7 +163,7 @@ namespace FallDave.Trifles
         /// <exception cref="InvalidOperationException"><paramref name="original"/> contains more than one element.</exception>
         public Opt(IEnumerable<T> original)
         {
-            Errors.Require(original, "original");
+            Checker.NotNull(original, "original");
 
             bool tmpHasValue = false;
             T tmpValue = default(T);
@@ -166,7 +193,7 @@ namespace FallDave.Trifles
         /// <exception cref="InvalidOperationException"><paramref name="original"/> contains more than one element.</exception>
         public Opt(IEnumerator<T> original)
         {
-            Errors.Require(original, "original");
+            Checker.NotNull(original, "original");
 
             bool tmpHasValue = false;
             T tmpValue = default(T);
@@ -198,7 +225,8 @@ namespace FallDave.Trifles
         #endregion
 
         #region IEnumerable<T> implementation
-
+        
+        /// <inheritdoc cref="IEnumerable{T}.GetEnumerator()"/>
         public IEnumerator<T> GetEnumerator()
         {
             if (hasValue)
@@ -223,7 +251,7 @@ namespace FallDave.Trifles
         /// </summary>
         /// <returns><c>true</c> (with <paramref name="value"/> set to the contained value) if this option contains a value; <c>false</c> (with <paramref name="value"/> undefined) otherwise.</returns>
         /// <param name="value">Variable to receive the value contained in this option.</param>
-        public bool TryGetValue(out T value)
+        public bool TryGetSingle(out T value)
         {
             // All constructors that leave hasValue as false also leaves value as default(T).
             // Therefore, this works nicely.
@@ -265,39 +293,24 @@ namespace FallDave.Trifles
         }
 
         /// <summary>
-        /// Retrieves the first (and only) value contained in this option, if any.
+        /// Retrieves the (only) value contained in this option, if any, or the default value for its value type otherwise.
         /// </summary>
-        /// <returns>The value contained in this option.</returns>
-        /// <exception cref="InvalidOperationException">This option contains no value.</exception>
-        public T First()
+        /// <returns>The value contained in this option, if any, or <c>default</c>(<typeparamref name="T"/>) otherwise.</returns>
+        public T SingleOrDefault()
         {
-            return Single();
+            return hasValue ? value : default(T);
         }
 
         /// <summary>
-        /// Retrieves the last (and only) value contained in this option, if any.
+        /// Retrieves the (only) value contained in this option, if any, or the value returned by the given fallback function otherwise.
         /// </summary>
-        /// <returns>The value contained in this option.</returns>
-        /// <exception cref="InvalidOperationException">This option contains no value.</exception>
-        public T Last()
+        /// <param name="getValueIfNotPresent">A function that is called to produce the return value if this option is empty.</param>
+        /// <returns>The value contained in this option, if any, or the result of calling <paramref name="getValueIfNotPresent"/> otherwise.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="getValueIfNotPresent"/> is <c>null</c>.</exception>
+        public T SingleOrElse(Func<T> getValueIfNotPresent)
         {
-            return Single();
-        }
-
-        /// <summary>
-        /// Retrieves the value contained at the specified index in this option, if any.
-        /// </summary>
-        /// <param name="index">The index of the value to retrieve.</param>
-        /// <returns>The value contained at the specified index in this option, if this is a full option and <paramref name="index"/> equals <c>0</c>.</returns>
-        /// <exception cref="ArgumentOutOfRangeException"><paramref name="index"/> is less than 0 or greater than or equal to <see cref="Count()"/>.</exception>
-        public T ElementAt(int index)
-        {
-            if (hasValue && index == 0)
-            {
-                return value;
-            }
-
-            throw new ArgumentOutOfRangeException("index");
+            Checker.NotNull(getValueIfNotPresent, "getValueIfNotPresent");
+            return hasValue ? value : getValueIfNotPresent();
         }
     }
 }

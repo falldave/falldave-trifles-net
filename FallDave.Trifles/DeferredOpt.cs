@@ -35,7 +35,7 @@ namespace FallDave.Trifles
         /// <param name="getCurrentFixedValue">A function that returns the current value of the option as an <see cref="Opt{T}"/>.</param>
         public DeferredOpt(Func<Opt<T>> getCurrentFixedValue)
         {
-            this.getCurrentFixedValue = Errors.Require(getCurrentFixedValue, "getCurrentFixedValue");
+            this.getCurrentFixedValue = Checker.NotNull(getCurrentFixedValue, "getCurrentFixedValue");
         }
 
         #region IOpt<T> implementation

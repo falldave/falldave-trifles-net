@@ -7,17 +7,16 @@ using System.Threading.Tasks;
 namespace FallDave.Trifles
 {
     /// <summary>
-    /// A module of extension methods applicable to the simple types defined by C# ( <c>bool</c>,
-    /// <c>byte</c>, <c>char</c>, <c>decimal</c>, <c>double</c>, <c>float</c>, <c>int</c>,
-    /// <c>long</c>, <c>sbyte</c>, <c>short</c>, <c>uint</c>, <c>ulong</c>, and <c>ushort</c>),
-    /// specifically, to retrieve the value which all that is known about the value is that it is an
-    /// <see cref="IConvertible"/>.
+    /// Extension methods applicable to the simple types defined by C# ( <c>bool</c>, <c>byte</c>,
+    /// <c>char</c>, <c>decimal</c>, <c>double</c>, <c>float</c>, <c>int</c>, <c>long</c>,
+    /// <c>sbyte</c>, <c>short</c>, <c>uint</c>, <c>ulong</c>, and <c>ushort</c>), specifically, to
+    /// retrieve the value which all that is known about the value is that it is an <see cref="IConvertible"/>.
     /// <para>
     /// To utilize these methods on some arbitrary value or object, cast it (applying any checking
-    /// necessary) to <see
-    /// cref="IConvertible"/>, an interface implemented by all of the basic types. If the cast cannot be performed,
-    /// the value is known not to be of a simple type (all simple types implement <see cref="IConvertible"/>).
-    /// If the cast succeeds, the methods in this class become available.
+    /// necessary) to <see cref="IConvertible"/>, an interface implemented by all of the basic
+    ///            types. If the cast cannot be performed, the value is known not to be of a simple
+    /// type (all simple types implement <see cref="IConvertible"/>). If the cast succeeds, the
+    /// methods in this class become available.
     /// </para>
     /// </summary>
     public static class SimpleTypeExtensions
@@ -201,7 +200,7 @@ namespace FallDave.Trifles
 
         /// <summary> Determines whether the specified value is one of the simple typed defined by
         /// C# to contain numeric values but is not a <c>char</c>. <para> This method is equivalent
-        /// to <code>value.IsNumeric() && !(value is char)</code>. </para> </summary> <param
+        /// to <code><![CDATA[value.IsNumeric() && !(value is char)]]></code>. </para> </summary> <param
         /// name="value"></param> <returns></returns>
         public static bool IsNumericAndNotChar(this IConvertible value)
         {
