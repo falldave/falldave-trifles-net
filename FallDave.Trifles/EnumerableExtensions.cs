@@ -25,58 +25,6 @@ namespace FallDave.Trifles
     /// </summary>
     public static class EnumerableExtensions
     {
-        /// <summary>
-        /// Produces an option whose contents are the result of applying, in a deferred fashion, the specified selector function to the contents of this option.
-        /// </summary>
-        /// <typeparam name="TSource"></typeparam>
-        /// <typeparam name="TResult"></typeparam>
-        /// <param name="source"></param>
-        /// <param name="selector"></param>
-        /// <returns></returns>
-        public static IOpt<TResult> Select<TSource, TResult>(this IOpt<TSource> source, Func<TSource, TResult> selector)
-        {
-            IEnumerable<TSource> sourcex = source;
-            return sourcex.Select(selector).SingleOpt();
-        }
-
-        /// <summary>
-        /// Produces a fixed option whose contents are the result of eagerly applying the specified selector function to the contents of this option.
-        /// </summary>
-        /// <typeparam name="TSource"></typeparam>
-        /// <typeparam name="TResult"></typeparam>
-        /// <param name="source"></param>
-        /// <param name="selector"></param>
-        /// <returns></returns>
-        public static Opt<TResult> SelectFix<TSource, TResult>(this IOpt<TSource> source, Func<TSource, TResult> selector)
-        {
-            return source.Fix().SelectFix(selector);
-        }
-
-        /// <summary>
-        /// Produces an option whose contents are the result of filtering, in a deferred fashion, the contents of this option according to the specified predicate.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="source"></param>
-        /// <param name="predicate"></param>
-        /// <returns></returns>
-        public static IOpt<T> Where<T>(this IOpt<T> source, Func<T, bool> predicate)
-        {
-            IEnumerable<T> sourcex = source;
-            return sourcex.SingleOpt(predicate);
-        }
-
-        /// <summary>
-        /// Produces a fixed option whose contents are the result of eagerly filtering the contents of this option according to the specified predicate.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="source"></param>
-        /// <param name="predicate"></param>
-        /// <returns></returns>
-        public static Opt<T> WhereFix<T>(this IOpt<T> source, Func<T, bool> predicate)
-        {
-            return source.Fix().WhereFix(predicate);
-        }
-
         #region Opt<T>-returning *FixOpt methods
 
         /// <summary>
@@ -96,7 +44,7 @@ namespace FallDave.Trifles
         {
             Checker.NotNull(source, "source");
             var usingPredicate = SetUpPredicate(ref predicate);
-            return SingleAsInit(source, predicate, usingPredicate).AsOpt();
+            return ComputeSingleFixOpt(source, predicate, usingPredicate);
         }
 
         /// <summary>
@@ -113,7 +61,7 @@ namespace FallDave.Trifles
         {
             Checker.NotNull(source, "source");
             var usingPredicate = SetUpPredicate(ref predicate);
-            return FirstAsInit(source, predicate, usingPredicate).AsOpt();
+            return ComputeFirstFixOpt(source, predicate, usingPredicate);
         }
 
         /// <summary>
@@ -130,7 +78,7 @@ namespace FallDave.Trifles
         {
             Checker.NotNull(source, "source");
             var usingPredicate = SetUpPredicate(ref predicate);
-            return LastAsInit(source, predicate, usingPredicate).AsOpt();
+            return ComputeLastFixOpt(source, predicate, usingPredicate);
         }
 
         /// <summary>
@@ -145,7 +93,7 @@ namespace FallDave.Trifles
         public static Opt<T> ElementAtFixOpt<T>(this IEnumerable<T> source, int index)
         {
             Checker.NotNull(source, "source");
-            return ElementAtAsInit(source, index).AsOpt();
+            return ComputeElementAtFixOpt(source, index);
         }
 
         /// <summary>
@@ -165,7 +113,7 @@ namespace FallDave.Trifles
         {
             Checker.NotNull(source, "source");
             var usingPredicate = SetUpPredicate(ref predicate);
-            return SingleAsInit(source, predicate, usingPredicate).AsOpt();
+            return ComputeSingleFixOpt(source, predicate, usingPredicate);
         }
 
         /// <summary>
@@ -182,7 +130,7 @@ namespace FallDave.Trifles
         {
             Checker.NotNull(source, "source");
             var usingPredicate = SetUpPredicate(ref predicate);
-            return FirstAsInit(source, predicate, usingPredicate).AsOpt();
+            return ComputeFirstFixOpt(source, predicate, usingPredicate);
         }
 
         /// <summary>
@@ -199,7 +147,7 @@ namespace FallDave.Trifles
         {
             Checker.NotNull(source, "source");
             var usingPredicate = SetUpPredicate(ref predicate);
-            return LastAsInit(source, predicate, usingPredicate).AsOpt();
+            return ComputeLastFixOpt(source, predicate, usingPredicate);
         }
 
         /// <summary>
@@ -214,7 +162,7 @@ namespace FallDave.Trifles
         public static Opt<T> ElementAtFixOpt<T>(this IEnumerator<T> source, int index)
         {
             Checker.NotNull(source, "source");
-            return ElementAtAsInit(source, index).AsOpt();
+            return ComputeElementAtFixOpt(source, index);
         }
 
         #endregion
@@ -434,12 +382,16 @@ namespace FallDave.Trifles
         {
             return new DeferredOpt<T>(() => source.ElementAtFixOpt(index));
         }
-        
+
         #endregion
 
-        #region *AsInit for Single, First, Last, ElementAt.
+        #region Compute*FixOpt for Single, First, Last, ElementAt.
 
-        private static OptInit<T> SingleAsInit<T>(IEnumerable<T> source, Func<T, bool> predicate, bool usingPredicate = false)
+        // Essentially like *FixOpt without the parameter checks.
+
+        #region For enumerables
+
+        private static Opt<T> ComputeSingleFixOpt<T>(IEnumerable<T> source, Func<T, bool> predicate, bool usingPredicate = false)
         {
             var init = new OptInit<T>();
             if (source is IList<T> && !usingPredicate)
@@ -464,22 +416,15 @@ namespace FallDave.Trifles
                 {
                     if (predicate(item))
                     {
-                        if (init.HasValue)
-                        {
-                            throw Errors.MoreThanOneElement(usingPredicate);
-                        }
-                        else
-                        {
-                            init.Value = item;
-                        }
+                        init.Add(item, usingPredicate);
                     }
                 }
             }
 
-            return init;
+            return init.AsOpt();
         }
 
-        private static OptInit<T> FirstAsInit<T>(IEnumerable<T> source, Func<T, bool> predicate, bool usingPredicate = false)
+        private static Opt<T> ComputeFirstFixOpt<T>(IEnumerable<T> source, Func<T, bool> predicate, bool usingPredicate = false)
         {
             var init = new OptInit<T>();
             if (source is IList<T> && !usingPredicate)
@@ -502,10 +447,10 @@ namespace FallDave.Trifles
                 }
             }
 
-            return init;
+            return init.AsOpt();
         }
 
-        private static OptInit<T> LastAsInit<T>(IEnumerable<T> source, Func<T, bool> predicate, bool usingPredicate = false)
+        private static Opt<T> ComputeLastFixOpt<T>(IEnumerable<T> source, Func<T, bool> predicate, bool usingPredicate = false)
         {
             var init = new OptInit<T>();
             if (source is IList<T> && !usingPredicate)
@@ -528,10 +473,10 @@ namespace FallDave.Trifles
                 }
             }
 
-            return init;
+            return init.AsOpt();
         }
 
-        private static OptInit<T> ElementAtAsInit<T>(IEnumerable<T> source, int index)
+        private static Opt<T> ComputeElementAtFixOpt<T>(IEnumerable<T> source, int index)
         {
             var init = new OptInit<T>();
             if (source is IList<T>)
@@ -559,10 +504,14 @@ namespace FallDave.Trifles
                 }
             }
 
-            return init;
+            return init.AsOpt();
         }
 
-        private static OptInit<T> SingleAsInit<T>(IEnumerator<T> source, Func<T, bool> predicate, bool usingPredicate = false)
+        #endregion
+
+        #region For enumerators
+
+        private static Opt<T> ComputeSingleFixOpt<T>(IEnumerator<T> source, Func<T, bool> predicate, bool usingPredicate = false)
         {
             var init = new OptInit<T>();
 
@@ -572,21 +521,14 @@ namespace FallDave.Trifles
 
                 if (predicate(item))
                 {
-                    if (init.HasValue)
-                    {
-                        throw Errors.MoreThanOneElement(usingPredicate);
-                    }
-                    else
-                    {
-                        init.Value = item;
-                    }
+                    init.Add(item, usingPredicate);
                 }
             }
 
-            return init;
+            return init.AsOpt();
         }
 
-        private static OptInit<T> FirstAsInit<T>(IEnumerator<T> source, Func<T, bool> predicate, bool usingPredicate = false)
+        private static Opt<T> ComputeFirstFixOpt<T>(IEnumerator<T> source, Func<T, bool> predicate, bool usingPredicate = false)
         {
             var init = new OptInit<T>();
 
@@ -601,10 +543,10 @@ namespace FallDave.Trifles
                 }
             }
 
-            return init;
+            return init.AsOpt();
         }
 
-        private static OptInit<T> LastAsInit<T>(IEnumerator<T> source, Func<T, bool> predicate, bool usingPredicate = false)
+        private static Opt<T> ComputeLastFixOpt<T>(IEnumerator<T> source, Func<T, bool> predicate, bool usingPredicate = false)
         {
             var init = new OptInit<T>();
 
@@ -618,10 +560,10 @@ namespace FallDave.Trifles
                 }
             }
 
-            return init;
+            return init.AsOpt();
         }
 
-        private static OptInit<T> ElementAtAsInit<T>(IEnumerator<T> source, int index)
+        private static Opt<T> ComputeElementAtFixOpt<T>(IEnumerator<T> source, int index)
         {
             var init = new OptInit<T>();
 
@@ -640,8 +582,10 @@ namespace FallDave.Trifles
                 leftToSkip--;
             }
 
-            return init;
+            return init.AsOpt();
         }
+
+        #endregion
 
         #endregion
 
@@ -665,6 +609,7 @@ namespace FallDave.Trifles
         // A sort of mutable Opt builder.
         // Initially hasValue = false, valueBuffer = default(T).
         // When Value is set to a value, hasValue becomes true and cannot be reverted to false.
+        // Add()ing a value succeeds only when no value has already been set.
         private struct OptInit<T>
         {
             /// <summary>
@@ -676,11 +621,6 @@ namespace FallDave.Trifles
             /// Contains the value of this option, if any. Otherwise, should contain <c>default(</c><typeparamref name="T"/><c>)</c>.
             /// </summary>
             private T valueBuffer;
-
-            public bool HasValue
-            {
-                get { return hasValue; }
-            }
 
             public T Value
             {
@@ -694,6 +634,20 @@ namespace FallDave.Trifles
                     hasValue = true;
                     valueBuffer = value;
                 }
+            }
+
+            // Sets the value iff the value is not already set.
+            // Otherwise, throws "more than one element".
+            public void Add(T value, bool usingPredicate)
+            {
+                if (hasValue)
+                {
+                    throw Errors.MoreThanOneElement(usingPredicate);
+                }
+                else
+                {
+                    Value = value;
+                }                
             }
 
             public Opt<T> AsOpt()

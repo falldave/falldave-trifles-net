@@ -18,12 +18,64 @@ namespace FallDave.Trifles
 {
     using System;
     using System.Collections.Generic;
-
+    using System.Linq;
     /// <summary>
     /// Extension methods applicable to <see cref="IOpt{T}"/> instances.
     /// </summary>
     public static class OptExtensions
     {
+        /// <summary>
+        /// Produces an option whose contents are the result of applying, in a deferred fashion, the specified selector function to the contents of this option.
+        /// </summary>
+        /// <typeparam name="TSource"></typeparam>
+        /// <typeparam name="TResult"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="selector"></param>
+        /// <returns></returns>
+        public static IOpt<TResult> Select<TSource, TResult>(this IOpt<TSource> source, Func<TSource, TResult> selector)
+        {
+            IEnumerable<TSource> sourcex = source;
+            return sourcex.Select(selector).SingleOpt();
+        }
+
+        /// <summary>
+        /// Produces a fixed option whose contents are the result of eagerly applying the specified selector function to the contents of this option.
+        /// </summary>
+        /// <typeparam name="TSource"></typeparam>
+        /// <typeparam name="TResult"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="selector"></param>
+        /// <returns></returns>
+        public static Opt<TResult> SelectFix<TSource, TResult>(this IOpt<TSource> source, Func<TSource, TResult> selector)
+        {
+            return source.Fix().SelectFix(selector);
+        }
+
+        /// <summary>
+        /// Produces an option whose contents are the result of filtering, in a deferred fashion, the contents of this option according to the specified predicate.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
+        public static IOpt<T> Where<T>(this IOpt<T> source, Func<T, bool> predicate)
+        {
+            IEnumerable<T> sourcex = source;
+            return sourcex.SingleOpt(predicate);
+        }
+
+        /// <summary>
+        /// Produces a fixed option whose contents are the result of eagerly filtering the contents of this option according to the specified predicate.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
+        public static Opt<T> WhereFix<T>(this IOpt<T> source, Func<T, bool> predicate)
+        {
+            return source.Fix().WhereFix(predicate);
+        }
+
         /// <summary>
         /// Returns whether this option contains a value.
         /// </summary>
