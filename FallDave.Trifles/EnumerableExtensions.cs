@@ -25,6 +25,127 @@ namespace FallDave.Trifles
     /// </summary>
     public static class EnumerableExtensions
     {
+        #region *OrValue and *OrResult
+
+        private static T ComputeFilledValue<T>(this Opt<T> fixedOpt, T value)
+        {
+            return fixedOpt.FillWithValueFix(value).Single();
+        }
+
+        private static T ComputeFilledResult<T>(this Opt<T> fixedOpt, Func<Opt<T>> getResult)
+        {
+            Checker.NotNull(getResult, "getResult");
+            return fixedOpt.FillWithResultFix(getResult).Single();
+        }
+
+        /// <summary>
+        /// Returns the single value in this sequence, if any, or the specified fallback value if the sequence is empty.
+        /// (Throws if the sequence, after any filtering, contains more than one element.)
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="value"></param>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
+        public static T SingleOrValue<T>(this IEnumerable<T> source, T value, Func<T, bool> predicate = null)
+        {
+            return source.SingleFixOpt(predicate).ComputeFilledValue(value);
+        }
+
+        /// <summary>
+        /// Returns the single value in this sequence, if any, or the result of the specified function if the sequence is empty.
+        /// (Throws if the sequence, after any filtering, contains more than one element.)
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="getResult"></param>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
+        public static T SingleOrResult<T>(this IEnumerable<T> source, Func<Opt<T>> getResult, Func<T,bool> predicate = null)
+        {
+            return source.SingleFixOpt(predicate).ComputeFilledResult(getResult);
+        }
+
+        /// <summary>
+        /// Returns the first value in this sequence, if any, or the specified fallback value if the sequence is empty.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="value"></param>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
+        public static T FirstOrValue<T>(this IEnumerable<T> source, T value, Func<T, bool> predicate = null)
+        {
+            return source.FirstFixOpt(predicate).ComputeFilledValue(value);
+        }
+
+        /// <summary>
+        /// Returns the first value in this sequence, if any, or the result of the specified function if the sequence is empty.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="getResult"></param>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
+        public static T FirstOrResult<T>(this IEnumerable<T> source, Func<Opt<T>> getResult, Func<T, bool> predicate = null)
+        {
+            return source.FirstFixOpt(predicate).ComputeFilledResult(getResult);
+        }
+
+        /// <summary>
+        /// Returns the last value in this sequence, if any, or the specified fallback value if the sequence is empty.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="value"></param>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
+        public static T LastOrValue<T>(this IEnumerable<T> source, T value, Func<T, bool> predicate = null)
+        {
+            return source.LastFixOpt(predicate).ComputeFilledValue(value);
+        }
+
+        /// <summary>
+        /// Returns the last value in this sequence, if any, or the result of the specified function if the sequence is empty.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="getResult"></param>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
+        public static T LastOrResult<T>(this IEnumerable<T> source, Func<Opt<T>> getResult, Func<T, bool> predicate = null)
+        {
+            return source.LastFixOpt(predicate).ComputeFilledResult(getResult);
+        }
+
+        /// <summary>
+        /// Returns the element at the specified position in the sequence, if any, or the specified fallback value if there is no such element.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="value"></param>
+        /// <param name="index"></param>
+        /// <returns></returns>
+        public static T ElementAtOrValue<T>(this IEnumerable<T> source, T value, int index)
+        {
+            return source.ElementAtFixOpt(index).ComputeFilledValue(value);
+        }
+
+        /// <summary>
+        /// Returns the element at the specified position in the sequence, if any, or the result of the specified function if there is no such element.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="getResult"></param>
+        /// <param name="index"></param>
+        /// <returns></returns>
+        public static T ElementAtOrResult<T>(this IEnumerable<T> source, Func<Opt<T>> getResult, int index)
+        {
+            return source.ElementAtFixOpt(index).ComputeFilledResult(getResult);
+        }
+
+        #endregion
+
         #region Opt<T>-returning *FixOpt methods
 
         /// <summary>

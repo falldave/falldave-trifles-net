@@ -186,8 +186,8 @@ namespace FallDave.Trifles
         /// <exception cref="ArgumentOutOfRangeException"><paramref name="index"/> is less than zero or greater than or equal to the number of elements in this option.</exception>
         public static T ElementAt<T>(this IOpt<T> source, int index)
         {
-            var f = source.FixSource();            
-            if(index == 0 && f.Any())
+            var f = source.FixSource();
+            if (index == 0 && f.Any())
             {
                 return f.Single();
             }
@@ -206,6 +206,93 @@ namespace FallDave.Trifles
         {
             var f = source.FixSource();
             return index == 0 ? f.SingleOrDefault() : default(T);
+        }
+
+        /// <summary>
+        /// Returns (immediately, non-deferred) an option which contains the value from this option, if any, or another option containing the specified value, otherwise.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static Opt<T> FillWithValueFix<T>(this IOpt<T> source, T value)
+        {
+            var opt = source.FixSource();
+            return opt.Any() ? opt : Opt.Full(value);
+        }
+
+        /// <summary>
+        /// Returns (immediately, non-deferred) an option which contains the value from this option, if any, or another option containing the result of the specified function, otherwise.
+        /// The specified function is not called unless <paramref name="source"/> is empty.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="getResult"></param>
+        /// <returns></returns>
+        public static Opt<T> FillWithResultFix<T>(this IOpt<T> source, Func<Opt<T>> getResult)
+        {
+            Checker.NotNull(getResult, "getResult");
+            var opt = source.FixSource();
+            return opt.Any() ? opt : getResult();
+        }
+
+        /// <summary>
+        /// Returns (immediately, non-deferred) an option which contains the value from this option, if any, or the value from the specified fallback option, otherwise.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="fallback"></param>
+        /// <returns></returns>
+        public static Opt<T> SubstituteIfEmptyFix<T>(this IOpt<T> source, IOpt<T> fallback)
+        {
+            Checker.NotNull(fallback, "fallback");
+            var opt = source.FixSource();
+            return opt.Any() ? opt : fallback.Fix();
+        }
+
+        /// <summary>
+        /// Returns (in a deferred fashion) an option which contains the value from this option, if any, or another option containing the specified value, otherwise.
+        /// The value of <paramref name="source"/> is reevaluated every time the returned option's value is retrieved.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static IOpt<T> FillWithValue<T>(this IOpt<T> source, T value)
+        {
+            Checker.NotNull(source, "source");
+            return new DeferredOpt<T>(() => source.FillWithValueFix(value));
+        }
+
+        /// <summary>
+        /// Returns (in a deferred fashion) an option which contains the value from this option, if any, or another option containing the result of the specified function, otherwise.
+        /// The specified function is not called unless <paramref name="source"/> is empty.
+        /// The value of <paramref name="source"/> (and the result of getResult(), where applicable) is reevaluated every time the returned option's value is retrieved.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="getResult"></param>
+        /// <returns></returns>
+        public static IOpt<T> FillWithResult<T>(this IOpt<T> source, Func<Opt<T>> getResult)
+        {
+            Checker.NotNull(source, "source");
+            Checker.NotNull(getResult, "getResult");
+            return new DeferredOpt<T>(() => source.FillWithResultFix(getResult));
+        }
+
+        /// <summary>
+        /// Returns (in a deferred fashion) an option which contains the value from this option, if any, or the value from the specified fallback option, otherwise.
+        /// The value of <paramref name="source"/> (and of <paramref name="fallback"/>, if <paramref name="source"/> is currently empty) is reevaluated every time the returned option's value is retrieved.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="fallback"></param>
+        /// <returns></returns>
+        public static IOpt<T> SubstituteIfEmpty<T>(this IOpt<T> source, IOpt<T> fallback)
+        {
+            Checker.NotNull(source, "source");
+            Checker.NotNull(fallback, "fallback");
+            return new DeferredOpt<T>(() => source.SubstituteIfEmptyFix(fallback));
         }
 
         // Private abbr for `source.Fix()` with a null check

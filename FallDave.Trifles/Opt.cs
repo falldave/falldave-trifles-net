@@ -299,18 +299,6 @@ namespace FallDave.Trifles
         public T SingleOrDefault()
         {
             return hasValue ? value : default(T);
-        }
-
-        /// <summary>
-        /// Retrieves the (only) value contained in this option, if any, or the value returned by the given fallback function otherwise.
-        /// </summary>
-        /// <param name="getValueIfNotPresent">A function that is called to produce the return value if this option is empty.</param>
-        /// <returns>The value contained in this option, if any, or the result of calling <paramref name="getValueIfNotPresent"/> otherwise.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="getValueIfNotPresent"/> is <c>null</c>.</exception>
-        public T SingleOrElse(Func<T> getValueIfNotPresent)
-        {
-            Checker.NotNull(getValueIfNotPresent, "getValueIfNotPresent");
-            return hasValue ? value : getValueIfNotPresent();
-        }
+        }        
     }
 }
