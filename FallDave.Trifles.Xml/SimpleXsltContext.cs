@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,7 +25,7 @@ namespace FallDave.Trifles.Xml
 
         public override int CompareDocument(string baseUri, string nextbaseUri)
         {
-            throw new NotImplementedException();
+            return 0;
         }
 
         public override bool PreserveWhitespace(XPathNavigator node)
@@ -32,40 +33,14 @@ namespace FallDave.Trifles.Xml
             return true;
         }
 
-        /// <summary>
-        /// Looks up the specified prefix and returns the result as an <see cref="XNamespace"/>.
-        /// </summary>
-        /// <param name="prefix">The prefix to look up (<see cref="string.Empty"/> for the default namespace).</param>
-        /// <returns>An <see cref="XNamespace"/> corresponding to the namespace name to which the given prefix is mapped</returns>
-        public XNamespace AsXNamespace(string prefix)
+        public override IXsltContextFunction ResolveFunction(string prefix, string localName, XPathResultType[] argTypes)
         {
-            if(prefix == null)
-            {
-                throw new ArgumentNullException("prefix");
-            }
-
-            var namespaceName = LookupNamespace(prefix);
-            return XNamespace.Get(namespaceName);
-        }
-
-        public XName AsXName(string prefix, string localName)
-        {
-            if(localName == null)
-            {
-                throw new ArgumentNullException("localName");
-            }
-
-            return AsXNamespace(prefix) + localName;
-        }
-
-        public override IXsltContextFunction ResolveFunction(string prefix, string localName, XPathResultType[] ArgTypes)
-        {
-            return ResolveFunction(AsXName(prefix, localName), ArgTypes);
+            return ResolveFunction(this.GetRequiredXName(prefix, localName), argTypes);
         }
 
         public virtual IXsltContextFunction ResolveFunction(XName xName, params XPathResultType[] argTypes)
         {
-            if(xName == null)
+            if (xName == null)
             {
                 throw new ArgumentNullException("xName");
             }
@@ -75,7 +50,7 @@ namespace FallDave.Trifles.Xml
 
         public override IXsltContextVariable ResolveVariable(string prefix, string localName)
         {
-            return ResolveVariable(AsXName(prefix, localName));
+            return ResolveVariable(this.GetRequiredXName(prefix, localName));
         }
 
         public virtual IXsltContextVariable ResolveVariable(XName xName)
@@ -86,6 +61,42 @@ namespace FallDave.Trifles.Xml
             }
 
             throw new NotImplementedException();
+        }
+
+        private class SimpleXsltFunction : IXsltContextFunction
+        {
+            private readonly ImmutableArray<XPathResultType> argTypes;
+            private readonly Func<XsltContext, XPathNavigator, object[], object> implementation;
+            private readonly int maxArgs;
+            private readonly int minArgs;
+            private readonly XPathResultType returnType;
+
+            public SimpleXsltFunction(Func<XsltContext, XPathNavigator, object[], object> implementation,  XPathResultType returnType, int minArgs, int maxArgs, params XPathResultType[] argTypes)
+            {
+                if (implementation == null) throw new ArgumentNullException("implementation");
+                if (minArgs < 0) throw new ArgumentOutOfRangeException("minArgs");
+                if (maxArgs < minArgs) throw new ArgumentOutOfRangeException("maxArgs");
+                if (argTypes == null) throw new ArgumentNullException("argTypes");
+
+                this.implementation = implementation;
+                this.returnType = returnType;
+                this.minArgs = minArgs;
+                this.maxArgs = maxArgs;
+                this.argTypes = argTypes.ToImmutableArray();
+            }
+
+            public XPathResultType[] ArgTypes { get { return argTypes.ToArray(); } }
+
+            public int Maxargs { get { return maxArgs; } }
+
+            public int Minargs { get { return minArgs; } }
+
+            public XPathResultType ReturnType { get { return returnType; } }
+
+            public object Invoke(XsltContext xsltContext, object[] args, XPathNavigator docContext)
+            {
+                return implementation(xsltContext, docContext, args);
+            }
         }
     }
 }
