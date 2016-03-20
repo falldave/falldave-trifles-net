@@ -13,6 +13,7 @@
 //
 // </copyright>
 //-----------------------------------------------------------------------
+
 namespace FallDave.Trifles
 {
     using System;
