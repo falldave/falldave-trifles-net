@@ -57,10 +57,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="buildevents.ps1" />
     <None Include="FallDave.Trifles.Xml.licenseheader" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>powershell -ExecutionPolicy ByPass "&amp;'$(SolutionDir)common.ps1'" -Function Prebuild -ConfigurationName '$(ConfigurationName)' -OutDir '$(OutDir)' -DevEnvDir '$(DevEnvDir)' -PlatformName '$(PlatformName)' -ProjectDir '$(ProjectDir)' -ProjectPath '$(ProjectPath)' -ProjectName '$(ProjectName)' -ProjectFileName '$(ProjectFileName)' -ProjectExt '$(ProjectExt)' -SolutionDir '$(SolutionDir)' -SolutionPath '$(SolutionPath)' -SolutionName '$(SolutionName)' -SolutionFileName '$(SolutionFileName)' -SolutionExt '$(SolutionExt)' -TargetDir '$(TargetDir)' -TargetPath '$(TargetPath)' -TargetName '$(TargetName)' -TargetFileName '$(TargetFileName)' -TargetExt '$(TargetExt)'</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>powershell -ExecutionPolicy ByPass "&amp;'$(SolutionDir)common.ps1'" -Function Postbuild -ConfigurationName '$(ConfigurationName)' -OutDir '$(OutDir)' -DevEnvDir '$(DevEnvDir)' -PlatformName '$(PlatformName)' -ProjectDir '$(ProjectDir)' -ProjectPath '$(ProjectPath)' -ProjectName '$(ProjectName)' -ProjectFileName '$(ProjectFileName)' -ProjectExt '$(ProjectExt)' -SolutionDir '$(SolutionDir)' -SolutionPath '$(SolutionPath)' -SolutionName '$(SolutionName)' -SolutionFileName '$(SolutionFileName)' -SolutionExt '$(SolutionExt)' -TargetDir '$(TargetDir)' -TargetPath '$(TargetPath)' -TargetName '$(TargetName)' -TargetFileName '$(TargetFileName)' -TargetExt '$(TargetExt)'</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

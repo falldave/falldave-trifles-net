@@ -50,9 +50,16 @@
     <Compile Include="StringExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="buildevents.ps1" />
     <None Include="FallDave.Trifles.licenseheader" />
     <None Include="packages.config" />
     <None Include="Settings.StyleCop" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>powershell -ExecutionPolicy ByPass "&amp;'$(SolutionDir)common.ps1'" -Function Prebuild -ConfigurationName '$(ConfigurationName)' -OutDir '$(OutDir)' -DevEnvDir '$(DevEnvDir)' -PlatformName '$(PlatformName)' -ProjectDir '$(ProjectDir)' -ProjectPath '$(ProjectPath)' -ProjectName '$(ProjectName)' -ProjectFileName '$(ProjectFileName)' -ProjectExt '$(ProjectExt)' -SolutionDir '$(SolutionDir)' -SolutionPath '$(SolutionPath)' -SolutionName '$(SolutionName)' -SolutionFileName '$(SolutionFileName)' -SolutionExt '$(SolutionExt)' -TargetDir '$(TargetDir)' -TargetPath '$(TargetPath)' -TargetName '$(TargetName)' -TargetFileName '$(TargetFileName)' -TargetExt '$(TargetExt)'</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>powershell -ExecutionPolicy ByPass "&amp;'$(SolutionDir)common.ps1'" -Function Postbuild -ConfigurationName '$(ConfigurationName)' -OutDir '$(OutDir)' -DevEnvDir '$(DevEnvDir)' -PlatformName '$(PlatformName)' -ProjectDir '$(ProjectDir)' -ProjectPath '$(ProjectPath)' -ProjectName '$(ProjectName)' -ProjectFileName '$(ProjectFileName)' -ProjectExt '$(ProjectExt)' -SolutionDir '$(SolutionDir)' -SolutionPath '$(SolutionPath)' -SolutionName '$(SolutionName)' -SolutionFileName '$(SolutionFileName)' -SolutionExt '$(SolutionExt)' -TargetDir '$(TargetDir)' -TargetPath '$(TargetPath)' -TargetName '$(TargetName)' -TargetFileName '$(TargetFileName)' -TargetExt '$(TargetExt)'</PostBuildEvent>
+  </PropertyGroup>
 </Project>

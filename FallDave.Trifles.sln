@@ -8,6 +8,15 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FallDave.Trifles.Xml", "FallDave.Trifles.Xml\FallDave.Trifles.Xml.csproj", "{186C5D0E-866E-413F-ACAB-06F3564A1815}"
 EndProject
 Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "Help", "Help\Help.shfbproj", "{49A89E67-1687-44B3-90D6-3D839EEA7039}"
+	ProjectSection(ProjectDependencies) = postProject
+		{186C5D0E-866E-413F-ACAB-06F3564A1815} = {186C5D0E-866E-413F-ACAB-06F3564A1815}
+		{EB6357F1-8D1E-4C38-8112-2AD089875571} = {EB6357F1-8D1E-4C38-8112-2AD089875571}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{54FBEA7C-FE72-4D1B-9A5A-84F8A005197D}"
+	ProjectSection(SolutionItems) = preProject
+		common.ps1 = common.ps1
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
