@@ -76,6 +76,22 @@ namespace FallDave.Trifles
         {
             return hasValue ? Full(value) : Empty<T>();
         }
+
+        /// <summary>
+        /// Creates a new option whose contents are evaluated on demand using the given function.
+        /// </summary>
+        /// <typeparam name="T">The value type for the new deferred option.</typeparam>
+        /// <param name="getCurrentFixedValue">
+        /// A function that returns, as a fixed option, the current value of this option.
+        /// </param>
+        /// <returns>
+        /// A new options whose contents are reevaluated each time they are retrieved by calling the
+        /// given function.
+        /// </returns>
+        public static IOpt<T> Defer<T>(Func<Opt<T>> getCurrentFixedValue)
+        {
+            return new DeferredOpt<T>(getCurrentFixedValue);
+        }
     }
 
     /// <summary>

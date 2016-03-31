@@ -416,7 +416,7 @@ namespace FallDave.Trifles
         /// <exception cref="InvalidOperationException">At the time of evaluation, the source sequence contains more than one element.</exception>
         public static IOpt<T> SingleOpt<T>(this IEnumerable<T> source, Func<T, bool> predicate = null)
         {
-            return new DeferredOpt<T>(() => source.SingleFixOpt(predicate));
+            return Opt.Defer(() => source.SingleFixOpt(predicate));
         }
 
         /// <summary>
@@ -428,7 +428,7 @@ namespace FallDave.Trifles
         /// <typeparam name="T">The type of value contained by the sequence.</typeparam>
         public static IOpt<T> FirstOpt<T>(this IEnumerable<T> source, Func<T, bool> predicate = null)
         {
-            return new DeferredOpt<T>(() => source.FirstFixOpt(predicate));
+            return Opt.Defer(() => source.FirstFixOpt(predicate));
         }
 
         /// <summary>
@@ -440,7 +440,7 @@ namespace FallDave.Trifles
         /// <typeparam name="T">The type of value contained by the sequence.</typeparam>
         public static IOpt<T> LastOpt<T>(this IEnumerable<T> source, Func<T, bool> predicate = null)
         {
-            return new DeferredOpt<T>(() => source.LastFixOpt(predicate));
+            return Opt.Defer(() => source.LastFixOpt(predicate));
         }
 
         /// <summary>
@@ -452,7 +452,7 @@ namespace FallDave.Trifles
         /// <typeparam name="T">The type of value contained by the sequence.</typeparam>
         public static IOpt<T> ElementAtOpt<T>(this IEnumerable<T> source, int index)
         {
-            return new DeferredOpt<T>(() => source.ElementAtFixOpt(index));
+            return Opt.Defer(() => source.ElementAtFixOpt(index));
         }
 
         /// <summary>
@@ -465,7 +465,7 @@ namespace FallDave.Trifles
         /// <exception cref="InvalidOperationException">At the time of evaluation, the source sequence contains more than one element.</exception>
         public static IOpt<T> SingleOpt<T>(this IEnumerator<T> source, Func<T, bool> predicate = null)
         {
-            return new DeferredOpt<T>(() => source.SingleFixOpt(predicate));
+            return Opt.Defer(() => source.SingleFixOpt(predicate));
         }
 
         /// <summary>
@@ -477,7 +477,7 @@ namespace FallDave.Trifles
         /// <typeparam name="T">The type of value contained by the sequence.</typeparam>
         public static IOpt<T> FirstOpt<T>(this IEnumerator<T> source, Func<T, bool> predicate = null)
         {
-            return new DeferredOpt<T>(() => source.FirstFixOpt(predicate));
+            return Opt.Defer(() => source.FirstFixOpt(predicate));
         }
 
         /// <summary>
@@ -489,7 +489,7 @@ namespace FallDave.Trifles
         /// <typeparam name="T">The type of value contained by the sequence.</typeparam>
         public static IOpt<T> LastOpt<T>(this IEnumerator<T> source, Func<T, bool> predicate = null)
         {
-            return new DeferredOpt<T>(() => source.LastFixOpt(predicate));
+            return Opt.Defer(() => source.LastFixOpt(predicate));
         }
 
         /// <summary>
@@ -501,7 +501,7 @@ namespace FallDave.Trifles
         /// <typeparam name="T">The type of value contained by the sequence.</typeparam>
         public static IOpt<T> ElementAtOpt<T>(this IEnumerator<T> source, int index)
         {
-            return new DeferredOpt<T>(() => source.ElementAtFixOpt(index));
+            return Opt.Defer(() => source.ElementAtFixOpt(index));
         }
 
         #endregion

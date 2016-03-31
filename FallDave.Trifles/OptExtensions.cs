@@ -261,7 +261,7 @@ namespace FallDave.Trifles
         public static IOpt<T> FillWithValue<T>(this IOpt<T> source, T value)
         {
             Checker.NotNull(source, "source");
-            return new DeferredOpt<T>(() => source.FillWithValueFix(value));
+            return Opt.Defer(() => source.FillWithValueFix(value));
         }
 
         /// <summary>
@@ -277,7 +277,7 @@ namespace FallDave.Trifles
         {
             Checker.NotNull(source, "source");
             Checker.NotNull(getResult, "getResult");
-            return new DeferredOpt<T>(() => source.FillWithResultFix(getResult));
+            return Opt.Defer(() => source.FillWithResultFix(getResult));
         }
 
         /// <summary>
@@ -292,7 +292,7 @@ namespace FallDave.Trifles
         {
             Checker.NotNull(source, "source");
             Checker.NotNull(fallback, "fallback");
-            return new DeferredOpt<T>(() => source.SubstituteIfEmptyFix(fallback));
+            return Opt.Defer(() => source.SubstituteIfEmptyFix(fallback));
         }
 
         // Private abbr for `source.Fix()` with a null check
