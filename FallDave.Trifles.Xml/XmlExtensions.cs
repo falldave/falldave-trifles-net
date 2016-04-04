@@ -49,7 +49,7 @@ namespace FallDave.Trifles.Xml
         /// <returns></returns>
         public static IEnumerable<XPathNavigator> AsEnumerable(this XPathNodeIterator source)
         {
-            if (source == null) { throw new ArgumentNullException("source"); }
+            Checker.NotNull(source, "source");
             return source.Cast<XPathNavigator>();
         }
 
@@ -75,8 +75,8 @@ namespace FallDave.Trifles.Xml
         /// <returns></returns>
         public static Opt<string> LookupNamespaceOpt(this IXmlNamespaceResolver namespaceResolver, string prefix)
         {
-            if (namespaceResolver == null) { throw new ArgumentNullException("namespaceResolver"); }
-            if (prefix == null) { throw new ArgumentNullException("prefix"); }
+            Checker.NotNull(namespaceResolver, "namespaceResolver");
+            Checker.NotNull(prefix, "prefix");
             var namespaceName = namespaceResolver.LookupNamespace(prefix);
             return Opt.FullIfNotNull(namespaceName);
         }
@@ -91,8 +91,8 @@ namespace FallDave.Trifles.Xml
         /// <returns></returns>
         public static Opt<string> LookupPrefixOpt(this IXmlNamespaceResolver namespaceResolver, string namespaceName)
         {
-            if (namespaceResolver == null) { throw new ArgumentNullException("namespaceResolver"); }
-            if (namespaceName == null) { throw new ArgumentNullException("namespaceName"); }
+            Checker.NotNull(namespaceResolver, "namespaceResolver");
+            Checker.NotNull(namespaceName, "namespaceName");
             var prefix = namespaceResolver.LookupPrefix(namespaceName);
             return Opt.FullIfNotNull(prefix);
         }
@@ -106,14 +106,14 @@ namespace FallDave.Trifles.Xml
         /// <returns></returns>
         public static Opt<XNamespace> GetXNamespaceOpt(this IXmlNamespaceResolver namespaceResolver, string prefix)
         {
-            if (namespaceResolver == null) { throw new ArgumentNullException("namespaceResolver"); }
-            if (prefix == null) { throw new ArgumentNullException("prefix"); }
+            Checker.NotNull(namespaceResolver, "namespaceResolver");
+            Checker.NotNull(prefix, "prefix");
             return namespaceResolver.LookupNamespaceOpt(prefix).SelectFix(ns => XNamespace.Get(ns));
         }
 
         /// <summary>
         /// Retrieves, as an XNamespace, the namespace name in this namespace resolver corresponding to the specified prefix.
-        /// If the prefix is unknown, this throws an XslException.
+        /// If the prefix is unknown, this throws a PrefixNotDefinedException.
         /// </summary>
         /// <param name="namespaceResolver"></param>
         /// <param name="prefix"></param>
@@ -124,7 +124,7 @@ namespace FallDave.Trifles.Xml
             {
                 return xns;
             }
-            throw new System.Xml.Xsl.XsltException("The prefix '{0}' is not defined.".FormatStr(prefix));
+            throw new PrefixNotDefinedException(null, prefix);
         }
 
         /// <summary>
@@ -137,15 +137,15 @@ namespace FallDave.Trifles.Xml
         /// <returns></returns>
         public static Opt<XName> GetXNameOpt(this IXmlNamespaceResolver namespaceResolver, string prefix, string localName)
         {
-            if (namespaceResolver == null) { throw new ArgumentNullException("namespaceResolver"); }
-            if (prefix == null) { throw new ArgumentNullException("prefix"); }
-            if (localName == null) { throw new ArgumentNullException("localName"); }
+            Checker.NotNull(namespaceResolver, "namespaceResolver");
+            Checker.NotNull(prefix, "prefix");
+            Checker.NotNull(localName, "localName");
             return namespaceResolver.GetXNamespaceOpt(prefix).SelectFix(xns => xns.GetName(localName));
         }
 
         /// <summary>
         /// Retrieves, as an XName, the namespace name in this namespace resolver corresponding to the specified prefix, paired with the local name.
-        /// If the prefix is unknown, this throws an XslException.
+        /// If the prefix is unknown, this throws an PrefixNotDefinedException.
         /// </summary>
         /// <param name="namespaceResolver"></param>
         /// <param name="prefix"></param>
@@ -153,7 +153,7 @@ namespace FallDave.Trifles.Xml
         /// <returns></returns>
         public static XName GetRequiredXName(this IXmlNamespaceResolver namespaceResolver, string prefix, string localName)
         {
-            if(localName == null) { throw new ArgumentNullException("localName"); }
+            Checker.NotNull(localName, "localName");
             return namespaceResolver.GetRequiredXNamespace(prefix).GetName(localName);           
         }
 
