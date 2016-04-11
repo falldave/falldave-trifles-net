@@ -17,14 +17,16 @@
 namespace FallDave.Trifles
 {
     using System;
+    using System.Collections;
     using System.Collections.Generic;
-    using System.Linq;
 
     /// <summary>
     /// Utility extensions applicable to <see cref="IEnumerable{T}"/> instances.
     /// </summary>
     public static class EnumerableExtensions
     {
+        #region Opt facilities
+
         #region *OrValue and *OrResult
 
         private static T ComputeFilledValue<T>(this Opt<T> fixedOpt, T value)
@@ -61,7 +63,7 @@ namespace FallDave.Trifles
         /// <param name="getResult"></param>
         /// <param name="predicate"></param>
         /// <returns></returns>
-        public static T SingleOrResult<T>(this IEnumerable<T> source, Func<Opt<T>> getResult, Func<T,bool> predicate = null)
+        public static T SingleOrResult<T>(this IEnumerable<T> source, Func<Opt<T>> getResult, Func<T, bool> predicate = null)
         {
             return source.SingleFixOpt(predicate).ComputeFilledResult(getResult);
         }
@@ -144,7 +146,7 @@ namespace FallDave.Trifles
             return source.ElementAtFixOpt(index).ComputeFilledResult(getResult);
         }
 
-        #endregion
+        #endregion *OrValue and *OrResult
 
         #region Opt<T>-returning *FixOpt methods
 
@@ -286,7 +288,7 @@ namespace FallDave.Trifles
             return ComputeElementAtFixOpt(source, index);
         }
 
-        #endregion
+        #endregion Opt<T>-returning *FixOpt methods
 
         #region TryGet* methods
 
@@ -402,7 +404,7 @@ namespace FallDave.Trifles
             return source.ElementAtFixOpt(index).TryGetSingle(out value);
         }
 
-        #endregion
+        #endregion TryGet* methods
 
         #region *Opt
 
@@ -504,7 +506,7 @@ namespace FallDave.Trifles
             return Opt.Defer(() => source.ElementAtFixOpt(index));
         }
 
-        #endregion
+        #endregion *Opt
 
         #region Compute*FixOpt for Single, First, Last, ElementAt.
 
@@ -523,10 +525,12 @@ namespace FallDave.Trifles
                     case 0:
                         // do nothing
                         break;
+
                     case 1:
                         // use element
                         init.Value = list[0];
                         break;
+
                     default:
                         throw Errors.MoreThanOneElement();
                 }
@@ -628,7 +632,7 @@ namespace FallDave.Trifles
             return init.AsOpt();
         }
 
-        #endregion
+        #endregion For enumerables
 
         #region For enumerators
 
@@ -706,9 +710,9 @@ namespace FallDave.Trifles
             return init.AsOpt();
         }
 
-        #endregion
+        #endregion For enumerators
 
-        #endregion
+        #endregion Compute*FixOpt for Single, First, Last, ElementAt.
 
         // If the given predicate is null, it is changed to an always-true predicate. Returns
         // whether the initial predicate was non-null. In exception messages this is the difference
@@ -768,7 +772,7 @@ namespace FallDave.Trifles
                 else
                 {
                     Value = value;
-                }                
+                }
             }
 
             public Opt<T> AsOpt()
@@ -777,6 +781,131 @@ namespace FallDave.Trifles
             }
         }
 
-        #endregion
+        #endregion OptInit
+
+        #endregion Opt facilities
+
+        #region CountUpTo
+
+        /// <summary>
+        /// Counts the elements in a sequence until the sequence ends or a maximum count is reached,
+        /// whichever occurs first.
+        /// </summary>
+        /// <para>
+        /// This style of counting is used to determine whether the number of elements is greater
+        /// than or equal to some number without necessarily traversing the entire sequence.
+        /// </para>
+        /// <example>
+        /// This sample demonstrates how to call the method to determine if a sequence has a given
+        /// correct length or is too long or too short.
+        /// <code><![CDATA[
+        /// // Determine whether the sequence contains exactly correctLength elements. The maxCount
+        /// // of correctLength + 1 indicates the smallest length that is too long.
+        /// 
+        /// int count = seq.CountUpTo(correctLength + 1);
+        /// 
+        /// if (count < correctLength)
+        /// {
+        ///     Console.WriteLine("Sequence does not contain enough elements (length is {0})", count);
+        /// }
+        /// else if (count > correctLength)
+        /// {
+        ///     // Equivalently, count == correctLength + 1, since that is the only possible value
+        ///     // greater than correctLength. But we write it as > for style reasons and because
+        ///     // that is the way we'd write it using plain count.
+        ///     Console.WriteLine("Sequence contains too many elements (length is greater than or equal to {0})", count);
+        /// }
+        /// else
+        /// {
+        ///     Console.WriteLine("Sequence contains the correct number of elements (length is {0})", count);
+        /// }
+        /// ]]></code>
+        /// </example>
+        /// <para>
+        /// Implementation note: If the predicate is <c>null</c> and the source sequence is an <see
+        /// cref="IList{T}"/> or <see cref="IList"/>, its count will be retrieved through such
+        /// interface rather than by counting the source as an enumerable.
+        /// </para>
+        /// <typeparam name="T">The type of element in the source sequence.</typeparam>
+        /// <param name="source">The source sequence whose elements to count.</param>
+        /// <param name="maxCount">The number of elements at which to stop counting.</param>
+        /// <param name="predicate">
+        /// A condition the element must meet in order to be counted; <c>null</c> specifies no condition.
+        /// </param>
+        /// <returns>
+        /// The number of elements in the source enumerable, after any filtering, or the maximum
+        /// count, whichever is reached first.
+        /// </returns>
+        /// <exception cref="ArgumentNullException"><paramref name="source"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentOutOfRangeException">
+        /// <paramref name="maxCount"/> is less than 0.
+        /// </exception>
+        public static int CountUpTo<T>(this IEnumerable<T> source, int maxCount, Func<T, bool> predicate = null)
+        {
+            Checker.NotNull(source, "source");
+            if (maxCount < 0) { throw new ArgumentOutOfRangeException("maxCount"); }
+
+            return maxCount - CountRemaining(source, maxCount, predicate);
+        }
+
+        // An inversion of CountUpTo() that counts down so that the count is only ever tested as
+        // `remaining == 0`. If the source is exhausted before `remaining` is 0, return the minimum
+        // number of additional elements that would have been needed to finish the count.
+        private static int CountRemaining<T>(IEnumerable<T> source, int remaining, Func<T, bool> predicate)
+        {
+            if (remaining == 0)
+            {
+                // Nothing to count
+                return 0;
+            }
+            else if (predicate == null)
+            {
+                {
+                    // Quick count using IList/IList<T> interface
+
+                    int listCount = -1;
+
+                    if (source is IList)
+                    {
+                        listCount = ((IList)source).Count;
+                    }
+                    else if (source is IList<T>)
+                    {
+                        listCount = ((IList<T>)source).Count;
+                    }
+
+                    if (listCount >= 0)
+                    {
+                        var remainingAfterListCount = remaining - listCount;
+                        return (remainingAfterListCount < 0) ? 0 : remainingAfterListCount;
+                    }
+                }
+
+                {
+                    // Iterating count
+
+                    foreach (var element in source)
+                    {
+                        if (--remaining == 0) { return 0; }
+                    }
+
+                    return remaining;
+                }
+            }
+            else
+            {
+                // Iterating count with filter
+
+                foreach (var element in source)
+                {
+                    if (!predicate(element)) { continue; }
+                    if (--remaining == 0) { return 0; }
+                }
+
+                return remaining;
+            }
+        }
+
+        #endregion CountUpTo
     }
 }
