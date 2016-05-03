@@ -23,7 +23,7 @@ using System.Threading.Tasks;
 namespace FallDave.Trifles
 {
     /// <summary>
-    /// Utility extensions applicable to <see cref="IDictionary{T}"/> instances.
+    /// Utility extensions applicable to <see cref="IDictionary{TKey, TValue}"/> instances.
     /// </summary>
     public static class DictionaryExtensions
     {
