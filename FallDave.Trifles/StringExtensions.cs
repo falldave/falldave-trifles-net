@@ -136,12 +136,34 @@ namespace FallDave.Trifles
         }
 
         /// <summary>
+        /// Alternate invocation for <see cref="string.Join(string, object[])"/> to be called on the sequence to be joined.
+        /// </summary>
+        /// <param name="values"></param>
+        /// <param name="separator"></param>
+        /// <returns></returns>
+        public static string JoinWithStr(this object[] values, string separator = "")
+        {
+            return string.Join(separator, values);
+        }
+
+        /// <summary>
         /// Alternate invocation for <see cref="string.Join(string, string[])"/>.
         /// </summary>
         /// <param name="separator"></param>
         /// <param name="values"></param>
         /// <returns></returns>
         public static string JoinStr(this string separator, params string[] values)
+        {
+            return string.Join(separator, values);
+        }
+
+        /// <summary>
+        /// Alternate invocation for <see cref="string.Join(string, string[])"/> to be called on the sequence to be joined.
+        /// </summary>
+        /// <param name="values"></param>
+        /// <param name="separator"></param>
+        /// <returns></returns>
+        public static string JoinWithStr(this string[] values, string separator = "")
         {
             return string.Join(separator, values);
         }
@@ -158,6 +180,17 @@ namespace FallDave.Trifles
         }
 
         /// <summary>
+        /// Alternate invocation for <see cref="string.Join(string, IEnumerable{string})"/> to be called on the sequence to be joined.
+        /// </summary>
+        /// <param name="values"></param>
+        /// <param name="separator"></param>
+        /// <returns></returns>
+        public static string JoinWithStr(this IEnumerable<string> values, string separator = "")
+        {
+            return string.Join(separator, values);
+        }
+
+        /// <summary>
         /// Alternate invocation for <see cref="string.Join{T}(string, IEnumerable{T})"/>.
         /// </summary>
         /// <typeparam name="T"></typeparam>
@@ -165,6 +198,18 @@ namespace FallDave.Trifles
         /// <param name="values"></param>
         /// <returns></returns>
         public static string JoinStr<T>(this string separator, IEnumerable<T> values)
+        {
+            return string.Join(separator, values);
+        }
+
+        /// <summary>
+        /// Alternate invocation for <see cref="string.Join{T}(string, IEnumerable{T})"/> to be called on the sequence to be joined.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="values"></param>
+        /// <param name="separator"></param>
+        /// <returns></returns>
+        public static string JoinWithStr<T>(IEnumerable<T> values, string separator = "")
         {
             return string.Join(separator, values);
         }
