@@ -47,6 +47,8 @@
     <Compile Include="Errors.cs" />
     <Compile Include="DeferredOpt.cs" />
     <Compile Include="EnumerableExtensions.cs" />
+    <Compile Include="Sequences\GeneratorExtensions.cs" />
+    <Compile Include="Sequences\IGenerator.cs" />
     <Compile Include="SimpleTypeExtensions.cs" />
     <Compile Include="StringExtensions.cs" />
   </ItemGroup>
@@ -56,6 +58,7 @@
     <None Include="packages.config" />
     <None Include="Settings.StyleCop" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>powershell -ExecutionPolicy ByPass "&amp;'$(SolutionDir)common.ps1'" -Function Prebuild -ConfigurationName '$(ConfigurationName)' -OutDir '$(OutDir)' -DevEnvDir '$(DevEnvDir)' -PlatformName '$(PlatformName)' -ProjectDir '$(ProjectDir)' -ProjectPath '$(ProjectPath)' -ProjectName '$(ProjectName)' -ProjectFileName '$(ProjectFileName)' -ProjectExt '$(ProjectExt)' -SolutionDir '$(SolutionDir)' -SolutionPath '$(SolutionPath)' -SolutionName '$(SolutionName)' -SolutionFileName '$(SolutionFileName)' -SolutionExt '$(SolutionExt)' -TargetDir '$(TargetDir)' -TargetPath '$(TargetPath)' -TargetName '$(TargetName)' -TargetFileName '$(TargetFileName)' -TargetExt '$(TargetExt)'</PreBuildEvent>

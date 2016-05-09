@@ -26,12 +26,22 @@ namespace FallDave.Trifles
     {
         public static InvalidOperationException NoElements(bool usingPredicate = false)
         {
-            throw new InvalidOperationException(usingPredicate ? "This sequence contains no matching elements." : "This sequence contains no elements.");
+            return new InvalidOperationException(usingPredicate ? "This sequence contains no matching elements." : "This sequence contains no elements.");
         }
 
         public static InvalidOperationException MoreThanOneElement(bool usingPredicate = false)
         {
             return new InvalidOperationException(usingPredicate ? "This sequence contains more than one matching element." : "This sequence contains more than one element.");
+        }
+
+        public static InvalidOperationException EnumNotStarted()
+        {
+            return new InvalidOperationException("Enumeration has not yet started.");
+        }
+
+        public static InvalidOperationException EnumEnded()
+        {
+            return new InvalidOperationException("Enumeration has already ended.");
         }
     }
 }
