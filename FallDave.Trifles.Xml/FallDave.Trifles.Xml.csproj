@@ -49,6 +49,13 @@
     <Compile Include="FunctionBasedXPathNavigable.cs" />
     <Compile Include="XmlExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XPath\ParentedMap.cs" />
+    <Compile Include="XPath\TriflesXPathContext.cs" />
+    <Compile Include="XPath\TriflesXPathData.cs" />
+    <Compile Include="XPath\DeferredVariable.cs" />
+    <Compile Include="XPath\TriflesXPathExtensionFunction.cs" />
+    <Compile Include="XPath\TriflesXPathExtensionVariable.cs" />
+    <Compile Include="XPath\XPathXNamesTable.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FallDave.Trifles\FallDave.Trifles.csproj">
