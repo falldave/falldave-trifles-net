@@ -57,7 +57,7 @@ namespace FallDave.Trifles.Xml.XPath
         /// <returns></returns>
         public static XPathNodeIterator ToNodeSet(IEnumerable<object> elements)
         {
-            var items = elements.Select(element => ToNodeSetItem(element));
+            var items = elements.Select(element => WrapXPathValueInXElement(element));
             var root = new XElement("root", items.ToArray());
             var rootNav = root.CreateNavigator();
             var result = (XPathNodeIterator)rootNav.Evaluate("item");
@@ -66,46 +66,67 @@ namespace FallDave.Trifles.Xml.XPath
 
 
 
-        // Converts a value to a node-set item.
-        private static XElement ToNodeSetItem(object value)
+
+        /// <summary>
+        /// Encodes an object value as an <see cref="XElement"/> having the name "item" and some
+        /// additional information that might be helpful in round-tripping the value.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static XElement WrapXPathValueInXElement(object value)
         {
             if (value is bool)
             {
                 var boolValue = (bool)value;
-                return boolValue ? CreateNodeSetItemElement("boolean", "true") : CreateNodeSetItemElement("boolean");
+                return boolValue ? CreateWrapItemElement("boolean", "true") : CreateWrapItemElement("boolean");
             }
             else if (value is char)
             {
-                return CreateNodeSetItemElement("string", ((char)value).ToString());
+                var convValue = (char)value;
+
+                return CreateWrapItemElement("string",
+                    new XAttribute("subtype", "char"),
+                    new XAttribute("numeric-value", (int)convValue),
+                    convValue.ToString());
             }
             else if (value is IConvertible && ((IConvertible)value).IsNumericAndNotChar())
             {
                 var convValue = (IConvertible)value;
-                var numericValue = Convert.ToDouble(convValue);
-                var xpathStringValue = ToString(numericValue);
+                var xpathStringValue = convValue.NumericValueToNonScientificStringOpt().Single();
 
-                return CreateNodeSetItemElement("number", xpathStringValue);
+                var content = new List<object>();
+
+                var subtype = GetNumericSubtype(convValue);
+
+                if (subtype != null)
+                {
+                    content.Add(new XAttribute("subtype", subtype));
+                }
+
+                content.Add(xpathStringValue);
+
+                return CreateWrapItemElement("number", content.ToArray());
             }
             else if (value is string)
             {
-                return CreateNodeSetItemElement("string", value);
+                return CreateWrapItemElement("string", value);
             }
             else if (value is XPathNodeIterator)
             {
                 var i = (XPathNodeIterator)value;
                 var nodes = i.AsEnumerable().Select(n => n.ToXNode()).ToArray();
 
-                return CreateNodeSetItemElement("node-set", nodes);
+                return CreateWrapItemElement("node-set", nodes);
             }
             else if (value is IXPathNavigable)
             {
                 var xnode = ((IXPathNavigable)value).ToXNode();
 
-                return CreateNodeSetItemElement("result-tree-fragment", xnode);
+                return CreateWrapItemElement("result-tree-fragment", xnode);
             }
             else if (value == null)
             {
-                return CreateNodeSetItemElement("null");
+                return CreateWrapItemElement("node-set", new XAttribute("subtype","null"));
             }
             else
             {
@@ -113,8 +134,32 @@ namespace FallDave.Trifles.Xml.XPath
             }
         }
 
+        private static string GetNumericSubtype(IConvertible convValue)
+        {
+            string subtype = null;
+
+            if (convValue is decimal)
+            {
+                subtype = "decimal";
+            }
+            else if (convValue.IsFloatingPoint())
+            {
+                subtype = "floating-point";
+            }
+            else if (convValue.IsUnsignedIntegral())
+            {
+                subtype = "unsigned-integer";
+            }
+            else if (convValue.IsSignedIntegral())
+            {
+                subtype = "signed-integer";
+            }
+
+            return subtype;
+        }
+
         // Creates an XElement containing the data of a node-set item.
-        private static XElement CreateNodeSetItemElement(string type, params object[] otherContent)
+        private static XElement CreateWrapItemElement(string type, params object[] otherContent)
         {
             var typeAttr = new XAttribute("type", type);
             var elem = new XElement("item", typeAttr);
