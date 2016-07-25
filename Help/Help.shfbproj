@@ -26,6 +26,18 @@
       <Argument Key="logoAlignment" Value="left" xmlns="" />
       <Argument Key="maxVersionParts" Value="" xmlns="" />
     </TransformComponentArguments>
+    <DocumentationSources>
+      <DocumentationSource sourceFile="..\FallDave.Trifles\bin\Debug\FallDave.Trifles.XML" />
+      <DocumentationSource sourceFile="..\FallDave.Trifles\bin\Debug\FallDave.Trifles.dll" />
+      <DocumentationSource sourceFile="..\FallDave.Trifles.Xml\bin\Debug\FallDave.Trifles.Xml.XML" />
+      <DocumentationSource sourceFile="..\FallDave.Trifles.Xml\bin\Debug\FallDave.Trifles.Xml.dll" />
+    </DocumentationSources>
+    <BuildAssemblerVerbosity>OnlyWarningsAndErrors</BuildAssemblerVerbosity>
+    <HelpFileFormat>Website</HelpFileFormat>
+    <IndentHtml>False</IndentHtml>
+    <KeepLogFile>True</KeepLogFile>
+    <DisableCodeBlockComponent>False</DisableCodeBlockComponent>
+    <CleanIntermediates>True</CleanIntermediates>
   </PropertyGroup>
   <!-- There are no properties for these groups.  AnyCPU needs to appear in order for Visual Studio to perform
 			 the build.  The others are optional common platform types that may appear. -->
