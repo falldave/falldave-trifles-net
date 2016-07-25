@@ -16,6 +16,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,10 +47,10 @@ namespace FallDave.Trifles
             FloatingPoint,
             Decimal
         }
-        
+
         private static SimpleTypeClassification Classify(Type type)
         {
-            switch(type.FullName)
+            switch (type.FullName)
             {
                 case "System.Boolean":
                     return SimpleTypeClassification.Boolean;
@@ -66,14 +67,14 @@ namespace FallDave.Trifles
                 case "System.Int32":
                 case "System.Int64":
                     return SimpleTypeClassification.SignedIntegral;
-                    
+
                 case "System.Single":
                 case "System.Double":
                     return SimpleTypeClassification.FloatingPoint;
 
                 case "System.Decimal":
                     return SimpleTypeClassification.Decimal;
-                    
+
                 default:
                     return SimpleTypeClassification.NonSimpleType;
             }
@@ -198,7 +199,7 @@ namespace FallDave.Trifles
         }
 
         /// <summary>
-        /// Determines whether the specified value is one of the simple typed defined by C# to
+        /// Determines whether the specified value is one of the simple types defined by C# to
         /// contain numeric values.
         /// <para>
         /// This method is equivalent to
@@ -214,7 +215,7 @@ namespace FallDave.Trifles
             return (value is decimal) || value.IsIntegral() || value.IsFloatingPoint();
         }
 
-        /// <summary> Determines whether the specified value is one of the simple typed defined by
+        /// <summary> Determines whether the specified value is one of the simple types defined by
         /// C# to contain numeric values but is not a <c>char</c>. <para> This method is equivalent
         /// to <code><![CDATA[value.IsNumeric() && !(value is char)]]></code>. </para> </summary> <param
         /// name="value"></param> <returns></returns>
@@ -412,5 +413,140 @@ namespace FallDave.Trifles
                     return Opt.Empty<decimal>();
             }
         }
+
+        // http://stackoverflow.com/questions/1546113/double-to-string-conversion-without-scientific-notation
+        private static readonly string FixedPointFormat = "0." + new string('#', 339);
+        private static readonly CultureInfo NonCulture = CultureInfo.InvariantCulture;
+
+        /// <summary>
+        /// If the given value is of a numeric type, converts the value to a string representation
+        /// using the specified format. Returns empty if this value is not of a numeric type.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="format"></param>
+        /// <returns></returns>
+        public static Opt<string> NumericValueToStringOpt(this IConvertible value, string format)
+        {
+            switch (Classify(value))
+            {
+                case SimpleTypeClassification.Decimal:
+                    {
+                        return Opt.Full(((decimal)value).ToString(format));
+                    }
+                case SimpleTypeClassification.FloatingPoint:
+                    {
+                        return value.FloatingPointValueOpt()
+                            .Select(v => v.ToString(format))
+                            .SingleFixOpt();
+                    }
+                case SimpleTypeClassification.SignedIntegral:
+                    {
+                        return value.SignedIntegralValueOpt()
+                            .Select(v => v.ToString(format))
+                            .SingleFixOpt();
+                    }
+                case SimpleTypeClassification.UnsignedIntegral:
+                    {
+                        return value.UnsignedIntegralValueOpt()
+                            .Select(v => v.ToString(format))
+                            .SingleFixOpt();
+                    }
+                default:
+                    return Opt.Empty<string>();
+            }
+        }
+
+        /// <summary>
+        /// If the given value is of a numeric type, converts the value to a string representation
+        /// using the specified culture-specific format information. Returns empty if this value is not of a
+        /// numeric type.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="provider"></param>
+        /// <returns></returns>
+        public static Opt<string> NumericValueToStringOpt(this IConvertible value, IFormatProvider provider)
+        {
+            switch (Classify(value))
+            {
+                case SimpleTypeClassification.Decimal:
+                    {
+                        return Opt.Full(((decimal)value).ToString(provider));
+                    }
+                case SimpleTypeClassification.FloatingPoint:
+                    {
+                        return value.FloatingPointValueOpt()
+                            .Select(v => v.ToString(provider))
+                            .SingleFixOpt();
+                    }
+                case SimpleTypeClassification.SignedIntegral:
+                    {
+                        return value.SignedIntegralValueOpt()
+                            .Select(v => v.ToString(provider))
+                            .SingleFixOpt();
+                    }
+                case SimpleTypeClassification.UnsignedIntegral:
+                    {
+                        return value.UnsignedIntegralValueOpt()
+                            .Select(v => v.ToString(provider))
+                            .SingleFixOpt();
+                    }
+                default:
+                    return Opt.Empty<string>();
+            }
+        }
+
+        /// <summary>
+        /// If the given value is of a numeric type, converts the value to a string representation
+        /// using the specified format and culture-specific format information. Returns empty if this value is not of a
+        /// numeric type.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="format"></param>
+        /// <param name="provider"></param>
+        /// <returns></returns>
+        public static Opt<string> NumericValueToStringOpt(this IConvertible value, string format, IFormatProvider provider)
+        {
+            switch (Classify(value))
+            {
+                case SimpleTypeClassification.Decimal:
+                    {
+                        return Opt.Full(((decimal)value).ToString(format, provider));
+                    }
+                case SimpleTypeClassification.FloatingPoint:
+                    {
+                        return value.FloatingPointValueOpt()
+                            .Select(v => v.ToString(format, provider))
+                            .SingleFixOpt();
+                    }
+                case SimpleTypeClassification.SignedIntegral:
+                    {
+                        return value.SignedIntegralValueOpt()
+                            .Select(v => v.ToString(format, provider))
+                            .SingleFixOpt();
+                    }
+                case SimpleTypeClassification.UnsignedIntegral:
+                    {
+                        return value.UnsignedIntegralValueOpt()
+                            .Select(v => v.ToString(format, provider))
+                            .SingleFixOpt();
+                    }
+                default:
+                    return Opt.Empty<string>();
+            }
+        }
+
+        /// <summary>
+        /// If the specified value is of a numeric type, retrieves the value as a string whose value
+        /// is encoded, using the invariant culture, in its full length without the use of
+        /// scientific/exponential notation. ("Infinity", "-Infinity", and "NaN" are encoded using
+        /// those names.)
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static Opt<string> NumericValueToNonScientificStringOpt(this IConvertible value)
+        {
+            return value.NumericValueToStringOpt(FixedPointFormat, NonCulture);
+        }
     }
 }
+
