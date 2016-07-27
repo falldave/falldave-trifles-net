@@ -67,12 +67,45 @@ function Create-ExtraDir()
 	Create-Dir $extraDir
 }
 
+function Get-AssemblyVersion
+{
+	param([string] $assemblyPath)
+	[System.Reflection.Assembly]::LoadFrom($assemblyPath).GetName().Version.ToString()
+}
+
+function Get-AutoSemVer($assemblyVersion, $configuration) {
+    $versionParts = $assemblyVersion.Split(".")
+    $mainVersionParts = $versionParts[0 .. 2]
+
+    $firstSubpatchIndex = $mainVersionParts.Length
+    $lastSubpatchIndex = $versionParts.Length - 1
+
+    $subpatchVersionParts = @()
+    if ($firstSubpatchIndex -le $lastSubpatchIndex) {
+        $subpatchVersionParts = $versionParts[$firstSubpatchIndex .. $lastSubpatchIndex]
+    }
+
+    $mainVersion = [string]::Join(".", $mainVersionParts)
+    $subpatchVersion = [string]::Join(".", $subpatchVersionParts)
+
+    if ($configuration -eq "release") {
+        "$mainVersion.$subpatchVersion"
+    }
+    else {
+        "$mainVersion-$configuration-$subpatchVersion"
+    }
+}
+
 function Pack-NuGet()
 {
+	[string]$packageAssemblyVersion = Get-AssemblyVersion $TargetPath
+
+	$packageVersion = Get-AutoSemVer $packageAssemblyVersion $ConfigurationName
+		
 	Create-Dir $nugetOutDir
 
 	say "Packing NuGet for $ProjectPath"
-	nuget pack $ProjectPath -OutputDirectory $nugetOutDir
+	nuget pack $ProjectPath -Version $packageVersion -OutputDirectory $nugetOutDir
 	say "OK, NuGet package is in $nugetOutDir"
 }
 
