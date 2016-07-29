@@ -202,6 +202,78 @@ namespace FallDave.Trifles.Xml
 
         #endregion
 
+        /// <summary>
+        /// An XNamespace containing "http://www.w3.org/2001/XMLSchema-instance".
+        /// </summary>
+        public static readonly XNamespace XsiNamespace = "http://www.w3.org/2001/XMLSchema-instance";
+
+        /// <summary>
+        /// An XName containing "{http://www.w3.org/2001/XMLSchema-instance}nil", which is usually rendered as "xsi:nil".
+        /// </summary>
+        public static XName XsiNilName = XsiNamespace + "nil";
         
+        /// <summary>
+        /// Retrieves the attribute having the given name, or an empty result if there is no such attribute.
+        /// </summary>
+        /// <param name="element"></param>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public static Opt<XAttribute> AttributeOpt(this XElement element, XName name)
+        {
+            return Opt.FullIfNotNull(element.Attribute(name));
+        }
+
+        /// <summary>
+        /// Retrieves the value of the attribute having the given name, or an empty result if there is no such attribute.
+        /// </summary>
+        /// <param name="element"></param>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public static Opt<string> AttributeValueOpt(this XElement element, XName name)
+        {
+            return element.AttributeOpt(name).SelectFix(a => a.Value);
+        }
+
+        /// <summary>
+        /// Retrieves the value of the attribute having the given name, or <c>null</c> if there is no such attribute.
+        /// </summary>
+        /// <param name="element"></param>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public static string AttributeValue(this XElement element, XName name)
+        {
+            return element.AttributeValueOpt(name).SingleOrDefault();
+        }
+        
+        /// <summary>
+        /// Returns whether the attribute whose name is contained in <see cref="XsiNilName"/> exists and contains the string "true".
+        /// </summary>
+        /// <param name="element"></param>
+        /// <returns></returns>
+        public static bool XsiNil(this XElement element)
+        {
+            return element.AttributeValue(XsiNilName) == "true";
+        }
+
+        /// <summary>
+        /// Sets whether the attribute whose name is contained in <see cref="XsiNilName"/> is set to the string "true" (if <c>true</c>) or omitted entirely (if <c>false</c>).
+        /// </summary>
+        /// <param name="element"></param>
+        /// <param name="newValue"></param>
+        public static void XsiNil(this XElement element, bool newValue)
+        {
+            if(newValue)
+            {
+                element.SetAttributeValue(XsiNilName, "true");
+            }
+            else
+            {
+                var a = element.Attribute(XsiNilName);
+                if(a != null)
+                {
+                    a.Remove();
+                }
+            }
+        }
     }
 }
