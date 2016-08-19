@@ -171,6 +171,37 @@ namespace FallDave.Trifles
         }
 
         /// <summary>
+        /// Returns a counted option containing the only element of a sequence
+        /// (after any filtering), or an empty counted option if the sequence is
+        /// empty or there is more than one element in the sequence. The counted
+        /// option contains an indication whether the sequence length was 0, 1,
+        /// or greater than 1.
+        /// </summary>
+        /// <para>
+        /// The computation of the result of this method is performed
+        /// immediately, not deferred.
+        /// </para>
+        /// <typeparam name="T">The type of the contained value of the option.</typeparam>
+        /// <param name="source">An enumerable from which to extract the element.</param>
+        /// <param name="predicate">
+        /// A predicate by which to filter <paramref name="source"/>; if
+        /// <c>null</c>, no filtering is performed.
+        /// </param>
+        /// <returns>
+        /// A <see cref="CountedOpt{T}"/> containing the single element of the
+        /// sequence (after any filtering), or no elements otherwise, and
+        /// indicates whether the sequence was empty, single-element, or
+        /// multiple-element.
+        /// </returns>
+        /// <exception cref="ArgumentNullException"><paramref name="source"/> is <c>null</c>.</exception>
+        public static CountedOpt<T> CountSingleFixOpt<T>(this IEnumerable<T> source, Func<T, bool> predicate = null)
+        {
+            Checker.NotNull(source, "source");
+            var usingPredicate = SetUpPredicate(ref predicate);
+            return ComputeCountSingleFixOpt(source, predicate, usingPredicate);
+        }
+
+        /// <summary>
         /// Returns a fixed option containing the first element of a sequence (after any filtering),
         /// or an empty fixed option if the sequence is empty.
         /// </summary>
@@ -237,6 +268,37 @@ namespace FallDave.Trifles
             Checker.NotNull(source, "source");
             var usingPredicate = SetUpPredicate(ref predicate);
             return ComputeSingleFixOpt(source, predicate, usingPredicate);
+        }
+
+        /// <summary>
+        /// Returns a counted option containing the only element of a sequence
+        /// (after any filtering), or an empty counted option if the sequence is
+        /// empty or there is more than one element in the sequence. The counted
+        /// option contains an indication whether the sequence length was 0, 1,
+        /// or greater than 1.
+        /// </summary>
+        /// <para>
+        /// The computation of the result of this method is performed
+        /// immediately, not deferred.
+        /// </para>
+        /// <typeparam name="T">The type of the contained value of the option.</typeparam>
+        /// <param name="source">An enumerable from which to extract the element.</param>
+        /// <param name="predicate">
+        /// A predicate by which to filter <paramref name="source"/>; if
+        /// <c>null</c>, no filtering is performed.
+        /// </param>
+        /// <returns>
+        /// A <see cref="CountedOpt{T}"/> containing the single element of the
+        /// sequence (after any filtering), or no elements otherwise, and
+        /// indicates whether the sequence was empty, single-element, or
+        /// multiple-element.
+        /// </returns>
+        /// <exception cref="ArgumentNullException"><paramref name="source"/> is <c>null</c>.</exception>
+        public static CountedOpt<T> CountSingleFixOpt<T>(this IEnumerator<T> source, Func<T, bool> predicate = null)
+        {
+            Checker.NotNull(source, "source");
+            var usingPredicate = SetUpPredicate(ref predicate);
+            return ComputeCountSingleFixOpt(source, predicate, usingPredicate);
         }
 
         /// <summary>
@@ -549,6 +611,33 @@ namespace FallDave.Trifles
             return init.AsOpt();
         }
 
+        private static CountedOpt<T> ComputeCountSingleFixOpt<T>(IEnumerable<T> source, Func<T, bool> predicate, bool usingPredicate = false)
+        {
+            var init = new CountedOptInit<T>();
+
+            var list = usingPredicate ? null : source as IList<T>;
+
+            if (list != null)
+            {
+                init.SetFromList(list);
+            }
+            else
+            {
+                foreach (var item in source)
+                {
+                    if (predicate(item))
+                    {
+                        if (!init.Add(item))
+                        {
+                            break;
+                        }
+                    }
+                }
+            }
+
+            return init.AsCountedOpt();
+        }
+
         private static Opt<T> ComputeFirstFixOpt<T>(IEnumerable<T> source, Func<T, bool> predicate, bool usingPredicate = false)
         {
             var init = new OptInit<T>();
@@ -651,6 +740,26 @@ namespace FallDave.Trifles
             }
 
             return init.AsOpt();
+        }
+
+        private static CountedOpt<T> ComputeCountSingleFixOpt<T>(IEnumerator<T> source, Func<T, bool> predicate, bool usingPredicate = false)
+        {
+            var init = new CountedOptInit<T>();
+
+            while (source.MoveNext())
+            {
+                var item = source.Current;
+
+                if (predicate(item))
+                {
+                    if (!init.Add(item))
+                    {
+                        break;
+                    }
+                }
+            }
+
+            return init.AsCountedOpt();
         }
 
         private static Opt<T> ComputeFirstFixOpt<T>(IEnumerator<T> source, Func<T, bool> predicate, bool usingPredicate = false)
@@ -778,6 +887,53 @@ namespace FallDave.Trifles
             public Opt<T> AsOpt()
             {
                 return Opt.Create(hasValue, Value);
+            }
+        }
+
+        private struct CountedOptInit<T>
+        {
+            private int sourceCount;
+            private T value;
+
+            public bool Set(T value)
+            {
+                sourceCount = 1;
+                this.value = value;
+                return true;
+            }
+
+            public bool SetFromList(IList<T> list)
+            {
+                var listCount = list.Count;
+                var value = (listCount > 0) ? list[0] : default(T);
+                return Set(listCount, value);
+            }
+
+            public bool Set(int sourceCount, T value)
+            {
+                if (sourceCount == 1)
+                {
+                    return Set(value);
+                }
+
+                if (sourceCount < 0)
+                {
+                    throw new ArgumentOutOfRangeException("sourceCount");
+                }
+
+                this.sourceCount = sourceCount;
+                this.value = default(T);
+                return false;
+            }
+
+            public bool Add(T value)
+            {
+                return Set(sourceCount + 1, value);
+            }
+
+            public CountedOpt<T> AsCountedOpt()
+            {
+                return new CountedOpt<T>(sourceCount, value);
             }
         }
 
