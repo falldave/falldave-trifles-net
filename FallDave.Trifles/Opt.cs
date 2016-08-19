@@ -78,6 +78,29 @@ namespace FallDave.Trifles
         }
 
         /// <summary>
+        /// Creates a new fixed option whose element count is set by the given
+        /// flag and whose value is only computed if the flag is <c>true</c>.
+        /// </summary>
+        /// <typeparam name="T">The value type for the new fixed option.</typeparam>
+        /// <param name="hasValue">
+        /// <c>true</c> if the new fixed option will contain a value, or
+        /// <c>false</c> if it will be empty.
+        /// </param>
+        /// <param name="getValue">
+        /// A callback to retrieve the value to be contained in the new fixed
+        /// option (ignored if <paramref name="hasValue"/> is <c>false</c>).
+        /// </param>
+        /// <returns>
+        /// A new fixed option equivalent to <c>Opt.Full(getValue())</c> if
+        /// <paramref name="hasValue"/> is <c>true</c>, or
+        /// <c><![CDATA[Opt.Empty<T>()]]></c> otherwise.
+        /// </returns>
+        public static Opt<T> CreateFromResult<T>(bool hasValue, Func<T> getValue)
+        {
+            return hasValue ? Full(getValue()) : Empty<T>();
+        }
+
+        /// <summary>
         /// Creates a new option whose contents are evaluated on demand using the given function.
         /// </summary>
         /// <typeparam name="T">The value type for the new deferred option.</typeparam>
