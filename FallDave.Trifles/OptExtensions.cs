@@ -295,6 +295,76 @@ namespace FallDave.Trifles
             return Opt.Defer(() => source.SubstituteIfEmptyFix(fallback));
         }
 
+        /// <summary>
+        /// Collapses an option-containing option into an option representing
+        /// the contents of the inner option, if any. If the outer and inner options are both full,
+        /// the result is full; otherwise, the result is empty.
+        /// </summary>
+        /// <para>
+        /// The result is not deferred but computed immediately.
+        /// </para>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source"></param>
+        /// <returns></returns>
+        public static Opt<T> FlattenFixOpt<T>(this IOpt<IOpt<T>> source)
+        {
+            Checker.NotNull(source, "source");
+            IOpt<T> inner;
+            return source.TryGetSingle(out inner) ? inner.Fix() : Opt.Empty<T>();
+        }
+
+        /// <summary>
+        /// Collapses an option-containing option into an option representing
+        /// the contents of the inner option, if any. If the outer and inner options are both full,
+        /// the result is full; otherwise, the result is empty.
+        /// </summary>
+        /// <para>
+        /// The result is not deferred but computed immediately.
+        /// </para>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source"></param>
+        /// <returns></returns>
+        public static Opt<T> FlattenFixOpt<T>(this IOpt<Opt<T>> source)
+        {
+            Checker.NotNull(source, "source");
+            Opt<T> inner;
+            return source.TryGetSingle(out inner) ? inner.Fix() : Opt.Empty<T>();
+        }
+
+        /// <summary>
+        /// Collapses an option-containing option into an option representing
+        /// the contents of the inner option, if any. If the outer and inner options are both full,
+        /// the result is full; otherwise, the result is empty.
+        /// </summary>
+        /// <para>
+        /// The result is deferred.
+        /// </para>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source"></param>
+        /// <returns></returns>
+        public static IOpt<T> FlattenOpt<T>(this IOpt<IOpt<T>> source)
+        {
+            Checker.NotNull(source, "source");
+            return Opt.Defer<T>(() => source.FlattenFixOpt());
+        }
+
+        /// <summary>
+        /// Collapses an option-containing option into an option representing
+        /// the contents of the inner option, if any. If the outer and inner options are both full,
+        /// the result is full; otherwise, the result is empty.
+        /// </summary>
+        /// <para>
+        /// The result is deferred.
+        /// </para>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source"></param>
+        /// <returns></returns>
+        public static IOpt<T> FlattenOpt<T>(this IOpt<Opt<T>> source)
+        {
+            Checker.NotNull(source, "source");
+            return Opt.Defer<T>(() => source.FlattenFixOpt());
+        }
+
         // Private abbr for `source.Fix()` with a null check
         private static Opt<T> FixSource<T>(this IOpt<T> source)
         {
