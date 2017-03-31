@@ -1,7 +1,7 @@
 ﻿//-----------------------------------------------------------------------
 // <copyright file="XmlExtensions.cs" company="falldave">
 //
-// Written in 2015-2016 by David McFall
+// Written in 2015-2017 by David McFall
 //
 // To the extent possible under law, the author(s) have dedicated all copyright
 // and related and neighboring rights to this software to the public domain
@@ -41,7 +41,7 @@ namespace FallDave.Trifles.Xml
             Checker.NotNull(createNavigatorFunction, "createNavigatorFunction");
             return new FunctionBasedXPathNavigable(createNavigatorFunction);
         }
-        
+
         /// <summary>
         /// Adapts an XPathNodeIterator to serve as an IEnumerable{XPathNavigator}.
         /// </summary>
@@ -120,7 +120,7 @@ namespace FallDave.Trifles.Xml
         /// <returns></returns>
         public static XNamespace GetRequiredXNamespace(this IXmlNamespaceResolver namespaceResolver, string prefix)
         {
-            foreach(var xns in GetXNamespaceOpt(namespaceResolver, prefix))
+            foreach (var xns in GetXNamespaceOpt(namespaceResolver, prefix))
             {
                 return xns;
             }
@@ -153,8 +153,8 @@ namespace FallDave.Trifles.Xml
         /// <returns></returns>
         public static XName GetRequiredXName(this IXmlNamespaceResolver namespaceResolver, string prefix, string localName)
         {
-            if(localName == null) { throw new ArgumentNullException("localName"); }
-            return namespaceResolver.GetRequiredXNamespace(prefix).GetName(localName);           
+            if (localName == null) { throw new ArgumentNullException("localName"); }
+            return namespaceResolver.GetRequiredXNamespace(prefix).GetName(localName);
         }
 
         #endregion
@@ -211,7 +211,7 @@ namespace FallDave.Trifles.Xml
         /// An XName containing "{http://www.w3.org/2001/XMLSchema-instance}nil", which is usually rendered as "xsi:nil".
         /// </summary>
         public static XName XsiNilName = XsiNamespace + "nil";
-        
+
         /// <summary>
         /// Retrieves the attribute having the given name, or an empty result if there is no such attribute.
         /// </summary>
@@ -244,7 +244,7 @@ namespace FallDave.Trifles.Xml
         {
             return element.AttributeValueOpt(name).SingleOrDefault();
         }
-        
+
         /// <summary>
         /// Returns whether the attribute whose name is contained in <see cref="XsiNilName"/> exists and contains the string "true".
         /// </summary>
@@ -262,14 +262,14 @@ namespace FallDave.Trifles.Xml
         /// <param name="newValue"></param>
         public static void XsiNil(this XElement element, bool newValue)
         {
-            if(newValue)
+            if (newValue)
             {
                 element.SetAttributeValue(XsiNilName, "true");
             }
             else
             {
                 var a = element.Attribute(XsiNilName);
-                if(a != null)
+                if (a != null)
                 {
                     a.Remove();
                 }
