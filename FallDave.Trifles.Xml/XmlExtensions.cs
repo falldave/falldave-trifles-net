@@ -428,17 +428,124 @@ namespace FallDave.Trifles.Xml
             return element.AttributeValueOpt(name).SingleOrDefault();
         }
 
-        private static bool TestXsiNilValue(string value)
+        /// <summary>
+        /// Interprets the given string value as an <c>xsd:boolean</c> value. Returns <c>true</c> if
+        /// successful, with an out parameter result of <c>true</c> if the string value is
+        /// <c>"true"</c> or <c>"1"</c>, <c>false</c> if the string value is <c>"false"</c> or
+        /// <c>"0"</c>, or <c>null</c> if the string value is <c>null</c>. If the value is none of
+        /// these, this method returns <c>false</c>.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="result"></param>
+        /// <returns></returns>
+        public static bool TryParseXsdBooleanValue(string value, out bool? result)
         {
             if (value == null)
             {
-                return false;
-            }
-            else if (value == "true")
-            {
+                result = null;
                 return true;
             }
-            throw new InvalidOperationException("Attribute " + XsiNilName + " must be omitted or have the value 'true' (value was '" + value + "').");
+            else {
+                switch (value)
+                {
+                    case "0":
+                    case "false":
+                        result = false;
+                        return true;
+                    case "1":
+                    case "true":
+                        result = true;
+                        return true;
+                    default:
+                        result = null;
+                        return false;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Interprets the given string value as an <c>xsd:boolean</c> value. Returns <c>true</c> if
+        /// the string value is <c>"true"</c> or <c>"1"</c>, <c>false</c> if the string value is
+        /// <c>"false"</c> or <c>"0"</c>, or <c>null</c> if the string value is <c>null</c>. If the
+        /// value is none of these, this method throws an exception.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        /// <exception cref="FormatException">
+        /// <paramref name="value"/> is not <c>null</c> and not a valid <c>xsd:boolean</c> value (
+        /// <c>"0"</c>, <c>"false"</c>, <c>"1"</c>, or <c>"true"</c>).
+        /// </exception>
+        public static bool? ParseXsdBooleanValue(string value)
+        {
+            bool? result;
+            if (!TryParseXsdBooleanValue(value, out result))
+            {
+                throw new FormatException("The value '{0}' is not a valid xsd:boolean value (must be '0', 'false', '1', or 'true')".FormatStr(value));
+            }
+            return result;
+        }
+
+        private static bool? ParseXsdBooleanAttributeValue(XName attributeName, string value)
+        {
+            bool? result;
+            if (!TryParseXsdBooleanValue(value, out result))
+            {
+                throw new FormatException("The value '{0}' of attribute '{1}' is not a valid xsd:boolean value (must be '0', 'false', '1', or 'true')".FormatStr(value, attributeName));
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// Interprets the given string value as an <c>xsd:boolean</c> value. Returns <c>true</c> if
+        /// successful, with an out parameter result of <c>true</c> if the string value is
+        /// <c>"true"</c> or <c>"1"</c>, <c>false</c> if the string value is <c>"false"</c> or
+        /// <c>"0"</c>, or the value <paramref name="defaultValue"/> if the string value is
+        /// <c>null</c>. If the value is none of these, this method returns <c>false</c>.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="defaultValue"></param>
+        /// <param name="result"></param>
+        /// <returns></returns>
+        public static bool TryParseXsdBooleanValue(string value, bool defaultValue, out bool result)
+        {
+            bool? optResult;
+            if (TryParseXsdBooleanValue(value, out optResult))
+            {
+                result = DefaultBoolValue(optResult, defaultValue);
+                return true;
+            }
+            result = default(bool);
+            return false;
+        }
+
+        private static bool DefaultBoolValue(bool? value, bool defaultValue)
+        {
+            return value.HasValue ? value.Value : defaultValue;
+        }
+
+        /// <summary>
+        /// Interprets the given string value as an <c>xsd:boolean</c> value. Returns <c>true</c> if
+        /// the string value is <c>"true"</c> or <c>"1"</c>, <c>false</c> if the string value is
+        /// <c>"false"</c> or <c>"0"</c>, or the value <paramref name="defaultValue"/> if the string
+        /// value is <c>null</c>. If the value is none of these, this method throws an exception.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="defaultValue"></param>
+        /// <returns></returns>
+        /// <exception cref="FormatException">
+        /// <paramref name="value"/> is not <c>null</c> and not a valid <c>xsd:boolean</c> value (
+        /// <c>"0"</c>, <c>"false"</c>, <c>"1"</c>, or <c>"true"</c>).
+        /// </exception>
+        public static bool ParseXsdBooleanValue(string value, bool defaultValue)
+        {
+            var result = ParseXsdBooleanValue(value);
+            return DefaultBoolValue(result, defaultValue);
+        }
+
+        private static bool ParseXsdBooleanAttributeValue(XName attributeName, string value, bool defaultValue)
+        {
+            var result = ParseXsdBooleanAttributeValue(attributeName, value);
+            return DefaultBoolValue(result, defaultValue);
         }
 
         private static string GetXsiNilValue(bool newValue)
@@ -446,6 +553,131 @@ namespace FallDave.Trifles.Xml
             return newValue ? "true" : null;
         }
 
+        /// <summary>
+        /// Parses the <c>xsd:boolean</c> value of the indicated attribute, returning <c>true</c> for
+        /// a value of <c>"true"</c> or <c>"1"</c>, <c>false</c> for a value of <c>"false"</c> or
+        /// <c>"0"</c>, or <c>null</c> if the attribute does not exist. If the attribute exists but
+        /// does not match any of the above values, an exception is thrown.
+        /// </summary>
+        /// <param name="element"></param>
+        /// <param name="attributeName"></param>
+        /// <returns></returns>
+        /// <exception cref="FormatException">
+        /// The attribute is present but not a valid <c>xsd:boolean</c> value ( <c>"0"</c>,
+        /// <c>"false"</c>, <c>"1"</c>, or <c>"true"</c>).
+        /// </exception>
+        public static bool? ParseXsdBooleanAttribute(XElement element, XName attributeName)
+        {
+            Checker.NotNull(element, "element");
+            Checker.NotNull(attributeName, "attributeName");
+
+            var attributeValue = element.AttributeValue(attributeName);
+            return ParseXsdBooleanAttributeValue(attributeName, attributeValue);
+        }
+
+        /// <summary>
+        /// Parses the <c>xsd:boolean</c> value of the indicated attribute, returning <c>true</c> for
+        /// a value of <c>"true"</c> or <c>"1"</c>, <c>false</c> for a value of <c>"false"</c> or
+        /// <c>"0"</c>, or the value of <paramref name="defaultValue"/> if the attribute does not
+        /// exist. If the attribute exists but does not match any of the above values, an exception
+        /// is thrown.
+        /// </summary>
+        /// <param name="element"></param>
+        /// <param name="attributeName"></param>
+        /// <param name="defaultValue"></param>
+        /// <returns></returns>
+        /// <exception cref="FormatException">
+        /// The attribute is present but not a valid <c>xsd:boolean</c> value ( <c>"0"</c>,
+        /// <c>"false"</c>, <c>"1"</c>, or <c>"true"</c>).
+        /// </exception>
+        public static bool ParseXsdBooleanAttribute(XElement element, XName attributeName, bool defaultValue)
+        {
+            return DefaultBoolValue(ParseXsdBooleanAttribute(element, attributeName), defaultValue);
+        }
+
+        /// <summary>
+        /// Parses the <c>xsd:boolean</c> value of the indicated attribute, returning <c>true</c> for
+        /// a value of <c>"true"</c> or <c>"1"</c>, <c>false</c> for a value of <c>"false"</c> or
+        /// <c>"0"</c>, or <c>null</c> if the attribute does not exist. If the attribute exists but
+        /// does not match any of the above values, an exception is thrown.
+        /// </summary>
+        /// <param name="element"></param>
+        /// <param name="attributeName"></param>
+        /// <returns></returns>
+        /// <exception cref="FormatException">
+        /// The attribute is present but not a valid <c>xsd:boolean</c> value ( <c>"0"</c>,
+        /// <c>"false"</c>, <c>"1"</c>, or <c>"true"</c>).
+        /// </exception>
+        public static bool? ParseXsdBooleanAttribute(XmlElement element, XName attributeName)
+        {
+            Checker.NotNull(element, "element");
+            Checker.NotNull(attributeName, "attributeName");
+
+            var attributeValue = element.AttributeValue(attributeName);
+            return ParseXsdBooleanAttributeValue(attributeName, attributeValue);
+        }
+
+        /// <summary>
+        /// Parses the <c>xsd:boolean</c> value of the indicated attribute, returning <c>true</c> for
+        /// a value of <c>"true"</c> or <c>"1"</c>, <c>false</c> for a value of <c>"false"</c> or
+        /// <c>"0"</c>, or the value of <paramref name="defaultValue"/> if the attribute does not
+        /// exist. If the attribute exists but does not match any of the above values, an exception
+        /// is thrown.
+        /// </summary>
+        /// <param name="element"></param>
+        /// <param name="attributeName"></param>
+        /// <param name="defaultValue"></param>
+        /// <returns></returns>
+        /// <exception cref="FormatException">
+        /// The attribute is present but not a valid <c>xsd:boolean</c> value ( <c>"0"</c>,
+        /// <c>"false"</c>, <c>"1"</c>, or <c>"true"</c>).
+        /// </exception>
+        public static bool ParseXsdBooleanAttribute(XmlElement element, XName attributeName, bool defaultValue)
+        {
+            return DefaultBoolValue(ParseXsdBooleanAttribute(element, attributeName), defaultValue);
+        }
+
+        /// <summary>
+        /// Parses the <c>xsd:boolean</c> value of the indicated attribute, returning <c>true</c> for
+        /// a value of <c>"true"</c> or <c>"1"</c>, <c>false</c> for a value of <c>"false"</c> or
+        /// <c>"0"</c>, or <c>null</c> if the attribute does not exist. If the attribute exists but
+        /// does not match any of the above values, an exception is thrown.
+        /// </summary>
+        /// <param name="element"></param>
+        /// <param name="attributeName"></param>
+        /// <returns></returns>
+        /// <exception cref="FormatException">
+        /// The attribute is present but not a valid <c>xsd:boolean</c> value ( <c>"0"</c>,
+        /// <c>"false"</c>, <c>"1"</c>, or <c>"true"</c>).
+        /// </exception>
+        public static bool? ParseXsdBooleanAttribute(IXPathNavigable element, XName attributeName)
+        {
+            Checker.NotNull(element, "element");
+            Checker.NotNull(attributeName, "attributeName");
+
+            var attributeValue = element.AttributeValue(attributeName);
+            return ParseXsdBooleanAttributeValue(attributeName, attributeValue);
+        }
+
+        /// <summary>
+        /// Parses the <c>xsd:boolean</c> value of the indicated attribute, returning <c>true</c> for
+        /// a value of <c>"true"</c> or <c>"1"</c>, <c>false</c> for a value of <c>"false"</c> or
+        /// <c>"0"</c>, or the value of <paramref name="defaultValue"/> if the attribute does not
+        /// exist. If the attribute exists but does not match any of the above values, an exception
+        /// is thrown.
+        /// </summary>
+        /// <param name="element"></param>
+        /// <param name="attributeName"></param>
+        /// <param name="defaultValue"></param>
+        /// <returns></returns>
+        /// <exception cref="FormatException">
+        /// The attribute is present but not a valid <c>xsd:boolean</c> value ( <c>"0"</c>,
+        /// <c>"false"</c>, <c>"1"</c>, or <c>"true"</c>).
+        /// </exception>
+        public static bool ParseXsdBooleanAttribute(IXPathNavigable element, XName attributeName, bool defaultValue)
+        {
+            return DefaultBoolValue(ParseXsdBooleanAttribute(element, attributeName), defaultValue);
+        }
 
         /// <summary>
         /// Returns whether the attribute whose name is contained in <see cref="XsiNilName"/> exists
@@ -455,7 +687,7 @@ namespace FallDave.Trifles.Xml
         /// <returns></returns>
         public static bool XsiNil(this XElement element)
         {
-            return TestXsiNilValue(element.AttributeValue(XsiNilName));
+            return ParseXsdBooleanAttribute(element, XsiNilName, false);
         }
 
         /// <summary>
@@ -466,7 +698,7 @@ namespace FallDave.Trifles.Xml
         /// <returns></returns>
         public static bool XsiNil(this XmlElement element)
         {
-            return TestXsiNilValue(element.AttributeValue(XsiNilName));
+            return ParseXsdBooleanAttribute(element, XsiNilName, false);
         }
 
         /// <summary>
@@ -477,7 +709,7 @@ namespace FallDave.Trifles.Xml
         /// <returns></returns>
         public static bool XsiNil(this IXPathNavigable element)
         {
-            return TestXsiNilValue(element.AttributeValue(XsiNilName));
+            return ParseXsdBooleanAttribute(element, XsiNilName, false);
         }
 
         /// <summary>
