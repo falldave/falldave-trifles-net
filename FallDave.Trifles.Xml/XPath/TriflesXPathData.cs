@@ -73,6 +73,7 @@ namespace FallDave.Trifles.Xml.XPath
         /// Encodes an object value as an <see cref="XElement"/> having the name
         /// "item" and some additional information that might be helpful in
         /// round-tripping the value.
+        /// </summary>
         /// <para>
         /// The produced <see cref="XElement"/> will have at least the property
         /// <c>clr-type</c>, which is the <see cref="System.Type.FullName"/>
@@ -208,13 +209,13 @@ namespace FallDave.Trifles.Xml.XPath
             }
             else if (value == null)
             {
-                var xe = CreateWrapItemElement(elementName, valueClrType, "node-set", new XAttribute("subtype","null"));
+                var xe = CreateWrapItemElement(elementName, valueClrType, "node-set", new XAttribute("subtype", "null"));
                 xe.XsiNil(true);
                 return xe;
             }
             else
             {
-                if(returnNullInsteadOfUnknown)
+                if (returnNullInsteadOfUnknown)
                 {
                     return null;
                 }
