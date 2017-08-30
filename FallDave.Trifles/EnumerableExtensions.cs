@@ -29,15 +29,15 @@ namespace FallDave.Trifles
 
         #region *OrValue and *OrResult
 
-        private static T ComputeFilledValue<T>(this Opt<T> fixedOpt, T value)
+        private static T ComputeSingleOrValue<T>(this Opt<T> fixedOpt, T value)
         {
-            return fixedOpt.FillWithValueFix(value).Single();
+            return fixedOpt.FallbackValueFix(value).Single();
         }
 
-        private static T ComputeFilledResult<T>(this Opt<T> fixedOpt, Func<Opt<T>> getResult)
+        private static T ComputeSingleOrResult<T>(this Opt<T> fixedOpt, Func<Opt<T>> getResult)
         {
             Checker.NotNull(getResult, "getResult");
-            return fixedOpt.FillWithResultFix(getResult).Single();
+            return fixedOpt.FallbackFix(getResult).Single();
         }
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace FallDave.Trifles
         /// <returns></returns>
         public static T SingleOrValue<T>(this IEnumerable<T> source, T value, Func<T, bool> predicate = null)
         {
-            return source.SingleFixOpt(predicate).ComputeFilledValue(value);
+            return source.SingleFixOpt(predicate).ComputeSingleOrValue(value);
         }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace FallDave.Trifles
         /// <returns></returns>
         public static T SingleOrResult<T>(this IEnumerable<T> source, Func<Opt<T>> getResult, Func<T, bool> predicate = null)
         {
-            return source.SingleFixOpt(predicate).ComputeFilledResult(getResult);
+            return source.SingleFixOpt(predicate).ComputeSingleOrResult(getResult);
         }
 
         /// <summary>
@@ -78,7 +78,7 @@ namespace FallDave.Trifles
         /// <returns></returns>
         public static T FirstOrValue<T>(this IEnumerable<T> source, T value, Func<T, bool> predicate = null)
         {
-            return source.FirstFixOpt(predicate).ComputeFilledValue(value);
+            return source.FirstFixOpt(predicate).ComputeSingleOrValue(value);
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace FallDave.Trifles
         /// <returns></returns>
         public static T FirstOrResult<T>(this IEnumerable<T> source, Func<Opt<T>> getResult, Func<T, bool> predicate = null)
         {
-            return source.FirstFixOpt(predicate).ComputeFilledResult(getResult);
+            return source.FirstFixOpt(predicate).ComputeSingleOrResult(getResult);
         }
 
         /// <summary>
@@ -104,7 +104,7 @@ namespace FallDave.Trifles
         /// <returns></returns>
         public static T LastOrValue<T>(this IEnumerable<T> source, T value, Func<T, bool> predicate = null)
         {
-            return source.LastFixOpt(predicate).ComputeFilledValue(value);
+            return source.LastFixOpt(predicate).ComputeSingleOrValue(value);
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace FallDave.Trifles
         /// <returns></returns>
         public static T LastOrResult<T>(this IEnumerable<T> source, Func<Opt<T>> getResult, Func<T, bool> predicate = null)
         {
-            return source.LastFixOpt(predicate).ComputeFilledResult(getResult);
+            return source.LastFixOpt(predicate).ComputeSingleOrResult(getResult);
         }
 
         /// <summary>
@@ -130,7 +130,7 @@ namespace FallDave.Trifles
         /// <returns></returns>
         public static T ElementAtOrValue<T>(this IEnumerable<T> source, T value, int index)
         {
-            return source.ElementAtFixOpt(index).ComputeFilledValue(value);
+            return source.ElementAtFixOpt(index).ComputeSingleOrValue(value);
         }
 
         /// <summary>
@@ -143,7 +143,7 @@ namespace FallDave.Trifles
         /// <returns></returns>
         public static T ElementAtOrResult<T>(this IEnumerable<T> source, Func<Opt<T>> getResult, int index)
         {
-            return source.ElementAtFixOpt(index).ComputeFilledResult(getResult);
+            return source.ElementAtFixOpt(index).ComputeSingleOrResult(getResult);
         }
 
         #endregion *OrValue and *OrResult

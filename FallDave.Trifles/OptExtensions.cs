@@ -210,16 +210,34 @@ namespace FallDave.Trifles
         }
 
         /// <summary>
+        /// Obsolete; replace with <see cref="FallbackValueFix{T}(IOpt{T}, T)"/>.
+        /// </summary>
+        [Obsolete("Use FallbackValueFix() instead.")]
+        public static Opt<T> FillWithValueFix<T>(this IOpt<T> source, T value)
+        {
+            return FallbackValueFix(source, value);
+        }
+
+        /// <summary>
         /// Returns (immediately, non-deferred) an option which contains the value from this option, if any, or another option containing the specified value, otherwise.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="source"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        public static Opt<T> FillWithValueFix<T>(this IOpt<T> source, T value)
+        public static Opt<T> FallbackValueFix<T>(this IOpt<T> source, T value)
         {
             var opt = source.FixSource();
             return opt.Any() ? opt : Opt.Full(value);
+        }
+
+        /// <summary>
+        /// Obsolete; replace with <see cref="FallbackFix{T}(IOpt{T}, Func{Opt{T}})"/>.
+        /// </summary>
+        [Obsolete("Use FallbackFix() instead.")]
+        public static Opt<T> FillWithResultFix<T>(this IOpt<T> source, Func<Opt<T>> getResult)
+        {
+            return FallbackFix(source, getResult);
         }
 
         /// <summary>
@@ -230,7 +248,7 @@ namespace FallDave.Trifles
         /// <param name="source"></param>
         /// <param name="getResult"></param>
         /// <returns></returns>
-        public static Opt<T> FillWithResultFix<T>(this IOpt<T> source, Func<Opt<T>> getResult)
+        public static Opt<T> FallbackFix<T>(this IOpt<T> source, Func<Opt<T>> getResult)
         {
             Checker.NotNull(getResult, "getResult");
             var opt = source.FixSource();
@@ -238,17 +256,35 @@ namespace FallDave.Trifles
         }
 
         /// <summary>
+        /// Obsolete; replace with <see cref="FallbackOptFix{T}(IOpt{T}, IOpt{T})"/>.
+        /// </summary>
+        [Obsolete("Use FallbackOptFix() instead.")]
+        public static Opt<T> SubstituteIfEmptyFix<T>(this IOpt<T> source, IOpt<T> fallback)
+        {
+            return FallbackOptFix(source, fallback);
+        }
+
+        /// <summary>
         /// Returns (immediately, non-deferred) an option which contains the value from this option, if any, or the value from the specified fallback option, otherwise.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="source"></param>
-        /// <param name="fallback"></param>
+        /// <param name="option"></param>
         /// <returns></returns>
-        public static Opt<T> SubstituteIfEmptyFix<T>(this IOpt<T> source, IOpt<T> fallback)
+        public static Opt<T> FallbackOptFix<T>(this IOpt<T> source, IOpt<T> option)
         {
-            Checker.NotNull(fallback, "fallback");
+            Checker.NotNull(option, "option");
             var opt = source.FixSource();
-            return opt.Any() ? opt : fallback.Fix();
+            return opt.Any() ? opt : option.Fix();
+        }
+
+        /// <summary>
+        /// Obsolete; replace with <see cref="FallbackValue{T}(IOpt{T}, T)"/>.
+        /// </summary>
+        [Obsolete("Use FallbackValue() instead.")]
+        public static IOpt<T> FillWithValue<T>(this IOpt<T> source, T value)
+        {
+            return FallbackValue(source, value);
         }
 
         /// <summary>
@@ -259,10 +295,19 @@ namespace FallDave.Trifles
         /// <param name="source"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        public static IOpt<T> FillWithValue<T>(this IOpt<T> source, T value)
+        public static IOpt<T> FallbackValue<T>(this IOpt<T> source, T value)
         {
             Checker.NotNull(source, "source");
-            return Opt.Defer(() => source.FillWithValueFix(value));
+            return Opt.Defer(() => source.FallbackValueFix(value));
+        }
+
+        /// <summary>
+        /// Obsolete; replace with <see cref="Fallback{T}(IOpt{T}, Func{Opt{T}})"/>.
+        /// </summary>
+        [Obsolete("Use Fallback() instead.")]
+        public static IOpt<T> FillWithResult<T>(this IOpt<T> source, Func<Opt<T>> getResult)
+        {
+            return Fallback(source, getResult);
         }
 
         /// <summary>
@@ -274,26 +319,35 @@ namespace FallDave.Trifles
         /// <param name="source"></param>
         /// <param name="getResult"></param>
         /// <returns></returns>
-        public static IOpt<T> FillWithResult<T>(this IOpt<T> source, Func<Opt<T>> getResult)
+        public static IOpt<T> Fallback<T>(this IOpt<T> source, Func<Opt<T>> getResult)
         {
             Checker.NotNull(source, "source");
             Checker.NotNull(getResult, "getResult");
-            return Opt.Defer(() => source.FillWithResultFix(getResult));
+            return Opt.Defer(() => source.FallbackFix(getResult));
+        }
+
+        /// <summary>
+        /// Obsolete; replace with <see cref="FallbackOpt{T}(IOpt{T}, IOpt{T})"/>.
+        /// </summary>
+        [Obsolete("Use FallbackOpt() instead.")]
+        public static IOpt<T> SubstituteIfEmpty<T>(this IOpt<T> source, IOpt<T> fallback)
+        {
+            return FallbackOpt(source, fallback);
         }
 
         /// <summary>
         /// Returns (in a deferred fashion) an option which contains the value from this option, if any, or the value from the specified fallback option, otherwise.
-        /// The value of <paramref name="source"/> (and of <paramref name="fallback"/>, if <paramref name="source"/> is currently empty) is reevaluated every time the returned option's value is retrieved.
+        /// The value of <paramref name="source"/> (and of <paramref name="option"/>, if <paramref name="source"/> is currently empty) is reevaluated every time the returned option's value is retrieved.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="source"></param>
-        /// <param name="fallback"></param>
+        /// <param name="option"></param>
         /// <returns></returns>
-        public static IOpt<T> SubstituteIfEmpty<T>(this IOpt<T> source, IOpt<T> fallback)
+        public static IOpt<T> FallbackOpt<T>(this IOpt<T> source, IOpt<T> option)
         {
             Checker.NotNull(source, "source");
-            Checker.NotNull(fallback, "fallback");
-            return Opt.Defer(() => source.SubstituteIfEmptyFix(fallback));
+            Checker.NotNull(option, "option");
+            return Opt.Defer(() => source.FallbackOptFix(option));
         }
 
         /// <summary>
