@@ -1281,8 +1281,71 @@ namespace FallDave.Trifles
             }
         }
 
+        /// <summary>
+        /// If this option contains a value, calls an action with that value as a parameter;
+        /// otherwise, does nothing.
+        /// </summary>
+        /// <para>
+        /// This method returns the current option, so it may be chained with e.g. <see
+        /// cref="ForNone(Action)"/> to implement type-safe if-else semantics.
+        /// </para>
+        /// <param name="action">An action to be executed if this option contains a value.</param>
+        /// <returns>This option.</returns>
+        public Opt<T> ForAny(Action<T> action)
+        {
+            Checker.NotNull(action, "action");
+            if (hasValue)
+            {
+                action(value);
+            }
+            return this;
+        }
 
+        /// <summary>
+        /// If this option contains a value, calls an action with that value as a parameter;
+        /// otherwise, calls a different action.
+        /// </summary>
+        /// <para>
+        /// This method implements type-safe if-else semantics in one call. However, it may help
+        /// readability to chain a <see cref="ForAny(Action{T})"/> with a <see
+        /// cref="ForNone(Action)"/> call instead.
+        /// </para>
+        /// <param name="action">An action to be executed if this option contains a value.</param>
+        /// <param name="actionIfNone">An action to be executed if this option is empty.</param>
+        /// <returns>This option.</returns>
+        public Opt<T> ForAny(Action<T> action, Action actionIfNone)
+        {
+            Checker.NotNull(action, "action");
+            Checker.NotNull(actionIfNone, "actionIfNone");
+            if (hasValue)
+            {
+                action(value);
+            }
+            else
+            {
+                actionIfNone();
+            }
+            return this;
+        }
 
+        /// <summary>
+        /// If this option contains no value, calls an action; otherwise, does nothing.
+        /// </summary>
+        /// <para>
+        /// This method returns the current option, so it may be chained with e.g. <see
+        /// cref="ForAny(Action{T})"/> to implement type-safe if-else semantics.
+        /// </para>
+        /// <param name="actionIfNone">An action to be executed if this option is empty.</param>
+        /// <returns>This option.</returns>
+        public Opt<T> ForNone(Action actionIfNone)
+        {
+            Checker.NotNull(actionIfNone, "actionIfNone");
+            if (!hasValue)
+            {
+                actionIfNone();
+            }
+            return this;
+        }
 
 
         // The parameterless constructor simply yields an empty Opt.

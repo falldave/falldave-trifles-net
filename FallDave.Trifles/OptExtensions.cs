@@ -26,6 +26,67 @@ namespace FallDave.Trifles
     public static class OptExtensions
     {
         /// <summary>
+        /// If the source option contains a value, calls an action with that value as a parameter;
+        /// otherwise, does nothing.
+        /// </summary>
+        /// <para>
+        /// This method forces evaluation by making a fixed copy of the source option. The copy is
+        /// returned, so this call may be chained with e.g. <see cref="Opt{T}.ForNone(Action)"/> to
+        /// implement type-safe if-else semantics.
+        /// </para>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="action">An action to be executed if this option contains a value.</param>
+        /// <returns>A fixed copy of <paramref name="source"/>.</returns>
+        public static Opt<T> ForAny<T>(this IOpt<T> source, Action<T> action)
+        {
+            Checker.NotNull(action, "action");
+            return source.FixSource().ForAny(action);
+        }
+
+        /// <summary>
+        /// If the source option contains a value, calls an action with that value as a parameter;
+        /// otherwise, calls a different action.
+        /// </summary>
+        /// <para>
+        /// This method forces evaluation by making a fixed copy of the source option. The copy is returned.
+        /// </para>
+        /// <para>
+        /// This method implements type-safe if-else semantics in one call. However, it may help
+        /// readability to chain a <see cref="ForAny{T}(IOpt{T}, Action{T})"/> with a <see
+        /// cref="Opt{T}.ForNone(Action)"/> call instead.
+        /// </para>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="action">An action to be executed if this option contains a value.</param>
+        /// <param name="actionIfNone">An action to be executed if this option is empty.</param>
+        /// <returns>A fixed copy of <paramref name="source"/>.</returns>
+        public static Opt<T> ForAny<T>(this IOpt<T> source, Action<T> action, Action actionIfNone)
+        {
+            Checker.NotNull(action, "action");
+            Checker.NotNull(actionIfNone, "actionIfNone");
+            return source.FixSource().ForAny(action, actionIfNone);
+        }
+
+        /// <summary>
+        /// If the source option contains no value, calls an action; otherwise, does nothing.
+        /// </summary>
+        /// <para>
+        /// This method forces evaluation by making a fixed copy of the source option. The copy is
+        /// returned, so it may be chained with e.g. <see cref="Opt{T}.ForAny(Action{T})"/> to
+        /// implement type-safe if-else semantics.
+        /// </para>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="actionIfNone">An action to be executed if this option is empty.</param>
+        /// <returns>A fixed copy of <paramref name="source"/>.</returns>
+        public static Opt<T> ForNone<T>(this IOpt<T> source, Action actionIfNone)
+        {
+            Checker.NotNull(actionIfNone, "actionIfNone");
+            return source.FixSource().ForNone(actionIfNone);
+        }
+
+        /// <summary>
         /// Produces an option whose contents are the result of applying, in a deferred fashion, the specified selector function to the contents of this option.
         /// </summary>
         /// <typeparam name="TSource"></typeparam>
@@ -207,6 +268,17 @@ namespace FallDave.Trifles
         {
             var f = source.FixSource();
             return index == 0 ? f.SingleOrDefault() : default(T);
+        }
+
+        /// <summary>
+        /// Returns an empty option having the same value type as this option.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source"></param>
+        /// <returns></returns>
+        public static Opt<T> Cleared<T>(this IOpt<T> source)
+        {
+            return Opt.Empty<T>();
         }
 
         /// <summary>
