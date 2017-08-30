@@ -328,12 +328,12 @@ namespace FallDave.Trifles
         }
 
         /// <summary>
-        /// Obsolete; replace with <see cref="FallbackOptFix{T}(IOpt{T}, IOpt{T})"/>.
+        /// Obsolete; replace with <see cref="FallbackFix{T}(IOpt{T}, IOpt{T})"/>.
         /// </summary>
-        [Obsolete("Use FallbackOptFix() instead.")]
+        [Obsolete("Use FallbackFix() instead.")]
         public static Opt<T> SubstituteIfEmptyFix<T>(this IOpt<T> source, IOpt<T> fallback)
         {
-            return FallbackOptFix(source, fallback);
+            return FallbackFix(source, fallback);
         }
 
         /// <summary>
@@ -343,7 +343,7 @@ namespace FallDave.Trifles
         /// <param name="source"></param>
         /// <param name="option"></param>
         /// <returns></returns>
-        public static Opt<T> FallbackOptFix<T>(this IOpt<T> source, IOpt<T> option)
+        public static Opt<T> FallbackFix<T>(this IOpt<T> source, IOpt<T> option)
         {
             Checker.NotNull(option, "option");
             var opt = source.FixSource();
@@ -399,12 +399,12 @@ namespace FallDave.Trifles
         }
 
         /// <summary>
-        /// Obsolete; replace with <see cref="FallbackOpt{T}(IOpt{T}, IOpt{T})"/>.
+        /// Obsolete; replace with <see cref="Fallback{T}(IOpt{T}, IOpt{T})"/>.
         /// </summary>
-        [Obsolete("Use FallbackOpt() instead.")]
+        [Obsolete("Use Fallback() instead.")]
         public static IOpt<T> SubstituteIfEmpty<T>(this IOpt<T> source, IOpt<T> fallback)
         {
-            return FallbackOpt(source, fallback);
+            return Fallback(source, fallback);
         }
 
         /// <summary>
@@ -415,11 +415,11 @@ namespace FallDave.Trifles
         /// <param name="source"></param>
         /// <param name="option"></param>
         /// <returns></returns>
-        public static IOpt<T> FallbackOpt<T>(this IOpt<T> source, IOpt<T> option)
+        public static IOpt<T> Fallback<T>(this IOpt<T> source, IOpt<T> option)
         {
             Checker.NotNull(source, "source");
             Checker.NotNull(option, "option");
-            return Opt.Defer(() => source.FallbackOptFix(option));
+            return Opt.Defer(() => source.FallbackFix(option));
         }
 
         /// <summary>
