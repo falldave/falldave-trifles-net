@@ -38,6 +38,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BinaryData.cs" />
+    <Compile Include="BinaryStreamingExtensions.cs" />
     <Compile Include="Checker.cs" />
     <Compile Include="ConvertOpt.cs" />
     <Compile Include="CountedOpt.cs" />
@@ -50,6 +52,7 @@
     <Compile Include="DeferredOpt.cs" />
     <Compile Include="EnumerableExtensions.cs" />
     <Compile Include="SimpleTypeExtensions.cs" />
+    <Compile Include="StreamExtensions.cs" />
     <Compile Include="StringExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
