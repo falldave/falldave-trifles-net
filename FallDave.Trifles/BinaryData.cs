@@ -31,13 +31,9 @@ namespace FallDave.Trifles
             Checker.NotNull(value, "value");
             int size = value.Count;
 
-            if (startIndex < 0 || startIndex > size)
+            if (startIndex < 0 || startIndex > size - count)
             {
                 throw new ArgumentOutOfRangeException("startIndex");
-            }
-            if (startIndex > size - count)
-            {
-                throw new ArgumentOutOfRangeException("count");
             }
         }
 
@@ -59,9 +55,14 @@ namespace FallDave.Trifles
 
         #region Get*Bytes()
 
-        // Retrieve n bytes from the given list as an array. If the list is already an array,
-        // return it; otherwise, copy to a new array. This allows some of our conversion
-        // operations to be generalized to other IList<byte>s, such as ImmutableArray<byte>.
+        // Retrieve n bytes from the given list as an array. If the list is
+        // already an array, return it; otherwise, copy to a new array. This
+        // allows some of our conversion operations to be generalized to other
+        // IList<byte>s, such as ImmutableArray<byte>.
+        //
+        // If a new array is created, startIndex is set to 0 to indicate the
+        // beginning of the new array. If the value is already an array,
+        // startIndex is left unchanged.
 
         private static byte[] Get2Bytes(IList<byte> value, ref int startIndex)
         {
@@ -136,6 +137,213 @@ namespace FallDave.Trifles
 
         #endregion Get*Bytes()
 
+        #region Pack*()
+
+        /// <summary>
+        /// Composes a single 16-bit unsigned integer value from 2 byte values.
+        /// </summary>
+        /// <param name="b0">A byte value representing the low 8 bits of the result.</param>
+        /// <param name="b1">
+        /// A byte value representing the 8 bits of the result immediately higher than those
+        /// represented by <paramref name="b0"/>.
+        /// </param>
+        /// <returns>A 16-bit unsigned value composed from the given byte values.</returns>
+        public static UInt16 PackUInt16(byte b0, byte b1)
+        {
+            return (UInt16)(b0 | (UInt16)(b1 << 8));
+        }
+
+        /// <summary>
+        /// Composes a single 32-bit unsigned integer value from 4 byte values.
+        /// </summary>
+        /// <param name="b0">A byte value representing the lowest 8 bits of an integer value.</param>
+        /// <param name="b1">
+        /// A byte value representing the 8 bits of the result immediately higher than those
+        /// represented by <paramref name="b0"/>.
+        /// </param>
+        /// <param name="b2">
+        /// A byte value representing the 8 bits of the result immediately higher than those
+        /// represented by <paramref name="b1"/>.
+        /// </param>
+        /// <param name="b3">
+        /// A byte value representing the 8 bits of the result immediately higher than those
+        /// represented by <paramref name="b2"/>.
+        /// </param>
+        /// <returns>A 32-bit unsigned value composed from the given byte values.</returns>
+        public static UInt32 PackUInt32(byte b0, byte b1, byte b2, byte b3)
+        {
+            return (UInt32)(b0 | b1 << 8 | b2 << 16 | b3 << 24);
+        }
+
+        /// <summary>
+        /// Composes a single 64-bit unsigned integer value from 8 byte values.
+        /// </summary>
+        /// <param name="b0">A byte value representing the lowest 8 bits of an integer value.</param>
+        /// <param name="b1">
+        /// A byte value representing the 8 bits of the result immediately higher than those
+        /// represented by <paramref name="b0"/>.
+        /// </param>
+        /// <param name="b2">
+        /// A byte value representing the 8 bits of the result immediately higher than those
+        /// represented by <paramref name="b1"/>.
+        /// </param>
+        /// <param name="b3">
+        /// A byte value representing the 8 bits of the result immediately higher than those
+        /// represented by <paramref name="b2"/>.
+        /// </param>
+        /// <param name="b4">
+        /// A byte value representing the 8 bits of the result immediately higher than those
+        /// represented by <paramref name="b3"/>.
+        /// </param>
+        /// <param name="b5">
+        /// A byte value representing the 8 bits of the result immediately higher than those
+        /// represented by <paramref name="b4"/>.
+        /// </param>
+        /// <param name="b6">
+        /// A byte value representing the 8 bits of the result immediately higher than those
+        /// represented by <paramref name="b5"/>.
+        /// </param>
+        /// <param name="b7">
+        /// A byte value representing the 8 bits of the result immediately higher than those
+        /// represented by <paramref name="b6"/>.
+        /// </param>
+        /// <returns>A 64-bit unsigned value composed from the given byte values.</returns>
+        private static UInt64 PackUInt64(byte b0, byte b1, byte b2, byte b3, byte b4, byte b5, byte b6, byte b7)
+        {
+            return b0 | (UInt64)b1 << 8 | (UInt64)b2 << 16 | (UInt64)b3 << 24 | (UInt64)b4 << 32 | (UInt64)b5 << 40 | (UInt64)b6 << 48 | (UInt64)b7 << 56;
+        }
+
+        /// <summary>
+        /// Composes a single 16-bit signed integer value from 2 byte values.
+        /// </summary>
+        /// <param name="b0">A byte value representing the low 8 bits of the result.</param>
+        /// <param name="b1">
+        /// A byte value representing the 8 bits of the result immediately higher than those
+        /// represented by <paramref name="b0"/>.
+        /// </param>
+        /// <returns>A 16-bit signed value composed from the given byte values.</returns>
+        public static Int16 PackInt16(byte b0, byte b1)
+        {
+            return (Int16)PackUInt16(b0, b1);
+        }
+
+        /// <summary>
+        /// Composes a single 32-bit signed integer value from 4 byte values.
+        /// </summary>
+        /// <param name="b0">A byte value representing the lowest 8 bits of an integer value.</param>
+        /// <param name="b1">
+        /// A byte value representing the 8 bits of the result immediately higher than those
+        /// represented by <paramref name="b0"/>.
+        /// </param>
+        /// <param name="b2">
+        /// A byte value representing the 8 bits of the result immediately higher than those
+        /// represented by <paramref name="b1"/>.
+        /// </param>
+        /// <param name="b3">
+        /// A byte value representing the 8 bits of the result immediately higher than those
+        /// represented by <paramref name="b2"/>.
+        /// </param>
+        /// <returns>A 32-bit signed value composed from the given byte values.</returns>
+        public static Int32 PackInt32(byte b0, byte b1, byte b2, byte b3)
+        {
+            return (Int32)PackUInt32(b0, b1, b2, b3);
+        }
+
+        /// <summary>
+        /// Composes a single 64-bit signed integer value from 8 byte values.
+        /// </summary>
+        /// <param name="b0">A byte value representing the lowest 8 bits of an integer value.</param>
+        /// <param name="b1">
+        /// A byte value representing the 8 bits of the result immediately higher than those
+        /// represented by <paramref name="b0"/>.
+        /// </param>
+        /// <param name="b2">
+        /// A byte value representing the 8 bits of the result immediately higher than those
+        /// represented by <paramref name="b1"/>.
+        /// </param>
+        /// <param name="b3">
+        /// A byte value representing the 8 bits of the result immediately higher than those
+        /// represented by <paramref name="b2"/>.
+        /// </param>
+        /// <param name="b4">
+        /// A byte value representing the 8 bits of the result immediately higher than those
+        /// represented by <paramref name="b3"/>.
+        /// </param>
+        /// <param name="b5">
+        /// A byte value representing the 8 bits of the result immediately higher than those
+        /// represented by <paramref name="b4"/>.
+        /// </param>
+        /// <param name="b6">
+        /// A byte value representing the 8 bits of the result immediately higher than those
+        /// represented by <paramref name="b5"/>.
+        /// </param>
+        /// <param name="b7">
+        /// A byte value representing the 8 bits of the result immediately higher than those
+        /// represented by <paramref name="b6"/>.
+        /// </param>
+        /// <returns>A 64-bit signed value composed from the given byte values.</returns>
+        private static Int64 PackInt64(byte b0, byte b1, byte b2, byte b3, byte b4, byte b5, byte b6, byte b7)
+        {
+            return (Int64)PackUInt64(b0, b1, b2, b3, b4, b5, b6, b7);
+        }
+
+        #endregion Pack*()
+
+        #region ToU*NoCheck(IList<byte>, int, bool)
+
+        // Calls Pack*() with bytes read from a list.
+
+        private static ushort ToUInt16NoCheck(IList<byte> value, int startIndex, bool littleEndian)
+        {
+            return littleEndian ?
+                PackUInt16(
+                    value[startIndex],
+                    value[startIndex + 1]) :
+                PackUInt16(
+                    value[startIndex + 1],
+                    value[startIndex]);
+        }
+
+        private static uint ToUInt32NoCheck(IList<byte> value, int startIndex, bool littleEndian)
+        {
+            return littleEndian ?
+                PackUInt32(
+                    value[startIndex],
+                    value[startIndex + 1],
+                    value[startIndex + 2],
+                    value[startIndex + 3]) :
+                PackUInt32(
+                    value[startIndex + 3],
+                    value[startIndex + 2],
+                    value[startIndex + 1],
+                    value[startIndex]);
+        }
+
+        private static ulong ToUInt64NoCheck(IList<byte> value, int startIndex, bool littleEndian)
+        {
+            return littleEndian ?
+                PackUInt64(
+                    value[startIndex],
+                    value[startIndex + 1],
+                    value[startIndex + 2],
+                    value[startIndex + 3],
+                    value[startIndex + 4],
+                    value[startIndex + 5],
+                    value[startIndex + 6],
+                    value[startIndex + 7]) :
+                PackUInt64(
+                    value[startIndex + 7],
+                    value[startIndex + 6],
+                    value[startIndex + 5],
+                    value[startIndex + 4],
+                    value[startIndex + 3],
+                    value[startIndex + 2],
+                    value[startIndex + 1],
+                    value[startIndex]);
+        }
+
+        #endregion ToU*NoCheck(IList<byte>, int, bool)
+
         #region Swap*NoCheck()
 
         // Reverse the order of n bytes in the buffer.
@@ -194,54 +402,27 @@ namespace FallDave.Trifles
 
         private static UInt16 Swapped2(UInt16 value)
         {
-            UInt16
-                b0 = (byte)(value),
-                b1 = (byte)(value >> 8);
-
-            return (UInt16)(
-                (b0 << 8) |
-                (b1)
-                );
+            return (UInt16)(value << 8 | value >> 8);
         }
 
         private static UInt32 Swapped4(UInt32 value)
         {
-            UInt32
-                b0 = (byte)(value),
-                b1 = (byte)(value >> 8),
-                b2 = (byte)(value >> 16),
-                b3 = (byte)(value >> 24);
-
-            return (UInt32)(
-                (b0 << 24) |
-                (b1 << 16) |
-                (b2 << 8) |
-                (b3)
-                );
+            return value << 24 |
+                (value << 8 & 0x00FF0000u) |
+                (value >> 8 & 0x0000FF00u) |
+                value >> 24;
         }
 
         private static UInt64 Swapped8(UInt64 value)
         {
-            UInt64
-                b0 = (byte)(value),
-                b1 = (byte)(value >> 8),
-                b2 = (byte)(value >> 16),
-                b3 = (byte)(value >> 24),
-                b4 = (byte)(value >> 32),
-                b5 = (byte)(value >> 40),
-                b6 = (byte)(value >> 48),
-                b7 = (byte)(value >> 56);
-
-            return (UInt64)(
-                (b0 << 56) |
-                (b1 << 48) |
-                (b2 << 40) |
-                (b3 << 32) |
-                (b4 << 24) |
-                (b5 << 16) |
-                (b6 << 8) |
-                (b7)
-                );
+            return value << 56 |
+                (value << 40 & 0x00FF000000000000ul) |
+                (value << 24 & 0x0000FF0000000000ul) |
+                (value << 8 & 0x000000FF00000000ul) |
+                (value >> 8 & 0x00000000FF000000ul) |
+                (value >> 24 & 0x0000000000FF0000ul) |
+                (value >> 40 & 0x000000000000FF00ul) |
+                value >> 56;
         }
 
         #endregion Swapped*()
@@ -322,7 +503,7 @@ namespace FallDave.Trifles
         /// <returns>The result of a byte-swap operation on <paramref name="value"/></returns>
         public static Int64 Swapped(Int64 value)
         {
-            return (Int64)Swapped((UInt64)value);
+            return (Int64)Swapped8((UInt64)value);
         }
 
         /// <summary>
@@ -332,7 +513,7 @@ namespace FallDave.Trifles
         /// <returns>The result of a byte-swap operation on <paramref name="value"/></returns>
         public static Int32 Swapped(Int32 value)
         {
-            return (Int32)Swapped((UInt32)value);
+            return (Int32)Swapped4((UInt32)value);
         }
 
         /// <summary>
@@ -342,109 +523,166 @@ namespace FallDave.Trifles
         /// <returns>The result of a byte-swap operation on <paramref name="value"/></returns>
         public static Int16 Swapped(Int16 value)
         {
-            return (Int16)Swapped((UInt16)value);
+            return (Int16)Swapped2((UInt16)value);
         }
 
         #endregion Swapped(integer type)
 
-        #region Swapped(integer type, bool)
+        #region To*(IList<byte>, int, bool)
 
         /// <summary>
-        /// Converts the given value from the system byte order to the specified byte order, if needed.
+        /// Returns a Unicode character converted from 2 bytes at a specified position in the given
+        /// list, using the specified byte order.
         /// </summary>
-        /// <param name="nativeValue">
-        /// A 64-bit integer value in the system byte order (as specified by <see cref="BitConverter.IsLittleEndian"/>)
-        /// </param>
+        /// <param name="value">A list of bytes.</param>
+        /// <param name="startIndex">The starting position within <paramref name="value"/>.</param>
         /// <param name="littleEndian">
-        /// <c>true</c> if the result should be in little-endian order, or <c>false</c> if the result
-        /// should be in big-endian order
+        /// <c>true</c> to interpret the value in little-endian order, or <c>false</c> to interpret
+        /// the value in big-endian order.
         /// </param>
-        /// <returns>The specified value after any necessary conversion.</returns>
-        public static UInt64 Swapped(UInt64 nativeValue, bool littleEndian)
+        /// <returns>A Unicode character formed by the specified data.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="value"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentOutOfRangeException">
+        /// <paramref name="startIndex"/> is less than zero or greater than the length of <paramref
+        /// name="value"/> minus 2.
+        /// </exception>
+        public static Char ToChar(IList<byte> value, int startIndex, bool littleEndian = true)
         {
-            return (littleEndian == BitConverter.IsLittleEndian) ? nativeValue : Swapped(nativeValue);
+            return (Char)ToUInt16(value, startIndex, littleEndian);
         }
 
         /// <summary>
-        /// Converts the given value from the system byte order to the specified byte order, if needed.
+        /// Returns a 16-bit signed integer converted from 2 bytes at a specified position in the
+        /// given list, using the specified byte order.
         /// </summary>
-        /// <param name="nativeValue">
-        /// A 64-bit integer value in the system byte order (as specified by <see cref="BitConverter.IsLittleEndian"/>)
-        /// </param>
+        /// <param name="value">A list of bytes.</param>
+        /// <param name="startIndex">The starting position within <paramref name="value"/>.</param>
         /// <param name="littleEndian">
-        /// <c>true</c> if the result should be in little-endian order, or <c>false</c> if the result
-        /// should be in big-endian order
+        /// <c>true</c> to interpret the value in little-endian order, or <c>false</c> to interpret
+        /// the value in big-endian order.
         /// </param>
-        /// <returns>The specified value after any necessary conversion.</returns>
-        public static UInt32 Swapped(UInt32 nativeValue, bool littleEndian)
+        /// <returns>A 16-bit signed integer formed by the specified data.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="value"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentOutOfRangeException">
+        /// <paramref name="startIndex"/> is less than zero or greater than the length of <paramref
+        /// name="value"/> minus 2.
+        /// </exception>
+        public static Int16 ToInt16(IList<byte> value, int startIndex, bool littleEndian = true)
         {
-            return (littleEndian == BitConverter.IsLittleEndian) ? nativeValue : Swapped(nativeValue);
+            return (Int16)ToUInt16(value, startIndex, littleEndian);
         }
 
         /// <summary>
-        /// Converts the given value from the system byte order to the specified byte order, if needed.
+        /// Returns a 32-bit signed integer converted from 4 bytes at a specified position in the
+        /// given list, using the specified byte order.
         /// </summary>
-        /// <param name="nativeValue">
-        /// A 64-bit integer value in the system byte order (as specified by <see cref="BitConverter.IsLittleEndian"/>)
-        /// </param>
+        /// <param name="value">A list of bytes.</param>
+        /// <param name="startIndex">The starting position within <paramref name="value"/>.</param>
         /// <param name="littleEndian">
-        /// <c>true</c> if the result should be in little-endian order, or <c>false</c> if the result
-        /// should be in big-endian order
+        /// <c>true</c> to interpret the value in little-endian order, or <c>false</c> to interpret
+        /// the value in big-endian order.
         /// </param>
-        /// <returns>The specified value after any necessary conversion.</returns>
-        public static UInt16 Swapped(UInt16 nativeValue, bool littleEndian)
+        /// <returns>A 32-bit signed integer formed by the specified data.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="value"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentOutOfRangeException">
+        /// <paramref name="startIndex"/> is less than zero or greater than the length of <paramref
+        /// name="value"/> minus 4.
+        /// </exception>
+        public static Int32 ToInt32(IList<byte> value, int startIndex, bool littleEndian = true)
         {
-            return (littleEndian == BitConverter.IsLittleEndian) ? nativeValue : Swapped(nativeValue);
+            return (Int32)ToUInt32(value, startIndex, littleEndian);
         }
 
         /// <summary>
-        /// Converts the given value from the system byte order to the specified byte order, if needed.
+        /// Returns a 64-bit signed integer converted from 8 bytes at a specified position in the
+        /// given list, using the specified byte order.
         /// </summary>
-        /// <param name="nativeValue">
-        /// A 64-bit integer value in the system byte order (as specified by <see cref="BitConverter.IsLittleEndian"/>)
-        /// </param>
+        /// <param name="value">A list of bytes.</param>
+        /// <param name="startIndex">The starting position within <paramref name="value"/>.</param>
         /// <param name="littleEndian">
-        /// <c>true</c> if the result should be in little-endian order, or <c>false</c> if the result
-        /// should be in big-endian order
+        /// <c>true</c> to interpret the value in little-endian order, or <c>false</c> to interpret
+        /// the value in big-endian order.
         /// </param>
-        /// <returns>The specified value after any necessary conversion.</returns>
-        public static Int64 Swapped(Int64 nativeValue, bool littleEndian)
+        /// <returns>A 64-bit signed integer formed by the specified data.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="value"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentOutOfRangeException">
+        /// <paramref name="startIndex"/> is less than zero or greater than the length of <paramref
+        /// name="value"/> minus 8.
+        /// </exception>
+        public static Int64 ToInt64(IList<byte> value, int startIndex, bool littleEndian = true)
         {
-            return (littleEndian == BitConverter.IsLittleEndian) ? nativeValue : Swapped(nativeValue);
+            return (Int64)ToUInt64(value, startIndex, littleEndian);
         }
 
         /// <summary>
-        /// Converts the given value from the system byte order to the specified byte order, if needed.
+        /// Returns a 16-bit unsigned integer converted from 2 bytes at a specified position in the
+        /// given list, using the specified byte order.
         /// </summary>
-        /// <param name="nativeValue">
-        /// A 64-bit integer value in the system byte order (as specified by <see cref="BitConverter.IsLittleEndian"/>)
-        /// </param>
+        /// <param name="value">A list of bytes.</param>
+        /// <param name="startIndex">The starting position within <paramref name="value"/>.</param>
         /// <param name="littleEndian">
-        /// <c>true</c> if the result should be in little-endian order, or <c>false</c> if the result
-        /// should be in big-endian order
+        /// <c>true</c> to interpret the value in little-endian order, or <c>false</c> to interpret
+        /// the value in big-endian order.
         /// </param>
-        /// <returns>The specified value after any necessary conversion.</returns>
-        public static Int32 Swapped(Int32 nativeValue, bool littleEndian)
+        /// <returns>A 16-bit unsigned integer formed by the specified data.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="value"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentOutOfRangeException">
+        /// <paramref name="startIndex"/> is less than zero or greater than the length of <paramref
+        /// name="value"/> minus 2.
+        /// </exception>
+        public static UInt16 ToUInt16(IList<byte> value, int startIndex, bool littleEndian = true)
         {
-            return (littleEndian == BitConverter.IsLittleEndian) ? nativeValue : Swapped(nativeValue);
+            CheckGetNBytes(value, startIndex, 2);
+
+            return ToUInt16NoCheck(value, startIndex, littleEndian);
         }
 
         /// <summary>
-        /// Converts the given value from the system byte order to the specified byte order, if needed.
+        /// Returns a 32-bit unsigned integer converted from 4 bytes at a specified position in the
+        /// given list, using the specified byte order.
         /// </summary>
-        /// <param name="nativeValue">
-        /// A 64-bit integer value in the system byte order (as specified by <see cref="BitConverter.IsLittleEndian"/>)
-        /// </param>
+        /// <param name="value">A list of bytes.</param>
+        /// <param name="startIndex">The starting position within <paramref name="value"/>.</param>
         /// <param name="littleEndian">
-        /// <c>true</c> if the result should be in little-endian order, or <c>false</c> if the result
-        /// should be in big-endian order
+        /// <c>true</c> to interpret the value in little-endian order, or <c>false</c> to interpret
+        /// the value in big-endian order.
         /// </param>
-        /// <returns>The specified value after any necessary conversion.</returns>
-        public static Int16 Swapped(Int16 nativeValue, bool littleEndian)
+        /// <returns>A 32-bit unsigned integer formed by the specified data.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="value"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentOutOfRangeException">
+        /// <paramref name="startIndex"/> is less than zero or greater than the length of <paramref
+        /// name="value"/> minus 4.
+        /// </exception>
+        public static UInt32 ToUInt32(IList<byte> value, int startIndex, bool littleEndian = true)
         {
-            return (littleEndian == BitConverter.IsLittleEndian) ? nativeValue : Swapped(nativeValue);
+            CheckGetNBytes(value, startIndex, 4);
+
+            return ToUInt32NoCheck(value, startIndex, littleEndian);
         }
 
-        #endregion Swapped(integer type, bool)
+        /// <summary>
+        /// Returns a 64-bit unsigned integer converted from 8 bytes at a specified position in the
+        /// given list, using the specified byte order.
+        /// </summary>
+        /// <param name="value">A list of bytes.</param>
+        /// <param name="startIndex">The starting position within <paramref name="value"/>.</param>
+        /// <param name="littleEndian">
+        /// <c>true</c> to interpret the value in little-endian order, or <c>false</c> to interpret
+        /// the value in big-endian order.
+        /// </param>
+        /// <returns>A 64-bit unsigned integer formed by the specified data.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="value"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentOutOfRangeException">
+        /// <paramref name="startIndex"/> is less than zero or greater than the length of <paramref
+        /// name="value"/> minus 8.
+        /// </exception>
+        public static UInt64 ToUInt64(IList<byte> value, int startIndex, bool littleEndian = true)
+        {
+            CheckGetNBytes(value, startIndex, 8);
+
+            return ToUInt64NoCheck(value, startIndex, littleEndian);
+        }
+
+        #endregion To*(IList<byte>, int, bool)
     }
 }
