@@ -208,7 +208,7 @@ namespace FallDave.Trifles
         /// represented by <paramref name="b6"/>.
         /// </param>
         /// <returns>A 64-bit unsigned value composed from the given byte values.</returns>
-        private static UInt64 PackUInt64(byte b0, byte b1, byte b2, byte b3, byte b4, byte b5, byte b6, byte b7)
+        public static UInt64 PackUInt64(byte b0, byte b1, byte b2, byte b3, byte b4, byte b5, byte b6, byte b7)
         {
             return b0 | (UInt64)b1 << 8 | (UInt64)b2 << 16 | (UInt64)b3 << 24 | (UInt64)b4 << 32 | (UInt64)b5 << 40 | (UInt64)b6 << 48 | (UInt64)b7 << 56;
         }
@@ -282,7 +282,7 @@ namespace FallDave.Trifles
         /// represented by <paramref name="b6"/>.
         /// </param>
         /// <returns>A 64-bit signed value composed from the given byte values.</returns>
-        private static Int64 PackInt64(byte b0, byte b1, byte b2, byte b3, byte b4, byte b5, byte b6, byte b7)
+        public static Int64 PackInt64(byte b0, byte b1, byte b2, byte b3, byte b4, byte b5, byte b6, byte b7)
         {
             return (Int64)PackUInt64(b0, b1, b2, b3, b4, b5, b6, b7);
         }
