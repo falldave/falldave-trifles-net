@@ -1,0 +1,371 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Numerics" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Numerics" #>
+<#@ output extension=".cs" #>
+
+
+using FallDave.Trifles;
+using NUnit.Framework;
+using System;
+using System.Linq;
+using System.Collections.Generic;
+using System.Numerics;
+
+namespace FallDave.Trifles.Tests
+{
+    [TestFixture()]
+    public partial class MathTriflesTests
+    {
+		#region Test Min() and Max()
+
+<#
+		foreach (var leftType in intTypes)
+		{
+			foreach (var rightType in intTypes.Where(t => leftType.OverlapsOnLeft(t)))
+			{
+				var leftNumbers = GetClampTestNumbers().Where(n => leftType.Contains(n));
+				var rightNumbers = GetClampTestNumbers().Where(n => rightType.Contains(n));
+
+				foreach (var leftNumber in leftNumbers) { foreach (var rightNumber in rightNumbers) {
+				#>
+		[TestCase(<#= leftType.GetLiteral(leftNumber) #>, <#= rightType.GetLiteral(rightNumber) #>)]
+<#
+				}}
+
+#>
+        public void TestMinMax<#= leftType.Name #><#= rightType.Name #>(<#= leftType.Name #> val1, <#= rightType.Name #> val2)
+        {
+            BigInteger
+                expectedMin = BigInteger.Min(val1, val2),
+				expectedMax = BigInteger.Max(val1, val2),
+                actualMin = MathTrifles.Min(val1, val2),
+				actualMax = MathTrifles.Max(val1, val2);
+            
+            Assert.That(actualMin, Is.EqualTo(expectedMin));
+			Assert.That(actualMax, Is.EqualTo(expectedMax));
+        }
+
+<#
+
+
+			}
+		}
+#>
+		#endregion
+
+	    #region Test ClampTo*()
+
+<#
+		foreach (var inputType in new [] { infoS4, infoS8, infoU8 })
+		{
+			foreach (var outputType in intTypes.Where(t => t.IsStrictSubsetOf(inputType)))
+			{
+				var inputNumbers = GetClampTestNumbers().Where(n => inputType.Contains(n));
+
+				foreach (var inputNumber in inputNumbers) {
+				#>
+		[TestCase(<#= inputType.GetLiteral(inputNumber) #>)]
+<#
+				}
+
+#>
+        public void TestClamp<#= inputType.Name #>To<#= outputType.Name #>(<#= inputType.Name #> value)
+        {
+            BigInteger
+                expected = Clamp(value, <#= outputType.Name #>.MinValue, <#= outputType.Name #>.MaxValue),
+                actual = MathTrifles.ClampTo<#= outputType.Name #>(value);
+            
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+
+<#
+
+
+			}
+		}
+
+#>
+		#endregion
+
+	    #region Test Clamp*()
+
+<#
+
+
+
+		foreach (var inputType in new [] { infoS4, infoS8, infoU8 })
+		{
+			foreach (var outputType in intTypes.Where(t => t.IsNonStrictSubsetOf(inputType)))
+			{
+				var inputNumbers = GetClampTestNumbers().Where(n => inputType.Contains(n));
+				var rangeNumbers = GetClampTestNumbers().Where(n => outputType.Contains(n));
+
+				foreach (var inputNumber in inputNumbers) {
+					foreach (var min in rangeNumbers) {
+						foreach (var max in rangeNumbers) {
+#>
+		[TestCase(<#= inputType.GetLiteral(inputNumber) #>, <#= outputType.GetLiteral(min) #>, <#= outputType.GetLiteral(max) #>)]
+<#
+						}
+					}					
+				}
+#>
+		public void TestClamp<#= inputType.Name #><#= outputType.Name #>(<#= inputType.Name #> value, <#= outputType.Name #> minInclusive, <#= outputType.Name #> maxInclusive)
+        {
+            BigInteger expected = 0, actual = 0;
+            bool expectedException = false, actualException = false;
+
+            try
+            {
+                expected = Clamp(value, minInclusive, maxInclusive);
+            }
+            catch (ArgumentException)
+            {
+                expectedException = true;
+            }
+
+            try
+            {
+                actual = MathTrifles.Clamp(value, minInclusive, maxInclusive);
+            }
+            catch (ArgumentException)
+            {
+                actualException = true;
+            }
+
+            Assert.That(actualException, Is.EqualTo(expectedException));
+
+            if (!expectedException)
+            {
+                Assert.That(actual, Is.EqualTo(expected));
+            }
+        }
+
+
+<#
+			}
+		}
+#>
+
+		#endregion
+
+        #region Test Compare(), <, <=, ==, >=, >
+
+        // Using BigInteger, which can safely receive a value from any of the native integer types
+        // (at the cost of size and speed, which doesn't matter in testing), determine that the
+        // result of a given inter-type compare is correct.
+
+			<#
+
+		foreach (var signedType in new [] { infoS4, infoS8 })
+		{
+			var unsignedType = infoU8;
+			foreach (var swap in new [] { false, true })
+			{
+
+				IntTypeInfo leftType, rightType;
+				if(swap) {
+					leftType = unsignedType;
+					rightType = signedType;
+				}
+				else {
+					leftType = signedType;
+					rightType = unsignedType;
+				}
+				
+				#>
+
+<#
+				foreach (var tc in GetTestComparisonsCases(signedType, unsignedType, swap)) {
+					#>
+				<#= tc #>
+<#
+				}
+
+				#>
+				public void TestComparisons<#= leftType.Name #><#= rightType.Name #>(<#= leftType.Name #> a, <#= rightType.Name #> b)
+				{
+					BigInteger ba = a, bb = b;
+					Assert.That(Sgn(ba.CompareTo(bb)), Is.EqualTo(Sgn(MathTrifles.Compare(a, b))));
+					Assert.That(ba < bb, Is.EqualTo(MathTrifles.LessThan(a, b)));
+					Assert.That(ba <= bb, Is.EqualTo(MathTrifles.LessThanOrEqual(a, b)));
+					Assert.That(ba == bb, Is.EqualTo(MathTrifles.Equality(a, b)));
+					Assert.That(ba >= bb, Is.EqualTo(MathTrifles.GreaterThanOrEqual(a, b)));
+					Assert.That(ba > bb, Is.EqualTo(MathTrifles.GreaterThan(a, b)));
+				}
+				<#
+			}
+		}
+
+		#>
+	
+	
+
+        #endregion
+
+
+    }
+}
+
+<#+
+
+
+        private class IntTypeInfo
+        {
+            public string Name { get; private set; }
+            public bool Signed { get; private set; }
+            public int Bits { get; private set; }
+            private string LiteralPrefix { get; set; }
+            private string LiteralSuffix { get; set; }
+
+            public string GetLiteral(string value)
+            {
+                return LiteralPrefix + value + LiteralSuffix;
+            }
+
+			public string GetLiteral(BigInteger value)
+			{
+				return GetLiteral(value.ToString());
+			}
+
+			public BigInteger MaxValue
+			{
+				get
+				{
+					int b = Signed ? Bits - 1 : Bits;
+					return (BigInteger.One << b) - 1;
+				}
+			}
+
+			public BigInteger MinValue
+			{
+				get
+				{
+					return Signed ? -(BigInteger.One << (Bits - 1)) : 0;
+				}
+			}
+
+			public bool Contains(BigInteger value)
+			{
+				return (value >= MinValue) && (value <= MaxValue);
+			}
+
+			public bool HasSameRangeAs(IntTypeInfo other)
+			{
+				return (this.MinValue == other.MinValue) && (this.MaxValue == other.MaxValue);
+			}
+
+			public bool IsNonStrictSubsetOf(IntTypeInfo other)
+			{
+				return (this.MinValue >= other.MinValue) && (this.MaxValue <= other.MaxValue);
+			}
+
+			public bool IsStrictSubsetOf(IntTypeInfo other)
+			{
+				return IsNonStrictSubsetOf(other) && !HasSameRangeAs(other);
+			}
+
+			public bool OverlapsOnLeft(IntTypeInfo other)
+			{
+				return (this.MinValue < other.MinValue) && (this.MaxValue > other.MinValue) && (this.MaxValue < other.MaxValue);
+			}
+
+			public string NameMaxValue()
+			{
+				return Name + ".MaxValue";
+			}
+
+			public string Coerced(string expression)
+			{
+				return "((" + Name + ")(" + expression + "))";
+			}
+
+            private IntTypeInfo(string name, bool signed, int bits, string literalPrefix, string literalSuffix)
+            {
+                Name = name;
+                Signed = signed;
+                Bits = bits;
+                LiteralPrefix = literalPrefix;
+                LiteralSuffix = literalSuffix;
+            }
+
+            public IntTypeInfo(string name, bool signed, int bits)
+                : this(name, signed, bits, "((" + name + ")(", "))")
+            {
+                if (bits > 32)
+                {
+                    throw new ArgumentException("Values for this type must specify a literal suffix");
+                }
+            }
+
+            public IntTypeInfo(string name, bool signed, int bits, string literalSuffix)
+                : this(name, signed, bits, "", literalSuffix)
+            {                
+                if (bits < 32)
+                {
+                    throw new ArgumentException("Values for this type cannot specify a literal suffix");
+                }
+            }
+        }
+
+        private static IntTypeInfo
+            infoS1 = new IntTypeInfo("SByte", true, 8),
+            infoU1 = new IntTypeInfo("Byte", false, 8),
+            infoS2 = new IntTypeInfo("Int16", true, 16),
+            infoU2 = new IntTypeInfo("UInt16", false, 16),
+            infoS4 = new IntTypeInfo("Int32", true, 32, ""),
+            infoU4 = new IntTypeInfo("UInt32", false, 32, "U"),
+            infoS8 = new IntTypeInfo("Int64", true, 64, "L"),
+            infoU8 = new IntTypeInfo("UInt64", false, 64, "UL");
+
+		private static IntTypeInfo[] intTypes = new [] { infoS1, infoU1, infoS2, infoU2, infoS4, infoU4, infoS8, infoU8 };
+
+		private static IEnumerable<string> GetTestComparisonsCases(IntTypeInfo signedType, IntTypeInfo unsignedType, bool swap) {
+			yield return GetTestComparisonsCase(signedType.GetLiteral("-1"), unsignedType.GetLiteral("0"), swap);
+			yield return GetTestComparisonsCase(signedType.GetLiteral("-1"), unsignedType.GetLiteral("1"), swap);
+			yield return GetTestComparisonsCase(signedType.GetLiteral("0"), unsignedType.GetLiteral("0"), swap);
+			yield return GetTestComparisonsCase(signedType.GetLiteral("0"), unsignedType.GetLiteral("1"), swap);
+			yield return GetTestComparisonsCase(signedType.GetLiteral("1"), unsignedType.GetLiteral("0"), swap);
+			yield return GetTestComparisonsCase(signedType.GetLiteral("1"), unsignedType.GetLiteral("1"), swap);
+
+			yield return GetTestComparisonsCase(signedType.NameMaxValue() + " - 1", unsignedType.Coerced(signedType.NameMaxValue()) + " - 1", swap);
+			yield return GetTestComparisonsCase(signedType.NameMaxValue() + " - 1", unsignedType.Coerced(signedType.NameMaxValue()), swap);
+			yield return GetTestComparisonsCase(signedType.NameMaxValue() + " - 1", unsignedType.Coerced(signedType.NameMaxValue()) + " + 1", swap);
+			yield return GetTestComparisonsCase(signedType.NameMaxValue(), unsignedType.Coerced(signedType.NameMaxValue()) + " - 1", swap);
+			yield return GetTestComparisonsCase(signedType.NameMaxValue(), unsignedType.Coerced(signedType.NameMaxValue()), swap);
+			yield return GetTestComparisonsCase(signedType.NameMaxValue(), unsignedType.Coerced(signedType.NameMaxValue()) + " + 1", swap);
+		}
+
+		private static string GetTestComparisonsCase(string left, string right, bool swap)
+		{
+			if(swap) {
+				string t = left;
+				left = right;
+				right = t;
+			}
+
+			return "[TestCase(" + left + ", " + right + ")]";
+		}
+
+		private static IEnumerable<BigInteger> GetClampTestNumbers()
+		{
+			yield return 0;
+			yield return 1;
+			yield return -1;
+			yield return 100;
+			yield return -100;
+
+			BigInteger n = 10000;
+
+			while(n <= UInt64.MaxValue)
+			{
+				yield return n;
+				yield return -n;
+				n = n * n;
+			}
+		}
+#>
