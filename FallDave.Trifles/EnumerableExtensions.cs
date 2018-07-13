@@ -19,6 +19,7 @@ namespace FallDave.Trifles
     using System;
     using System.Collections;
     using System.Collections.Generic;
+    using System.Collections.Immutable;
 
     /// <summary>
     /// Utility extensions applicable to <see cref="IEnumerable{T}"/> instances.
@@ -41,8 +42,8 @@ namespace FallDave.Trifles
         }
 
         /// <summary>
-        /// Returns the single value in this sequence, if any, or the specified fallback value if the sequence is empty.
-        /// (Throws if the sequence, after any filtering, contains more than one element.)
+        /// Returns the single value in this sequence, if any, or the specified fallback value if the
+        /// sequence is empty. (Throws if the sequence, after any filtering, contains more than one element.)
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="source"></param>
@@ -55,8 +56,9 @@ namespace FallDave.Trifles
         }
 
         /// <summary>
-        /// Returns the single value in this sequence, if any, or the result of the specified function if the sequence is empty.
-        /// (Throws if the sequence, after any filtering, contains more than one element.)
+        /// Returns the single value in this sequence, if any, or the result of the specified
+        /// function if the sequence is empty. (Throws if the sequence, after any filtering, contains
+        /// more than one element.)
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="source"></param>
@@ -69,7 +71,8 @@ namespace FallDave.Trifles
         }
 
         /// <summary>
-        /// Returns the first value in this sequence, if any, or the specified fallback value if the sequence is empty.
+        /// Returns the first value in this sequence, if any, or the specified fallback value if the
+        /// sequence is empty.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="source"></param>
@@ -82,7 +85,8 @@ namespace FallDave.Trifles
         }
 
         /// <summary>
-        /// Returns the first value in this sequence, if any, or the result of the specified function if the sequence is empty.
+        /// Returns the first value in this sequence, if any, or the result of the specified function
+        /// if the sequence is empty.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="source"></param>
@@ -95,7 +99,8 @@ namespace FallDave.Trifles
         }
 
         /// <summary>
-        /// Returns the last value in this sequence, if any, or the specified fallback value if the sequence is empty.
+        /// Returns the last value in this sequence, if any, or the specified fallback value if the
+        /// sequence is empty.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="source"></param>
@@ -108,7 +113,8 @@ namespace FallDave.Trifles
         }
 
         /// <summary>
-        /// Returns the last value in this sequence, if any, or the result of the specified function if the sequence is empty.
+        /// Returns the last value in this sequence, if any, or the result of the specified function
+        /// if the sequence is empty.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="source"></param>
@@ -121,7 +127,8 @@ namespace FallDave.Trifles
         }
 
         /// <summary>
-        /// Returns the element at the specified position in the sequence, if any, or the specified fallback value if there is no such element.
+        /// Returns the element at the specified position in the sequence, if any, or the specified
+        /// fallback value if there is no such element.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="source"></param>
@@ -134,7 +141,8 @@ namespace FallDave.Trifles
         }
 
         /// <summary>
-        /// Returns the element at the specified position in the sequence, if any, or the result of the specified function if there is no such element.
+        /// Returns the element at the specified position in the sequence, if any, or the result of
+        /// the specified function if there is no such element.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="source"></param>
@@ -152,17 +160,26 @@ namespace FallDave.Trifles
 
         /// <summary>
         /// Returns a fixed option containing the only element of a sequence (after any filtering),
-        /// or an empty fixed option if the sequence is empty;
-        /// this method throws an exception if there is more than one element in the sequence.
+        /// or an empty fixed option if the sequence is empty; this method throws an exception if
+        /// there is more than one element in the sequence.
         /// </summary>
         /// <para>The computation of the result of this method is performed immediately, not deferred.</para>
         /// <typeparam name="T">The type of the contained value of the option.</typeparam>
         /// <param name="source">An enumerable from which to extract the element.</param>
-        /// <param name="predicate">A predicate by which to filter <paramref name="source"/>; if <c>null</c>, no filtering is performed.</param>
-        /// <returns>An <see cref="Opt{T}"/> containing the single element of the sequence (after any filtering), or no elements otherwise.</returns>
+        /// <param name="predicate">
+        /// A predicate by which to filter <paramref name="source"/>; if <c>null</c>, no filtering is performed.
+        /// </param>
+        /// <returns>
+        /// An <see cref="Opt{T}"/> containing the single element of the sequence (after any
+        /// filtering), or no elements otherwise.
+        /// </returns>
         /// <exception cref="ArgumentNullException"><paramref name="source"/> is <c>null</c>.</exception>
-        /// <exception cref="InvalidOperationException">The sequence contains more than one element.</exception>
-        /// <exception cref="InvalidOperationException">The sequence contains more than one matching element.</exception>
+        /// <exception cref="InvalidOperationException">
+        /// The sequence contains more than one element.
+        /// </exception>
+        /// <exception cref="InvalidOperationException">
+        /// The sequence contains more than one matching element.
+        /// </exception>
         public static Opt<T> SingleFixOpt<T>(this IEnumerable<T> source, Func<T, bool> predicate = null)
         {
             Checker.NotNull(source, "source");
@@ -171,27 +188,21 @@ namespace FallDave.Trifles
         }
 
         /// <summary>
-        /// Returns a counted option containing the only element of a sequence
-        /// (after any filtering), or an empty counted option if the sequence is
-        /// empty or there is more than one element in the sequence. The counted
-        /// option contains an indication whether the sequence length was 0, 1,
-        /// or greater than 1.
+        /// Returns a counted option containing the only element of a sequence (after any filtering),
+        /// or an empty counted option if the sequence is empty or there is more than one element in
+        /// the sequence. The counted option contains an indication whether the sequence length was
+        /// 0, 1, or greater than 1.
         /// </summary>
-        /// <para>
-        /// The computation of the result of this method is performed
-        /// immediately, not deferred.
-        /// </para>
+        /// <para>The computation of the result of this method is performed immediately, not deferred.</para>
         /// <typeparam name="T">The type of the contained value of the option.</typeparam>
         /// <param name="source">An enumerable from which to extract the element.</param>
         /// <param name="predicate">
-        /// A predicate by which to filter <paramref name="source"/>; if
-        /// <c>null</c>, no filtering is performed.
+        /// A predicate by which to filter <paramref name="source"/>; if <c>null</c>, no filtering is performed.
         /// </param>
         /// <returns>
-        /// A <see cref="CountedOpt{T}"/> containing the single element of the
-        /// sequence (after any filtering), or no elements otherwise, and
-        /// indicates whether the sequence was empty, single-element, or
-        /// multiple-element.
+        /// A <see cref="CountedOpt{T}"/> containing the single element of the sequence (after any
+        /// filtering), or no elements otherwise, and indicates whether the sequence was empty,
+        /// single-element, or multiple-element.
         /// </returns>
         /// <exception cref="ArgumentNullException"><paramref name="source"/> is <c>null</c>.</exception>
         public static CountedOpt<T> CountSingleFixOpt<T>(this IEnumerable<T> source, Func<T, bool> predicate = null)
@@ -208,8 +219,13 @@ namespace FallDave.Trifles
         /// <para>The computation of the result of this method is performed immediately, not deferred.</para>
         /// <typeparam name="T">The type of the contained value of the option.</typeparam>
         /// <param name="source">An enumerable from which to extract the element.</param>
-        /// <param name="predicate">A predicate by which to filter <paramref name="source"/>; if <c>null</c>, no filtering is performed.</param>
-        /// <returns>An <see cref="Opt{T}"/> containing the first element of the sequence (after any filtering), or no elements otherwise.</returns>
+        /// <param name="predicate">
+        /// A predicate by which to filter <paramref name="source"/>; if <c>null</c>, no filtering is performed.
+        /// </param>
+        /// <returns>
+        /// An <see cref="Opt{T}"/> containing the first element of the sequence (after any
+        /// filtering), or no elements otherwise.
+        /// </returns>
         /// <exception cref="ArgumentNullException"><paramref name="source"/> is <c>null</c>.</exception>
         public static Opt<T> FirstFixOpt<T>(this IEnumerable<T> source, Func<T, bool> predicate = null)
         {
@@ -225,8 +241,13 @@ namespace FallDave.Trifles
         /// <para>The computation of the result of this method is performed immediately, not deferred.</para>
         /// <typeparam name="T">The type of the contained value of the option.</typeparam>
         /// <param name="source">An enumerable from which to extract the element.</param>
-        /// <param name="predicate">A predicate by which to filter <paramref name="source"/>; if <c>null</c>, no filtering is performed.</param>
-        /// <returns>An <see cref="Opt{T}"/> containing the last element of the sequence (after any filtering), or no elements otherwise.</returns>
+        /// <param name="predicate">
+        /// A predicate by which to filter <paramref name="source"/>; if <c>null</c>, no filtering is performed.
+        /// </param>
+        /// <returns>
+        /// An <see cref="Opt{T}"/> containing the last element of the sequence (after any
+        /// filtering), or no elements otherwise.
+        /// </returns>
         /// <exception cref="ArgumentNullException"><paramref name="source"/> is <c>null</c>.</exception>
         public static Opt<T> LastFixOpt<T>(this IEnumerable<T> source, Func<T, bool> predicate = null)
         {
@@ -236,13 +257,16 @@ namespace FallDave.Trifles
         }
 
         /// <summary>
-        /// Returns a fixed option containing the element at the specified index of a sequence,
-        /// or an empty fixed option if the index is out of range.
+        /// Returns a fixed option containing the element at the specified index of a sequence, or an
+        /// empty fixed option if the index is out of range.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="source">An enumerable from which to extract the element.</param>
         /// <param name="index">The index of the element to retrieve.</param>
-        /// <returns>An <see cref="Opt{T}"/> containing the last element of the sequence (after any filtering), or no elements otherwise.</returns>
+        /// <returns>
+        /// An <see cref="Opt{T}"/> containing the last element of the sequence (after any
+        /// filtering), or no elements otherwise.
+        /// </returns>
         /// <exception cref="ArgumentNullException"><paramref name="source"/> is <c>null</c>.</exception>
         public static Opt<T> ElementAtFixOpt<T>(this IEnumerable<T> source, int index)
         {
@@ -252,17 +276,26 @@ namespace FallDave.Trifles
 
         /// <summary>
         /// Returns a fixed option containing the only element of a sequence (after any filtering),
-        /// or an empty fixed option if the sequence is empty;
-        /// this method throws an exception if there is more than one element in the sequence.
+        /// or an empty fixed option if the sequence is empty; this method throws an exception if
+        /// there is more than one element in the sequence.
         /// </summary>
         /// <para>The computation of the result of this method is performed immediately, not deferred.</para>
         /// <typeparam name="T">The type of the contained value of the option.</typeparam>
         /// <param name="source">An enumerator from which to extract the element.</param>
-        /// <param name="predicate">A predicate by which to filter <paramref name="source"/>; if <c>null</c>, no filtering is performed.</param>
-        /// <returns>An <see cref="Opt{T}"/> containing the single element of the sequence (after any filtering), or no elements otherwise.</returns>
+        /// <param name="predicate">
+        /// A predicate by which to filter <paramref name="source"/>; if <c>null</c>, no filtering is performed.
+        /// </param>
+        /// <returns>
+        /// An <see cref="Opt{T}"/> containing the single element of the sequence (after any
+        /// filtering), or no elements otherwise.
+        /// </returns>
         /// <exception cref="ArgumentNullException"><paramref name="source"/> is <c>null</c>.</exception>
-        /// <exception cref="InvalidOperationException">The sequence contains more than one element.</exception>
-        /// <exception cref="InvalidOperationException">The sequence contains more than one matching element.</exception>
+        /// <exception cref="InvalidOperationException">
+        /// The sequence contains more than one element.
+        /// </exception>
+        /// <exception cref="InvalidOperationException">
+        /// The sequence contains more than one matching element.
+        /// </exception>
         public static Opt<T> SingleFixOpt<T>(this IEnumerator<T> source, Func<T, bool> predicate = null)
         {
             Checker.NotNull(source, "source");
@@ -271,27 +304,21 @@ namespace FallDave.Trifles
         }
 
         /// <summary>
-        /// Returns a counted option containing the only element of a sequence
-        /// (after any filtering), or an empty counted option if the sequence is
-        /// empty or there is more than one element in the sequence. The counted
-        /// option contains an indication whether the sequence length was 0, 1,
-        /// or greater than 1.
+        /// Returns a counted option containing the only element of a sequence (after any filtering),
+        /// or an empty counted option if the sequence is empty or there is more than one element in
+        /// the sequence. The counted option contains an indication whether the sequence length was
+        /// 0, 1, or greater than 1.
         /// </summary>
-        /// <para>
-        /// The computation of the result of this method is performed
-        /// immediately, not deferred.
-        /// </para>
+        /// <para>The computation of the result of this method is performed immediately, not deferred.</para>
         /// <typeparam name="T">The type of the contained value of the option.</typeparam>
         /// <param name="source">An enumerable from which to extract the element.</param>
         /// <param name="predicate">
-        /// A predicate by which to filter <paramref name="source"/>; if
-        /// <c>null</c>, no filtering is performed.
+        /// A predicate by which to filter <paramref name="source"/>; if <c>null</c>, no filtering is performed.
         /// </param>
         /// <returns>
-        /// A <see cref="CountedOpt{T}"/> containing the single element of the
-        /// sequence (after any filtering), or no elements otherwise, and
-        /// indicates whether the sequence was empty, single-element, or
-        /// multiple-element.
+        /// A <see cref="CountedOpt{T}"/> containing the single element of the sequence (after any
+        /// filtering), or no elements otherwise, and indicates whether the sequence was empty,
+        /// single-element, or multiple-element.
         /// </returns>
         /// <exception cref="ArgumentNullException"><paramref name="source"/> is <c>null</c>.</exception>
         public static CountedOpt<T> CountSingleFixOpt<T>(this IEnumerator<T> source, Func<T, bool> predicate = null)
@@ -308,8 +335,13 @@ namespace FallDave.Trifles
         /// <para>The computation of the result of this method is performed immediately, not deferred.</para>
         /// <typeparam name="T">The type of the contained value of the option.</typeparam>
         /// <param name="source">An enumerator from which to extract the element.</param>
-        /// <param name="predicate">A predicate by which to filter <paramref name="source"/>; if <c>null</c>, no filtering is performed.</param>
-        /// <returns>An <see cref="Opt{T}"/> containing the first element of the sequence (after any filtering), or no elements otherwise.</returns>
+        /// <param name="predicate">
+        /// A predicate by which to filter <paramref name="source"/>; if <c>null</c>, no filtering is performed.
+        /// </param>
+        /// <returns>
+        /// An <see cref="Opt{T}"/> containing the first element of the sequence (after any
+        /// filtering), or no elements otherwise.
+        /// </returns>
         /// <exception cref="ArgumentNullException"><paramref name="source"/> is <c>null</c>.</exception>
         public static Opt<T> FirstFixOpt<T>(this IEnumerator<T> source, Func<T, bool> predicate = null)
         {
@@ -325,8 +357,13 @@ namespace FallDave.Trifles
         /// <para>The computation of the result of this method is performed immediately, not deferred.</para>
         /// <typeparam name="T">The type of the contained value of the option.</typeparam>
         /// <param name="source">An enumerator from which to extract the element.</param>
-        /// <param name="predicate">A predicate by which to filter <paramref name="source"/>; if <c>null</c>, no filtering is performed.</param>
-        /// <returns>An <see cref="Opt{T}"/> containing the last element of the sequence (after any filtering), or no elements otherwise.</returns>
+        /// <param name="predicate">
+        /// A predicate by which to filter <paramref name="source"/>; if <c>null</c>, no filtering is performed.
+        /// </param>
+        /// <returns>
+        /// An <see cref="Opt{T}"/> containing the last element of the sequence (after any
+        /// filtering), or no elements otherwise.
+        /// </returns>
         /// <exception cref="ArgumentNullException"><paramref name="source"/> is <c>null</c>.</exception>
         public static Opt<T> LastFixOpt<T>(this IEnumerator<T> source, Func<T, bool> predicate = null)
         {
@@ -336,13 +373,16 @@ namespace FallDave.Trifles
         }
 
         /// <summary>
-        /// Returns a fixed option containing the element at the specified index of a sequence,
-        /// or an empty fixed option if the index is out of range.
+        /// Returns a fixed option containing the element at the specified index of a sequence, or an
+        /// empty fixed option if the index is out of range.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="source">An enumerator from which to extract the element.</param>
         /// <param name="index">The index of the element to retrieve.</param>
-        /// <returns>An <see cref="Opt{T}"/> containing the last element of the sequence (after any filtering), or no elements otherwise.</returns>
+        /// <returns>
+        /// An <see cref="Opt{T}"/> containing the last element of the sequence (after any
+        /// filtering), or no elements otherwise.
+        /// </returns>
         /// <exception cref="ArgumentNullException"><paramref name="source"/> is <c>null</c>.</exception>
         public static Opt<T> ElementAtFixOpt<T>(this IEnumerator<T> source, int index)
         {
@@ -359,11 +399,21 @@ namespace FallDave.Trifles
         /// </summary>
         /// <typeparam name="T">The type of value contained by the sequence.</typeparam>
         /// <param name="source">The sequence to use as the source.</param>
-        /// <param name="value">Set to the single value, if available; otherwise, set to <c>default(</c><typeparamref name="T"/><c>)</c>.</param>
-        /// <param name="predicate">A predicate function by which to filter the source sequence. If <c>null</c>, no filter is used.</param>
-        /// <returns><c>true</c> if <paramref name="source"/> (after any filtering) contains a single element, or <c>false</c> if empty.</returns>
+        /// <param name="value">
+        /// Set to the single value, if available; otherwise, set to <c>default(</c><typeparamref name="T"/><c>)</c>.
+        /// </param>
+        /// <param name="predicate">
+        /// A predicate function by which to filter the source sequence. If <c>null</c>, no filter is used.
+        /// </param>
+        /// <returns>
+        /// <c>true</c> if <paramref name="source"/> (after any filtering) contains a single element,
+        /// or <c>false</c> if empty.
+        /// </returns>
         /// <exception cref="ArgumentNullException"><paramref name="source"/> is <c>null</c>.</exception>
-        /// <exception cref="InvalidOperationException">At the time of evaluation, the source sequence (after any filtering) contains more than one element.</exception>
+        /// <exception cref="InvalidOperationException">
+        /// At the time of evaluation, the source sequence (after any filtering) contains more than
+        /// one element.
+        /// </exception>
         public static bool TryGetSingle<T>(this IEnumerable<T> source, out T value, Func<T, bool> predicate = null)
         {
             return source.SingleFixOpt(predicate).TryGetSingle(out value);
@@ -374,9 +424,16 @@ namespace FallDave.Trifles
         /// </summary>
         /// <typeparam name="T">The type of value contained by the sequence.</typeparam>
         /// <param name="source">The sequence to use as the source.</param>
-        /// <param name="value">Set to the first value, if available; otherwise, set to <c>default(</c><typeparamref name="T"/><c>)</c>.</param>
-        /// <param name="predicate">A predicate function by which to filter the source sequence. If <c>null</c>, no filter is used.</param>
-        /// <returns><c>true</c> if <paramref name="source"/> (after any filtering) contains a first element, or <c>false</c> if empty.</returns>
+        /// <param name="value">
+        /// Set to the first value, if available; otherwise, set to <c>default(</c><typeparamref name="T"/><c>)</c>.
+        /// </param>
+        /// <param name="predicate">
+        /// A predicate function by which to filter the source sequence. If <c>null</c>, no filter is used.
+        /// </param>
+        /// <returns>
+        /// <c>true</c> if <paramref name="source"/> (after any filtering) contains a first element,
+        /// or <c>false</c> if empty.
+        /// </returns>
         /// <exception cref="ArgumentNullException"><paramref name="source"/> is <c>null</c>.</exception>
         public static bool TryGetFirst<T>(this IEnumerable<T> source, out T value, Func<T, bool> predicate = null)
         {
@@ -388,9 +445,16 @@ namespace FallDave.Trifles
         /// </summary>
         /// <typeparam name="T">The type of value contained by the sequence.</typeparam>
         /// <param name="source">The sequence to use as the source.</param>
-        /// <param name="value">Set to the last value, if available; otherwise, set to <c>default(</c><typeparamref name="T"/><c>)</c>.</param>
-        /// <param name="predicate">A predicate function by which to filter the source sequence. If <c>null</c>, no filter is used.</param>
-        /// <returns><c>true</c> if <paramref name="source"/> (after any filtering) contains a last element, or <c>false</c> if empty.</returns>
+        /// <param name="value">
+        /// Set to the last value, if available; otherwise, set to <c>default(</c><typeparamref name="T"/><c>)</c>.
+        /// </param>
+        /// <param name="predicate">
+        /// A predicate function by which to filter the source sequence. If <c>null</c>, no filter is used.
+        /// </param>
+        /// <returns>
+        /// <c>true</c> if <paramref name="source"/> (after any filtering) contains a last element,
+        /// or <c>false</c> if empty.
+        /// </returns>
         /// <exception cref="ArgumentNullException"><paramref name="source"/> is <c>null</c>.</exception>
         public static bool TryGetLast<T>(this IEnumerable<T> source, out T value, Func<T, bool> predicate = null)
         {
@@ -403,8 +467,14 @@ namespace FallDave.Trifles
         /// <typeparam name="T">The type of value contained by the sequence.</typeparam>
         /// <param name="source">The sequence to use as the source.</param>
         /// <param name="index">The index of the element to retrieve.</param>
-        /// <param name="value">Set to the value at the given index, if available; otherwise, set to <c>default(</c><typeparamref name="T"/><c>)</c>.</param>
-        /// <returns><c>true</c> if <paramref name="source"/> contains an element at the given index, or <c>false</c> if the index is out of range.</returns>
+        /// <param name="value">
+        /// Set to the value at the given index, if available; otherwise, set to
+        /// <c>default(</c><typeparamref name="T"/><c>)</c>.
+        /// </param>
+        /// <returns>
+        /// <c>true</c> if <paramref name="source"/> contains an element at the given index, or
+        /// <c>false</c> if the index is out of range.
+        /// </returns>
         public static bool TryGetElementAt<T>(this IEnumerable<T> source, int index, out T value)
         {
             return source.ElementAtFixOpt(index).TryGetSingle(out value);
@@ -415,11 +485,21 @@ namespace FallDave.Trifles
         /// </summary>
         /// <typeparam name="T">The type of value contained by the sequence.</typeparam>
         /// <param name="source">The sequence to use as the source.</param>
-        /// <param name="value">Set to the single value, if available; otherwise, set to <c>default(</c><typeparamref name="T"/><c>)</c>.</param>
-        /// <param name="predicate">A predicate function by which to filter the source sequence. If <c>null</c>, no filter is used.</param>
-        /// <returns><c>true</c> if <paramref name="source"/> (after any filtering) contains a single element, or <c>false</c> if empty.</returns>
+        /// <param name="value">
+        /// Set to the single value, if available; otherwise, set to <c>default(</c><typeparamref name="T"/><c>)</c>.
+        /// </param>
+        /// <param name="predicate">
+        /// A predicate function by which to filter the source sequence. If <c>null</c>, no filter is used.
+        /// </param>
+        /// <returns>
+        /// <c>true</c> if <paramref name="source"/> (after any filtering) contains a single element,
+        /// or <c>false</c> if empty.
+        /// </returns>
         /// <exception cref="ArgumentNullException"><paramref name="source"/> is <c>null</c>.</exception>
-        /// <exception cref="InvalidOperationException">At the time of evaluation, the source sequence (after any filtering) contains more than one element.</exception>
+        /// <exception cref="InvalidOperationException">
+        /// At the time of evaluation, the source sequence (after any filtering) contains more than
+        /// one element.
+        /// </exception>
         public static bool TryGetSingle<T>(this IEnumerator<T> source, out T value, Func<T, bool> predicate = null)
         {
             return source.SingleFixOpt(predicate).TryGetSingle(out value);
@@ -430,9 +510,16 @@ namespace FallDave.Trifles
         /// </summary>
         /// <typeparam name="T">The type of value contained by the sequence.</typeparam>
         /// <param name="source">The sequence to use as the source.</param>
-        /// <param name="value">Set to the first value, if available; otherwise, set to <c>default(</c><typeparamref name="T"/><c>)</c>.</param>
-        /// <param name="predicate">A predicate function by which to filter the source sequence. If <c>null</c>, no filter is used.</param>
-        /// <returns><c>true</c> if <paramref name="source"/> (after any filtering) contains a first element, or <c>false</c> if empty.</returns>
+        /// <param name="value">
+        /// Set to the first value, if available; otherwise, set to <c>default(</c><typeparamref name="T"/><c>)</c>.
+        /// </param>
+        /// <param name="predicate">
+        /// A predicate function by which to filter the source sequence. If <c>null</c>, no filter is used.
+        /// </param>
+        /// <returns>
+        /// <c>true</c> if <paramref name="source"/> (after any filtering) contains a first element,
+        /// or <c>false</c> if empty.
+        /// </returns>
         /// <exception cref="ArgumentNullException"><paramref name="source"/> is <c>null</c>.</exception>
         public static bool TryGetFirst<T>(this IEnumerator<T> source, out T value, Func<T, bool> predicate = null)
         {
@@ -444,9 +531,16 @@ namespace FallDave.Trifles
         /// </summary>
         /// <typeparam name="T">The type of value contained by the sequence.</typeparam>
         /// <param name="source">The sequence to use as the source.</param>
-        /// <param name="value">Set to the last value, if available; otherwise, set to <c>default(</c><typeparamref name="T"/><c>)</c>.</param>
-        /// <param name="predicate">A predicate function by which to filter the source sequence. If <c>null</c>, no filter is used.</param>
-        /// <returns><c>true</c> if <paramref name="source"/> (after any filtering) contains a last element, or <c>false</c> if empty.</returns>
+        /// <param name="value">
+        /// Set to the last value, if available; otherwise, set to <c>default(</c><typeparamref name="T"/><c>)</c>.
+        /// </param>
+        /// <param name="predicate">
+        /// A predicate function by which to filter the source sequence. If <c>null</c>, no filter is used.
+        /// </param>
+        /// <returns>
+        /// <c>true</c> if <paramref name="source"/> (after any filtering) contains a last element,
+        /// or <c>false</c> if empty.
+        /// </returns>
         /// <exception cref="ArgumentNullException"><paramref name="source"/> is <c>null</c>.</exception>
         public static bool TryGetLast<T>(this IEnumerator<T> source, out T value, Func<T, bool> predicate = null)
         {
@@ -459,8 +553,14 @@ namespace FallDave.Trifles
         /// <typeparam name="T">The type of value contained by the sequence.</typeparam>
         /// <param name="source">The sequence to use as the source.</param>
         /// <param name="index">The index of the element to retrieve.</param>
-        /// <param name="value">Set to the value at the given index, if available; otherwise, set to <c>default(</c><typeparamref name="T"/><c>)</c>.</param>
-        /// <returns><c>true</c> if <paramref name="source"/> contains an element at the given index, or <c>false</c> if the index is out of range.</returns>
+        /// <param name="value">
+        /// Set to the value at the given index, if available; otherwise, set to
+        /// <c>default(</c><typeparamref name="T"/><c>)</c>.
+        /// </param>
+        /// <returns>
+        /// <c>true</c> if <paramref name="source"/> contains an element at the given index, or
+        /// <c>false</c> if the index is out of range.
+        /// </returns>
         public static bool TryGetElementAt<T>(this IEnumerator<T> source, int index, out T value)
         {
             return source.ElementAtFixOpt(index).TryGetSingle(out value);
@@ -471,24 +571,38 @@ namespace FallDave.Trifles
         #region *Opt
 
         /// <summary>
-        /// Returns a deferred option that will contain the source's only element (if the source contains exactly one element) or no elements (if the source is empty).
+        /// Returns a deferred option that will contain the source's only element (if the source
+        /// contains exactly one element) or no elements (if the source is empty).
         /// </summary>
-        /// <returns>An option which, at the point of evaluation, contain the entire source sequence if and only if the sequence has no more than one element.</returns>
+        /// <returns>
+        /// An option which, at the point of evaluation, contain the entire source sequence if and
+        /// only if the sequence has no more than one element.
+        /// </returns>
         /// <param name="source">The sequence to use as the source.</param>
-        /// <param name="predicate">A predicate function by which to filter the source sequence. If <c>null</c>, no filter is used.</param>
+        /// <param name="predicate">
+        /// A predicate function by which to filter the source sequence. If <c>null</c>, no filter is used.
+        /// </param>
         /// <typeparam name="T">The type of value contained by the sequence.</typeparam>
-        /// <exception cref="InvalidOperationException">At the time of evaluation, the source sequence contains more than one element.</exception>
+        /// <exception cref="InvalidOperationException">
+        /// At the time of evaluation, the source sequence contains more than one element.
+        /// </exception>
         public static IOpt<T> SingleOpt<T>(this IEnumerable<T> source, Func<T, bool> predicate = null)
         {
             return Opt.Defer(() => source.SingleFixOpt(predicate));
         }
 
         /// <summary>
-        /// Returns a deferred option that will contain the source's first element (if the source contains at least one element) or no elements (if the source is empty).
+        /// Returns a deferred option that will contain the source's first element (if the source
+        /// contains at least one element) or no elements (if the source is empty).
         /// </summary>
-        /// <returns>An option which, at the point of evaluation, contains the first element of the source sequence, if the source is not empty, or no element if the source is empty.</returns>
+        /// <returns>
+        /// An option which, at the point of evaluation, contains the first element of the source
+        /// sequence, if the source is not empty, or no element if the source is empty.
+        /// </returns>
         /// <param name="source">The sequence to use as the source.</param>
-        /// <param name="predicate">A predicate function by which to filter the source sequence. If <c>null</c>, no filter is used.</param>
+        /// <param name="predicate">
+        /// A predicate function by which to filter the source sequence. If <c>null</c>, no filter is used.
+        /// </param>
         /// <typeparam name="T">The type of value contained by the sequence.</typeparam>
         public static IOpt<T> FirstOpt<T>(this IEnumerable<T> source, Func<T, bool> predicate = null)
         {
@@ -496,11 +610,17 @@ namespace FallDave.Trifles
         }
 
         /// <summary>
-        /// Returns a deferred option that will contain the source's last element (if the source contains at least one element) or no elements (if the source is empty).
+        /// Returns a deferred option that will contain the source's last element (if the source
+        /// contains at least one element) or no elements (if the source is empty).
         /// </summary>
-        /// <returns>An option which, at the point of evaluation, contains the last element of the source sequence, if the source is not empty, or no element if the source is empty.</returns>
+        /// <returns>
+        /// An option which, at the point of evaluation, contains the last element of the source
+        /// sequence, if the source is not empty, or no element if the source is empty.
+        /// </returns>
         /// <param name="source">The sequence to use as the source.</param>
-        /// <param name="predicate">A predicate function by which to filter the source sequence. If <c>null</c>, no filter is used.</param>
+        /// <param name="predicate">
+        /// A predicate function by which to filter the source sequence. If <c>null</c>, no filter is used.
+        /// </param>
         /// <typeparam name="T">The type of value contained by the sequence.</typeparam>
         public static IOpt<T> LastOpt<T>(this IEnumerable<T> source, Func<T, bool> predicate = null)
         {
@@ -508,9 +628,14 @@ namespace FallDave.Trifles
         }
 
         /// <summary>
-        /// Returns a deferred option that will contain the element of the source at the given index (if the index is not out of range) or no elements (if the index is out of range).
+        /// Returns a deferred option that will contain the element of the source at the given index
+        /// (if the index is not out of range) or no elements (if the index is out of range).
         /// </summary>
-        /// <returns>An option which, at the point of evaluation, contains the element of the source sequence at the given index, if the index is in range (at least zero and no greater than the element count of the source), or no element if the index is out of range.</returns>
+        /// <returns>
+        /// An option which, at the point of evaluation, contains the element of the source sequence
+        /// at the given index, if the index is in range (at least zero and no greater than the
+        /// element count of the source), or no element if the index is out of range.
+        /// </returns>
         /// <param name="source">The sequence to use as the source.</param>
         /// <param name="index">The index of the value to retrieve.</param>
         /// <typeparam name="T">The type of value contained by the sequence.</typeparam>
@@ -520,24 +645,38 @@ namespace FallDave.Trifles
         }
 
         /// <summary>
-        /// Returns a deferred option that will contain the source's only element (if the source contains exactly one element) or no elements (if the source is empty).
+        /// Returns a deferred option that will contain the source's only element (if the source
+        /// contains exactly one element) or no elements (if the source is empty).
         /// </summary>
-        /// <returns>An option which, at the point of evaluation, contain the entire source sequence if and only if the sequence has no more than one element.</returns>
+        /// <returns>
+        /// An option which, at the point of evaluation, contain the entire source sequence if and
+        /// only if the sequence has no more than one element.
+        /// </returns>
         /// <param name="source">The sequence to use as the source.</param>
-        /// <param name="predicate">A predicate function by which to filter the source sequence. If <c>null</c>, no filter is used.</param>
+        /// <param name="predicate">
+        /// A predicate function by which to filter the source sequence. If <c>null</c>, no filter is used.
+        /// </param>
         /// <typeparam name="T">The type of value contained by the sequence.</typeparam>
-        /// <exception cref="InvalidOperationException">At the time of evaluation, the source sequence contains more than one element.</exception>
+        /// <exception cref="InvalidOperationException">
+        /// At the time of evaluation, the source sequence contains more than one element.
+        /// </exception>
         public static IOpt<T> SingleOpt<T>(this IEnumerator<T> source, Func<T, bool> predicate = null)
         {
             return Opt.Defer(() => source.SingleFixOpt(predicate));
         }
 
         /// <summary>
-        /// Returns a deferred option that will contain the source's first element (if the source contains at least one element) or no elements (if the source is empty).
+        /// Returns a deferred option that will contain the source's first element (if the source
+        /// contains at least one element) or no elements (if the source is empty).
         /// </summary>
-        /// <returns>An option which, at the point of evaluation, contains the first element of the source sequence, if the source is not empty, or no element if the source is empty.</returns>
+        /// <returns>
+        /// An option which, at the point of evaluation, contains the first element of the source
+        /// sequence, if the source is not empty, or no element if the source is empty.
+        /// </returns>
         /// <param name="source">The sequence to use as the source.</param>
-        /// <param name="predicate">A predicate function by which to filter the source sequence. If <c>null</c>, no filter is used.</param>
+        /// <param name="predicate">
+        /// A predicate function by which to filter the source sequence. If <c>null</c>, no filter is used.
+        /// </param>
         /// <typeparam name="T">The type of value contained by the sequence.</typeparam>
         public static IOpt<T> FirstOpt<T>(this IEnumerator<T> source, Func<T, bool> predicate = null)
         {
@@ -545,11 +684,17 @@ namespace FallDave.Trifles
         }
 
         /// <summary>
-        /// Returns a deferred option that will contain the source's last element (if the source contains at least one element) or no elements (if the source is empty).
+        /// Returns a deferred option that will contain the source's last element (if the source
+        /// contains at least one element) or no elements (if the source is empty).
         /// </summary>
-        /// <returns>An option which, at the point of evaluation, contains the last element of the source sequence, if the source is not empty, or no element if the source is empty.</returns>
+        /// <returns>
+        /// An option which, at the point of evaluation, contains the last element of the source
+        /// sequence, if the source is not empty, or no element if the source is empty.
+        /// </returns>
         /// <param name="source">The sequence to use as the source.</param>
-        /// <param name="predicate">A predicate function by which to filter the source sequence. If <c>null</c>, no filter is used.</param>
+        /// <param name="predicate">
+        /// A predicate function by which to filter the source sequence. If <c>null</c>, no filter is used.
+        /// </param>
         /// <typeparam name="T">The type of value contained by the sequence.</typeparam>
         public static IOpt<T> LastOpt<T>(this IEnumerator<T> source, Func<T, bool> predicate = null)
         {
@@ -557,9 +702,14 @@ namespace FallDave.Trifles
         }
 
         /// <summary>
-        /// Returns a deferred option that will contain the element of the source at the given index (if the index is not out of range) or no elements (if the index is out of range).
+        /// Returns a deferred option that will contain the element of the source at the given index
+        /// (if the index is not out of range) or no elements (if the index is out of range).
         /// </summary>
-        /// <returns>An option which, at the point of evaluation, contains the element of the source sequence at the given index, if the index is in range (at least zero and no greater than the element count of the source), or no element if the index is out of range.</returns>
+        /// <returns>
+        /// An option which, at the point of evaluation, contains the element of the source sequence
+        /// at the given index, if the index is in range (at least zero and no greater than the
+        /// element count of the source), or no element if the index is out of range.
+        /// </returns>
         /// <param name="source">The sequence to use as the source.</param>
         /// <param name="index">The index of the value to retrieve.</param>
         /// <typeparam name="T">The type of value contained by the sequence.</typeparam>
@@ -823,9 +973,9 @@ namespace FallDave.Trifles
 
         #endregion Compute*FixOpt for Single, First, Last, ElementAt.
 
-        // If the given predicate is null, it is changed to an always-true predicate. Returns
-        // whether the initial predicate was non-null. In exception messages this is the difference
-        // between say "no elements" and "no matching elements".
+        // If the given predicate is null, it is changed to an always-true predicate. Returns whether
+        // the initial predicate was non-null. In exception messages this is the difference between
+        // say "no elements" and "no matching elements".
         private static bool SetUpPredicate<T>(ref Func<T, bool> predicate)
         {
             var usingPredicate = true;
@@ -840,10 +990,9 @@ namespace FallDave.Trifles
 
         #region OptInit
 
-        // A sort of mutable Opt builder.
-        // Initially hasValue = false, valueBuffer = default(T).
-        // When Value is set to a value, hasValue becomes true and cannot be reverted to false.
-        // Add()ing a value succeeds only when no value has already been set.
+        // A sort of mutable Opt builder. Initially hasValue = false, valueBuffer = default(T). When
+        // Value is set to a value, hasValue becomes true and cannot be reverted to false. Add()ing a
+        // value succeeds only when no value has already been set.
         private struct OptInit<T>
         {
             /// <summary>
@@ -852,7 +1001,8 @@ namespace FallDave.Trifles
             private bool hasValue;
 
             /// <summary>
-            /// Contains the value of this option, if any. Otherwise, should contain <c>default(</c><typeparamref name="T"/><c>)</c>.
+            /// Contains the value of this option, if any. Otherwise, should contain
+            /// <c>default(</c><typeparamref name="T"/><c>)</c>.
             /// </summary>
             private T valueBuffer;
 
@@ -870,8 +1020,7 @@ namespace FallDave.Trifles
                 }
             }
 
-            // Sets the value iff the value is not already set.
-            // Otherwise, throws "more than one element".
+            // Sets the value iff the value is not already set. Otherwise, throws "more than one element".
             public void Add(T value, bool usingPredicate)
             {
                 if (hasValue)
@@ -954,28 +1103,30 @@ namespace FallDave.Trifles
         /// <example>
         /// This sample demonstrates how to call the method to determine if a sequence has a given
         /// correct length or is too long or too short.
-        /// <code><![CDATA[
+        /// <code>
+        /// <![CDATA[
         /// // Determine whether the sequence contains exactly correctLength elements. The maxCount
         /// // of correctLength + 1 indicates the smallest length that is too long.
-        /// 
+        ///
         /// int count = seq.CountUpTo(correctLength + 1);
-        /// 
+        ///
         /// if (count < correctLength)
         /// {
-        ///     Console.WriteLine("Sequence does not contain enough elements (length is {0})", count);
+        /// Console.WriteLine("Sequence does not contain enough elements (length is {0})", count);
         /// }
         /// else if (count > correctLength)
         /// {
-        ///     // Equivalently, count == correctLength + 1, since that is the only possible value
-        ///     // greater than correctLength. But we write it as > for style reasons and because
-        ///     // that is the way we'd write it using plain count.
-        ///     Console.WriteLine("Sequence contains too many elements (length is greater than or equal to {0})", count);
+        /// // Equivalently, count == correctLength + 1, since that is the only possible value
+        /// // greater than correctLength. But we write it as > for style reasons and because
+        /// // that is the way we'd write it using plain count.
+        /// Console.WriteLine("Sequence contains too many elements (length is greater than or equal to {0})", count);
         /// }
         /// else
         /// {
-        ///     Console.WriteLine("Sequence contains the correct number of elements (length is {0})", count);
+        /// Console.WriteLine("Sequence contains the correct number of elements (length is {0})", count);
         /// }
-        /// ]]></code>
+        /// ]]>
+        /// </code>
         /// </example>
         /// <para>
         /// Implementation note: If the predicate is <c>null</c> and the source sequence is an <see
@@ -1063,5 +1214,696 @@ namespace FallDave.Trifles
         }
 
         #endregion CountUpTo
+
+        #region CopyTo
+
+        /// <summary>
+        /// Copies the specified items in this list to the specified array at the specified index.
+        /// </summary>
+        /// <remarks>
+        /// This method falls back to to <see cref="Array.Copy(Array, int, Array, int, int)"/> if
+        /// <paramref name="source"/> is a <c>T[]</c>, or to <see cref="ImmutableArray{T}.CopyTo(int,
+        /// T[], int, int)"/> if <paramref name="source"/> is an <see cref="ImmutableArray{T}"/>.
+        /// </remarks>
+        /// <typeparam name="T">The type of elements in <paramref name="source"/>.</typeparam>
+        /// <param name="source">The list to copy from.</param>
+        /// <param name="sourceIndex">The index in <paramref name="source"/> where copying begins.</param>
+        /// <param name="destination">The array to copy to.</param>
+        /// <param name="destinationIndex">
+        /// The index in <paramref name="destination"/> where copying begins.
+        /// </param>
+        /// <param name="length">The number of elements to copy.</param>
+        public static void CopyTo<T>(this IList<T> source, int sourceIndex, T[] destination, int destinationIndex, int length)
+        {
+            Checker.NotNull(source, "source");
+            Checker.NotNull(destination, "destination");
+
+            if (source is T[])
+            {
+                var sourceArray = (T[])source;
+                Array.Copy(sourceArray, sourceIndex, destination, destinationIndex, length);
+            }
+            else if (source is ImmutableArray<T>)
+            {
+                var sourceImmutableArray = (ImmutableArray<T>)source;
+                sourceImmutableArray.CopyTo(sourceIndex, destination, destinationIndex, length);
+            }
+            else
+            {
+                Checker.SpanInRange(source.Count, sourceIndex, length, "sourceIndex", "length");
+                Checker.SpanInRange(destination.Length, destinationIndex, length, "destinationIndex", "length");
+
+                for (int i = 0; i < length; ++i)
+                {
+                    destination[destinationIndex + i] = source[sourceIndex + i];
+                }
+            }
+        }
+
+        /// <summary>
+        /// Copies items from the specified enumerator to an array until the given length has been
+        /// read or the sequence is exhausted.
+        /// </summary>
+        /// <remarks>This method does not manage the lifetime of <paramref name="source"/>.</remarks>
+        /// <typeparam name="T">The type of elements in <paramref name="source"/>.</typeparam>
+        /// <param name="source">The enumerator to copy from.</param>
+        /// <param name="destination">The array to copy to.</param>
+        /// <param name="destinationIndex">
+        /// The index in <paramref name="destination"/> where copying begins.
+        /// </param>
+        /// <param name="length">The maximum number of elements to copy.</param>
+        /// <returns>
+        /// The number of elements actually copied; this may be less than <paramref name="length"/>
+        /// if the source sequence is exhausted before <paramref name="length"/> elements could be copied.
+        /// </returns>
+        public static int CopyTo<T>(this IEnumerator<T> source, T[] destination, int destinationIndex, int length)
+        {
+            Checker.NotNull(source, "source");
+            Checker.NotNull(destination, "destination");
+            Checker.SpanInRange(destination.Length, destinationIndex, length, "destinationIndex", "length");
+
+            int i = 0;
+
+            while (i < length && source.MoveNext())
+            {
+                destination[destinationIndex + i] = source.Current;
+                ++i;
+            }
+
+            return i;
+        }
+
+        #endregion CopyTo
+
+        #region BufferViaArray
+
+        private const int BufferViaArrayDefaultSize = 2048;
+
+        private static ArgumentException BufferArrayIsZeroLength()
+        {
+            return new ArgumentException("Buffer array for non-empty copy cannot be zero-length.");
+        }
+
+        // Action that copies length elements from sourceIndex of a source to destinationIndex of a destination.
+        private delegate void SubcopyAction(int sourceIndex, int destinationIndex, int length);
+
+        // Gets an action that copies a specified sublist from the given source to the given array.
+        // Note that the non-array, non-ImmutableArray variant does no bounds checking.
+        private static SubcopyAction GetSubcopyAction<T>(IList<T> source, T[] destination)
+        {
+            if (source is T[])
+            {
+                var sourceArray = (T[])source;
+                return (sourceIndex, destinationIndex, length) => Array.Copy(sourceArray, sourceIndex, destination, destinationIndex, length);
+            }
+            else if (source is ImmutableArray<T>)
+            {
+                var sourceImmutableArray = ((ImmutableArray<T>)source);
+                return (sourceIndex, destinationIndex, length) => sourceImmutableArray.CopyTo(sourceIndex, destination, destinationIndex, length);
+            }
+            else
+            {
+                var sourceNonArray = source;
+                return (sourceIndex, destinationIndex, length) =>
+                {
+                    for (int i = 0; i < length; ++i)
+                    {
+                        destination[destinationIndex + i] = sourceNonArray[sourceIndex + i];
+                    }
+                };
+            }
+        }
+
+        /// <summary>
+        /// Repeatedly copies elements from the given source list into the given array, producing the
+        /// number of elements copied as a sequence.
+        /// </summary>
+        /// <example>
+        /// This sample demonstrates how to copy bytes from a list to a stream using an intermediate array.
+        /// <code>
+        /// <![CDATA[
+        /// private static void BufferViaArraySample(IList<byte> source, Stream destination)
+        /// {
+        /// var buffer = new byte[2048];
+        /// foreach(var length in source.BufferViaArray(0, source.Count, buffer))
+        /// {
+        /// destination.Write(buffer, 0, length);
+        /// }
+        /// }
+        /// ]]>
+        /// </code>
+        /// </example>
+        /// <typeparam name="T">The type of elements to be buffered.</typeparam>
+        /// <param name="source">A list containing the elements to be copied.</param>
+        /// <param name="index">The first index of <paramref name="source"/> to be copied.</param>
+        /// <param name="count">The total number of elements to copy from <paramref name="source"/>.</param>
+        /// <param name="buffer">An array to use as the copy buffer.</param>
+        /// <returns>
+        /// An enumerable that interleaves copying with yielding the number of elements copied since
+        /// the previous yield. (The index in <paramref name="buffer"/> of each copy is always 0.)
+        /// </returns>
+        /// <exception cref="ArgumentNullException">
+        /// If <paramref name="buffer"/> is <c>null</c> when <paramref name="count"/> is greater than 0.
+        /// </exception>
+        /// <exception cref="ArgumentException">
+        /// If <paramref name="buffer"/> is 0-length when <paramref name="count"/> is greater than 0.
+        /// </exception>
+        public static IEnumerable<int> BufferViaArray<T>(this IList<T> source, int index, int count, T[] buffer)
+        {
+            Checker.NotNull(source, "source");
+            Checker.SpanInRange(source.Count, index, count, "index", "count");
+
+            if (count > 0)
+            {
+                Checker.NotNull(buffer, "buffer");
+                if (buffer.Length == 0)
+                {
+                    throw BufferArrayIsZeroLength();
+                }
+            }
+
+            var subcopy = GetSubcopyAction(source, buffer);
+
+            while (count > 0)
+            {
+                int countThisPass = Math.Min(count, buffer.Length);
+                subcopy(index, 0, countThisPass);
+                index += countThisPass;
+                count -= countThisPass;
+                yield return countThisPass;
+            }
+        }
+
+        /// <summary>
+        /// Repeatedly calls the given action with elements read from the indicated source list into
+        /// a buffer.
+        /// </summary>
+        /// <example>
+        /// This sample demonstrates how to copy bytes from a list to a stream using the default
+        /// buffer size and a callback.
+        /// <code>
+        /// <![CDATA[
+        /// private static void BufferViaArrayCallbackSample(IList<byte> source, System.IO.Stream destination)
+        /// {
+        /// source.BufferViaArray(0, source.Count, (buffer, offset, count) => destination.Write(buffer, offset, count));
+        /// }
+        /// ]]>
+        /// </code>
+        /// </example>
+        /// <typeparam name="T">The type of elements to be buffered.</typeparam>
+        /// <param name="source">A list containing the elements to be copied.</param>
+        /// <param name="index">The first index of <paramref name="source"/> to be copied.</param>
+        /// <param name="count">The total number of elements to copy from <paramref name="source"/>.</param>
+        /// <param name="fillAction">
+        /// An <see cref="Action"/> which will be called repeatedly with the copy buffer, the start
+        /// index within the copy buffer, and the number of valid elements in the copy buffer.
+        /// </param>
+        /// <param name="buffer">
+        /// An array to use as the copy buffer; if <c>null</c> or omitted, a new array is created.
+        /// </param>
+        public static void BufferViaArray<T>(this IList<T> source, int index, int count, Action<T[], int, int> fillAction, T[] buffer = null)
+        {
+            Checker.NotNull(fillAction, "fillAction");
+
+            if (buffer == null && count > 0)
+            {
+                buffer = new T[Math.Min(count, BufferViaArrayDefaultSize)];
+            }
+
+            foreach (var countThisPass in source.BufferViaArray(index, count, buffer))
+            {
+                fillAction(buffer, 0, countThisPass);
+            }
+        }
+
+        /// <summary>
+        /// Repeatedly calls the given action with elements read from the indicated source sequence
+        /// into a buffer.
+        /// </summary>
+        /// <example>
+        /// This sample demonstrates how to copy bytes from a list to a stream using an intermediate array.
+        /// <code>
+        /// <![CDATA[
+        /// private static void BufferViaArraySample(IEnumerable<byte> source, System.IO.Stream destination)
+        /// {
+        /// var buffer = new byte[2048];
+        /// foreach (var length in source.BufferViaArray(buffer))
+        /// {
+        /// destination.Write(buffer, 0, length);
+        /// }
+        /// }
+        /// ]]>
+        /// </code>
+        /// </example>
+        /// <typeparam name="T">The type of elements to be buffered.</typeparam>
+        /// <param name="source">A sequence containing the elements to be copied.</param>
+        /// <param name="buffer">
+        /// An array to use as the copy buffer; if <c>null</c> or omitted, a new array is created.
+        /// </param>
+        public static IEnumerable<int> BufferViaArray<T>(this IEnumerable<T> source, T[] buffer)
+        {
+            Checker.NotNull(source, "source");
+
+            // Defer to list implementation if possible
+            if (source is IList<T>)
+            {
+                var list = (IList<T>)source;
+                return BufferViaArray(list, 0, list.Count, buffer);
+            }
+            else
+            {
+                Checker.NotNull(buffer, "buffer");
+                return BufferEnumerableViaArray(source, buffer);
+            }
+        }
+
+        private static IEnumerable<int> BufferEnumerableViaArray<T>(IEnumerable<T> source, T[] buffer)
+        {
+            using (var enumerator = source.GetEnumerator())
+            {
+                foreach (var item in BufferEnumeratorViaArray(enumerator, buffer))
+                {
+                    yield return item;
+                }
+            }
+        }
+
+        // Buffer is assumed not null.
+        private static IEnumerable<int> BufferEnumeratorViaArray<T>(IEnumerator<T> source, T[] buffer)
+        {
+            if (buffer.Length == 0)
+            {
+                // Allowed only if source turns out to be empty.
+                if (source.MoveNext())
+                {
+                    throw BufferArrayIsZeroLength();
+                }
+            }
+            else
+            {
+                int bufferLength = buffer.Length;
+                int i;
+
+                do
+                {
+                    i = 0;
+
+                    // Copy elements to buffer
+                    while (i < bufferLength && source.MoveNext())
+                    {
+                        buffer[i] = source.Current;
+                        ++i;
+                    }
+
+                    // At least one element was copied
+                    if (i > 0)
+                    {
+                        yield return i;
+                    }
+                } while (i == bufferLength); // Buffer was filled before sequence ended (so there may be more elements)
+            }
+        }
+
+        /// <summary>
+        /// Repeatedly calls the given action with elements read from the indicated source sequence
+        /// into a buffer.
+        /// </summary>
+        /// <example>
+        /// This sample demonstrates how to copy bytes from a list to a stream using the default
+        /// buffer size and a callback.
+        /// <code>
+        /// <![CDATA[
+        /// private static void BufferViaArrayCallbackSample(IEnumerable<byte> source, System.IO.Stream destination)
+        /// {
+        /// source.BufferViaArray((buffer, offset, count) => destination.Write(buffer, offset, count));
+        /// }
+        /// ]]>
+        /// </code>
+        /// </example>
+        /// <typeparam name="T">The type of elements to be buffered.</typeparam>
+        /// <param name="source">A sequence containing the elements to be copied.</param>
+        /// <param name="fillAction">
+        /// An <see cref="Action"/> which will be called repeatedly with the copy buffer, the start
+        /// index within the copy buffer, and the number of valid elements in the copy buffer.
+        /// </param>
+        /// <param name="buffer">
+        /// An array to use as the copy buffer; if <c>null</c> or omitted, a new array is created.
+        /// </param>
+        public static void BufferViaArray<T>(this IEnumerable<T> source, Action<T[], int, int> fillAction, T[] buffer = null)
+        {
+            Checker.NotNull(fillAction, "fillAction");
+
+            if (buffer == null)
+            {
+                buffer = new T[BufferViaArrayDefaultSize];
+            }
+
+            foreach (var countThisPass in source.BufferViaArray(buffer))
+            {
+                fillAction(buffer, 0, countThisPass);
+            }
+        }
+
+        #endregion BufferViaArray
+
+        #region Skip/Take
+
+        private static ulong NonnegativeLong(long count)
+        {
+            return count < 0 ? 0UL : (ulong)count;
+        }
+
+        // Skips up to count elements. Returns true if count elements were skipped, or false if the
+        // sequence contained fewer than count elements.
+        private static bool SkipEnumerator<T>(IEnumerator<T> enumerator, int count)
+        {
+            while (count > 0 && enumerator.MoveNext())
+            {
+                --count;
+            }
+
+            return (count <= 0);
+        }
+
+        private static bool SkipEnumerator<T>(IEnumerator<T> enumerator, ulong count)
+        {
+            while (count > 0 && enumerator.MoveNext())
+            {
+                --count;
+            }
+
+            return (count == 0);
+        }
+
+        /// <summary>
+        /// Omits a specified number of elements from the beginning of a sequence before producing
+        /// the remaining elements.
+        /// </summary>
+        /// <typeparam name="T">The type of elements in <paramref name="source"/>.</typeparam>
+        /// <param name="source">An enumerable to return elements from.</param>
+        /// <param name="count">The number of elements to skip.</param>
+        /// <returns>
+        /// An enumerable that contains the elements of <paramref name="source"/> after the index
+        /// <paramref name="count"/>, or no elements if the sequence contains that number of elements
+        /// or fewer.
+        /// </returns>
+        /// <exception cref="ArgumentNullException"><paramref name="source"/> is <c>null</c>.</exception>
+        /// <seealso cref="System.Linq.Enumerable.Skip{TSource}(IEnumerable{TSource}, int)"/>
+        public static IEnumerable<T> Skip<T>(this IEnumerable<T> source, long count)
+        {
+            return Skip(source, NonnegativeLong(count));
+        }
+
+        /// <summary>
+        /// Omits a specified number of elements from the beginning of a sequence before producing
+        /// the remaining elements.
+        /// </summary>
+        /// <typeparam name="T">The type of elements in <paramref name="source"/>.</typeparam>
+        /// <param name="source">An enumerable to return elements from.</param>
+        /// <param name="count">The number of elements to skip.</param>
+        /// <returns>
+        /// An enumerable that contains the elements of <paramref name="source"/> after the index
+        /// <paramref name="count"/>, or no elements if the sequence contains that number of elements
+        /// or fewer.
+        /// </returns>
+        /// <exception cref="ArgumentNullException"><paramref name="source"/> is <c>null</c>.</exception>
+        /// <seealso cref="System.Linq.Enumerable.Skip{TSource}(IEnumerable{TSource}, int)"/>
+        public static IEnumerable<T> Skip<T>(this IEnumerable<T> source, ulong count)
+        {
+            Checker.NotNull(source, "source");
+
+            using (var enumerator = source.GetEnumerator())
+            {
+                bool skippedAll = SkipEnumerator(enumerator, count);
+                if (skippedAll)
+                {
+                    while (enumerator.MoveNext())
+                    {
+                        yield return enumerator.Current;
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Produces a specified number of elements from the beginning of a sequence, omitting the
+        /// remaining elements.
+        /// </summary>
+        /// <typeparam name="T">The type of elements in <paramref name="source"/>.</typeparam>
+        /// <param name="source">An enumerable to return elements from.</param>
+        /// <param name="count">The number of elements to take.</param>
+        /// <returns>
+        /// An enumerable that contains the first <paramref name="count"/> elements of <paramref
+        /// name="source"/>, or all elements of <paramref name="source"/> if the sequence contains
+        /// fewer than <paramref name="count"/> elements, or no elements if <paramref name="count"/>
+        /// is negative.
+        /// </returns>
+        /// <exception cref="ArgumentNullException"><paramref name="source"/> is <c>null</c>.</exception>
+        public static IEnumerable<T> Take<T>(this IEnumerable<T> source, long count)
+        {
+            return Take(source, NonnegativeLong(count));
+        }
+
+        /// <summary>
+        /// Produces a specified number of elements from the beginning of a sequence, omitting the
+        /// remaining elements.
+        /// </summary>
+        /// <typeparam name="T">The type of elements in <paramref name="source"/>.</typeparam>
+        /// <param name="source">An enumerable to return elements from.</param>
+        /// <param name="count">The number of elements to take.</param>
+        /// <returns>
+        /// An enumerable that contains the first <paramref name="count"/> elements of <paramref
+        /// name="source"/>, or all elements of <paramref name="source"/> if the sequence contains
+        /// fewer than <paramref name="count"/> elements.
+        /// </returns>
+        /// <exception cref="ArgumentNullException"><paramref name="source"/> is <c>null</c>.</exception>
+        public static IEnumerable<T> Take<T>(this IEnumerable<T> source, ulong count)
+        {
+            Checker.NotNull(source, "source");
+
+            if (count > 0)
+            {
+                foreach (var item in source)
+                {
+                    yield return item;
+                    --count;
+                    if (count == 0)
+                    {
+                        break;
+                    }
+                }
+            }
+        }
+
+        private static InvalidOperationException NotEnoughElementsToSkip()
+        {
+            return new InvalidOperationException("The sequence ended before the specified number of elements could be skipped.");
+        }
+
+        private static InvalidOperationException NotEnoughElementsToTake()
+        {
+            return new InvalidOperationException("The sequence ended before the specified number of elements could be yielded.");
+        }
+
+        /// <summary>
+        /// Omits a specified number of elements in a sequence before producing the remaining
+        /// elements, throwing an exception if there are not enough elements to skip.
+        /// </summary>
+        /// <typeparam name="T">The type of elements in <paramref name="source"/>.</typeparam>
+        /// <param name="source">An enumerable to return elements from.</param>
+        /// <param name="count">The number of elements to skip.</param>
+        /// <returns>
+        /// An enumerable that contains the elements of <paramref name="source"/> after the index
+        /// <paramref name="count"/>.
+        /// </returns>
+        /// <exception cref="ArgumentNullException"><paramref name="source"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentOutOfRangeException"><paramref name="count"/> is negative.</exception>
+        /// <exception cref="InvalidOperationException">
+        /// The skip cannot be completed because <paramref name="source"/> contains fewer than
+        /// <paramref name="count"/> elements.
+        /// </exception>
+        public static IEnumerable<T> HardSkip<T>(this IEnumerable<T> source, int count)
+        {
+            Checker.NotNegative(count, "count");
+            Checker.NotNull(source, "source");
+
+            using (var enumerator = source.GetEnumerator())
+            {
+                bool skippedAll = SkipEnumerator(enumerator, count);
+                if (skippedAll)
+                {
+                    while (enumerator.MoveNext())
+                    {
+                        yield return enumerator.Current;
+                    }
+                }
+                else
+                {
+                    throw NotEnoughElementsToSkip();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Omits a specified number of elements in a sequence before producing the remaining
+        /// elements, throwing an exception if there are not enough elements to skip.
+        /// </summary>
+        /// <typeparam name="T">The type of elements in <paramref name="source"/>.</typeparam>
+        /// <param name="source">An enumerable to return elements from.</param>
+        /// <param name="count">The number of elements to skip.</param>
+        /// <returns>
+        /// An enumerable that contains the elements of <paramref name="source"/> after the index
+        /// <paramref name="count"/>.
+        /// </returns>
+        /// <exception cref="ArgumentNullException"><paramref name="source"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentOutOfRangeException"><paramref name="count"/> is negative.</exception>
+        /// <exception cref="InvalidOperationException">
+        /// The skip cannot be completed because <paramref name="source"/> contains fewer than
+        /// <paramref name="count"/> elements.
+        /// </exception>
+        public static IEnumerable<T> HardSkip<T>(this IEnumerable<T> source, long count)
+        {
+            Checker.NotNegative(count, "count");
+            return HardSkip(source, (ulong)count);
+        }
+
+        /// <summary>
+        /// Omits a specified number of elements in a sequence before producing the remaining
+        /// elements, throwing an exception if there are not enough elements to skip.
+        /// </summary>
+        /// <typeparam name="T">The type of elements in <paramref name="source"/>.</typeparam>
+        /// <param name="source">An enumerable to return elements from.</param>
+        /// <param name="count">The number of elements to skip.</param>
+        /// <returns>
+        /// An enumerable that contains the elements of <paramref name="source"/> after the index
+        /// <paramref name="count"/>.
+        /// </returns>
+        /// <exception cref="ArgumentNullException"><paramref name="source"/> is <c>null</c>.</exception>
+        /// <exception cref="InvalidOperationException">
+        /// The skip cannot be completed because <paramref name="source"/> contains fewer than
+        /// <paramref name="count"/> elements.
+        /// </exception>
+        public static IEnumerable<T> HardSkip<T>(this IEnumerable<T> source, ulong count)
+        {
+            Checker.NotNull(source, "source");
+
+            using (var enumerator = source.GetEnumerator())
+            {
+                bool skippedAll = SkipEnumerator(enumerator, count);
+                if (skippedAll)
+                {
+                    while (enumerator.MoveNext())
+                    {
+                        yield return enumerator.Current;
+                    }
+                }
+                else
+                {
+                    throw NotEnoughElementsToSkip();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Produces a specified number of elements from the beginning of a sequence, omitting the
+        /// remaining elements, throwing an exception if there are not enough elements to produce.
+        /// </summary>
+        /// <typeparam name="T">The type of elements in <paramref name="source"/>.</typeparam>
+        /// <param name="source">An enumerable to return elements from.</param>
+        /// <param name="count">The number of elements to take.</param>
+        /// <returns>
+        /// An enumerable that contains the first <paramref name="count"/> elements of <paramref name="source"/>.
+        /// </returns>
+        /// <exception cref="ArgumentNullException"><paramref name="source"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentOutOfRangeException"><paramref name="count"/> is negative.</exception>
+        /// <exception cref="InvalidOperationException">
+        /// The take cannot be completed because <paramref name="source"/> contains fewer than
+        /// <paramref name="count"/> elements. (Thrown from enumeration.)
+        /// </exception>
+        public static IEnumerable<T> HardTake<T>(this IEnumerable<T> source, int count)
+        {
+            Checker.NotNegative(count, "count");
+            Checker.NotNull(source, "source");
+
+            if (count > 0)
+            {
+                foreach (var item in source)
+                {
+                    yield return item;
+                    --count;
+                    if (count == 0)
+                    {
+                        break;
+                    }
+                }
+            }
+
+            if (count > 0)
+            {
+                throw NotEnoughElementsToTake();
+            }
+        }
+
+        /// <summary>
+        /// Produces a specified number of elements from the beginning of a sequence, omitting the
+        /// remaining elements, throwing an exception if there are not enough elements to produce.
+        /// </summary>
+        /// <typeparam name="T">The type of elements in <paramref name="source"/>.</typeparam>
+        /// <param name="source">An enumerable to return elements from.</param>
+        /// <param name="count">The number of elements to take.</param>
+        /// <returns>
+        /// An enumerable that contains the first <paramref name="count"/> elements of <paramref name="source"/>.
+        /// </returns>
+        /// <exception cref="ArgumentNullException"><paramref name="source"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentOutOfRangeException"><paramref name="count"/> is negative.</exception>
+        /// <exception cref="InvalidOperationException">
+        /// The take cannot be completed because <paramref name="source"/> contains fewer than
+        /// <paramref name="count"/> elements. (Thrown from enumeration.)
+        /// </exception>
+        public static IEnumerable<T> HardTake<T>(this IEnumerable<T> source, long count)
+        {
+            Checker.NotNegative(count, "count");
+            return HardTake(source, (ulong)count);
+        }
+
+        /// <summary>
+        /// Produces a specified number of elements from the beginning of a sequence, omitting the
+        /// remaining elements, throwing an exception if there are not enough elements to produce.
+        /// </summary>
+        /// <typeparam name="T">The type of elements in <paramref name="source"/>.</typeparam>
+        /// <param name="source">An enumerable to return elements from.</param>
+        /// <param name="count">The number of elements to take.</param>
+        /// <returns>
+        /// An enumerable that contains the first <paramref name="count"/> elements of <paramref name="source"/>.
+        /// </returns>
+        /// <exception cref="ArgumentNullException"><paramref name="source"/> is <c>null</c>.</exception>
+        /// <exception cref="InvalidOperationException">
+        /// The take cannot be completed because <paramref name="source"/> contains fewer than
+        /// <paramref name="count"/> elements. (Thrown from enumeration.)
+        /// </exception>
+        public static IEnumerable<T> HardTake<T>(this IEnumerable<T> source, ulong count)
+        {
+            Checker.NotNull(source, "source");
+
+            if (count > 0)
+            {
+                foreach (var item in source)
+                {
+                    yield return item;
+                    --count;
+                    if (count == 0)
+                    {
+                        break;
+                    }
+                }
+            }
+
+            if (count > 0)
+            {
+                throw NotEnoughElementsToTake();
+            }
+        }
+
+        #endregion Skip/Take
     }
 }
