@@ -1243,6 +1243,11 @@ namespace FallDave.Trifles
                 var sourceArray = (T[])source;
                 Array.Copy(sourceArray, sourceIndex, destination, destinationIndex, length);
             }
+            else if(source is List<T>)
+            {
+                var sourceList = (List<T>)source;
+                source.CopyTo(sourceIndex, destination, destinationIndex, length);
+            }
             else if (source is ImmutableArray<T>)
             {
                 var sourceImmutableArray = (ImmutableArray<T>)source;
@@ -1258,6 +1263,39 @@ namespace FallDave.Trifles
                     destination[destinationIndex + i] = source[sourceIndex + i];
                 }
             }
+        }
+
+        /// <summary>
+        /// Copies the specified items in this list to the specified array at the specified index.
+        /// </summary>
+        /// <remarks>
+        /// This method falls back to to <see cref="Array.Copy(Array, int, Array, int, int)"/> if
+        /// <paramref name="source"/> is a <c>T[]</c>, or to <see cref="ImmutableArray{T}.CopyTo(int,
+        /// T[], int, int)"/> if <paramref name="source"/> is an <see cref="ImmutableArray{T}"/>.
+        /// </remarks>
+        /// <typeparam name="T">The type of elements in <paramref name="source"/>.</typeparam>
+        /// <param name="source">The list to copy from.</param>
+        /// <param name="destination">The array to copy to.</param>
+        /// <param name="destinationIndex">
+        /// The index in <paramref name="destination"/> where copying begins.
+        /// </param>
+        /// <param name="length">The number of elements to copy.</param>
+        public static void CopyTo<T>(this IList<T> source, T[] destination, int destinationIndex, int length)
+        {
+            CopyTo(source, 0, destination, destinationIndex, length);
+        }
+
+        private static int CopyEnumeratorToNoCheck<T>(IEnumerator<T> source, T[] destination, int destinationIndex, int length)
+        {
+            int i = 0;
+
+            while (i < length && source.MoveNext())
+            {
+                destination[destinationIndex + i] = source.Current;
+                ++i;
+            }
+
+            return i;
         }
 
         /// <summary>
@@ -1282,15 +1320,34 @@ namespace FallDave.Trifles
             Checker.NotNull(destination, "destination");
             Checker.SpanInRange(destination.Length, destinationIndex, length, "destinationIndex", "length");
 
-            int i = 0;
+            return CopyEnumeratorToNoCheck(source, destination, destinationIndex, length);
+        }
 
-            while (i < length && source.MoveNext())
+        /// <summary>
+        /// Copies items from the specified enumerable to an array until the given length has been
+        /// read or the sequence is exhausted.
+        /// </summary>
+        /// <typeparam name="T">The type of elements in <paramref name="source"/>.</typeparam>
+        /// <param name="source">The enumerable to copy from.</param>
+        /// <param name="destination">The array to copy to.</param>
+        /// <param name="destinationIndex">
+        /// The index in <paramref name="destination"/> where copying begins.
+        /// </param>
+        /// <param name="length">The maximum number of elements to copy.</param>
+        /// <returns>
+        /// The number of elements actually copied; this may be less than <paramref name="length"/>
+        /// if the source sequence is exhausted before <paramref name="length"/> elements could be copied.
+        /// </returns>
+        public static int CopyTo<T>(this IEnumerable<T> source, T[] destination, int destinationIndex, int length)
+        {
+            Checker.NotNull(source, "source");
+            Checker.NotNull(destination, "destination");
+            Checker.SpanInRange(destination.Length, destinationIndex, length, "destinationIndex", "length");
+
+            using (var enumerator = source.GetEnumerator())
             {
-                destination[destinationIndex + i] = source.Current;
-                ++i;
+                return CopyEnumeratorToNoCheck(enumerator, destination, destinationIndex, length);
             }
-
-            return i;
         }
 
         #endregion CopyTo
@@ -1316,6 +1373,11 @@ namespace FallDave.Trifles
                 var sourceArray = (T[])source;
                 return (sourceIndex, destinationIndex, length) => Array.Copy(sourceArray, sourceIndex, destination, destinationIndex, length);
             }
+            else if (source is List<T>)
+            {
+                var sourceList = ((List<T>)source);
+                return (sourceIndex, destinationIndex, length) => sourceList.CopyTo(sourceIndex, destination, destinationIndex, length);
+            }
             else if (source is ImmutableArray<T>)
             {
                 var sourceImmutableArray = ((ImmutableArray<T>)source);
@@ -1323,12 +1385,11 @@ namespace FallDave.Trifles
             }
             else
             {
-                var sourceNonArray = source;
                 return (sourceIndex, destinationIndex, length) =>
                 {
                     for (int i = 0; i < length; ++i)
                     {
-                        destination[destinationIndex + i] = sourceNonArray[sourceIndex + i];
+                        destination[destinationIndex + i] = source[sourceIndex + i];
                     }
                 };
             }
@@ -1720,7 +1781,7 @@ namespace FallDave.Trifles
         /// <exception cref="ArgumentOutOfRangeException"><paramref name="count"/> is negative.</exception>
         /// <exception cref="InvalidOperationException">
         /// The skip cannot be completed because <paramref name="source"/> contains fewer than
-        /// <paramref name="count"/> elements.
+        /// <paramref name="count"/> elements. (Thrown from enumeration.)
         /// </exception>
         public static IEnumerable<T> HardSkip<T>(this IEnumerable<T> source, int count)
         {
@@ -1759,7 +1820,7 @@ namespace FallDave.Trifles
         /// <exception cref="ArgumentOutOfRangeException"><paramref name="count"/> is negative.</exception>
         /// <exception cref="InvalidOperationException">
         /// The skip cannot be completed because <paramref name="source"/> contains fewer than
-        /// <paramref name="count"/> elements.
+        /// <paramref name="count"/> elements. (Thrown from enumeration.)
         /// </exception>
         public static IEnumerable<T> HardSkip<T>(this IEnumerable<T> source, long count)
         {
@@ -1781,7 +1842,7 @@ namespace FallDave.Trifles
         /// <exception cref="ArgumentNullException"><paramref name="source"/> is <c>null</c>.</exception>
         /// <exception cref="InvalidOperationException">
         /// The skip cannot be completed because <paramref name="source"/> contains fewer than
-        /// <paramref name="count"/> elements.
+        /// <paramref name="count"/> elements. (Thrown from enumeration.)
         /// </exception>
         public static IEnumerable<T> HardSkip<T>(this IEnumerable<T> source, ulong count)
         {

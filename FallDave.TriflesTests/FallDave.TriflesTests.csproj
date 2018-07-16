@@ -55,6 +55,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="EnumerableExtensionsTests.cs" />
     <Compile Include="MathTriflesTests.cs" />
     <Compile Include="MathTriflesTests.generated.cs">
       <AutoGen>True</AutoGen>
@@ -62,6 +63,7 @@
       <DependentUpon>MathTriflesTests.generated.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WrappedList.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
