@@ -1,0 +1,757 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpKI>
+  <HelpKINode Title="AbsolutePath method" Url="html/fa0f491e-ef69-53a2-0e43-083b15ca8a77.htm" />
+  <HelpKINode Title="AddFunction method" Url="html/3fff1373-a50a-f119-5ac5-6b8c7632c685.htm" />
+  <HelpKINode Title="AddVariable method">
+    <HelpKINode Title="TriflesXPathContext.AddVariable Method " Url="html/07989356-34fd-90b0-67ac-1e614e8d2bb7.htm" />
+    <HelpKINode Title="XPathXNamesTable.AddVariable Method " Url="html/17d75c15-1edc-c742-9aaa-d9282a0b9708.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Any method" Url="html/e87e92a4-9214-85ea-f763-69c2084b4130.htm" />
+  <HelpKINode Title="Any(Of T) method" Url="html/888f3255-9757-c23d-661d-ca58dd47606f.htm" />
+  <HelpKINode Title="Any&lt;T&gt; method" Url="html/888f3255-9757-c23d-661d-ca58dd47606f.htm" />
+  <HelpKINode Title="ArgTypes property" Url="html/99923ba8-5a51-11b7-43f2-bbf0e99977d3.htm" />
+  <HelpKINode Title="AsEnumerable method" Url="html/c26957da-1da5-cac7-86c3-0781bdb81bec.htm" />
+  <HelpKINode Title="AsXPathNavigable method" Url="html/468ad033-20af-40d4-90ce-64ea5fc050e5.htm" />
+  <HelpKINode Title="AttributeOpt method" Url="html/8174c078-6f21-0aee-f68e-4a95725942c4.htm" />
+  <HelpKINode Title="AttributeValue method" Url="html/bc4ab484-4707-bfd9-e49d-542ba4730b20.htm" />
+  <HelpKINode Title="AttributeValueOpt method" Url="html/ba2aacb9-5180-d3fc-a654-d396f72ec03b.htm" />
+  <HelpKINode Title="BinaryData class">
+    <HelpKINode Title="BinaryData Class" Url="html/e20819d9-451b-0a9e-f716-e117d6b4b6e7.htm" />
+    <HelpKINode Title="about BinaryData class" Url="html/e20819d9-451b-0a9e-f716-e117d6b4b6e7.htm" />
+    <HelpKINode Title="methods" Url="html/195e4e47-f174-add8-7be5-95cee4524071.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BinaryData.PackInt16 method" Url="html/97f14a60-b0bf-e402-d14c-b33c9aa303da.htm" />
+  <HelpKINode Title="BinaryData.PackInt32 method" Url="html/6426be93-53b4-d39c-9ba4-6ac4cd9b3176.htm" />
+  <HelpKINode Title="BinaryData.PackInt64 method" Url="html/f40858e1-68b7-d681-83a7-e1efd0539e65.htm" />
+  <HelpKINode Title="BinaryData.PackUInt16 method" Url="html/e8016686-cd10-82e3-ba6d-eb01543df2cf.htm" />
+  <HelpKINode Title="BinaryData.PackUInt32 method" Url="html/1fa0b10e-caeb-3ec5-aec7-4c790fb72d11.htm" />
+  <HelpKINode Title="BinaryData.PackUInt64 method" Url="html/31c216c1-a18d-ddf3-e11a-e4428ec89ecd.htm" />
+  <HelpKINode Title="BinaryData.Swap2 method" Url="html/d6cdaf12-0219-beaf-a6d9-ba41fa2812e6.htm" />
+  <HelpKINode Title="BinaryData.Swap4 method" Url="html/49b7de6e-6b30-e68c-b0ea-80e39f2b26d1.htm" />
+  <HelpKINode Title="BinaryData.Swap8 method" Url="html/82944fb3-6ee7-417f-b0ad-a1b29816526f.htm" />
+  <HelpKINode Title="BinaryData.Swapped method" Url="html/892058cd-dbdf-a001-701d-229b6d755915.htm" />
+  <HelpKINode Title="BinaryData.ToChar method" Url="html/6b956625-85a0-1e4b-50b3-1952f06afc7a.htm" />
+  <HelpKINode Title="BinaryData.ToInt16 method" Url="html/ecdb7be7-59b8-e79e-7aba-5321d42d76e0.htm" />
+  <HelpKINode Title="BinaryData.ToInt32 method" Url="html/a4fe6f1e-d2ae-3334-7214-4fa655497f79.htm" />
+  <HelpKINode Title="BinaryData.ToInt64 method" Url="html/9f64b31a-907d-fc49-0392-a0ee7cc0ee2f.htm" />
+  <HelpKINode Title="BinaryData.ToUInt16 method" Url="html/c7e2da8e-439e-8390-f9d2-103c183b298a.htm" />
+  <HelpKINode Title="BinaryData.ToUInt32 method" Url="html/429c9870-aa35-4677-c20b-0efa26a2c73c.htm" />
+  <HelpKINode Title="BinaryData.ToUInt64 method" Url="html/f8c9ab68-ee99-5798-50cd-eb34025a01c0.htm" />
+  <HelpKINode Title="BinaryStreamingExtensions class">
+    <HelpKINode Title="BinaryStreamingExtensions Class" Url="html/61137370-ecad-edbd-21b5-72bff47140b0.htm" />
+    <HelpKINode Title="about BinaryStreamingExtensions class" Url="html/61137370-ecad-edbd-21b5-72bff47140b0.htm" />
+    <HelpKINode Title="methods" Url="html/a6f6abd5-a4cc-401a-7f74-3fa48a6cfcd2.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BinaryStreamingExtensions.ReadCharEndian method" Url="html/472153ef-db99-5278-c0d2-4b2be12330ec.htm" />
+  <HelpKINode Title="BinaryStreamingExtensions.ReadInt16Endian method" Url="html/51ab3a4b-59f4-fd4a-e2b4-a138d72811af.htm" />
+  <HelpKINode Title="BinaryStreamingExtensions.ReadInt32Endian method" Url="html/826da960-e220-7fe0-a342-a333fa4c481b.htm" />
+  <HelpKINode Title="BinaryStreamingExtensions.ReadInt64Endian method" Url="html/ad128e20-cd02-72e3-a0e4-c8a01eb5d7ae.htm" />
+  <HelpKINode Title="BinaryStreamingExtensions.ReadUInt16Endian method" Url="html/f3366736-e218-dc61-884e-3952eec71b71.htm" />
+  <HelpKINode Title="BinaryStreamingExtensions.ReadUInt32Endian method" Url="html/3c10f642-82ec-5277-59b1-71ae3d58b712.htm" />
+  <HelpKINode Title="BinaryStreamingExtensions.ReadUInt64Endian method" Url="html/daf738e1-2a95-d4f1-ecc3-d478aca1013c.htm" />
+  <HelpKINode Title="BinaryStreamingExtensions.WriteEndian method" Url="html/4c70c25e-92e5-e246-9b09-0e70ad1bdb46.htm" />
+  <HelpKINode Title="BufferViaArray method" Url="html/5705b0ce-5882-3740-8953-99b450d9159a.htm" />
+  <HelpKINode Title="Checker class">
+    <HelpKINode Title="Checker Class" Url="html/21355173-9cd3-74a4-794e-a37014babe4a.htm" />
+    <HelpKINode Title="about Checker class" Url="html/21355173-9cd3-74a4-794e-a37014babe4a.htm" />
+    <HelpKINode Title="methods" Url="html/15652cc4-2aea-6790-7f42-91af332b637d.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Checker.NotNegative method" Url="html/962ba181-b685-5085-07ee-2e7d11d1568b.htm" />
+  <HelpKINode Title="Checker.NotNull(Of T) method" Url="html/6a5afa8c-4907-93a0-d58a-e86c70821213.htm" />
+  <HelpKINode Title="Checker.NotNull&lt;T&gt; method" Url="html/6a5afa8c-4907-93a0-d58a-e86c70821213.htm" />
+  <HelpKINode Title="Checker.SliceInRange method" Url="html/5ede2d5a-4969-7e88-e795-562fc7494e7b.htm" />
+  <HelpKINode Title="Checker.SpanInRange method" Url="html/14394bc8-20c1-9d78-29d7-9a72a50be293.htm" />
+  <HelpKINode Title="Clamp method" Url="html/9e52e8d1-10c9-3bab-81c2-cc183dfaab3c.htm" />
+  <HelpKINode Title="ClampToByte method" Url="html/e2e45062-b500-3728-6a52-1775ad40cfc6.htm" />
+  <HelpKINode Title="ClampToInt16 method" Url="html/b52155de-ba6e-7a16-74cf-dcb0e09aa455.htm" />
+  <HelpKINode Title="ClampToInt32 method" Url="html/4fecde06-47d7-5831-7b9f-d27a2c9834dd.htm" />
+  <HelpKINode Title="ClampToInt64 method" Url="html/c32650ae-e8fb-7557-3040-61c2afadc1cd.htm" />
+  <HelpKINode Title="ClampToSByte method" Url="html/307c64b3-f14c-7212-dbb2-cfb7d2866900.htm" />
+  <HelpKINode Title="ClampToUInt16 method" Url="html/cd71e53f-c8cb-91bd-8ece-b6f2d13d08ee.htm" />
+  <HelpKINode Title="ClampToUInt32 method" Url="html/618a8802-53ed-8de7-d94f-7ed6eb3cfd35.htm" />
+  <HelpKINode Title="ClampToUInt64 method" Url="html/8dc87f48-fc78-7550-bb88-b9acbe7af4f2.htm" />
+  <HelpKINode Title="Cleared(Of T) method" Url="html/783b7d81-6356-d5be-9a3f-223128bcce8c.htm" />
+  <HelpKINode Title="Cleared&lt;T&gt; method" Url="html/783b7d81-6356-d5be-9a3f-223128bcce8c.htm" />
+  <HelpKINode Title="Compare method" Url="html/cccc718c-bb5f-4006-ee8d-e610d5a55f55.htm" />
+  <HelpKINode Title="CompareDocument method" Url="html/1a65cf02-a1aa-a66c-184d-6db5d8f927b4.htm" />
+  <HelpKINode Title="ConvertOpt class">
+    <HelpKINode Title="ConvertOpt Class" Url="html/72b0266a-5264-19da-6dd4-4d9e52e3c889.htm" />
+    <HelpKINode Title="about ConvertOpt class" Url="html/72b0266a-5264-19da-6dd4-4d9e52e3c889.htm" />
+    <HelpKINode Title="methods" Url="html/0b51f63b-8730-c8c1-8dcc-89b023fe6c85.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ConvertOpt.ToBooleanOpt method" Url="html/c9ce5646-4d39-a28e-4172-b875bf79022c.htm" />
+  <HelpKINode Title="ConvertOpt.ToByteOpt method" Url="html/9903b0bc-b50f-7f00-53c2-53a6256cd536.htm" />
+  <HelpKINode Title="ConvertOpt.ToCharOpt method" Url="html/2b98cec7-8e7b-10ca-76d7-705dfb5eaaed.htm" />
+  <HelpKINode Title="ConvertOpt.ToDateTimeOpt method" Url="html/6f8abd72-ef2b-ed27-e515-3e7c42e65568.htm" />
+  <HelpKINode Title="ConvertOpt.ToDecimalOpt method" Url="html/a70dc2b8-0e6d-346f-c1ab-9362c9fa8eac.htm" />
+  <HelpKINode Title="ConvertOpt.ToDoubleOpt method" Url="html/933cab36-6623-36ae-98e6-3b48700c1767.htm" />
+  <HelpKINode Title="ConvertOpt.ToInt16Opt method" Url="html/f1f9cd2b-231d-c5f7-559c-64f351f61f36.htm" />
+  <HelpKINode Title="ConvertOpt.ToInt32Opt method" Url="html/8924fc07-0706-1126-3cd5-fedb74989fb4.htm" />
+  <HelpKINode Title="ConvertOpt.ToInt64Opt method" Url="html/57aee04e-f492-0e63-1e24-fd73932e17b0.htm" />
+  <HelpKINode Title="ConvertOpt.ToSByteOpt method" Url="html/d3860edc-a22c-550e-d59d-3bea7c50a224.htm" />
+  <HelpKINode Title="ConvertOpt.ToSingleOpt method" Url="html/168509ef-a26c-ff07-148c-4389be9d99bc.htm" />
+  <HelpKINode Title="ConvertOpt.ToStringOpt method" Url="html/14bc6fe4-7861-95ed-c25f-93a9d27eb4cd.htm" />
+  <HelpKINode Title="ConvertOpt.ToUInt16Opt method" Url="html/2aee3f98-6c66-4617-d673-edca85f25daa.htm" />
+  <HelpKINode Title="ConvertOpt.ToUInt32Opt method" Url="html/89a865ae-0c34-d382-8bdf-514d582192a9.htm" />
+  <HelpKINode Title="ConvertOpt.ToUInt64Opt method" Url="html/49060b0f-9c70-b63b-5e77-6e3b0bc74ad9.htm" />
+  <HelpKINode Title="CopyTo method" Url="html/1eaca8db-98ea-833d-34a4-fbd75727f44e.htm" />
+  <HelpKINode Title="Count method" Url="html/5e6970bf-c53b-0e97-040f-99df699ee4a5.htm" />
+  <HelpKINode Title="Count(Of T) method" Url="html/a6465f18-578e-23a2-c1ec-98600f63cce7.htm" />
+  <HelpKINode Title="Count&lt;T&gt; method" Url="html/a6465f18-578e-23a2-c1ec-98600f63cce7.htm" />
+  <HelpKINode Title="CountedOpt(Of T) structure">
+    <HelpKINode Title="CountedOpt(T) Structure" Url="html/65871cdb-4e85-da76-f9f4-780378a331e0.htm" />
+    <HelpKINode Title="about CountedOpt(Of T) structure" Url="html/65871cdb-4e85-da76-f9f4-780378a331e0.htm" />
+    <HelpKINode Title="methods" Url="html/a0613f99-0d66-8a42-247a-676fcb85806e.htm" />
+    <HelpKINode Title="properties" Url="html/097e227f-dd97-fe04-de92-9da3dcce3762.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CountedOpt(Of T).Fix method" Url="html/164b250c-ae15-1b49-b094-e5174f069d24.htm" />
+  <HelpKINode Title="CountedOpt(Of T).GetEnumerator method" Url="html/1d54f53a-6fe5-7958-45f0-de5b3528361c.htm" />
+  <HelpKINode Title="CountedOpt(Of T).SourceCount property" Url="html/03d3cff6-69dd-05e3-436e-5c5328ea459b.htm" />
+  <HelpKINode Title="CountedOpt(Of T).SourceMultiple property" Url="html/ff511d79-e295-8468-3f03-bb11e3e9a31f.htm" />
+  <HelpKINode Title="CountedOpt(Of T).SourceNone property" Url="html/680f307d-a799-8109-35fe-b41b88788010.htm" />
+  <HelpKINode Title="CountedOpt&lt;T&gt; structure">
+    <HelpKINode Title="CountedOpt(T) Structure" Url="html/65871cdb-4e85-da76-f9f4-780378a331e0.htm" />
+    <HelpKINode Title="about CountedOpt&lt;T&gt; structure" Url="html/65871cdb-4e85-da76-f9f4-780378a331e0.htm" />
+    <HelpKINode Title="methods" Url="html/a0613f99-0d66-8a42-247a-676fcb85806e.htm" />
+    <HelpKINode Title="properties" Url="html/097e227f-dd97-fe04-de92-9da3dcce3762.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CountedOpt&lt;T&gt;.Fix method" Url="html/164b250c-ae15-1b49-b094-e5174f069d24.htm" />
+  <HelpKINode Title="CountedOpt&lt;T&gt;.GetEnumerator method" Url="html/1d54f53a-6fe5-7958-45f0-de5b3528361c.htm" />
+  <HelpKINode Title="CountedOpt&lt;T&gt;.SourceCount property" Url="html/03d3cff6-69dd-05e3-436e-5c5328ea459b.htm" />
+  <HelpKINode Title="CountedOpt&lt;T&gt;.SourceMultiple property" Url="html/ff511d79-e295-8468-3f03-bb11e3e9a31f.htm" />
+  <HelpKINode Title="CountedOpt&lt;T&gt;.SourceNone property" Url="html/680f307d-a799-8109-35fe-b41b88788010.htm" />
+  <HelpKINode Title="CountSingleFixOpt method" Url="html/8883ee40-5341-0329-6b96-01a7ac6fbf5a.htm" />
+  <HelpKINode Title="CountUpTo(Of T) method" Url="html/2d62c2dc-d765-595e-184a-c46b30008705.htm" />
+  <HelpKINode Title="CountUpTo&lt;T&gt; method" Url="html/2d62c2dc-d765-595e-184a-c46b30008705.htm" />
+  <HelpKINode Title="Create(Of T) method" Url="html/87aec6fb-3b65-d598-5018-d12192717c11.htm" />
+  <HelpKINode Title="Create&lt;T&gt; method" Url="html/87aec6fb-3b65-d598-5018-d12192717c11.htm" />
+  <HelpKINode Title="CreateFromResult(Of T) method" Url="html/2d52995f-9793-9b7f-f007-0c5b42ba3605.htm" />
+  <HelpKINode Title="CreateFromResult&lt;T&gt; method" Url="html/2d52995f-9793-9b7f-f007-0c5b42ba3605.htm" />
+  <HelpKINode Title="DecimalValueOpt method" Url="html/f86e7263-8bef-fb14-4224-5bc93c6de5b0.htm" />
+  <HelpKINode Title="Defer(Of T) method" Url="html/c38e10f2-f240-6637-ef9d-fa8446682f4e.htm" />
+  <HelpKINode Title="Defer&lt;T&gt; method" Url="html/c38e10f2-f240-6637-ef9d-fa8446682f4e.htm" />
+  <HelpKINode Title="DictionaryExtensions class">
+    <HelpKINode Title="DictionaryExtensions Class" Url="html/31b6409b-d244-21c5-8a4d-f6441a702526.htm" />
+    <HelpKINode Title="about DictionaryExtensions class" Url="html/31b6409b-d244-21c5-8a4d-f6441a702526.htm" />
+    <HelpKINode Title="methods" Url="html/543d630b-805f-ad55-efd7-5a11cb6db2cb.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DictionaryExtensions.ValueFixOpt(Of TKey, TValue) method" Url="html/fd1dd082-8e2f-0ffa-dad1-ad9f36697691.htm" />
+  <HelpKINode Title="DictionaryExtensions.ValueFixOpt&lt;TKey, TValue&gt; method" Url="html/fd1dd082-8e2f-0ffa-dad1-ad9f36697691.htm" />
+  <HelpKINode Title="DictionaryExtensions.ValueOpt(Of TKey, TValue) method" Url="html/fd93a7a1-7f08-5a89-78f3-dec9493b676e.htm" />
+  <HelpKINode Title="DictionaryExtensions.ValueOpt&lt;TKey, TValue&gt; method" Url="html/fd93a7a1-7f08-5a89-78f3-dec9493b676e.htm" />
+  <HelpKINode Title="ElementAt(Of T) method" Url="html/8b247fd6-cdda-e11a-12b0-c686afa3cff4.htm" />
+  <HelpKINode Title="ElementAt&lt;T&gt; method" Url="html/8b247fd6-cdda-e11a-12b0-c686afa3cff4.htm" />
+  <HelpKINode Title="ElementAtFixOpt method" Url="html/e1aea8a0-5520-89ad-e4be-ccd0390cb201.htm" />
+  <HelpKINode Title="ElementAtOpt method" Url="html/b8b65749-4ed2-59bc-4ca2-452e919a5ae0.htm" />
+  <HelpKINode Title="ElementAtOrDefault(Of T) method" Url="html/2d6a7000-bf48-6665-d989-e44d2cc58450.htm" />
+  <HelpKINode Title="ElementAtOrDefault&lt;T&gt; method" Url="html/2d6a7000-bf48-6665-d989-e44d2cc58450.htm" />
+  <HelpKINode Title="ElementAtOrResult(Of T) method" Url="html/96fb732c-b34a-0e5c-3a3c-68f834a4a343.htm" />
+  <HelpKINode Title="ElementAtOrResult&lt;T&gt; method" Url="html/96fb732c-b34a-0e5c-3a3c-68f834a4a343.htm" />
+  <HelpKINode Title="ElementAtOrValue(Of T) method" Url="html/d0fb611f-57b8-ee0b-bfe5-0fa10fe48478.htm" />
+  <HelpKINode Title="ElementAtOrValue&lt;T&gt; method" Url="html/d0fb611f-57b8-ee0b-bfe5-0fa10fe48478.htm" />
+  <HelpKINode Title="Empty(Of T) method" Url="html/88184cc7-97d5-1b60-919e-f68d13d76269.htm" />
+  <HelpKINode Title="Empty&lt;T&gt; method" Url="html/88184cc7-97d5-1b60-919e-f68d13d76269.htm" />
+  <HelpKINode Title="EnsureNavigator method" Url="html/430fad38-e08c-2bcc-396d-76f515a85286.htm" />
+  <HelpKINode Title="EnumerableExtensions class">
+    <HelpKINode Title="EnumerableExtensions Class" Url="html/f9252f13-efbb-5602-b77b-6fda282237f0.htm" />
+    <HelpKINode Title="about EnumerableExtensions class" Url="html/f9252f13-efbb-5602-b77b-6fda282237f0.htm" />
+    <HelpKINode Title="methods" Url="html/53badf20-602d-9b75-e568-8eaf7ae0d0f5.htm" />
+  </HelpKINode>
+  <HelpKINode Title="EnumerableExtensions.BufferViaArray method" Url="html/5705b0ce-5882-3740-8953-99b450d9159a.htm" />
+  <HelpKINode Title="EnumerableExtensions.CopyTo method" Url="html/1eaca8db-98ea-833d-34a4-fbd75727f44e.htm" />
+  <HelpKINode Title="EnumerableExtensions.CountSingleFixOpt method" Url="html/8883ee40-5341-0329-6b96-01a7ac6fbf5a.htm" />
+  <HelpKINode Title="EnumerableExtensions.CountUpTo(Of T) method" Url="html/2d62c2dc-d765-595e-184a-c46b30008705.htm" />
+  <HelpKINode Title="EnumerableExtensions.CountUpTo&lt;T&gt; method" Url="html/2d62c2dc-d765-595e-184a-c46b30008705.htm" />
+  <HelpKINode Title="EnumerableExtensions.ElementAtFixOpt method" Url="html/e1aea8a0-5520-89ad-e4be-ccd0390cb201.htm" />
+  <HelpKINode Title="EnumerableExtensions.ElementAtOpt method" Url="html/b8b65749-4ed2-59bc-4ca2-452e919a5ae0.htm" />
+  <HelpKINode Title="EnumerableExtensions.ElementAtOrResult(Of T) method" Url="html/96fb732c-b34a-0e5c-3a3c-68f834a4a343.htm" />
+  <HelpKINode Title="EnumerableExtensions.ElementAtOrResult&lt;T&gt; method" Url="html/96fb732c-b34a-0e5c-3a3c-68f834a4a343.htm" />
+  <HelpKINode Title="EnumerableExtensions.ElementAtOrValue(Of T) method" Url="html/d0fb611f-57b8-ee0b-bfe5-0fa10fe48478.htm" />
+  <HelpKINode Title="EnumerableExtensions.ElementAtOrValue&lt;T&gt; method" Url="html/d0fb611f-57b8-ee0b-bfe5-0fa10fe48478.htm" />
+  <HelpKINode Title="EnumerableExtensions.FirstFixOpt method" Url="html/392a3116-8363-3bc4-8245-5cd02e9329ec.htm" />
+  <HelpKINode Title="EnumerableExtensions.FirstOpt method" Url="html/436d4a87-1249-8911-71cf-1855a7142c38.htm" />
+  <HelpKINode Title="EnumerableExtensions.FirstOrResult(Of T) method" Url="html/3a15061d-48fc-65d6-1a69-86626ba9a2f1.htm" />
+  <HelpKINode Title="EnumerableExtensions.FirstOrResult&lt;T&gt; method" Url="html/3a15061d-48fc-65d6-1a69-86626ba9a2f1.htm" />
+  <HelpKINode Title="EnumerableExtensions.FirstOrValue(Of T) method" Url="html/5333fa23-0a87-bdcd-186e-afbea8a6c68e.htm" />
+  <HelpKINode Title="EnumerableExtensions.FirstOrValue&lt;T&gt; method" Url="html/5333fa23-0a87-bdcd-186e-afbea8a6c68e.htm" />
+  <HelpKINode Title="EnumerableExtensions.HardSkip method" Url="html/c2c4da62-1a05-274a-fba0-c407df444e87.htm" />
+  <HelpKINode Title="EnumerableExtensions.HardTake method" Url="html/e9de844b-2175-ae32-656b-1bb76ecebf7d.htm" />
+  <HelpKINode Title="EnumerableExtensions.LastFixOpt method" Url="html/eefa64d5-8eee-7691-569e-75ed37560a19.htm" />
+  <HelpKINode Title="EnumerableExtensions.LastOpt method" Url="html/9c448ad4-f326-2517-d530-35b76788233a.htm" />
+  <HelpKINode Title="EnumerableExtensions.LastOrResult(Of T) method" Url="html/241c03cc-939e-20a3-07b4-083a05e88f91.htm" />
+  <HelpKINode Title="EnumerableExtensions.LastOrResult&lt;T&gt; method" Url="html/241c03cc-939e-20a3-07b4-083a05e88f91.htm" />
+  <HelpKINode Title="EnumerableExtensions.LastOrValue(Of T) method" Url="html/c0744f85-9717-0bc9-1abd-ce4dba93d552.htm" />
+  <HelpKINode Title="EnumerableExtensions.LastOrValue&lt;T&gt; method" Url="html/c0744f85-9717-0bc9-1abd-ce4dba93d552.htm" />
+  <HelpKINode Title="EnumerableExtensions.SingleFixOpt method" Url="html/ec5a5c59-109d-97e1-0f36-bcdfb6088398.htm" />
+  <HelpKINode Title="EnumerableExtensions.SingleOpt method" Url="html/b316d1c2-b530-23cf-d30d-d7849cc3e19a.htm" />
+  <HelpKINode Title="EnumerableExtensions.SingleOrResult(Of T) method" Url="html/ea991e0a-14a7-aef7-4501-64c96f260e72.htm" />
+  <HelpKINode Title="EnumerableExtensions.SingleOrResult&lt;T&gt; method" Url="html/ea991e0a-14a7-aef7-4501-64c96f260e72.htm" />
+  <HelpKINode Title="EnumerableExtensions.SingleOrValue(Of T) method" Url="html/d5453f44-8068-122b-d665-898e86e9e5d0.htm" />
+  <HelpKINode Title="EnumerableExtensions.SingleOrValue&lt;T&gt; method" Url="html/d5453f44-8068-122b-d665-898e86e9e5d0.htm" />
+  <HelpKINode Title="EnumerableExtensions.Skip method" Url="html/01ea915d-7770-0840-48ae-b42029fcccdd.htm" />
+  <HelpKINode Title="EnumerableExtensions.Take method" Url="html/fb9dc4af-1b5e-2f04-ef50-07343f806747.htm" />
+  <HelpKINode Title="EnumerableExtensions.TryGetElementAt method" Url="html/148cb5ad-c788-9567-6ca7-5ba3db842cba.htm" />
+  <HelpKINode Title="EnumerableExtensions.TryGetFirst method" Url="html/a9d4ce5d-d9b0-1563-6702-e86edc37f064.htm" />
+  <HelpKINode Title="EnumerableExtensions.TryGetLast method" Url="html/1268f2ad-5cd2-3255-61ba-14cf2a969e52.htm" />
+  <HelpKINode Title="EnumerableExtensions.TryGetSingle method" Url="html/0cf7db8c-5994-bb57-143e-0e07937205cf.htm" />
+  <HelpKINode Title="Equality method" Url="html/fe4182dd-fe3c-e4b7-d2d0-d1d685bf0065.htm" />
+  <HelpKINode Title="Evaluate method">
+    <HelpKINode Title="TriflesXPathData.Evaluate Method " Url="html/1cf292b0-d130-fd39-089a-6fa7ff113701.htm" />
+    <HelpKINode Title="TriflesXPathExtensionVariable.Evaluate Method " Url="html/b5fdb25a-2db0-da99-e58d-5f7d2edf455c.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Fallback method" Url="html/df584d7a-7f0a-8ece-1668-467f73596b29.htm" />
+  <HelpKINode Title="FallbackFix method" Url="html/6e773555-f902-e7df-476f-fa29bc6a3ea3.htm" />
+  <HelpKINode Title="FallbackValue(Of T) method" Url="html/e7f8bbaf-44d7-acb1-21e8-25f6b93d32c8.htm" />
+  <HelpKINode Title="FallbackValue&lt;T&gt; method" Url="html/e7f8bbaf-44d7-acb1-21e8-25f6b93d32c8.htm" />
+  <HelpKINode Title="FallbackValueFix(Of T) method" Url="html/13fc74de-425b-be7b-c39f-11735de9874c.htm" />
+  <HelpKINode Title="FallbackValueFix&lt;T&gt; method" Url="html/13fc74de-425b-be7b-c39f-11735de9874c.htm" />
+  <HelpKINode Title="FallDave.Trifles namespace" Url="html/2a01a081-bfd9-d49e-0df0-0b2e5cb5e0bd.htm" />
+  <HelpKINode Title="FallDave.Trifles.BinaryData class" Url="html/e20819d9-451b-0a9e-f716-e117d6b4b6e7.htm" />
+  <HelpKINode Title="FallDave.Trifles.BinaryStreamingExtensions class" Url="html/61137370-ecad-edbd-21b5-72bff47140b0.htm" />
+  <HelpKINode Title="FallDave.Trifles.Checker class" Url="html/21355173-9cd3-74a4-794e-a37014babe4a.htm" />
+  <HelpKINode Title="FallDave.Trifles.ConvertOpt class" Url="html/72b0266a-5264-19da-6dd4-4d9e52e3c889.htm" />
+  <HelpKINode Title="FallDave.Trifles.CountedOpt(Of T) structure" Url="html/65871cdb-4e85-da76-f9f4-780378a331e0.htm" />
+  <HelpKINode Title="FallDave.Trifles.CountedOpt&lt;T&gt; structure" Url="html/65871cdb-4e85-da76-f9f4-780378a331e0.htm" />
+  <HelpKINode Title="FallDave.Trifles.DictionaryExtensions class" Url="html/31b6409b-d244-21c5-8a4d-f6441a702526.htm" />
+  <HelpKINode Title="FallDave.Trifles.EnumerableExtensions class" Url="html/f9252f13-efbb-5602-b77b-6fda282237f0.htm" />
+  <HelpKINode Title="FallDave.Trifles.IOpt(Of T) interface" Url="html/91133d93-71e7-888c-e2e6-677decd302be.htm" />
+  <HelpKINode Title="FallDave.Trifles.IOpt&lt;T&gt; interface" Url="html/91133d93-71e7-888c-e2e6-677decd302be.htm" />
+  <HelpKINode Title="FallDave.Trifles.MathTrifles class" Url="html/e2dfc372-ec54-dd63-8d84-81ce6b6a1db9.htm" />
+  <HelpKINode Title="FallDave.Trifles.Opt class" Url="html/05847462-f7ce-e627-2dfb-e0d93bdc972f.htm" />
+  <HelpKINode Title="FallDave.Trifles.Opt(Of T) structure" Url="html/9e6fddd6-4806-3f80-15f3-75aee0054e65.htm" />
+  <HelpKINode Title="FallDave.Trifles.Opt&lt;T&gt; structure" Url="html/9e6fddd6-4806-3f80-15f3-75aee0054e65.htm" />
+  <HelpKINode Title="FallDave.Trifles.OptExtensions class" Url="html/811aba34-a2da-6065-030d-3e5e6c74d8db.htm" />
+  <HelpKINode Title="FallDave.Trifles.SimpleTypeExtensions class" Url="html/bd98b0bc-9710-2639-5f7d-8783a998c8e4.htm" />
+  <HelpKINode Title="FallDave.Trifles.StreamExtensions class" Url="html/51411086-e380-53b9-cf9d-77023dad6a4d.htm" />
+  <HelpKINode Title="FallDave.Trifles.StringExtensions class" Url="html/aa324065-dc67-8b0e-84fe-f377f9e0229a.htm" />
+  <HelpKINode Title="FallDave.Trifles.Xml namespace" Url="html/c881a15a-904a-7265-ea9d-e434bf89ca04.htm" />
+  <HelpKINode Title="FallDave.Trifles.Xml.XmlExtensions class" Url="html/735a5823-1e77-c795-a503-6975c4d69a58.htm" />
+  <HelpKINode Title="FallDave.Trifles.Xml.XPath namespace" Url="html/340f8679-8029-7d98-231f-69a489781c09.htm" />
+  <HelpKINode Title="FallDave.Trifles.Xml.XPath.TriflesXPathContext class" Url="html/d4ce2664-4a33-058a-c1ca-7885b500c0a2.htm" />
+  <HelpKINode Title="FallDave.Trifles.Xml.XPath.TriflesXPathData class" Url="html/549ff4c3-2418-5ce8-be30-da7b91b69565.htm" />
+  <HelpKINode Title="FallDave.Trifles.Xml.XPath.TriflesXPathExtensionFunction class" Url="html/05e53650-7fc0-9957-5af1-7ab3199332da.htm" />
+  <HelpKINode Title="FallDave.Trifles.Xml.XPath.TriflesXPathExtensionVariable class" Url="html/066f4580-7efe-8c74-63ac-4a14629e371b.htm" />
+  <HelpKINode Title="FallDave.Trifles.Xml.XPath.TriflesXPathInvokable delegate" Url="html/4f190da7-c56b-8640-0b39-0379e413afa5.htm" />
+  <HelpKINode Title="FallDave.Trifles.Xml.XPath.XPathXNamesTable class" Url="html/dc879961-68ec-0eaf-03b0-a5e2aa1091b9.htm" />
+  <HelpKINode Title="FillWithResult(Of T) method" Url="html/eead260a-cfa7-cc28-8d8c-a1b3e2b7ac9f.htm" />
+  <HelpKINode Title="FillWithResult&lt;T&gt; method" Url="html/eead260a-cfa7-cc28-8d8c-a1b3e2b7ac9f.htm" />
+  <HelpKINode Title="FillWithResultFix(Of T) method" Url="html/ad0ff6f0-e26f-ef21-615d-85d630af0e38.htm" />
+  <HelpKINode Title="FillWithResultFix&lt;T&gt; method" Url="html/ad0ff6f0-e26f-ef21-615d-85d630af0e38.htm" />
+  <HelpKINode Title="FillWithValue(Of T) method" Url="html/c23585c5-dbb5-043e-bb9b-0366841bd32e.htm" />
+  <HelpKINode Title="FillWithValue&lt;T&gt; method" Url="html/c23585c5-dbb5-043e-bb9b-0366841bd32e.htm" />
+  <HelpKINode Title="FillWithValueFix(Of T) method" Url="html/950e1a9a-b805-71c8-f80a-312d3e8eaad7.htm" />
+  <HelpKINode Title="FillWithValueFix&lt;T&gt; method" Url="html/950e1a9a-b805-71c8-f80a-312d3e8eaad7.htm" />
+  <HelpKINode Title="First(Of T) method" Url="html/4699e1d9-0a6b-8ed8-898a-49a94de54f55.htm" />
+  <HelpKINode Title="First&lt;T&gt; method" Url="html/4699e1d9-0a6b-8ed8-898a-49a94de54f55.htm" />
+  <HelpKINode Title="FirstFixOpt method" Url="html/392a3116-8363-3bc4-8245-5cd02e9329ec.htm" />
+  <HelpKINode Title="FirstOpt method" Url="html/436d4a87-1249-8911-71cf-1855a7142c38.htm" />
+  <HelpKINode Title="FirstOrDefault(Of T) method" Url="html/eb2f45ff-e414-be7d-dd25-0e084611540a.htm" />
+  <HelpKINode Title="FirstOrDefault&lt;T&gt; method" Url="html/eb2f45ff-e414-be7d-dd25-0e084611540a.htm" />
+  <HelpKINode Title="FirstOrResult(Of T) method" Url="html/3a15061d-48fc-65d6-1a69-86626ba9a2f1.htm" />
+  <HelpKINode Title="FirstOrResult&lt;T&gt; method" Url="html/3a15061d-48fc-65d6-1a69-86626ba9a2f1.htm" />
+  <HelpKINode Title="FirstOrValue(Of T) method" Url="html/5333fa23-0a87-bdcd-186e-afbea8a6c68e.htm" />
+  <HelpKINode Title="FirstOrValue&lt;T&gt; method" Url="html/5333fa23-0a87-bdcd-186e-afbea8a6c68e.htm" />
+  <HelpKINode Title="Fix method">
+    <HelpKINode Title="CountedOpt(T).Fix Method " Url="html/164b250c-ae15-1b49-b094-e5174f069d24.htm" />
+    <HelpKINode Title="IOpt(T).Fix Method " Url="html/5f506e92-ca47-6a14-c85a-759200e31857.htm" />
+    <HelpKINode Title="Opt(T).Fix Method " Url="html/b3754496-8918-0c64-7c0e-2f6d8a90697a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="FlattenFixOpt method" Url="html/739f74ab-1b7d-572e-5d8b-bc8ef49eae43.htm" />
+  <HelpKINode Title="FlattenOpt method" Url="html/a1fcdd4b-96c2-7231-8c52-2650eb9fdd1a.htm" />
+  <HelpKINode Title="FloatingPointValueOpt method" Url="html/6ca82ac7-0fb7-2fd8-5684-fe9eb249fa6d.htm" />
+  <HelpKINode Title="ForAny method">
+    <HelpKINode Title="Opt(T).ForAny Method " Url="html/02c9dc53-bbd9-fdfb-927e-62dcc1815bc0.htm" />
+    <HelpKINode Title="OptExtensions.ForAny Method " Url="html/69990ca3-df8e-20df-2544-0dde95bee45e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="FormatStr method" Url="html/a16fd571-89a1-c131-0b7b-2537fcf669d3.htm" />
+  <HelpKINode Title="ForNone method" Url="html/4540e7d2-7891-91c7-d9f7-738d030d3b91.htm" />
+  <HelpKINode Title="ForNone(Of T) method" Url="html/419526b4-835d-2aec-4607-432f61445b25.htm" />
+  <HelpKINode Title="ForNone&lt;T&gt; method" Url="html/419526b4-835d-2aec-4607-432f61445b25.htm" />
+  <HelpKINode Title="Full(Of T) method" Url="html/e3240705-5305-4544-9e96-37c34450d344.htm" />
+  <HelpKINode Title="Full&lt;T&gt; method" Url="html/e3240705-5305-4544-9e96-37c34450d344.htm" />
+  <HelpKINode Title="FullIfNotNull(Of T) method" Url="html/3347ed57-8f41-6e47-0714-30e4ae4823aa.htm" />
+  <HelpKINode Title="FullIfNotNull&lt;T&gt; method" Url="html/3347ed57-8f41-6e47-0714-30e4ae4823aa.htm" />
+  <HelpKINode Title="FunctionName property" Url="html/79a304e0-5d97-f3ef-6dcd-67acb24d78ee.htm" />
+  <HelpKINode Title="GetEmptyNodeSet method" Url="html/88265058-3219-8d20-44f6-7061c47df804.htm" />
+  <HelpKINode Title="GetEnumerator method">
+    <HelpKINode Title="CountedOpt(T).GetEnumerator Method " Url="html/1d54f53a-6fe5-7958-45f0-de5b3528361c.htm" />
+    <HelpKINode Title="Opt(T).GetEnumerator Method " Url="html/cd369d4b-8c6f-f0a6-5902-c60555a64588.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetFunctionOpt method" Url="html/b52c5441-25a4-bb66-fe00-02db62d7df2f.htm" />
+  <HelpKINode Title="GetOwnFunctionOpt method" Url="html/4b053413-5bfc-1838-dc79-6deb730569b0.htm" />
+  <HelpKINode Title="GetOwnVariableOpt method" Url="html/d9bd4e0d-9059-0cee-6f21-4621f6d045e7.htm" />
+  <HelpKINode Title="GetRequiredXName method" Url="html/b5e11802-e5da-92de-095c-7fe19a1ca4bd.htm" />
+  <HelpKINode Title="GetRequiredXNamespace method" Url="html/742214ad-d674-89fd-7618-b5f47b869ae4.htm" />
+  <HelpKINode Title="GetVariableOpt method" Url="html/55964eb2-4db8-4eb9-0607-22624e22f16a.htm" />
+  <HelpKINode Title="GetXNameOpt method" Url="html/3b4b4549-01db-e98f-39c5-e521bdeff845.htm" />
+  <HelpKINode Title="GetXNamespaceOpt method" Url="html/7a2dee8f-b3d2-483c-ac0e-94fd18b2879b.htm" />
+  <HelpKINode Title="GreaterThan method" Url="html/bf8e7d8d-e197-d2f5-2e5a-99324a683450.htm" />
+  <HelpKINode Title="GreaterThanOrEqual method" Url="html/51fd1b08-ce25-b984-113a-c9a670f526ff.htm" />
+  <HelpKINode Title="GuessXPathResultType method" Url="html/e8a19cdd-3914-615f-6445-05f829ae7cde.htm" />
+  <HelpKINode Title="HardSkip method" Url="html/c2c4da62-1a05-274a-fba0-c407df444e87.htm" />
+  <HelpKINode Title="HardTake method" Url="html/e9de844b-2175-ae32-656b-1bb76ecebf7d.htm" />
+  <HelpKINode Title="HasAttribute method" Url="html/3311cb00-f1d7-9a52-6c1d-a958b3b263e6.htm" />
+  <HelpKINode Title="HasSimpleType method" Url="html/7ca0f031-ea57-2b47-fa65-f2edd5e3d927.htm" />
+  <HelpKINode Title="InternStr method" Url="html/584bd9bf-4e8d-6a29-495e-0c0cff464407.htm" />
+  <HelpKINode Title="Invoke method" Url="html/1a40bf9e-d3a5-2ed6-be9f-55d4dfd90e4f.htm" />
+  <HelpKINode Title="IOpt(Of T) interface">
+    <HelpKINode Title="IOpt(T) Interface" Url="html/91133d93-71e7-888c-e2e6-677decd302be.htm" />
+    <HelpKINode Title="about IOpt(Of T) interface" Url="html/91133d93-71e7-888c-e2e6-677decd302be.htm" />
+    <HelpKINode Title="methods" Url="html/860b864a-1eae-8754-7897-1b95db218bf9.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IOpt(Of T).Fix method" Url="html/5f506e92-ca47-6a14-c85a-759200e31857.htm" />
+  <HelpKINode Title="IOpt&lt;T&gt; interface">
+    <HelpKINode Title="IOpt(T) Interface" Url="html/91133d93-71e7-888c-e2e6-677decd302be.htm" />
+    <HelpKINode Title="about IOpt&lt;T&gt; interface" Url="html/91133d93-71e7-888c-e2e6-677decd302be.htm" />
+    <HelpKINode Title="methods" Url="html/860b864a-1eae-8754-7897-1b95db218bf9.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IOpt&lt;T&gt;.Fix method" Url="html/5f506e92-ca47-6a14-c85a-759200e31857.htm" />
+  <HelpKINode Title="IsFloatingPoint method" Url="html/3dfafaac-9da8-8367-c97a-9dd45ea5a16a.htm" />
+  <HelpKINode Title="IsIntegral method" Url="html/9baee07f-d4c2-15aa-b892-592e3f9455ca.htm" />
+  <HelpKINode Title="IsIntegralAndNotChar method" Url="html/693538a7-8b89-96a0-6195-99c46adfab28.htm" />
+  <HelpKINode Title="IsInternedStr method" Url="html/aff53f93-5a6d-2a9f-5f63-25af594b809c.htm" />
+  <HelpKINode Title="IsLocal property" Url="html/369fe8cb-8c19-2858-0f19-00cc18877ae9.htm" />
+  <HelpKINode Title="IsNullOrEmptyStr method" Url="html/f8488887-9077-1212-1fc1-caaab5cb8add.htm" />
+  <HelpKINode Title="IsNullOrWhiteSpaceStr method" Url="html/2b93e651-ea41-ff39-40d9-69dc90ed7c4d.htm" />
+  <HelpKINode Title="IsNumeric method" Url="html/9792fc67-f1e0-df66-6ca6-c8ded1664d7f.htm" />
+  <HelpKINode Title="IsNumericAndNotChar method" Url="html/06d9fc27-e7b9-3a99-4200-94a8c4f27eba.htm" />
+  <HelpKINode Title="IsParam property" Url="html/2ba520ee-87ac-6713-ddc8-6f86bf0bd3bc.htm" />
+  <HelpKINode Title="IsSignedIntegral method" Url="html/80a2c1fd-c83e-2ec2-b219-16ea0c026b06.htm" />
+  <HelpKINode Title="IsUnsignedIntegral method" Url="html/4e1ffc97-bb61-2d90-a29f-794197795f9c.htm" />
+  <HelpKINode Title="IsUnsignedIntegralAndNotChar method" Url="html/4c64502c-729f-56ea-75e2-072320757544.htm" />
+  <HelpKINode Title="JoinStr method" Url="html/5b417080-bfb0-864e-084c-27649d3fed97.htm" />
+  <HelpKINode Title="JoinWithStr method" Url="html/93146d17-3ffe-59f0-a7cc-bd85064d9893.htm" />
+  <HelpKINode Title="Last(Of T) method" Url="html/43c983a9-8030-40bb-dd09-4f09892515f0.htm" />
+  <HelpKINode Title="Last&lt;T&gt; method" Url="html/43c983a9-8030-40bb-dd09-4f09892515f0.htm" />
+  <HelpKINode Title="LastFixOpt method" Url="html/eefa64d5-8eee-7691-569e-75ed37560a19.htm" />
+  <HelpKINode Title="LastOpt method" Url="html/9c448ad4-f326-2517-d530-35b76788233a.htm" />
+  <HelpKINode Title="LastOrDefault(Of T) method" Url="html/049f29ed-7b58-c94b-7cc5-8c22a5d59246.htm" />
+  <HelpKINode Title="LastOrDefault&lt;T&gt; method" Url="html/049f29ed-7b58-c94b-7cc5-8c22a5d59246.htm" />
+  <HelpKINode Title="LastOrResult(Of T) method" Url="html/241c03cc-939e-20a3-07b4-083a05e88f91.htm" />
+  <HelpKINode Title="LastOrResult&lt;T&gt; method" Url="html/241c03cc-939e-20a3-07b4-083a05e88f91.htm" />
+  <HelpKINode Title="LastOrValue(Of T) method" Url="html/c0744f85-9717-0bc9-1abd-ce4dba93d552.htm" />
+  <HelpKINode Title="LastOrValue&lt;T&gt; method" Url="html/c0744f85-9717-0bc9-1abd-ce4dba93d552.htm" />
+  <HelpKINode Title="LessThan method" Url="html/b4f69ff2-7f15-3338-f90b-cfe09e206a58.htm" />
+  <HelpKINode Title="LessThanOrEqual method" Url="html/b7750981-cda9-ccd8-5dce-b86227fabe30.htm" />
+  <HelpKINode Title="LookupNamespaceOpt method" Url="html/6c4c741f-d5ff-e394-6347-8c0d6c0b20b1.htm" />
+  <HelpKINode Title="LookupPrefixOpt method" Url="html/e36ce78f-01d5-a46c-c060-cfb383c362c9.htm" />
+  <HelpKINode Title="MathTrifles class">
+    <HelpKINode Title="MathTrifles Class" Url="html/e2dfc372-ec54-dd63-8d84-81ce6b6a1db9.htm" />
+    <HelpKINode Title="about MathTrifles class" Url="html/e2dfc372-ec54-dd63-8d84-81ce6b6a1db9.htm" />
+    <HelpKINode Title="methods" Url="html/6612e0f3-ae3c-6cea-1f5e-8798fb717e5d.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MathTrifles.Clamp method" Url="html/9e52e8d1-10c9-3bab-81c2-cc183dfaab3c.htm" />
+  <HelpKINode Title="MathTrifles.ClampToByte method" Url="html/e2e45062-b500-3728-6a52-1775ad40cfc6.htm" />
+  <HelpKINode Title="MathTrifles.ClampToInt16 method" Url="html/b52155de-ba6e-7a16-74cf-dcb0e09aa455.htm" />
+  <HelpKINode Title="MathTrifles.ClampToInt32 method" Url="html/4fecde06-47d7-5831-7b9f-d27a2c9834dd.htm" />
+  <HelpKINode Title="MathTrifles.ClampToInt64 method" Url="html/c32650ae-e8fb-7557-3040-61c2afadc1cd.htm" />
+  <HelpKINode Title="MathTrifles.ClampToSByte method" Url="html/307c64b3-f14c-7212-dbb2-cfb7d2866900.htm" />
+  <HelpKINode Title="MathTrifles.ClampToUInt16 method" Url="html/cd71e53f-c8cb-91bd-8ece-b6f2d13d08ee.htm" />
+  <HelpKINode Title="MathTrifles.ClampToUInt32 method" Url="html/618a8802-53ed-8de7-d94f-7ed6eb3cfd35.htm" />
+  <HelpKINode Title="MathTrifles.ClampToUInt64 method" Url="html/8dc87f48-fc78-7550-bb88-b9acbe7af4f2.htm" />
+  <HelpKINode Title="MathTrifles.Compare method" Url="html/cccc718c-bb5f-4006-ee8d-e610d5a55f55.htm" />
+  <HelpKINode Title="MathTrifles.Equality method" Url="html/fe4182dd-fe3c-e4b7-d2d0-d1d685bf0065.htm" />
+  <HelpKINode Title="MathTrifles.GreaterThan method" Url="html/bf8e7d8d-e197-d2f5-2e5a-99324a683450.htm" />
+  <HelpKINode Title="MathTrifles.GreaterThanOrEqual method" Url="html/51fd1b08-ce25-b984-113a-c9a670f526ff.htm" />
+  <HelpKINode Title="MathTrifles.LessThan method" Url="html/b4f69ff2-7f15-3338-f90b-cfe09e206a58.htm" />
+  <HelpKINode Title="MathTrifles.LessThanOrEqual method" Url="html/b7750981-cda9-ccd8-5dce-b86227fabe30.htm" />
+  <HelpKINode Title="MathTrifles.Max method" Url="html/8e1fe76f-0d70-bceb-e96e-8ebf2bc10b46.htm" />
+  <HelpKINode Title="MathTrifles.Min method" Url="html/0bc38a06-efca-12b9-7364-1027cac86fa1.htm" />
+  <HelpKINode Title="Max method" Url="html/8e1fe76f-0d70-bceb-e96e-8ebf2bc10b46.htm" />
+  <HelpKINode Title="Maxargs property" Url="html/cc0827fd-d333-5770-0f0b-358c4092a404.htm" />
+  <HelpKINode Title="Min method" Url="html/0bc38a06-efca-12b9-7364-1027cac86fa1.htm" />
+  <HelpKINode Title="Minargs property" Url="html/085701df-c38a-7f8a-21ce-b1a991656e5b.htm" />
+  <HelpKINode Title="NotNegative method" Url="html/962ba181-b685-5085-07ee-2e7d11d1568b.htm" />
+  <HelpKINode Title="NotNull(Of T) method" Url="html/6a5afa8c-4907-93a0-d58a-e86c70821213.htm" />
+  <HelpKINode Title="NotNull&lt;T&gt; method" Url="html/6a5afa8c-4907-93a0-d58a-e86c70821213.htm" />
+  <HelpKINode Title="NumericValueAsDecimalOpt method" Url="html/e6c37586-4f9c-44fb-723c-576ad7604852.htm" />
+  <HelpKINode Title="NumericValueAsDoubleOpt method" Url="html/5dca04c0-1e95-8460-a510-be30afa9da7b.htm" />
+  <HelpKINode Title="NumericValueToNonScientificStringOpt method" Url="html/c8f32110-536f-a52a-89cf-610f31acafcc.htm" />
+  <HelpKINode Title="NumericValueToStringOpt method" Url="html/6e2663e3-01a8-63de-c474-f40085040542.htm" />
+  <HelpKINode Title="Opt class">
+    <HelpKINode Title="Opt Class" Url="html/05847462-f7ce-e627-2dfb-e0d93bdc972f.htm" />
+    <HelpKINode Title="about Opt class" Url="html/05847462-f7ce-e627-2dfb-e0d93bdc972f.htm" />
+    <HelpKINode Title="methods" Url="html/253a64d1-40e6-2eb0-bed6-4751d0be39ad.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Opt(Of T) structure">
+    <HelpKINode Title="Opt(T) Structure" Url="html/9e6fddd6-4806-3f80-15f3-75aee0054e65.htm" />
+    <HelpKINode Title="about Opt(Of T) structure" Url="html/9e6fddd6-4806-3f80-15f3-75aee0054e65.htm" />
+    <HelpKINode Title="constructor" Url="html/dcf93107-697a-7c1e-6398-3038952987bd.htm" />
+    <HelpKINode Title="methods" Url="html/ae1bf4dc-4f72-9c62-a59e-d102874b206a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Opt(Of T).Any method" Url="html/e87e92a4-9214-85ea-f763-69c2084b4130.htm" />
+  <HelpKINode Title="Opt(Of T).Count method" Url="html/5e6970bf-c53b-0e97-040f-99df699ee4a5.htm" />
+  <HelpKINode Title="Opt(Of T).Fix method" Url="html/b3754496-8918-0c64-7c0e-2f6d8a90697a.htm" />
+  <HelpKINode Title="Opt(Of T).ForAny method" Url="html/02c9dc53-bbd9-fdfb-927e-62dcc1815bc0.htm" />
+  <HelpKINode Title="Opt(Of T).ForNone method" Url="html/4540e7d2-7891-91c7-d9f7-738d030d3b91.htm" />
+  <HelpKINode Title="Opt(Of T).GetEnumerator method" Url="html/cd369d4b-8c6f-f0a6-5902-c60555a64588.htm" />
+  <HelpKINode Title="Opt(Of T).Opt constructor" Url="html/dcf93107-697a-7c1e-6398-3038952987bd.htm" />
+  <HelpKINode Title="Opt(Of T).SelectFix(Of TResult) method" Url="html/2e98536e-7d6b-7ad8-6797-f59a5565700d.htm" />
+  <HelpKINode Title="Opt(Of T).Single method" Url="html/3fa795db-6f36-0cbf-110e-9f09ea6f6619.htm" />
+  <HelpKINode Title="Opt(Of T).SingleOrDefault method" Url="html/37af4439-ee41-de28-72d5-6be29395b21a.htm" />
+  <HelpKINode Title="Opt(Of T).TryGetSingle method" Url="html/b2f64db7-f9c7-0306-329e-66c12ca9261c.htm" />
+  <HelpKINode Title="Opt(Of T).WhereFix method" Url="html/8ee1857e-0d0e-062a-6ad7-929d3f8d2579.htm" />
+  <HelpKINode Title="Opt.Create(Of T) method" Url="html/87aec6fb-3b65-d598-5018-d12192717c11.htm" />
+  <HelpKINode Title="Opt.Create&lt;T&gt; method" Url="html/87aec6fb-3b65-d598-5018-d12192717c11.htm" />
+  <HelpKINode Title="Opt.CreateFromResult(Of T) method" Url="html/2d52995f-9793-9b7f-f007-0c5b42ba3605.htm" />
+  <HelpKINode Title="Opt.CreateFromResult&lt;T&gt; method" Url="html/2d52995f-9793-9b7f-f007-0c5b42ba3605.htm" />
+  <HelpKINode Title="Opt.Defer(Of T) method" Url="html/c38e10f2-f240-6637-ef9d-fa8446682f4e.htm" />
+  <HelpKINode Title="Opt.Defer&lt;T&gt; method" Url="html/c38e10f2-f240-6637-ef9d-fa8446682f4e.htm" />
+  <HelpKINode Title="Opt.Empty(Of T) method" Url="html/88184cc7-97d5-1b60-919e-f68d13d76269.htm" />
+  <HelpKINode Title="Opt.Empty&lt;T&gt; method" Url="html/88184cc7-97d5-1b60-919e-f68d13d76269.htm" />
+  <HelpKINode Title="Opt.Full(Of T) method" Url="html/e3240705-5305-4544-9e96-37c34450d344.htm" />
+  <HelpKINode Title="Opt.Full&lt;T&gt; method" Url="html/e3240705-5305-4544-9e96-37c34450d344.htm" />
+  <HelpKINode Title="Opt.FullIfNotNull(Of T) method" Url="html/3347ed57-8f41-6e47-0714-30e4ae4823aa.htm" />
+  <HelpKINode Title="Opt.FullIfNotNull&lt;T&gt; method" Url="html/3347ed57-8f41-6e47-0714-30e4ae4823aa.htm" />
+  <HelpKINode Title="Opt.Zip method" Url="html/d99ecda2-0207-39c2-7ee5-6812960a5aa6.htm" />
+  <HelpKINode Title="Opt.ZipFix method" Url="html/66ff2177-2919-c06e-4753-a2958ca2e426.htm" />
+  <HelpKINode Title="Opt&lt;T&gt; structure">
+    <HelpKINode Title="Opt(T) Structure" Url="html/9e6fddd6-4806-3f80-15f3-75aee0054e65.htm" />
+    <HelpKINode Title="about Opt&lt;T&gt; structure" Url="html/9e6fddd6-4806-3f80-15f3-75aee0054e65.htm" />
+    <HelpKINode Title="constructor" Url="html/dcf93107-697a-7c1e-6398-3038952987bd.htm" />
+    <HelpKINode Title="methods" Url="html/ae1bf4dc-4f72-9c62-a59e-d102874b206a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Opt&lt;T&gt;.Any method" Url="html/e87e92a4-9214-85ea-f763-69c2084b4130.htm" />
+  <HelpKINode Title="Opt&lt;T&gt;.Count method" Url="html/5e6970bf-c53b-0e97-040f-99df699ee4a5.htm" />
+  <HelpKINode Title="Opt&lt;T&gt;.Fix method" Url="html/b3754496-8918-0c64-7c0e-2f6d8a90697a.htm" />
+  <HelpKINode Title="Opt&lt;T&gt;.ForAny method" Url="html/02c9dc53-bbd9-fdfb-927e-62dcc1815bc0.htm" />
+  <HelpKINode Title="Opt&lt;T&gt;.ForNone method" Url="html/4540e7d2-7891-91c7-d9f7-738d030d3b91.htm" />
+  <HelpKINode Title="Opt&lt;T&gt;.GetEnumerator method" Url="html/cd369d4b-8c6f-f0a6-5902-c60555a64588.htm" />
+  <HelpKINode Title="Opt&lt;T&gt;.Opt constructor" Url="html/dcf93107-697a-7c1e-6398-3038952987bd.htm" />
+  <HelpKINode Title="Opt&lt;T&gt;.SelectFix&lt;TResult&gt; method" Url="html/2e98536e-7d6b-7ad8-6797-f59a5565700d.htm" />
+  <HelpKINode Title="Opt&lt;T&gt;.Single method" Url="html/3fa795db-6f36-0cbf-110e-9f09ea6f6619.htm" />
+  <HelpKINode Title="Opt&lt;T&gt;.SingleOrDefault method" Url="html/37af4439-ee41-de28-72d5-6be29395b21a.htm" />
+  <HelpKINode Title="Opt&lt;T&gt;.TryGetSingle method" Url="html/b2f64db7-f9c7-0306-329e-66c12ca9261c.htm" />
+  <HelpKINode Title="Opt&lt;T&gt;.WhereFix method" Url="html/8ee1857e-0d0e-062a-6ad7-929d3f8d2579.htm" />
+  <HelpKINode Title="OptExtensions class">
+    <HelpKINode Title="OptExtensions Class" Url="html/811aba34-a2da-6065-030d-3e5e6c74d8db.htm" />
+    <HelpKINode Title="about OptExtensions class" Url="html/811aba34-a2da-6065-030d-3e5e6c74d8db.htm" />
+    <HelpKINode Title="methods" Url="html/85b07969-6752-4d67-bbbf-80a01268e7ed.htm" />
+  </HelpKINode>
+  <HelpKINode Title="OptExtensions.Any(Of T) method" Url="html/888f3255-9757-c23d-661d-ca58dd47606f.htm" />
+  <HelpKINode Title="OptExtensions.Any&lt;T&gt; method" Url="html/888f3255-9757-c23d-661d-ca58dd47606f.htm" />
+  <HelpKINode Title="OptExtensions.Cleared(Of T) method" Url="html/783b7d81-6356-d5be-9a3f-223128bcce8c.htm" />
+  <HelpKINode Title="OptExtensions.Cleared&lt;T&gt; method" Url="html/783b7d81-6356-d5be-9a3f-223128bcce8c.htm" />
+  <HelpKINode Title="OptExtensions.Count(Of T) method" Url="html/a6465f18-578e-23a2-c1ec-98600f63cce7.htm" />
+  <HelpKINode Title="OptExtensions.Count&lt;T&gt; method" Url="html/a6465f18-578e-23a2-c1ec-98600f63cce7.htm" />
+  <HelpKINode Title="OptExtensions.ElementAt(Of T) method" Url="html/8b247fd6-cdda-e11a-12b0-c686afa3cff4.htm" />
+  <HelpKINode Title="OptExtensions.ElementAt&lt;T&gt; method" Url="html/8b247fd6-cdda-e11a-12b0-c686afa3cff4.htm" />
+  <HelpKINode Title="OptExtensions.ElementAtOrDefault(Of T) method" Url="html/2d6a7000-bf48-6665-d989-e44d2cc58450.htm" />
+  <HelpKINode Title="OptExtensions.ElementAtOrDefault&lt;T&gt; method" Url="html/2d6a7000-bf48-6665-d989-e44d2cc58450.htm" />
+  <HelpKINode Title="OptExtensions.Fallback method" Url="html/df584d7a-7f0a-8ece-1668-467f73596b29.htm" />
+  <HelpKINode Title="OptExtensions.FallbackFix method" Url="html/6e773555-f902-e7df-476f-fa29bc6a3ea3.htm" />
+  <HelpKINode Title="OptExtensions.FallbackValue(Of T) method" Url="html/e7f8bbaf-44d7-acb1-21e8-25f6b93d32c8.htm" />
+  <HelpKINode Title="OptExtensions.FallbackValue&lt;T&gt; method" Url="html/e7f8bbaf-44d7-acb1-21e8-25f6b93d32c8.htm" />
+  <HelpKINode Title="OptExtensions.FallbackValueFix(Of T) method" Url="html/13fc74de-425b-be7b-c39f-11735de9874c.htm" />
+  <HelpKINode Title="OptExtensions.FallbackValueFix&lt;T&gt; method" Url="html/13fc74de-425b-be7b-c39f-11735de9874c.htm" />
+  <HelpKINode Title="OptExtensions.FillWithResult(Of T) method" Url="html/eead260a-cfa7-cc28-8d8c-a1b3e2b7ac9f.htm" />
+  <HelpKINode Title="OptExtensions.FillWithResult&lt;T&gt; method" Url="html/eead260a-cfa7-cc28-8d8c-a1b3e2b7ac9f.htm" />
+  <HelpKINode Title="OptExtensions.FillWithResultFix(Of T) method" Url="html/ad0ff6f0-e26f-ef21-615d-85d630af0e38.htm" />
+  <HelpKINode Title="OptExtensions.FillWithResultFix&lt;T&gt; method" Url="html/ad0ff6f0-e26f-ef21-615d-85d630af0e38.htm" />
+  <HelpKINode Title="OptExtensions.FillWithValue(Of T) method" Url="html/c23585c5-dbb5-043e-bb9b-0366841bd32e.htm" />
+  <HelpKINode Title="OptExtensions.FillWithValue&lt;T&gt; method" Url="html/c23585c5-dbb5-043e-bb9b-0366841bd32e.htm" />
+  <HelpKINode Title="OptExtensions.FillWithValueFix(Of T) method" Url="html/950e1a9a-b805-71c8-f80a-312d3e8eaad7.htm" />
+  <HelpKINode Title="OptExtensions.FillWithValueFix&lt;T&gt; method" Url="html/950e1a9a-b805-71c8-f80a-312d3e8eaad7.htm" />
+  <HelpKINode Title="OptExtensions.First(Of T) method" Url="html/4699e1d9-0a6b-8ed8-898a-49a94de54f55.htm" />
+  <HelpKINode Title="OptExtensions.First&lt;T&gt; method" Url="html/4699e1d9-0a6b-8ed8-898a-49a94de54f55.htm" />
+  <HelpKINode Title="OptExtensions.FirstOrDefault(Of T) method" Url="html/eb2f45ff-e414-be7d-dd25-0e084611540a.htm" />
+  <HelpKINode Title="OptExtensions.FirstOrDefault&lt;T&gt; method" Url="html/eb2f45ff-e414-be7d-dd25-0e084611540a.htm" />
+  <HelpKINode Title="OptExtensions.FlattenFixOpt method" Url="html/739f74ab-1b7d-572e-5d8b-bc8ef49eae43.htm" />
+  <HelpKINode Title="OptExtensions.FlattenOpt method" Url="html/a1fcdd4b-96c2-7231-8c52-2650eb9fdd1a.htm" />
+  <HelpKINode Title="OptExtensions.ForAny method" Url="html/69990ca3-df8e-20df-2544-0dde95bee45e.htm" />
+  <HelpKINode Title="OptExtensions.ForNone(Of T) method" Url="html/419526b4-835d-2aec-4607-432f61445b25.htm" />
+  <HelpKINode Title="OptExtensions.ForNone&lt;T&gt; method" Url="html/419526b4-835d-2aec-4607-432f61445b25.htm" />
+  <HelpKINode Title="OptExtensions.Last(Of T) method" Url="html/43c983a9-8030-40bb-dd09-4f09892515f0.htm" />
+  <HelpKINode Title="OptExtensions.Last&lt;T&gt; method" Url="html/43c983a9-8030-40bb-dd09-4f09892515f0.htm" />
+  <HelpKINode Title="OptExtensions.LastOrDefault(Of T) method" Url="html/049f29ed-7b58-c94b-7cc5-8c22a5d59246.htm" />
+  <HelpKINode Title="OptExtensions.LastOrDefault&lt;T&gt; method" Url="html/049f29ed-7b58-c94b-7cc5-8c22a5d59246.htm" />
+  <HelpKINode Title="OptExtensions.Select(Of TSource, TResult) method" Url="html/5052a95e-f17e-acd0-04b1-ed2fb1260f32.htm" />
+  <HelpKINode Title="OptExtensions.Select&lt;TSource, TResult&gt; method" Url="html/5052a95e-f17e-acd0-04b1-ed2fb1260f32.htm" />
+  <HelpKINode Title="OptExtensions.SelectFix(Of TSource, TResult) method" Url="html/ac542c80-aa9b-0638-7c00-26337e069830.htm" />
+  <HelpKINode Title="OptExtensions.SelectFix&lt;TSource, TResult&gt; method" Url="html/ac542c80-aa9b-0638-7c00-26337e069830.htm" />
+  <HelpKINode Title="OptExtensions.Single(Of T) method" Url="html/e7ff1816-366b-a857-9b07-6243ba68074d.htm" />
+  <HelpKINode Title="OptExtensions.Single&lt;T&gt; method" Url="html/e7ff1816-366b-a857-9b07-6243ba68074d.htm" />
+  <HelpKINode Title="OptExtensions.SingleOrDefault(Of T) method" Url="html/3b9cd158-2740-f811-6e83-b9b3f1fa05ee.htm" />
+  <HelpKINode Title="OptExtensions.SingleOrDefault&lt;T&gt; method" Url="html/3b9cd158-2740-f811-6e83-b9b3f1fa05ee.htm" />
+  <HelpKINode Title="OptExtensions.SubstituteIfEmpty(Of T) method" Url="html/737a674e-f10d-13ab-6a74-2c12afe2efdf.htm" />
+  <HelpKINode Title="OptExtensions.SubstituteIfEmpty&lt;T&gt; method" Url="html/737a674e-f10d-13ab-6a74-2c12afe2efdf.htm" />
+  <HelpKINode Title="OptExtensions.SubstituteIfEmptyFix(Of T) method" Url="html/85cc0c62-8dac-3790-3b62-655aaf83f879.htm" />
+  <HelpKINode Title="OptExtensions.SubstituteIfEmptyFix&lt;T&gt; method" Url="html/85cc0c62-8dac-3790-3b62-655aaf83f879.htm" />
+  <HelpKINode Title="OptExtensions.Where(Of T) method" Url="html/35f1ae1e-3479-e512-c84d-c2fb6bfb58cb.htm" />
+  <HelpKINode Title="OptExtensions.Where&lt;T&gt; method" Url="html/35f1ae1e-3479-e512-c84d-c2fb6bfb58cb.htm" />
+  <HelpKINode Title="OptExtensions.WhereFix(Of T) method" Url="html/c15e9862-8caa-db36-7c4a-5ab9cda592d5.htm" />
+  <HelpKINode Title="OptExtensions.WhereFix&lt;T&gt; method" Url="html/c15e9862-8caa-db36-7c4a-5ab9cda592d5.htm" />
+  <HelpKINode Title="OptExtensions.Zip method" Url="html/ccfd4129-8b6e-5ceb-fde1-0cb9cb57f4fd.htm" />
+  <HelpKINode Title="OptExtensions.ZipFix method" Url="html/4d2a384f-62ec-1a59-dccd-c942d53252d7.htm" />
+  <HelpKINode Title="PackInt16 method" Url="html/97f14a60-b0bf-e402-d14c-b33c9aa303da.htm" />
+  <HelpKINode Title="PackInt32 method" Url="html/6426be93-53b4-d39c-9ba4-6ac4cd9b3176.htm" />
+  <HelpKINode Title="PackInt64 method" Url="html/f40858e1-68b7-d681-83a7-e1efd0539e65.htm" />
+  <HelpKINode Title="PackUInt16 method" Url="html/e8016686-cd10-82e3-ba6d-eb01543df2cf.htm" />
+  <HelpKINode Title="PackUInt32 method" Url="html/1fa0b10e-caeb-3ec5-aec7-4c790fb72d11.htm" />
+  <HelpKINode Title="PackUInt64 method" Url="html/31c216c1-a18d-ddf3-e11a-e4428ec89ecd.htm" />
+  <HelpKINode Title="ParseXsdBooleanAttribute method" Url="html/3b878fd8-873e-6975-08f5-ec9c92ed04b5.htm" />
+  <HelpKINode Title="ParseXsdBooleanValue method" Url="html/27b8e4bb-9ab4-3095-708d-c4a8d0b34562.htm" />
+  <HelpKINode Title="PreserveWhitespace method" Url="html/a846a266-5c3e-ebca-b66e-76095bd977a8.htm" />
+  <HelpKINode Title="ReadCharEndian method" Url="html/472153ef-db99-5278-c0d2-4b2be12330ec.htm" />
+  <HelpKINode Title="ReadFully method" Url="html/1b22f1ff-ea66-5ca9-afe7-72deacf21cf5.htm" />
+  <HelpKINode Title="ReadInt16Endian method" Url="html/51ab3a4b-59f4-fd4a-e2b4-a138d72811af.htm" />
+  <HelpKINode Title="ReadInt32Endian method" Url="html/826da960-e220-7fe0-a342-a333fa4c481b.htm" />
+  <HelpKINode Title="ReadInt64Endian method" Url="html/ad128e20-cd02-72e3-a0e4-c8a01eb5d7ae.htm" />
+  <HelpKINode Title="ReadUInt16Endian method" Url="html/f3366736-e218-dc61-884e-3952eec71b71.htm" />
+  <HelpKINode Title="ReadUInt32Endian method" Url="html/3c10f642-82ec-5277-59b1-71ae3d58b712.htm" />
+  <HelpKINode Title="ReadUInt64Endian method" Url="html/daf738e1-2a95-d4f1-ecc3-d478aca1013c.htm" />
+  <HelpKINode Title="ReadViaArray method" Url="html/ddb3e5c8-9644-244c-d24a-26175718de64.htm" />
+  <HelpKINode Title="RemoveAttribute method" Url="html/79226096-9fd6-ca3a-bec5-e96782effdfe.htm" />
+  <HelpKINode Title="ResolveFunction method" Url="html/a78f3347-2d56-2161-89d5-3db3bcef1ffb.htm" />
+  <HelpKINode Title="ResolveVariable method" Url="html/bc26ce35-c538-667e-36ac-115db8a8d896.htm" />
+  <HelpKINode Title="ReturnType property" Url="html/0c653659-2f7a-5a8a-24a0-927540045d5d.htm" />
+  <HelpKINode Title="Select(Of TSource, TResult) method" Url="html/5052a95e-f17e-acd0-04b1-ed2fb1260f32.htm" />
+  <HelpKINode Title="Select&lt;TSource, TResult&gt; method" Url="html/5052a95e-f17e-acd0-04b1-ed2fb1260f32.htm" />
+  <HelpKINode Title="SelectFix(Of TResult) method" Url="html/2e98536e-7d6b-7ad8-6797-f59a5565700d.htm" />
+  <HelpKINode Title="SelectFix(Of TSource, TResult) method" Url="html/ac542c80-aa9b-0638-7c00-26337e069830.htm" />
+  <HelpKINode Title="SelectFix&lt;TResult&gt; method" Url="html/2e98536e-7d6b-7ad8-6797-f59a5565700d.htm" />
+  <HelpKINode Title="SelectFix&lt;TSource, TResult&gt; method" Url="html/ac542c80-aa9b-0638-7c00-26337e069830.htm" />
+  <HelpKINode Title="SetAttributeValue method" Url="html/7c668236-0d24-0238-cea0-ef9287aeb98b.htm" />
+  <HelpKINode Title="SignedIntegralValueOpt method" Url="html/f5bba8d4-d128-d487-e049-acae4ed65cbd.htm" />
+  <HelpKINode Title="SimpleTypeExtensions class">
+    <HelpKINode Title="SimpleTypeExtensions Class" Url="html/bd98b0bc-9710-2639-5f7d-8783a998c8e4.htm" />
+    <HelpKINode Title="about SimpleTypeExtensions class" Url="html/bd98b0bc-9710-2639-5f7d-8783a998c8e4.htm" />
+    <HelpKINode Title="methods" Url="html/7b579fc8-dd2c-4d76-74c4-85b7e7ca4344.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SimpleTypeExtensions.DecimalValueOpt method" Url="html/f86e7263-8bef-fb14-4224-5bc93c6de5b0.htm" />
+  <HelpKINode Title="SimpleTypeExtensions.FloatingPointValueOpt method" Url="html/6ca82ac7-0fb7-2fd8-5684-fe9eb249fa6d.htm" />
+  <HelpKINode Title="SimpleTypeExtensions.HasSimpleType method" Url="html/7ca0f031-ea57-2b47-fa65-f2edd5e3d927.htm" />
+  <HelpKINode Title="SimpleTypeExtensions.IsFloatingPoint method" Url="html/3dfafaac-9da8-8367-c97a-9dd45ea5a16a.htm" />
+  <HelpKINode Title="SimpleTypeExtensions.IsIntegral method" Url="html/9baee07f-d4c2-15aa-b892-592e3f9455ca.htm" />
+  <HelpKINode Title="SimpleTypeExtensions.IsIntegralAndNotChar method" Url="html/693538a7-8b89-96a0-6195-99c46adfab28.htm" />
+  <HelpKINode Title="SimpleTypeExtensions.IsNumeric method" Url="html/9792fc67-f1e0-df66-6ca6-c8ded1664d7f.htm" />
+  <HelpKINode Title="SimpleTypeExtensions.IsNumericAndNotChar method" Url="html/06d9fc27-e7b9-3a99-4200-94a8c4f27eba.htm" />
+  <HelpKINode Title="SimpleTypeExtensions.IsSignedIntegral method" Url="html/80a2c1fd-c83e-2ec2-b219-16ea0c026b06.htm" />
+  <HelpKINode Title="SimpleTypeExtensions.IsUnsignedIntegral method" Url="html/4e1ffc97-bb61-2d90-a29f-794197795f9c.htm" />
+  <HelpKINode Title="SimpleTypeExtensions.IsUnsignedIntegralAndNotChar method" Url="html/4c64502c-729f-56ea-75e2-072320757544.htm" />
+  <HelpKINode Title="SimpleTypeExtensions.NumericValueAsDecimalOpt method" Url="html/e6c37586-4f9c-44fb-723c-576ad7604852.htm" />
+  <HelpKINode Title="SimpleTypeExtensions.NumericValueAsDoubleOpt method" Url="html/5dca04c0-1e95-8460-a510-be30afa9da7b.htm" />
+  <HelpKINode Title="SimpleTypeExtensions.NumericValueToNonScientificStringOpt method" Url="html/c8f32110-536f-a52a-89cf-610f31acafcc.htm" />
+  <HelpKINode Title="SimpleTypeExtensions.NumericValueToStringOpt method" Url="html/6e2663e3-01a8-63de-c474-f40085040542.htm" />
+  <HelpKINode Title="SimpleTypeExtensions.SignedIntegralValueOpt method" Url="html/f5bba8d4-d128-d487-e049-acae4ed65cbd.htm" />
+  <HelpKINode Title="SimpleTypeExtensions.UnsignedIntegralValueOpt method" Url="html/e85520e9-c034-eb84-a558-3802b859adf9.htm" />
+  <HelpKINode Title="Single method" Url="html/3fa795db-6f36-0cbf-110e-9f09ea6f6619.htm" />
+  <HelpKINode Title="Single(Of T) method" Url="html/e7ff1816-366b-a857-9b07-6243ba68074d.htm" />
+  <HelpKINode Title="Single&lt;T&gt; method" Url="html/e7ff1816-366b-a857-9b07-6243ba68074d.htm" />
+  <HelpKINode Title="SingleFixOpt method" Url="html/ec5a5c59-109d-97e1-0f36-bcdfb6088398.htm" />
+  <HelpKINode Title="SingleOpt method" Url="html/b316d1c2-b530-23cf-d30d-d7849cc3e19a.htm" />
+  <HelpKINode Title="SingleOrDefault method" Url="html/37af4439-ee41-de28-72d5-6be29395b21a.htm" />
+  <HelpKINode Title="SingleOrDefault(Of T) method" Url="html/3b9cd158-2740-f811-6e83-b9b3f1fa05ee.htm" />
+  <HelpKINode Title="SingleOrDefault&lt;T&gt; method" Url="html/3b9cd158-2740-f811-6e83-b9b3f1fa05ee.htm" />
+  <HelpKINode Title="SingleOrResult(Of T) method" Url="html/ea991e0a-14a7-aef7-4501-64c96f260e72.htm" />
+  <HelpKINode Title="SingleOrResult&lt;T&gt; method" Url="html/ea991e0a-14a7-aef7-4501-64c96f260e72.htm" />
+  <HelpKINode Title="SingleOrValue(Of T) method" Url="html/d5453f44-8068-122b-d665-898e86e9e5d0.htm" />
+  <HelpKINode Title="SingleOrValue&lt;T&gt; method" Url="html/d5453f44-8068-122b-d665-898e86e9e5d0.htm" />
+  <HelpKINode Title="Skip method" Url="html/01ea915d-7770-0840-48ae-b42029fcccdd.htm" />
+  <HelpKINode Title="SliceInRange method" Url="html/5ede2d5a-4969-7e88-e795-562fc7494e7b.htm" />
+  <HelpKINode Title="SourceCount property" Url="html/03d3cff6-69dd-05e3-436e-5c5328ea459b.htm" />
+  <HelpKINode Title="SourceMultiple property" Url="html/ff511d79-e295-8468-3f03-bb11e3e9a31f.htm" />
+  <HelpKINode Title="SourceNone property" Url="html/680f307d-a799-8109-35fe-b41b88788010.htm" />
+  <HelpKINode Title="SpanInRange method" Url="html/14394bc8-20c1-9d78-29d7-9a72a50be293.htm" />
+  <HelpKINode Title="StreamExtensions class">
+    <HelpKINode Title="StreamExtensions Class" Url="html/51411086-e380-53b9-cf9d-77023dad6a4d.htm" />
+    <HelpKINode Title="about StreamExtensions class" Url="html/51411086-e380-53b9-cf9d-77023dad6a4d.htm" />
+    <HelpKINode Title="methods" Url="html/af883869-aeb1-2fdd-12ae-2a89acf5c003.htm" />
+  </HelpKINode>
+  <HelpKINode Title="StreamExtensions.ReadFully method" Url="html/1b22f1ff-ea66-5ca9-afe7-72deacf21cf5.htm" />
+  <HelpKINode Title="StreamExtensions.ReadViaArray method" Url="html/ddb3e5c8-9644-244c-d24a-26175718de64.htm" />
+  <HelpKINode Title="StreamExtensions.Write method" Url="html/3e2329f6-947a-0927-366e-76f67fd48875.htm" />
+  <HelpKINode Title="StringExtensions class">
+    <HelpKINode Title="StringExtensions Class" Url="html/aa324065-dc67-8b0e-84fe-f377f9e0229a.htm" />
+    <HelpKINode Title="about StringExtensions class" Url="html/aa324065-dc67-8b0e-84fe-f377f9e0229a.htm" />
+    <HelpKINode Title="methods" Url="html/ca735c41-dd1d-53ab-5f93-cde08f948226.htm" />
+  </HelpKINode>
+  <HelpKINode Title="StringExtensions.FormatStr method" Url="html/a16fd571-89a1-c131-0b7b-2537fcf669d3.htm" />
+  <HelpKINode Title="StringExtensions.InternStr method" Url="html/584bd9bf-4e8d-6a29-495e-0c0cff464407.htm" />
+  <HelpKINode Title="StringExtensions.IsInternedStr method" Url="html/aff53f93-5a6d-2a9f-5f63-25af594b809c.htm" />
+  <HelpKINode Title="StringExtensions.IsNullOrEmptyStr method" Url="html/f8488887-9077-1212-1fc1-caaab5cb8add.htm" />
+  <HelpKINode Title="StringExtensions.IsNullOrWhiteSpaceStr method" Url="html/2b93e651-ea41-ff39-40d9-69dc90ed7c4d.htm" />
+  <HelpKINode Title="StringExtensions.JoinStr method" Url="html/5b417080-bfb0-864e-084c-27649d3fed97.htm" />
+  <HelpKINode Title="StringExtensions.JoinWithStr method" Url="html/93146d17-3ffe-59f0-a7cc-bd85064d9893.htm" />
+  <HelpKINode Title="SubstituteIfEmpty(Of T) method" Url="html/737a674e-f10d-13ab-6a74-2c12afe2efdf.htm" />
+  <HelpKINode Title="SubstituteIfEmpty&lt;T&gt; method" Url="html/737a674e-f10d-13ab-6a74-2c12afe2efdf.htm" />
+  <HelpKINode Title="SubstituteIfEmptyFix(Of T) method" Url="html/85cc0c62-8dac-3790-3b62-655aaf83f879.htm" />
+  <HelpKINode Title="SubstituteIfEmptyFix&lt;T&gt; method" Url="html/85cc0c62-8dac-3790-3b62-655aaf83f879.htm" />
+  <HelpKINode Title="Swap2 method" Url="html/d6cdaf12-0219-beaf-a6d9-ba41fa2812e6.htm" />
+  <HelpKINode Title="Swap4 method" Url="html/49b7de6e-6b30-e68c-b0ea-80e39f2b26d1.htm" />
+  <HelpKINode Title="Swap8 method" Url="html/82944fb3-6ee7-417f-b0ad-a1b29816526f.htm" />
+  <HelpKINode Title="Swapped method" Url="html/892058cd-dbdf-a001-701d-229b6d755915.htm" />
+  <HelpKINode Title="Table property" Url="html/597ab18b-afe7-832f-1d00-95116cb9aff7.htm" />
+  <HelpKINode Title="Take method" Url="html/fb9dc4af-1b5e-2f04-ef50-07343f806747.htm" />
+  <HelpKINode Title="ToBoolean method" Url="html/0de108be-775f-cc74-8224-5d7d3e7f008c.htm" />
+  <HelpKINode Title="ToBooleanOpt method" Url="html/c9ce5646-4d39-a28e-4172-b875bf79022c.htm" />
+  <HelpKINode Title="ToByteOpt method" Url="html/9903b0bc-b50f-7f00-53c2-53a6256cd536.htm" />
+  <HelpKINode Title="ToChar method" Url="html/6b956625-85a0-1e4b-50b3-1952f06afc7a.htm" />
+  <HelpKINode Title="ToCharOpt method" Url="html/2b98cec7-8e7b-10ca-76d7-705dfb5eaaed.htm" />
+  <HelpKINode Title="ToDateTimeOpt method" Url="html/6f8abd72-ef2b-ed27-e515-3e7c42e65568.htm" />
+  <HelpKINode Title="ToDecimalOpt method" Url="html/a70dc2b8-0e6d-346f-c1ab-9362c9fa8eac.htm" />
+  <HelpKINode Title="ToDoubleOpt method" Url="html/933cab36-6623-36ae-98e6-3b48700c1767.htm" />
+  <HelpKINode Title="ToInt16 method" Url="html/ecdb7be7-59b8-e79e-7aba-5321d42d76e0.htm" />
+  <HelpKINode Title="ToInt16Opt method" Url="html/f1f9cd2b-231d-c5f7-559c-64f351f61f36.htm" />
+  <HelpKINode Title="ToInt32 method" Url="html/a4fe6f1e-d2ae-3334-7214-4fa655497f79.htm" />
+  <HelpKINode Title="ToInt32Opt method" Url="html/8924fc07-0706-1126-3cd5-fedb74989fb4.htm" />
+  <HelpKINode Title="ToInt64 method" Url="html/9f64b31a-907d-fc49-0392-a0ee7cc0ee2f.htm" />
+  <HelpKINode Title="ToInt64Opt method" Url="html/57aee04e-f492-0e63-1e24-fd73932e17b0.htm" />
+  <HelpKINode Title="ToNodeSet method" Url="html/54ae09a3-a8f8-8962-f13e-7d6950d7176c.htm" />
+  <HelpKINode Title="ToNumber method" Url="html/3a0745e4-37e9-7cee-9095-268a95838a75.htm" />
+  <HelpKINode Title="ToSByteOpt method" Url="html/d3860edc-a22c-550e-d59d-3bea7c50a224.htm" />
+  <HelpKINode Title="ToSingleOpt method" Url="html/168509ef-a26c-ff07-148c-4389be9d99bc.htm" />
+  <HelpKINode Title="ToString method" Url="html/8aac93bb-035d-e0ea-b33d-8cb5f97f06bd.htm" />
+  <HelpKINode Title="ToStringOpt method" Url="html/14bc6fe4-7861-95ed-c25f-93a9d27eb4cd.htm" />
+  <HelpKINode Title="ToUInt16 method" Url="html/c7e2da8e-439e-8390-f9d2-103c183b298a.htm" />
+  <HelpKINode Title="ToUInt16Opt method" Url="html/2aee3f98-6c66-4617-d673-edca85f25daa.htm" />
+  <HelpKINode Title="ToUInt32 method" Url="html/429c9870-aa35-4677-c20b-0efa26a2c73c.htm" />
+  <HelpKINode Title="ToUInt32Opt method" Url="html/89a865ae-0c34-d382-8bdf-514d582192a9.htm" />
+  <HelpKINode Title="ToUInt64 method" Url="html/f8c9ab68-ee99-5798-50cd-eb34025a01c0.htm" />
+  <HelpKINode Title="ToUInt64Opt method" Url="html/49060b0f-9c70-b63b-5e77-6e3b0bc74ad9.htm" />
+  <HelpKINode Title="ToXElementOpt method" Url="html/1592884b-e534-e0bb-8510-0db2045a01d1.htm" />
+  <HelpKINode Title="ToXNode method" Url="html/d49eda35-0aae-8065-248a-009d80e4fd69.htm" />
+  <HelpKINode Title="TriflesXPathContext class">
+    <HelpKINode Title="TriflesXPathContext Class" Url="html/d4ce2664-4a33-058a-c1ca-7885b500c0a2.htm" />
+    <HelpKINode Title="about TriflesXPathContext class" Url="html/d4ce2664-4a33-058a-c1ca-7885b500c0a2.htm" />
+    <HelpKINode Title="constructor" Url="html/e38263b0-3d73-b644-b3e6-2725935588a7.htm" />
+    <HelpKINode Title="methods" Url="html/adac2b8c-734f-8d07-e320-18fb9779a639.htm" />
+    <HelpKINode Title="properties" Url="html/57ff1200-193b-b13d-b96b-875c7de57b52.htm" />
+  </HelpKINode>
+  <HelpKINode Title="TriflesXPathContext.AddVariable method" Url="html/07989356-34fd-90b0-67ac-1e614e8d2bb7.htm" />
+  <HelpKINode Title="TriflesXPathContext.CompareDocument method" Url="html/1a65cf02-a1aa-a66c-184d-6db5d8f927b4.htm" />
+  <HelpKINode Title="TriflesXPathContext.PreserveWhitespace method" Url="html/a846a266-5c3e-ebca-b66e-76095bd977a8.htm" />
+  <HelpKINode Title="TriflesXPathContext.ResolveFunction method" Url="html/a78f3347-2d56-2161-89d5-3db3bcef1ffb.htm" />
+  <HelpKINode Title="TriflesXPathContext.ResolveVariable method" Url="html/bc26ce35-c538-667e-36ac-115db8a8d896.htm" />
+  <HelpKINode Title="TriflesXPathContext.Table property" Url="html/597ab18b-afe7-832f-1d00-95116cb9aff7.htm" />
+  <HelpKINode Title="TriflesXPathContext.TriflesXPathContext constructor" Url="html/e38263b0-3d73-b644-b3e6-2725935588a7.htm" />
+  <HelpKINode Title="TriflesXPathContext.Whitespace property" Url="html/0de41e3b-7d79-22a2-7f6e-bc2169af913e.htm" />
+  <HelpKINode Title="TriflesXPathData class">
+    <HelpKINode Title="TriflesXPathData Class" Url="html/549ff4c3-2418-5ce8-be30-da7b91b69565.htm" />
+    <HelpKINode Title="about TriflesXPathData class" Url="html/549ff4c3-2418-5ce8-be30-da7b91b69565.htm" />
+    <HelpKINode Title="methods" Url="html/6e543e09-a363-7f0d-462b-1ba3193ab98a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="TriflesXPathData.EnsureNavigator method" Url="html/430fad38-e08c-2bcc-396d-76f515a85286.htm" />
+  <HelpKINode Title="TriflesXPathData.Evaluate method" Url="html/1cf292b0-d130-fd39-089a-6fa7ff113701.htm" />
+  <HelpKINode Title="TriflesXPathData.GetEmptyNodeSet method" Url="html/88265058-3219-8d20-44f6-7061c47df804.htm" />
+  <HelpKINode Title="TriflesXPathData.GuessXPathResultType method" Url="html/e8a19cdd-3914-615f-6445-05f829ae7cde.htm" />
+  <HelpKINode Title="TriflesXPathData.ToBoolean method" Url="html/0de108be-775f-cc74-8224-5d7d3e7f008c.htm" />
+  <HelpKINode Title="TriflesXPathData.ToNodeSet method" Url="html/54ae09a3-a8f8-8962-f13e-7d6950d7176c.htm" />
+  <HelpKINode Title="TriflesXPathData.ToNumber method" Url="html/3a0745e4-37e9-7cee-9095-268a95838a75.htm" />
+  <HelpKINode Title="TriflesXPathData.ToString method" Url="html/8aac93bb-035d-e0ea-b33d-8cb5f97f06bd.htm" />
+  <HelpKINode Title="TriflesXPathData.WrapValueInElement method" Url="html/95896b9e-4231-fe47-eef5-2536c72e9820.htm" />
+  <HelpKINode Title="TriflesXPathData.WrapValueInElementOpt method" Url="html/40634607-af75-5ca0-7138-016b3b1bfea9.htm" />
+  <HelpKINode Title="TriflesXPathExtensionFunction class">
+    <HelpKINode Title="TriflesXPathExtensionFunction Class" Url="html/05e53650-7fc0-9957-5af1-7ab3199332da.htm" />
+    <HelpKINode Title="about TriflesXPathExtensionFunction class" Url="html/05e53650-7fc0-9957-5af1-7ab3199332da.htm" />
+    <HelpKINode Title="constructor" Url="html/641c5224-ce6e-d82c-1947-21d1c4811107.htm" />
+    <HelpKINode Title="methods" Url="html/aef6eaea-2cd9-8f92-1939-c5eb7af0180d.htm" />
+    <HelpKINode Title="properties" Url="html/3c661119-dfee-cf7e-149c-027f5b2ca037.htm" />
+  </HelpKINode>
+  <HelpKINode Title="TriflesXPathExtensionFunction.ArgTypes property" Url="html/99923ba8-5a51-11b7-43f2-bbf0e99977d3.htm" />
+  <HelpKINode Title="TriflesXPathExtensionFunction.FunctionName property" Url="html/79a304e0-5d97-f3ef-6dcd-67acb24d78ee.htm" />
+  <HelpKINode Title="TriflesXPathExtensionFunction.Invoke method" Url="html/1a40bf9e-d3a5-2ed6-be9f-55d4dfd90e4f.htm" />
+  <HelpKINode Title="TriflesXPathExtensionFunction.Maxargs property" Url="html/cc0827fd-d333-5770-0f0b-358c4092a404.htm" />
+  <HelpKINode Title="TriflesXPathExtensionFunction.Minargs property" Url="html/085701df-c38a-7f8a-21ce-b1a991656e5b.htm" />
+  <HelpKINode Title="TriflesXPathExtensionFunction.ReturnType property" Url="html/0c653659-2f7a-5a8a-24a0-927540045d5d.htm" />
+  <HelpKINode Title="TriflesXPathExtensionFunction.TriflesXPathExtensionFunction constructor" Url="html/641c5224-ce6e-d82c-1947-21d1c4811107.htm" />
+  <HelpKINode Title="TriflesXPathExtensionVariable class">
+    <HelpKINode Title="TriflesXPathExtensionVariable Class" Url="html/066f4580-7efe-8c74-63ac-4a14629e371b.htm" />
+    <HelpKINode Title="about TriflesXPathExtensionVariable class" Url="html/066f4580-7efe-8c74-63ac-4a14629e371b.htm" />
+    <HelpKINode Title="constructor" Url="html/f807b4f3-0df7-009b-8cd7-4cdbd6c9b39e.htm" />
+    <HelpKINode Title="methods" Url="html/6ac78c0e-9c0b-52fd-acbd-64c55d998b8b.htm" />
+    <HelpKINode Title="properties" Url="html/53a3d38e-9a55-7bb9-d353-388a4d24473c.htm" />
+  </HelpKINode>
+  <HelpKINode Title="TriflesXPathExtensionVariable.Evaluate method" Url="html/b5fdb25a-2db0-da99-e58d-5f7d2edf455c.htm" />
+  <HelpKINode Title="TriflesXPathExtensionVariable.IsLocal property" Url="html/369fe8cb-8c19-2858-0f19-00cc18877ae9.htm" />
+  <HelpKINode Title="TriflesXPathExtensionVariable.IsParam property" Url="html/2ba520ee-87ac-6713-ddc8-6f86bf0bd3bc.htm" />
+  <HelpKINode Title="TriflesXPathExtensionVariable.TriflesXPathExtensionVariable constructor" Url="html/f807b4f3-0df7-009b-8cd7-4cdbd6c9b39e.htm" />
+  <HelpKINode Title="TriflesXPathExtensionVariable.Value property" Url="html/7d838920-51a9-e5ce-1985-241c29190fe2.htm" />
+  <HelpKINode Title="TriflesXPathExtensionVariable.VariableName property" Url="html/c8ca416e-38df-0b45-489e-fe927996f8b5.htm" />
+  <HelpKINode Title="TriflesXPathExtensionVariable.VariableType property" Url="html/b4ca12b6-e243-d05f-6d77-eb0c5c2794ee.htm" />
+  <HelpKINode Title="TriflesXPathInvokable delegate" Url="html/4f190da7-c56b-8640-0b39-0379e413afa5.htm" />
+  <HelpKINode Title="TryGetElementAt method" Url="html/148cb5ad-c788-9567-6ca7-5ba3db842cba.htm" />
+  <HelpKINode Title="TryGetFirst method" Url="html/a9d4ce5d-d9b0-1563-6702-e86edc37f064.htm" />
+  <HelpKINode Title="TryGetLast method" Url="html/1268f2ad-5cd2-3255-61ba-14cf2a969e52.htm" />
+  <HelpKINode Title="TryGetSingle method">
+    <HelpKINode Title="EnumerableExtensions.TryGetSingle Method " Url="html/0cf7db8c-5994-bb57-143e-0e07937205cf.htm" />
+    <HelpKINode Title="Opt(T).TryGetSingle Method " Url="html/b2f64db7-f9c7-0306-329e-66c12ca9261c.htm" />
+  </HelpKINode>
+  <HelpKINode Title="TryParseXsdBooleanValue method" Url="html/8b670f3a-fe28-ca44-739b-c6df1fe5f310.htm" />
+  <HelpKINode Title="UnsignedIntegralValueOpt method" Url="html/e85520e9-c034-eb84-a558-3802b859adf9.htm" />
+  <HelpKINode Title="Value property" Url="html/7d838920-51a9-e5ce-1985-241c29190fe2.htm" />
+  <HelpKINode Title="ValueFixOpt(Of TKey, TValue) method" Url="html/fd1dd082-8e2f-0ffa-dad1-ad9f36697691.htm" />
+  <HelpKINode Title="ValueFixOpt&lt;TKey, TValue&gt; method" Url="html/fd1dd082-8e2f-0ffa-dad1-ad9f36697691.htm" />
+  <HelpKINode Title="ValueOpt(Of TKey, TValue) method" Url="html/fd93a7a1-7f08-5a89-78f3-dec9493b676e.htm" />
+  <HelpKINode Title="ValueOpt&lt;TKey, TValue&gt; method" Url="html/fd93a7a1-7f08-5a89-78f3-dec9493b676e.htm" />
+  <HelpKINode Title="VariableName property" Url="html/c8ca416e-38df-0b45-489e-fe927996f8b5.htm" />
+  <HelpKINode Title="VariableType property" Url="html/b4ca12b6-e243-d05f-6d77-eb0c5c2794ee.htm" />
+  <HelpKINode Title="version">
+    <HelpKINode Title="1.0.0.0" Url="html/28ec5434-3bfa-436b-be73-313eb49f1562.htm" />
+    <HelpKINode Title="history" Url="html/8c6dc58f-9c67-4285-93ef-0f2c1e68e4ab.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Welcome" Url="html/8212db58-4bb1-4510-9c0e-2744321a36b2.htm" />
+  <HelpKINode Title="Where(Of T) method" Url="html/35f1ae1e-3479-e512-c84d-c2fb6bfb58cb.htm" />
+  <HelpKINode Title="Where&lt;T&gt; method" Url="html/35f1ae1e-3479-e512-c84d-c2fb6bfb58cb.htm" />
+  <HelpKINode Title="WhereFix method" Url="html/8ee1857e-0d0e-062a-6ad7-929d3f8d2579.htm" />
+  <HelpKINode Title="WhereFix(Of T) method" Url="html/c15e9862-8caa-db36-7c4a-5ab9cda592d5.htm" />
+  <HelpKINode Title="WhereFix&lt;T&gt; method" Url="html/c15e9862-8caa-db36-7c4a-5ab9cda592d5.htm" />
+  <HelpKINode Title="Whitespace property" Url="html/0de41e3b-7d79-22a2-7f6e-bc2169af913e.htm" />
+  <HelpKINode Title="WrapValueInElement method" Url="html/95896b9e-4231-fe47-eef5-2536c72e9820.htm" />
+  <HelpKINode Title="WrapValueInElementOpt method" Url="html/40634607-af75-5ca0-7138-016b3b1bfea9.htm" />
+  <HelpKINode Title="Write method" Url="html/3e2329f6-947a-0927-366e-76f67fd48875.htm" />
+  <HelpKINode Title="WriteEndian method" Url="html/4c70c25e-92e5-e246-9b09-0e70ad1bdb46.htm" />
+  <HelpKINode Title="XmlExtensions class">
+    <HelpKINode Title="XmlExtensions Class" Url="html/735a5823-1e77-c795-a503-6975c4d69a58.htm" />
+    <HelpKINode Title="about XmlExtensions class" Url="html/735a5823-1e77-c795-a503-6975c4d69a58.htm" />
+    <HelpKINode Title="fields" Url="html/4f016234-9d90-f607-de7a-3027ca5abab1.htm" />
+    <HelpKINode Title="methods" Url="html/a4aacfcc-09b9-08b5-2749-189822767273.htm" />
+  </HelpKINode>
+  <HelpKINode Title="XmlExtensions.AbsolutePath method" Url="html/fa0f491e-ef69-53a2-0e43-083b15ca8a77.htm" />
+  <HelpKINode Title="XmlExtensions.AsEnumerable method" Url="html/c26957da-1da5-cac7-86c3-0781bdb81bec.htm" />
+  <HelpKINode Title="XmlExtensions.AsXPathNavigable method" Url="html/468ad033-20af-40d4-90ce-64ea5fc050e5.htm" />
+  <HelpKINode Title="XmlExtensions.AttributeOpt method" Url="html/8174c078-6f21-0aee-f68e-4a95725942c4.htm" />
+  <HelpKINode Title="XmlExtensions.AttributeValue method" Url="html/bc4ab484-4707-bfd9-e49d-542ba4730b20.htm" />
+  <HelpKINode Title="XmlExtensions.AttributeValueOpt method" Url="html/ba2aacb9-5180-d3fc-a654-d396f72ec03b.htm" />
+  <HelpKINode Title="XmlExtensions.GetRequiredXName method" Url="html/b5e11802-e5da-92de-095c-7fe19a1ca4bd.htm" />
+  <HelpKINode Title="XmlExtensions.GetRequiredXNamespace method" Url="html/742214ad-d674-89fd-7618-b5f47b869ae4.htm" />
+  <HelpKINode Title="XmlExtensions.GetXNameOpt method" Url="html/3b4b4549-01db-e98f-39c5-e521bdeff845.htm" />
+  <HelpKINode Title="XmlExtensions.GetXNamespaceOpt method" Url="html/7a2dee8f-b3d2-483c-ac0e-94fd18b2879b.htm" />
+  <HelpKINode Title="XmlExtensions.HasAttribute method" Url="html/3311cb00-f1d7-9a52-6c1d-a958b3b263e6.htm" />
+  <HelpKINode Title="XmlExtensions.LookupNamespaceOpt method" Url="html/6c4c741f-d5ff-e394-6347-8c0d6c0b20b1.htm" />
+  <HelpKINode Title="XmlExtensions.LookupPrefixOpt method" Url="html/e36ce78f-01d5-a46c-c060-cfb383c362c9.htm" />
+  <HelpKINode Title="XmlExtensions.ParseXsdBooleanAttribute method" Url="html/3b878fd8-873e-6975-08f5-ec9c92ed04b5.htm" />
+  <HelpKINode Title="XmlExtensions.ParseXsdBooleanValue method" Url="html/27b8e4bb-9ab4-3095-708d-c4a8d0b34562.htm" />
+  <HelpKINode Title="XmlExtensions.RemoveAttribute method" Url="html/79226096-9fd6-ca3a-bec5-e96782effdfe.htm" />
+  <HelpKINode Title="XmlExtensions.SetAttributeValue method" Url="html/7c668236-0d24-0238-cea0-ef9287aeb98b.htm" />
+  <HelpKINode Title="XmlExtensions.ToXElementOpt method" Url="html/1592884b-e534-e0bb-8510-0db2045a01d1.htm" />
+  <HelpKINode Title="XmlExtensions.ToXNode method" Url="html/d49eda35-0aae-8065-248a-009d80e4fd69.htm" />
+  <HelpKINode Title="XmlExtensions.TryParseXsdBooleanValue method" Url="html/8b670f3a-fe28-ca44-739b-c6df1fe5f310.htm" />
+  <HelpKINode Title="XmlExtensions.XsiNamespace field" Url="html/c3cc6da8-43f7-1b68-0e62-fde3c6ae9fbb.htm" />
+  <HelpKINode Title="XmlExtensions.XsiNil method" Url="html/875cd116-38cb-1bec-39c5-5de709802ae0.htm" />
+  <HelpKINode Title="XmlExtensions.XsiNilName field" Url="html/2fcd41aa-ebe7-2a24-4777-8172ca8fb281.htm" />
+  <HelpKINode Title="XPathXNamesTable class">
+    <HelpKINode Title="XPathXNamesTable Class" Url="html/dc879961-68ec-0eaf-03b0-a5e2aa1091b9.htm" />
+    <HelpKINode Title="about XPathXNamesTable class" Url="html/dc879961-68ec-0eaf-03b0-a5e2aa1091b9.htm" />
+    <HelpKINode Title="constructor" Url="html/35e1fbbb-d184-0e5b-e528-c1aaab72cfb2.htm" />
+    <HelpKINode Title="methods" Url="html/dd651f15-66f5-f169-3bda-7618aecc2ad0.htm" />
+  </HelpKINode>
+  <HelpKINode Title="XPathXNamesTable.AddFunction method" Url="html/3fff1373-a50a-f119-5ac5-6b8c7632c685.htm" />
+  <HelpKINode Title="XPathXNamesTable.AddVariable method" Url="html/17d75c15-1edc-c742-9aaa-d9282a0b9708.htm" />
+  <HelpKINode Title="XPathXNamesTable.GetFunctionOpt method" Url="html/b52c5441-25a4-bb66-fe00-02db62d7df2f.htm" />
+  <HelpKINode Title="XPathXNamesTable.GetOwnFunctionOpt method" Url="html/4b053413-5bfc-1838-dc79-6deb730569b0.htm" />
+  <HelpKINode Title="XPathXNamesTable.GetOwnVariableOpt method" Url="html/d9bd4e0d-9059-0cee-6f21-4621f6d045e7.htm" />
+  <HelpKINode Title="XPathXNamesTable.GetVariableOpt method" Url="html/55964eb2-4db8-4eb9-0607-22624e22f16a.htm" />
+  <HelpKINode Title="XPathXNamesTable.XPathXNamesTable constructor" Url="html/35e1fbbb-d184-0e5b-e528-c1aaab72cfb2.htm" />
+  <HelpKINode Title="XsiNamespace field" Url="html/c3cc6da8-43f7-1b68-0e62-fde3c6ae9fbb.htm" />
+  <HelpKINode Title="XsiNil method" Url="html/875cd116-38cb-1bec-39c5-5de709802ae0.htm" />
+  <HelpKINode Title="XsiNilName field" Url="html/2fcd41aa-ebe7-2a24-4777-8172ca8fb281.htm" />
+  <HelpKINode Title="Zip method">
+    <HelpKINode Title="Opt.Zip Method " Url="html/d99ecda2-0207-39c2-7ee5-6812960a5aa6.htm" />
+    <HelpKINode Title="OptExtensions.Zip Method " Url="html/ccfd4129-8b6e-5ceb-fde1-0cb9cb57f4fd.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ZipFix method">
+    <HelpKINode Title="Opt.ZipFix Method " Url="html/66ff2177-2919-c06e-4753-a2958ca2e426.htm" />
+    <HelpKINode Title="OptExtensions.ZipFix Method " Url="html/4d2a384f-62ec-1a59-dccd-c942d53252d7.htm" />
+  </HelpKINode>
+</HelpKI>

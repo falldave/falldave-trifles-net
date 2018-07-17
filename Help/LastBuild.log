@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shfbBuild product="Sandcastle Help File Builder and Tools" version="2015.10.10.0" projectFile="C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help.shfbproj" started="7/17/2018 2:12:21 PM">
+<buildStep step="Initializing">
+Finding tools...
+The Sandcastle tools are located in &#39;C:\Program Files\EWSoftware\Sandcastle Help File Builder\&#39;
+Locating components in the following folder(s):
+    C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help
+    C:\ProgramData\EWSoftware\Sandcastle Help File Builder\Components and Plug-Ins\
+    C:\Program Files\EWSoftware\Sandcastle Help File Builder\
+Framework reflection data location: C:\Program Files\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework
+Using presentation style &#39;VS2013&#39; located in &#39;C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013&#39;
+Loading and initializing plug-ins...
+Lightweight Website Style Version 2015.10.10.0
+Copyright &#169; 2006-2015, Eric Woodruff, All Rights Reserved
+Portions Copyright &#169; 2014, Sam Harwell, All Rights Reserved
+-------------------------------
+Clearing any prior web/markdown output...
+</buildStep>
+<buildStep step="ValidatingDocumentationSources">
+Validating and copying documentation source information
+Source: C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\FallDave.Trifles\bin\Debug\FallDave.Trifles.XML
+Source: C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\FallDave.Trifles\bin\Debug\FallDave.Trifles.dll
+    Found assembly &#39;C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\FallDave.Trifles\bin\Debug\FallDave.Trifles.dll&#39;
+Source: C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\FallDave.Trifles.Xml\bin\Debug\FallDave.Trifles.Xml.XML
+Source: C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\FallDave.Trifles.Xml\bin\Debug\FallDave.Trifles.Xml.dll
+    Found assembly &#39;C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\FallDave.Trifles.Xml\bin\Debug\FallDave.Trifles.Xml.dll&#39;
+
+Copying XML comments files
+    C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\FallDave.Trifles\bin\Debug\FallDave.Trifles.XML -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\FallDave.Trifles.XML
+    C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\FallDave.Trifles.Xml\bin\Debug\FallDave.Trifles.Xml.XML -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\FallDave.Trifles.Xml.XML
+</buildStep>
+<buildStep step="GenerateSharedContent">
+Generating shared content files (en-US, English (United States))...
+<plugIn name="Lightweight Website Style" behavior="After" priority="1000">
+</plugIn>    Last step completed in 00:00:00.2146
+</buildStep>
+<buildStep step="GenerateApiFilter">
+Generating API filter for MRefBuilder...
+    Last step completed in 00:00:00.1664
+</buildStep>
+<buildStep step="GenerateReflectionInfo">
+Generating reflection information...
+[C:\Program Files\MSBuild\14.0\bin\MSBuild.exe - GenerateRefInfo.proj]
+Build started 7/17/2018 2:12:27 PM.
+The target &quot;BeforeGenerateProjectPriFile&quot; listed in a BeforeTargets attribute at &quot;C:\Program Files\MSBuild\Microsoft\NuGet\Microsoft.NuGet.targets (186,61)&quot; does not exist in the project, and will be ignored.
+Project &quot;C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\GenerateRefInfo.proj&quot; on node 1 (default targets).
+PrepareForBuild:
+  Creating directory &quot;obj\Debug\&quot;.
+GenerateRefInfo:
+  MRefBuilder (v2015.10.10.0)
+  Copyright c 2006-2015, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2015, Eric Woodruff, All Rights Reserved.
+  Loaded 2 assemblies for reflection and 1 dependency assemblies.
+  Wrote information on 3 namespaces, 22 types, and 770 members
+  Copying file from &quot;reflection.org&quot; to &quot;reflection.all&quot;.
+  XslTransform (v2015.10.10.0)
+  Copyright c 2006-2015, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2015, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\Program Files\EWSoftware\Sandcastle Help File Builder\ProductionTransforms\MergeDuplicates.xsl&#39;.
+Done Building Project &quot;C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\GenerateRefInfo.proj&quot; (default targets).
+
+Build succeeded.
+
+Time Elapsed 00:00:15.56
+    Last step completed in 00:00:18.9974
+</buildStep>
+<buildStep step="TransformReflectionInfo">
+Transforming reflection output...
+[C:\Program Files\MSBuild\14.0\bin\MSBuild.exe - TransformManifest.proj]
+Build started 7/17/2018 2:12:48 PM.
+Project &quot;C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\TransformManifest.proj&quot; on node 1 (default targets).
+TransformManifest:
+  XslTransform (v2015.10.10.0)
+  Copyright c 2006-2015, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2015, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\Program Files\EWSoftware\Sandcastle Help File Builder\\ProductionTransforms\ApplyVSDocModel.xsl&#39;.
+  Copying file from &quot;reflection.xml&quot; to &quot;reflection.nofilenames&quot;.
+  XslTransform (v2015.10.10.0)
+  Copyright c 2006-2015, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2015, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\Program Files\EWSoftware\Sandcastle Help File Builder\ProductionTransforms\AddFilenames.xsl&#39;.
+  XslTransform (v2015.10.10.0)
+  Copyright c 2006-2015, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2015, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\Program Files\EWSoftware\Sandcastle Help File Builder\ProductionTransforms\ReflectionToManifest.xsl&#39;.
+Done Building Project &quot;C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\TransformManifest.proj&quot; (default targets).
+
+Build succeeded.
+
+Time Elapsed 00:00:23.76
+    Last step completed in 00:00:28.2880
+</buildStep>
+<buildStep step="GenerateNamespaceSummaries">
+Generating namespace summary information...
+    Last step completed in 00:00:00.4410
+</buildStep>
+<buildStep step="GenerateInheritedDocumentation">
+Generating inherited documentation...
+[C:\Program Files\MSBuild\14.0\bin\MSBuild.exe - GenerateInheritedDocs.proj]
+Sandcastle Help File Builder and Tools, version 2015.10.10.0
+Copyright c 2006-2015, Eric Woodruff, All Rights Reserved
+E-Mail: Eric@EWoodruff.us
+
+Reflection information will be retrieved from &#39;reflection.xml&#39;
+Inherited documentation will be written to &#39;_InheritedDocs_.xml&#39;
+Indexing C:\Program Files\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\*.xml
+Indexing C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\FallDave.Trifles.XML
+Indexing C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\FallDave.Trifles.Xml.XML
+Indexed 149293 members in 122 file(s).  2 file(s) to scan for &lt;inheritdoc /&gt; tags.
+Merging inherited documentation...
+
+
+Documentation merged successfully
+    Last step completed in 00:00:19.8023
+</buildStep>
+<buildStep step="CopyConceptualContent">
+Copying conceptual content...
+Copying standard token shared content file...
+Checking for other token files...
+Checking for code snippets files...
+Copying images and creating the media map file...
+Generating conceptual topic files
+    Parsing topic file &#39;C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Content\Welcome.aml&#39;
+    C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Content\Welcome.aml -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\ddueXml\8212db58-4bb1-4510-9c0e-2744321a36b2.xml
+    Parsing topic file &#39;C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Content\VersionHistory\VersionHistory.aml&#39;
+    C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Content\VersionHistory\VersionHistory.aml -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\ddueXml\8c6dc58f-9c67-4285-93ef-0f2c1e68e4ab.xml
+    Parsing topic file &#39;C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Content\VersionHistory\v1.0.0.0.aml&#39;
+    C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Content\VersionHistory\v1.0.0.0.aml -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\ddueXml\28ec5434-3bfa-436b-be73-313eb49f1562.xml
+    Last step completed in 00:00:00.3713
+</buildStep>
+<buildStep step="CreateConceptualTopicConfigs">
+Creating conceptual topic configuration files...
+    Companion files
+    _ContentMetadata_.xml
+    ConceptualManifest.xml
+    Last step completed in 00:00:00.1097
+</buildStep>
+<buildStep step="CopyAdditionalContent">
+Copying additional content files...
+C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\icons\Help.png -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\Help.png
+    Last step completed in 00:00:00.0909
+</buildStep>
+<buildStep step="MergeTablesOfContents">
+Merging conceptual and additional tables of contents...
+    Last step completed in 00:00:00.0000
+</buildStep>
+<buildStep step="GenerateIntermediateTableOfContents">
+Generating intermediate table of contents file...
+[C:\Program Files\MSBuild\14.0\bin\MSBuild.exe - GenerateIntermediateTOC.proj]
+Build started 7/17/2018 2:13:35 PM.
+Project &quot;C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\GenerateIntermediateTOC.proj&quot; on node 1 (default targets).
+GenerateIntermediateTOC:
+  XslTransform (v2015.10.10.0)
+  Copyright c 2006-2015, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2015, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\Program Files\EWSoftware\Sandcastle Help File Builder\\ProductionTransforms\CreateVSToc.xsl&#39;.
+Done Building Project &quot;C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\GenerateIntermediateTOC.proj&quot; (default targets).
+
+Build succeeded.
+
+Time Elapsed 00:00:05.09
+Generating conceptual content intermediate TOC file...
+    Last step completed in 00:00:08.2604
+</buildStep>
+<buildStep step="CreateBuildAssemblerConfigs">
+Creating Sandcastle configuration files...
+    sandcastle.config
+    conceptual.config
+    Last step completed in 00:00:02.3808
+</buildStep>
+<buildStep step="MergeCustomConfigs">
+Merging custom build component configurations
+C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\sandcastle.config
+C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\conceptual.config
+    Removing unused ExampleComponent.
+    Last step completed in 00:00:00.1808
+</buildStep>
+<buildStep step="BuildConceptualTopics">
+Building conceptual help topics...
+[C:\Program Files\MSBuild\14.0\bin\MSBuild.exe - BuildConceptualTopics.proj]
+Build started 7/17/2018 2:13:47 PM.
+Project &quot;C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildConceptualTopics.proj&quot; on node 1 (default targets).
+BuildConceptualTopics:
+  BuildAssembler (v2015.10.10.0)
+  Copyright c 2006-2015, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2015, Eric Woodruff, All Rights Reserved.
+  Loading configuration...
+  Processing topics...
+  Processed 3 topic(s)
+  CopyFromIndexComponent: &quot;metadata&quot; in-memory cache entries used: 1 of 15.
+Done Building Project &quot;C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildConceptualTopics.proj&quot; (default targets).
+
+Build succeeded.
+
+Time Elapsed 00:00:40.99
+    Last step completed in 00:00:45.2779
+</buildStep>
+<buildStep step="BuildReferenceTopics">
+Building reference help topics...
+[C:\Program Files\MSBuild\14.0\bin\MSBuild.exe - BuildReferenceTopics.proj]
+Build started 7/17/2018 2:14:31 PM.
+Project &quot;C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj&quot; on node 1 (default targets).
+BuildReferenceTopics:
+  BuildAssembler (v2015.10.10.0)
+  Copyright c 2006-2015, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2015, Eric Woodruff, All Rights Reserved.
+  Loading configuration...
+  Processing topics...
+BuildAssembler : warning : ShowMissingComponent: [N:FallDave.Trifles] Missing &lt;summary&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.BinaryData.Swap2(System.Byte[],System.Int32)] Missing &lt;param name=&quot;buffer&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.BinaryData.Swap2(System.Byte[],System.Int32)] Missing &lt;param name=&quot;startIndex&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.BinaryData.Swap4(System.Byte[],System.Int32)] Missing &lt;param name=&quot;buffer&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.BinaryData.Swap4(System.Byte[],System.Int32)] Missing &lt;param name=&quot;startIndex&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.BinaryData.Swap8(System.Byte[],System.Int32)] Missing &lt;param name=&quot;buffer&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.BinaryData.Swap8(System.Byte[],System.Int32)] Missing &lt;param name=&quot;startIndex&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.DictionaryExtensions.ValueFixOpt``2(System.Collections.Generic.IDictionary{``0,``1},``0)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.DictionaryExtensions.ValueOpt``2(System.Collections.Generic.IDictionary{``0,``1},``0)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.EnumerableExtensions.BufferViaArray``1(System.Collections.Generic.IEnumerable{``0},``0[])] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.EnumerableExtensions.ElementAtOrResult``1(System.Collections.Generic.IEnumerable{``0},System.Func{FallDave.Trifles.Opt{``0}},System.Int32)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.EnumerableExtensions.ElementAtOrValue``1(System.Collections.Generic.IEnumerable{``0},``0,System.Int32)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.EnumerableExtensions.FirstOrResult``1(System.Collections.Generic.IEnumerable{``0},System.Func{FallDave.Trifles.Opt{``0}},System.Func{``0,System.Boolean})] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.EnumerableExtensions.FirstOrValue``1(System.Collections.Generic.IEnumerable{``0},``0,System.Func{``0,System.Boolean})] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.EnumerableExtensions.LastOrResult``1(System.Collections.Generic.IEnumerable{``0},System.Func{FallDave.Trifles.Opt{``0}},System.Func{``0,System.Boolean})] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.EnumerableExtensions.LastOrValue``1(System.Collections.Generic.IEnumerable{``0},``0,System.Func{``0,System.Boolean})] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.EnumerableExtensions.SingleOrResult``1(System.Collections.Generic.IEnumerable{``0},System.Func{FallDave.Trifles.Opt{``0}},System.Func{``0,System.Boolean})] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.EnumerableExtensions.SingleOrValue``1(System.Collections.Generic.IEnumerable{``0},``0,System.Func{``0,System.Boolean})] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:FallDave.Trifles.Opt`1] Missing &lt;typeparam name=&quot;T&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Opt`1.SelectFix``1(System.Func{`0,``0})] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Opt`1.WhereFix(System.Func{`0,System.Boolean})] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.OptExtensions.Any``1(FallDave.Trifles.IOpt{``0})] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.OptExtensions.Cleared``1(FallDave.Trifles.IOpt{``0})] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.OptExtensions.Count``1(FallDave.Trifles.IOpt{``0})] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.OptExtensions.ElementAt``1(FallDave.Trifles.IOpt{``0},System.Int32)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.OptExtensions.Fallback``1(FallDave.Trifles.IOpt{``0},FallDave.Trifles.IOpt{``0})] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.OptExtensions.Fallback``1(FallDave.Trifles.IOpt{``0},System.Func{FallDave.Trifles.Opt{``0}})] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.OptExtensions.FallbackFix``1(FallDave.Trifles.IOpt{``0},FallDave.Trifles.IOpt{``0})] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.OptExtensions.FallbackFix``1(FallDave.Trifles.IOpt{``0},System.Func{FallDave.Trifles.Opt{``0}})] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.OptExtensions.FallbackValue``1(FallDave.Trifles.IOpt{``0},``0)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.OptExtensions.FallbackValueFix``1(FallDave.Trifles.IOpt{``0},``0)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.OptExtensions.FillWithResult``1(FallDave.Trifles.IOpt{``0},System.Func{FallDave.Trifles.Opt{``0}})] Missing &lt;typeparam name=&quot;T&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.OptExtensions.FillWithResult``1(FallDave.Trifles.IOpt{``0},System.Func{FallDave.Trifles.Opt{``0}})] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.OptExtensions.FillWithResult``1(FallDave.Trifles.IOpt{``0},System.Func{FallDave.Trifles.Opt{``0}})] Missing &lt;param name=&quot;source&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.OptExtensions.FillWithResult``1(FallDave.Trifles.IOpt{``0},System.Func{FallDave.Trifles.Opt{``0}})] Missing &lt;param name=&quot;getResult&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.OptExtensions.FillWithResultFix``1(FallDave.Trifles.IOpt{``0},System.Func{FallDave.Trifles.Opt{``0}})] Missing &lt;typeparam name=&quot;T&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.OptExtensions.FillWithResultFix``1(FallDave.Trifles.IOpt{``0},System.Func{FallDave.Trifles.Opt{``0}})] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.OptExtensions.FillWithResultFix``1(FallDave.Trifles.IOpt{``0},System.Func{FallDave.Trifles.Opt{``0}})] Missing &lt;param name=&quot;source&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.OptExtensions.FillWithResultFix``1(FallDave.Trifles.IOpt{``0},System.Func{FallDave.Trifles.Opt{``0}})] Missing &lt;param name=&quot;getResult&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.OptExtensions.FillWithValue``1(FallDave.Trifles.IOpt{``0},``0)] Missing &lt;typeparam name=&quot;T&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.OptExtensions.FillWithValue``1(FallDave.Trifles.IOpt{``0},``0)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.OptExtensions.FillWithValue``1(FallDave.Trifles.IOpt{``0},``0)] Missing &lt;param name=&quot;source&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.OptExtensions.FillWithValue``1(FallDave.Trifles.IOpt{``0},``0)] Missing &lt;param name=&quot;value&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.OptExtensions.FillWithValueFix``1(FallDave.Trifles.IOpt{``0},``0)] Missing &lt;typeparam name=&quot;T&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.OptExtensions.FillWithValueFix``1(FallDave.Trifles.IOpt{``0},``0)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.OptExtensions.FillWithValueFix``1(FallDave.Trifles.IOpt{``0},``0)] Missing &lt;param name=&quot;source&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.OptExtensions.FillWithValueFix``1(FallDave.Trifles.IOpt{``0},``0)] Missing &lt;param name=&quot;value&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.OptExtensions.FlattenFixOpt``1(FallDave.Trifles.IOpt{FallDave.Trifles.IOpt{``0}})] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.OptExtensions.FlattenFixOpt``1(FallDave.Trifles.IOpt{FallDave.Trifles.Opt{``0}})] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.OptExtensions.FlattenOpt``1(FallDave.Trifles.IOpt{FallDave.Trifles.IOpt{``0}})] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.OptExtensions.FlattenOpt``1(FallDave.Trifles.IOpt{FallDave.Trifles.Opt{``0}})] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.OptExtensions.Select``2(FallDave.Trifles.IOpt{``0},System.Func{``0,``1})] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.OptExtensions.SelectFix``2(FallDave.Trifles.IOpt{``0},System.Func{``0,``1})] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.OptExtensions.SubstituteIfEmpty``1(FallDave.Trifles.IOpt{``0},FallDave.Trifles.IOpt{``0})] Missing &lt;typeparam name=&quot;T&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.OptExtensions.SubstituteIfEmpty``1(FallDave.Trifles.IOpt{``0},FallDave.Trifles.IOpt{``0})] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.OptExtensions.SubstituteIfEmpty``1(FallDave.Trifles.IOpt{``0},FallDave.Trifles.IOpt{``0})] Missing &lt;param name=&quot;source&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.OptExtensions.SubstituteIfEmpty``1(FallDave.Trifles.IOpt{``0},FallDave.Trifles.IOpt{``0})] Missing &lt;param name=&quot;fallback&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.OptExtensions.SubstituteIfEmptyFix``1(FallDave.Trifles.IOpt{``0},FallDave.Trifles.IOpt{``0})] Missing &lt;typeparam name=&quot;T&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.OptExtensions.SubstituteIfEmptyFix``1(FallDave.Trifles.IOpt{``0},FallDave.Trifles.IOpt{``0})] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.OptExtensions.SubstituteIfEmptyFix``1(FallDave.Trifles.IOpt{``0},FallDave.Trifles.IOpt{``0})] Missing &lt;param name=&quot;source&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.OptExtensions.SubstituteIfEmptyFix``1(FallDave.Trifles.IOpt{``0},FallDave.Trifles.IOpt{``0})] Missing &lt;param name=&quot;fallback&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.OptExtensions.Where``1(FallDave.Trifles.IOpt{``0},System.Func{``0,System.Boolean})] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.OptExtensions.WhereFix``1(FallDave.Trifles.IOpt{``0},System.Func{``0,System.Boolean})] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.SimpleTypeExtensions.DecimalValueOpt(System.IConvertible)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.SimpleTypeExtensions.FloatingPointValueOpt(System.IConvertible)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.SimpleTypeExtensions.HasSimpleType(System.IConvertible)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.SimpleTypeExtensions.IsFloatingPoint(System.IConvertible)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.SimpleTypeExtensions.IsIntegral(System.IConvertible)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.SimpleTypeExtensions.IsIntegralAndNotChar(System.IConvertible)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.SimpleTypeExtensions.IsNumeric(System.IConvertible)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.SimpleTypeExtensions.IsNumericAndNotChar(System.IConvertible)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.SimpleTypeExtensions.IsSignedIntegral(System.IConvertible)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.SimpleTypeExtensions.IsUnsignedIntegral(System.IConvertible)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.SimpleTypeExtensions.IsUnsignedIntegralAndNotChar(System.IConvertible)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.SimpleTypeExtensions.NumericValueAsDecimalOpt(System.IConvertible)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.SimpleTypeExtensions.NumericValueAsDoubleOpt(System.IConvertible)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.SimpleTypeExtensions.NumericValueToNonScientificStringOpt(System.IConvertible)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.SimpleTypeExtensions.NumericValueToStringOpt(System.IConvertible,System.IFormatProvider)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.SimpleTypeExtensions.NumericValueToStringOpt(System.IConvertible,System.String)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.SimpleTypeExtensions.NumericValueToStringOpt(System.IConvertible,System.String,System.IFormatProvider)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.SimpleTypeExtensions.SignedIntegralValueOpt(System.IConvertible)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.SimpleTypeExtensions.UnsignedIntegralValueOpt(System.IConvertible)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.StreamExtensions.Write(System.IO.BinaryWriter,System.Collections.Generic.IEnumerable{System.Byte},System.Int32)] Missing &lt;param name=&quot;writer&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.StreamExtensions.Write(System.IO.BinaryWriter,System.Collections.Generic.IEnumerable{System.Byte},System.Int32)] Missing &lt;param name=&quot;source&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.StreamExtensions.Write(System.IO.BinaryWriter,System.Collections.Generic.IList{System.Byte},System.Int32)] Missing &lt;param name=&quot;writer&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.StreamExtensions.Write(System.IO.BinaryWriter,System.Collections.Generic.IList{System.Byte},System.Int32)] Missing &lt;param name=&quot;source&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.StreamExtensions.Write(System.IO.BinaryWriter,System.Collections.Generic.IList{System.Byte},System.Int32,System.Int32,System.Int32)] Missing &lt;param name=&quot;writer&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.StreamExtensions.Write(System.IO.BinaryWriter,System.Collections.Generic.IList{System.Byte},System.Int32,System.Int32,System.Int32)] Missing &lt;param name=&quot;source&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.StreamExtensions.Write(System.IO.BinaryWriter,System.Collections.Generic.IList{System.Byte},System.Int32,System.Int32,System.Int32)] Missing &lt;param name=&quot;offset&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.StreamExtensions.Write(System.IO.BinaryWriter,System.Collections.Generic.IList{System.Byte},System.Int32,System.Int32,System.Int32)] Missing &lt;param name=&quot;count&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.StreamExtensions.Write(System.IO.Stream,System.Collections.Generic.IEnumerable{System.Byte},System.Int32)] Missing &lt;param name=&quot;stream&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.StreamExtensions.Write(System.IO.Stream,System.Collections.Generic.IEnumerable{System.Byte},System.Int32)] Missing &lt;param name=&quot;source&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.StreamExtensions.Write(System.IO.Stream,System.Collections.Generic.IList{System.Byte},System.Int32)] Missing &lt;param name=&quot;stream&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.StreamExtensions.Write(System.IO.Stream,System.Collections.Generic.IList{System.Byte},System.Int32)] Missing &lt;param name=&quot;source&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.StreamExtensions.Write(System.IO.Stream,System.Collections.Generic.IList{System.Byte},System.Int32,System.Int32,System.Int32)] Missing &lt;param name=&quot;stream&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.StreamExtensions.Write(System.IO.Stream,System.Collections.Generic.IList{System.Byte},System.Int32,System.Int32,System.Int32)] Missing &lt;param name=&quot;source&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.StreamExtensions.Write(System.IO.Stream,System.Collections.Generic.IList{System.Byte},System.Int32,System.Int32,System.Int32)] Missing &lt;param name=&quot;offset&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.StreamExtensions.Write(System.IO.Stream,System.Collections.Generic.IList{System.Byte},System.Int32,System.Int32,System.Int32)] Missing &lt;param name=&quot;count&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.StringExtensions.FormatStr(System.String,System.IFormatProvider,System.Object[])] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.StringExtensions.FormatStr(System.String,System.Object)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.StringExtensions.FormatStr(System.String,System.Object,System.Object)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.StringExtensions.FormatStr(System.String,System.Object,System.Object,System.Object)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.StringExtensions.FormatStr(System.String,System.Object[])] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.StringExtensions.InternStr(System.String)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.StringExtensions.IsInternedStr(System.String)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.StringExtensions.IsNullOrEmptyStr(System.String)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.StringExtensions.IsNullOrWhiteSpaceStr(System.String)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.StringExtensions.JoinStr(System.String,System.Collections.Generic.IEnumerable{System.String})] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.StringExtensions.JoinStr``1(System.String,System.Collections.Generic.IEnumerable{``0})] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.StringExtensions.JoinStr(System.String,System.Object[])] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.StringExtensions.JoinStr(System.String,System.String[])] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.StringExtensions.JoinStr(System.String,System.String[],System.Int32,System.Int32)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.StringExtensions.JoinWithStr(System.Collections.Generic.IEnumerable{System.String},System.String)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.StringExtensions.JoinWithStr``1(System.Collections.Generic.IEnumerable{``0},System.String)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.StringExtensions.JoinWithStr(System.Object[],System.String)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.StringExtensions.JoinWithStr(System.String[],System.String)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [N:FallDave.Trifles.Xml] Missing &lt;summary&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.AbsolutePath(System.Xml.XPath.IXPathNavigable)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.AsEnumerable(System.Xml.XPath.XPathNodeIterator)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.AsEnumerable(System.Xml.XPath.XPathNodeIterator)] Missing &lt;param name=&quot;source&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.AsXPathNavigable(System.Func{System.Xml.XPath.XPathNavigator})] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.AsXPathNavigable(System.Func{System.Xml.XPath.XPathNavigator})] Missing &lt;param name=&quot;createNavigatorFunction&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.AsXPathNavigable(System.Xml.Linq.XNode)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.AsXPathNavigable(System.Xml.Linq.XNode)] Missing &lt;param name=&quot;source&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.AttributeOpt(System.Xml.Linq.XElement,System.Xml.Linq.XName)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.AttributeOpt(System.Xml.Linq.XElement,System.Xml.Linq.XName)] Missing &lt;param name=&quot;element&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.AttributeOpt(System.Xml.Linq.XElement,System.Xml.Linq.XName)] Missing &lt;param name=&quot;name&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.AttributeValue(System.Xml.Linq.XElement,System.Xml.Linq.XName)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.AttributeValue(System.Xml.Linq.XElement,System.Xml.Linq.XName)] Missing &lt;param name=&quot;element&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.AttributeValue(System.Xml.Linq.XElement,System.Xml.Linq.XName)] Missing &lt;param name=&quot;name&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.AttributeValue(System.Xml.XmlElement,System.Xml.Linq.XName)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.AttributeValue(System.Xml.XmlElement,System.Xml.Linq.XName)] Missing &lt;param name=&quot;element&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.AttributeValue(System.Xml.XmlElement,System.Xml.Linq.XName)] Missing &lt;param name=&quot;name&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.AttributeValue(System.Xml.XPath.IXPathNavigable,System.Xml.Linq.XName)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.AttributeValue(System.Xml.XPath.IXPathNavigable,System.Xml.Linq.XName)] Missing &lt;param name=&quot;element&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.AttributeValue(System.Xml.XPath.IXPathNavigable,System.Xml.Linq.XName)] Missing &lt;param name=&quot;name&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.AttributeValueOpt(System.Xml.Linq.XElement,System.Xml.Linq.XName)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.AttributeValueOpt(System.Xml.Linq.XElement,System.Xml.Linq.XName)] Missing &lt;param name=&quot;element&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.AttributeValueOpt(System.Xml.Linq.XElement,System.Xml.Linq.XName)] Missing &lt;param name=&quot;name&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.AttributeValueOpt(System.Xml.XmlElement,System.Xml.Linq.XName)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.AttributeValueOpt(System.Xml.XmlElement,System.Xml.Linq.XName)] Missing &lt;param name=&quot;element&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.AttributeValueOpt(System.Xml.XmlElement,System.Xml.Linq.XName)] Missing &lt;param name=&quot;name&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.AttributeValueOpt(System.Xml.XPath.IXPathNavigable,System.Xml.Linq.XName)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.AttributeValueOpt(System.Xml.XPath.IXPathNavigable,System.Xml.Linq.XName)] Missing &lt;param name=&quot;element&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.AttributeValueOpt(System.Xml.XPath.IXPathNavigable,System.Xml.Linq.XName)] Missing &lt;param name=&quot;name&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.GetRequiredXName(System.Xml.IXmlNamespaceResolver,System.String,System.String)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.GetRequiredXName(System.Xml.IXmlNamespaceResolver,System.String,System.String)] Missing &lt;param name=&quot;namespaceResolver&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.GetRequiredXName(System.Xml.IXmlNamespaceResolver,System.String,System.String)] Missing &lt;param name=&quot;prefix&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.GetRequiredXName(System.Xml.IXmlNamespaceResolver,System.String,System.String)] Missing &lt;param name=&quot;localName&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.GetRequiredXNamespace(System.Xml.IXmlNamespaceResolver,System.String)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.GetRequiredXNamespace(System.Xml.IXmlNamespaceResolver,System.String)] Missing &lt;param name=&quot;namespaceResolver&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.GetRequiredXNamespace(System.Xml.IXmlNamespaceResolver,System.String)] Missing &lt;param name=&quot;prefix&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.GetXNameOpt(System.Xml.IXmlNamespaceResolver,System.String,System.String)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.GetXNameOpt(System.Xml.IXmlNamespaceResolver,System.String,System.String)] Missing &lt;param name=&quot;namespaceResolver&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.GetXNameOpt(System.Xml.IXmlNamespaceResolver,System.String,System.String)] Missing &lt;param name=&quot;prefix&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.GetXNameOpt(System.Xml.IXmlNamespaceResolver,System.String,System.String)] Missing &lt;param name=&quot;localName&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.GetXNamespaceOpt(System.Xml.IXmlNamespaceResolver,System.String)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.GetXNamespaceOpt(System.Xml.IXmlNamespaceResolver,System.String)] Missing &lt;param name=&quot;namespaceResolver&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.GetXNamespaceOpt(System.Xml.IXmlNamespaceResolver,System.String)] Missing &lt;param name=&quot;prefix&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.HasAttribute(System.Xml.XmlElement,System.Xml.Linq.XName)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.HasAttribute(System.Xml.XmlElement,System.Xml.Linq.XName)] Missing &lt;param name=&quot;element&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.HasAttribute(System.Xml.XmlElement,System.Xml.Linq.XName)] Missing &lt;param name=&quot;name&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.HasAttribute(System.Xml.XPath.IXPathNavigable,System.Xml.Linq.XName)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.HasAttribute(System.Xml.XPath.IXPathNavigable,System.Xml.Linq.XName)] Missing &lt;param name=&quot;element&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.HasAttribute(System.Xml.XPath.IXPathNavigable,System.Xml.Linq.XName)] Missing &lt;param name=&quot;name&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.LookupNamespaceOpt(System.Xml.IXmlNamespaceResolver,System.String)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.LookupNamespaceOpt(System.Xml.IXmlNamespaceResolver,System.String)] Missing &lt;param name=&quot;namespaceResolver&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.LookupNamespaceOpt(System.Xml.IXmlNamespaceResolver,System.String)] Missing &lt;param name=&quot;prefix&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.LookupPrefixOpt(System.Xml.IXmlNamespaceResolver,System.String)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.LookupPrefixOpt(System.Xml.IXmlNamespaceResolver,System.String)] Missing &lt;param name=&quot;namespaceResolver&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.LookupPrefixOpt(System.Xml.IXmlNamespaceResolver,System.String)] Missing &lt;param name=&quot;namespaceName&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.ParseXsdBooleanAttribute(System.Xml.Linq.XElement,System.Xml.Linq.XName)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.ParseXsdBooleanAttribute(System.Xml.Linq.XElement,System.Xml.Linq.XName)] Missing &lt;param name=&quot;element&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.ParseXsdBooleanAttribute(System.Xml.Linq.XElement,System.Xml.Linq.XName)] Missing &lt;param name=&quot;attributeName&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.ParseXsdBooleanAttribute(System.Xml.Linq.XElement,System.Xml.Linq.XName,System.Boolean)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.ParseXsdBooleanAttribute(System.Xml.XmlElement,System.Xml.Linq.XName)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.ParseXsdBooleanAttribute(System.Xml.XmlElement,System.Xml.Linq.XName)] Missing &lt;param name=&quot;element&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.ParseXsdBooleanAttribute(System.Xml.XmlElement,System.Xml.Linq.XName)] Missing &lt;param name=&quot;attributeName&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.ParseXsdBooleanAttribute(System.Xml.XmlElement,System.Xml.Linq.XName,System.Boolean)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.ParseXsdBooleanAttribute(System.Xml.XPath.IXPathNavigable,System.Xml.Linq.XName)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.ParseXsdBooleanAttribute(System.Xml.XPath.IXPathNavigable,System.Xml.Linq.XName)] Missing &lt;param name=&quot;element&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.ParseXsdBooleanAttribute(System.Xml.XPath.IXPathNavigable,System.Xml.Linq.XName)] Missing &lt;param name=&quot;attributeName&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.ParseXsdBooleanAttribute(System.Xml.XPath.IXPathNavigable,System.Xml.Linq.XName,System.Boolean)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.ParseXsdBooleanValue(System.String)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.ParseXsdBooleanValue(System.String,System.Boolean)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.RemoveAttribute(System.Xml.XmlElement,System.Xml.Linq.XName)] Missing &lt;param name=&quot;element&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.RemoveAttribute(System.Xml.XmlElement,System.Xml.Linq.XName)] Missing &lt;param name=&quot;name&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.RemoveAttribute(System.Xml.XPath.IXPathNavigable,System.Xml.Linq.XName)] Missing &lt;param name=&quot;element&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.RemoveAttribute(System.Xml.XPath.IXPathNavigable,System.Xml.Linq.XName)] Missing &lt;param name=&quot;name&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.ToXElementOpt(System.Xml.Linq.XNode)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.ToXElementOpt(System.Xml.Linq.XNode)] Missing &lt;param name=&quot;node&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.ToXElementOpt(System.Xml.XPath.IXPathNavigable)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.ToXElementOpt(System.Xml.XPath.IXPathNavigable)] Missing &lt;param name=&quot;navigable&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.ToXNode(System.Xml.XPath.IXPathNavigable)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.ToXNode(System.Xml.XPath.IXPathNavigable)] Missing &lt;param name=&quot;navigable&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.TryParseXsdBooleanValue(System.String,System.Boolean,System.Boolean@)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.TryParseXsdBooleanValue(System.String,System.Nullable{System.Boolean}@)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.TryParseXsdBooleanValue(System.String,System.Nullable{System.Boolean}@)] Missing &lt;param name=&quot;value&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.TryParseXsdBooleanValue(System.String,System.Nullable{System.Boolean}@)] Missing &lt;param name=&quot;result&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.XsiNil(System.Xml.Linq.XElement)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.XsiNil(System.Xml.XmlElement)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XmlExtensions.XsiNil(System.Xml.XPath.IXPathNavigable)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [N:FallDave.Trifles.Xml.XPath] Missing &lt;summary&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XPath.TriflesXPathContext.CompareDocument(System.String,System.String)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XPath.TriflesXPathContext.PreserveWhitespace(System.Xml.XPath.XPathNavigator)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XPath.TriflesXPathContext.ResolveFunction(System.String,System.String,System.Xml.XPath.XPathResultType[])] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XPath.TriflesXPathContext.ResolveVariable(System.String,System.String)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XPath.TriflesXPathData.EnsureNavigator(System.Xml.XPath.XPathNavigator)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XPath.TriflesXPathData.EnsureNavigator(System.Xml.XPath.XPathNavigator)] Missing &lt;param name=&quot;nav&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XPath.TriflesXPathData.GetEmptyNodeSet(System.Xml.XPath.XPathNavigator)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XPath.TriflesXPathData.GuessXPathResultType(System.Object)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XPath.TriflesXPathData.ToBoolean(System.Object,System.Xml.XPath.XPathNavigator)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XPath.TriflesXPathData.ToBoolean(System.Object,System.Xml.XPath.XPathNavigator)] Missing &lt;param name=&quot;param&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XPath.TriflesXPathData.ToBoolean(System.Object,System.Xml.XPath.XPathNavigator)] Missing &lt;param name=&quot;nav&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XPath.TriflesXPathData.ToNodeSet(System.Collections.Generic.IEnumerable{System.Object})] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XPath.TriflesXPathData.ToNodeSet(System.Collections.Generic.IEnumerable{System.Object})] Missing &lt;param name=&quot;elements&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XPath.TriflesXPathData.ToNumber(System.Object,System.Xml.XPath.XPathNavigator)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XPath.TriflesXPathData.ToNumber(System.Object,System.Xml.XPath.XPathNavigator)] Missing &lt;param name=&quot;param&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XPath.TriflesXPathData.ToNumber(System.Object,System.Xml.XPath.XPathNavigator)] Missing &lt;param name=&quot;nav&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XPath.TriflesXPathData.ToString(System.Object,System.Xml.XPath.XPathNavigator)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XPath.TriflesXPathData.ToString(System.Object,System.Xml.XPath.XPathNavigator)] Missing &lt;param name=&quot;param&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XPath.TriflesXPathData.ToString(System.Object,System.Xml.XPath.XPathNavigator)] Missing &lt;param name=&quot;nav&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XPath.TriflesXPathData.WrapValueInElement(System.Object,System.Xml.Linq.XName,System.Boolean)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XPath.TriflesXPathData.WrapValueInElementOpt(System.Object,System.Xml.Linq.XName)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XPath.TriflesXPathExtensionFunction.#ctor(System.Xml.Linq.XName,System.Int32,System.Int32,System.Xml.XPath.XPathResultType[],System.Xml.XPath.XPathResultType,FallDave.Trifles.Xml.XPath.TriflesXPathInvokable)] Missing &lt;param name=&quot;name&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XPath.TriflesXPathExtensionFunction.#ctor(System.Xml.Linq.XName,System.Int32,System.Int32,System.Xml.XPath.XPathResultType[],System.Xml.XPath.XPathResultType,FallDave.Trifles.Xml.XPath.TriflesXPathInvokable)] Missing &lt;param name=&quot;minArgs&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XPath.TriflesXPathExtensionFunction.#ctor(System.Xml.Linq.XName,System.Int32,System.Int32,System.Xml.XPath.XPathResultType[],System.Xml.XPath.XPathResultType,FallDave.Trifles.Xml.XPath.TriflesXPathInvokable)] Missing &lt;param name=&quot;maxArgs&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XPath.TriflesXPathExtensionFunction.#ctor(System.Xml.Linq.XName,System.Int32,System.Int32,System.Xml.XPath.XPathResultType[],System.Xml.XPath.XPathResultType,FallDave.Trifles.Xml.XPath.TriflesXPathInvokable)] Missing &lt;param name=&quot;argTypes&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XPath.TriflesXPathExtensionFunction.#ctor(System.Xml.Linq.XName,System.Int32,System.Int32,System.Xml.XPath.XPathResultType[],System.Xml.XPath.XPathResultType,FallDave.Trifles.Xml.XPath.TriflesXPathInvokable)] Missing &lt;param name=&quot;returnType&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XPath.TriflesXPathExtensionFunction.#ctor(System.Xml.Linq.XName,System.Int32,System.Int32,System.Xml.XPath.XPathResultType[],System.Xml.XPath.XPathResultType,FallDave.Trifles.Xml.XPath.TriflesXPathInvokable)] Missing &lt;param name=&quot;fn&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XPath.TriflesXPathExtensionFunction.Invoke(System.Xml.Xsl.XsltContext,System.Object[],System.Xml.XPath.XPathNavigator)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XPath.TriflesXPathExtensionFunction.Invoke(System.Xml.Xsl.XsltContext,System.Object[],System.Xml.XPath.XPathNavigator)] Missing &lt;param name=&quot;xsltContext&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XPath.TriflesXPathExtensionFunction.Invoke(System.Xml.Xsl.XsltContext,System.Object[],System.Xml.XPath.XPathNavigator)] Missing &lt;param name=&quot;args&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XPath.TriflesXPathExtensionFunction.Invoke(System.Xml.Xsl.XsltContext,System.Object[],System.Xml.XPath.XPathNavigator)] Missing &lt;param name=&quot;docContext&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XPath.TriflesXPathExtensionVariable.#ctor(System.Xml.Linq.XName,System.Object,System.Boolean,System.Boolean,System.Nullable{System.Xml.XPath.XPathResultType})] Missing &lt;param name=&quot;name&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XPath.TriflesXPathExtensionVariable.#ctor(System.Xml.Linq.XName,System.Object,System.Boolean,System.Boolean,System.Nullable{System.Xml.XPath.XPathResultType})] Missing &lt;param name=&quot;value&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XPath.TriflesXPathExtensionVariable.#ctor(System.Xml.Linq.XName,System.Object,System.Boolean,System.Boolean,System.Nullable{System.Xml.XPath.XPathResultType})] Missing &lt;param name=&quot;isLocal&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XPath.TriflesXPathExtensionVariable.#ctor(System.Xml.Linq.XName,System.Object,System.Boolean,System.Boolean,System.Nullable{System.Xml.XPath.XPathResultType})] Missing &lt;param name=&quot;isParam&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XPath.TriflesXPathExtensionVariable.#ctor(System.Xml.Linq.XName,System.Object,System.Boolean,System.Boolean,System.Nullable{System.Xml.XPath.XPathResultType})] Missing &lt;param name=&quot;resultType&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XPath.TriflesXPathExtensionVariable.Evaluate(System.Xml.Xsl.XsltContext)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XPath.TriflesXPathExtensionVariable.Evaluate(System.Xml.Xsl.XsltContext)] Missing &lt;param name=&quot;xsltContext&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XPath.XPathXNamesTable.GetFunctionOpt(System.Xml.Linq.XName)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XPath.XPathXNamesTable.GetOwnFunctionOpt(System.Xml.Linq.XName)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XPath.XPathXNamesTable.GetOwnVariableOpt(System.Xml.Linq.XName)] Missing &lt;summary&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XPath.XPathXNamesTable.GetOwnVariableOpt(System.Xml.Linq.XName)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XPath.XPathXNamesTable.GetOwnVariableOpt(System.Xml.Linq.XName)] Missing &lt;param name=&quot;name&quot;/&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:FallDave.Trifles.Xml.XPath.XPathXNamesTable.GetVariableOpt(System.Xml.Linq.XName)] Missing &lt;returns&gt; documentation [C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj]
+  Processed 906 topic(s)
+  247 warning(s)
+  CopyFromIndexComponent: &quot;reflection&quot; in-memory cache entries used: 9 of 15.
+  CopyFromIndexComponent: &quot;comments&quot; in-memory cache entries used: 4 of 30.
+Done Building Project &quot;C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\BuildReferenceTopics.proj&quot; (default targets).
+
+Build succeeded.
+
+Time Elapsed 00:03:49.56
+    Last step completed in 00:03:58.8164
+</buildStep>
+<buildStep step="CombiningIntermediateTocFiles">
+Combining conceptual and API intermediate TOC files...
+    Last step completed in 00:00:00.0707
+</buildStep>
+<buildStep step="ExtractingHtmlInfo">
+Extracting HTML info for HTML Help 1 and/or website...
+[C:\Program Files\MSBuild\14.0\bin\MSBuild.exe - ExtractHtmlInfo.proj]
+Sandcastle Help File Builder and Tools, version 2015.10.10.0
+Copyright c 2006-2015, Eric Woodruff, All Rights Reserved
+E-Mail: Eric@EWoodruff.us
+
+Using LCID &#39;1033&#39;, code page &#39;65001&#39;, encoding charset &#39;UTF-8&#39;.
+
+Processing website files in C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website
+Processed 909 HTML files
+Sorting keywords and generating See Also indices
+Saving website keyword index to C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\WebKI.xml
+Saving website table of contents to C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\WebTOC.xml
+    Last step completed in 00:00:45.1273
+</buildStep>
+<buildStep step="CopyStandardHelpContent">
+Copying standard help content...
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\AlertCaution.png -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\AlertCaution.png
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\AlertNote.png -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\AlertNote.png
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\AlertSecurity.png -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\AlertSecurity.png
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\CFW.gif -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\CFW.gif
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\CodeExample.png -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\CodeExample.png
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\favicon.ico -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\favicon.ico
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privclass.gif -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\privclass.gif
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privdelegate.gif -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\privdelegate.gif
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privenumeration.gif -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\privenumeration.gif
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privevent.gif -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\privevent.gif
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privextension.gif -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\privextension.gif
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privfield.gif -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\privfield.gif
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privinterface.gif -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\privinterface.gif
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privmethod.gif -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\privmethod.gif
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privproperty.gif -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\privproperty.gif
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privstructure.gif -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\privstructure.gif
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protclass.gif -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\protclass.gif
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protdelegate.gif -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\protdelegate.gif
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protenumeration.gif -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\protenumeration.gif
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protevent.gif -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\protevent.gif
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protextension.gif -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\protextension.gif
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protfield.gif -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\protfield.gif
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protinterface.gif -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\protinterface.gif
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protmethod.gif -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\protmethod.gif
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protoperator.gif -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\protoperator.gif
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protproperty.gif -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\protproperty.gif
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protstructure.gif -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\protstructure.gif
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubclass.gif -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\pubclass.gif
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubdelegate.gif -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\pubdelegate.gif
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubenumeration.gif -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\pubenumeration.gif
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubevent.gif -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\pubevent.gif
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubextension.gif -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\pubextension.gif
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubfield.gif -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\pubfield.gif
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubinterface.gif -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\pubinterface.gif
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubmethod.gif -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\pubmethod.gif
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\puboperator.gif -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\puboperator.gif
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubproperty.gif -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\pubproperty.gif
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubstructure.gif -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\pubstructure.gif
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\SectionCollapsed.png -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\SectionCollapsed.png
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\SectionExpanded.png -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\SectionExpanded.png
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\slMobile.gif -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\slMobile.gif
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\static.gif -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\static.gif
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\xna.gif -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\xna.gif
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\scripts\branding.js -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\scripts\branding.js
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-cs-CZ.css -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\styles\branding-cs-CZ.css
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-de-DE.css -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\styles\branding-de-DE.css
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-en-US.css -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\styles\branding-en-US.css
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-es-ES.css -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\styles\branding-es-ES.css
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-fr-FR.css -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\styles\branding-fr-FR.css
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-Help1.css -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\styles\branding-Help1.css
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-HelpViewer.css -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\styles\branding-HelpViewer.css
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-it-IT.css -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\styles\branding-it-IT.css
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-ja-JP.css -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\styles\branding-ja-JP.css
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-ko-KR.css -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\styles\branding-ko-KR.css
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-pl-PL.css -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\styles\branding-pl-PL.css
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-pt-BR.css -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\styles\branding-pt-BR.css
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-ru-RU.css -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\styles\branding-ru-RU.css
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-tr-TR.css -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\styles\branding-tr-TR.css
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-Website.css -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\styles\branding-Website.css
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-zh-CN.css -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\styles\branding-zh-CN.css
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-zh-TW.css -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\styles\branding-zh-TW.css
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding.css -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\styles\branding.css
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\index.html -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\index.html
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\search.html -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\search.html
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\SearchHelp.aspx -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\SearchHelp.aspx
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\SearchHelp.inc.php -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\SearchHelp.inc.php
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\SearchHelp.php -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\SearchHelp.php
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\Web.Config -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\Web.Config
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\icons\Search.png -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\Search.png
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\icons\TocClose.gif -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\TocClose.gif
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\icons\TocCollapsed.gif -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\TocCollapsed.gif
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\icons\TocExpanded.gif -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\TocExpanded.gif
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\icons\TocOpen.gif -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\icons\TocOpen.gif
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\scripts\branding-Website.js -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\scripts\branding-Website.js
+C:\Program Files\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\scripts\jquery-1.11.0.min.js -&gt; C:\Users\falldave\Documents\Visual Studio 2015\Projects\falldave-trifles-net\Help\Help\Working\Output\Website\scripts\jquery-1.11.0.min.js
+    Last step completed in 00:00:09.1768
+</buildStep>
+<buildStep step="GenerateHelpFormatTableOfContents">
+Generating website table of contents file...
+    Last step completed in 00:00:00.0000
+</buildStep>
+<buildStep step="GenerateFullTextIndex">
+Generating full-text index for the website...
+
+<plugIn name="Lightweight Website Style" behavior="After" priority="1000">
+Adding lightweight search and TOC elements to each topic...
+</plugIn>    Last step completed in 00:01:03.3157
+</buildStep>
+<buildStep step="CopyingWebsiteFiles">
+Copying website files to output folder...
+
+Copied 500 files
+Copied 1000 files
+Copied 1151 files for the website content
+    Last step completed in 00:01:04.6732
+</buildStep>
+<buildStep step="CleanIntermediates">
+Removing intermediate files...
+    Last step completed in 00:00:19.0917
+</buildStep>
+<buildStep step="Completed">
+
+Build completed successfully at 7/17/2018 2:21:49 PM.  Total time: 00:09:27.7792
+
+</buildStep>
+</shfbBuild>
