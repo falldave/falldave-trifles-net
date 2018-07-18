@@ -37,6 +37,54 @@ namespace FallDave.Trifles
             return (buffer, index, count) => writer.Write(buffer, index, count);
         }
 
+        #region ToTriflesByteReader
+
+        /// <summary>
+        /// Returns this source as an <see cref="ITriflesByteReader"/>.
+        /// </summary>
+        /// <param name="source">A source to convert.</param>
+        /// <returns><paramref name="source"/> as an <see cref="ITriflesByteReader"/>.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="source"/> is <c>null</c>.</exception>
+        public static ITriflesByteReader ToTriflesByteReader(this ITriflesByteReader source)
+        {
+            return TriflesByteReaderImpl.ToTriflesByteReader(source);
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="ITriflesByteReader"/> backed by this source.
+        /// </summary>
+        /// <param name="source">A source to convert.</param>
+        /// <returns>
+        /// A new <see cref="ITriflesByteReader"/> whose <see cref="ITriflesByteReader.Read(byte[],
+        /// int, int)"/> method is implemented directly by the source's <see
+        /// cref="Stream.Read(byte[], int, int)"/> method.
+        /// </returns>
+        /// <exception cref="ArgumentNullException"><paramref name="source"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentException">
+        /// <paramref name="source"/> does not support reading.
+        /// </exception>
+        public static ITriflesByteReader ToTriflesByteReader(this Stream source)
+        {
+            return TriflesByteReaderImpl.ToTriflesByteReader(source);
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="ITriflesByteReader"/> backed by this source.
+        /// </summary>
+        /// <param name="source">A source to convert.</param>
+        /// <returns>
+        /// A new <see cref="ITriflesByteReader"/> whose <see cref="ITriflesByteReader.Read(byte[],
+        /// int, int)"/> method is implemented directly by the source's <see
+        /// cref="BinaryReader.Read(byte[], int, int)"/> method.
+        /// </returns>
+        /// <exception cref="ArgumentNullException"><paramref name="source"/> is <c>null</c>.</exception>
+        public static ITriflesByteReader ToTriflesByteReader(this BinaryReader source)
+        {
+            return TriflesByteReaderImpl.ToTriflesByteReader(source);
+        }
+
+        #endregion ToTriflesByteReader
+
         #region Write(... IEnumerable<byte> source ...)
 
         // This value must be at least 1.
