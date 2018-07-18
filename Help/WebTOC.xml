@@ -2,12 +2,12 @@
 <HelpTOC>
 
   <HelpTOCNode Title="Welcome to the [TODO: Add project name]" Url="html/8212db58-4bb1-4510-9c0e-2744321a36b2.htm" />
-  <HelpTOCNode Id="bc62b470-5a6c-4d53-a569-0e550be4a36a" Title="Version History" Url="html/8c6dc58f-9c67-4285-93ef-0f2c1e68e4ab.htm">
+  <HelpTOCNode Id="f905ab89-b8ee-40ed-a2c7-6c4c502c4f06" Title="Version History" Url="html/8c6dc58f-9c67-4285-93ef-0f2c1e68e4ab.htm">
     <HelpTOCNode Title="Version 1.0.0.0" Url="html/28ec5434-3bfa-436b-be73-313eb49f1562.htm" />
   </HelpTOCNode>
-  <HelpTOCNode Id="0e307b0b-15e8-4bfa-a6cd-856d4b89bc6b" Title="FallDave.Trifles" Url="html/2a01a081-bfd9-d49e-0df0-0b2e5cb5e0bd.htm">
-    <HelpTOCNode Id="f248239f-fffc-4c70-bd42-fcd95251905e" Title="BinaryData Class" Url="html/e20819d9-451b-0a9e-f716-e117d6b4b6e7.htm">
-      <HelpTOCNode Id="784896d8-ee5c-42f3-ae48-2cd1e1e03fb1" Title="BinaryData Methods" Url="html/195e4e47-f174-add8-7be5-95cee4524071.htm">
+  <HelpTOCNode Id="ce52f049-801e-421f-803d-4335c07e3096" Title="FallDave.Trifles" Url="html/2a01a081-bfd9-d49e-0df0-0b2e5cb5e0bd.htm">
+    <HelpTOCNode Id="82450f19-e8b5-44c3-b201-6f1eb490cae6" Title="BinaryData Class" Url="html/e20819d9-451b-0a9e-f716-e117d6b4b6e7.htm">
+      <HelpTOCNode Id="d0a27eab-947b-4350-96de-15dfb6d417ce" Title="BinaryData Methods" Url="html/195e4e47-f174-add8-7be5-95cee4524071.htm">
         <HelpTOCNode Title="PackInt16 Method " Url="html/97f14a60-b0bf-e402-d14c-b33c9aa303da.htm" />
         <HelpTOCNode Title="PackInt32 Method " Url="html/6426be93-53b4-d39c-9ba4-6ac4cd9b3176.htm" />
         <HelpTOCNode Title="PackInt64 Method " Url="html/f40858e1-68b7-d681-83a7-e1efd0539e65.htm" />
@@ -17,7 +17,7 @@
         <HelpTOCNode Title="Swap2 Method " Url="html/d6cdaf12-0219-beaf-a6d9-ba41fa2812e6.htm" />
         <HelpTOCNode Title="Swap4 Method " Url="html/49b7de6e-6b30-e68c-b0ea-80e39f2b26d1.htm" />
         <HelpTOCNode Title="Swap8 Method " Url="html/82944fb3-6ee7-417f-b0ad-a1b29816526f.htm" />
-        <HelpTOCNode Id="4bf92192-9499-4ed2-a355-279d3b7050ad" Title="Swapped Method " Url="html/892058cd-dbdf-a001-701d-229b6d755915.htm">
+        <HelpTOCNode Id="39464981-671c-4b18-8a1b-98915a1b8b34" Title="Swapped Method " Url="html/892058cd-dbdf-a001-701d-229b6d755915.htm">
           <HelpTOCNode Title="Swapped Method (Int16)" Url="html/ff51b5e5-71a0-f377-8790-dfab2f72fc03.htm" />
           <HelpTOCNode Title="Swapped Method (Int32)" Url="html/a1506af6-7414-1fa6-4b66-726f89250489.htm" />
           <HelpTOCNode Title="Swapped Method (Int64)" Url="html/b71f30ca-1ff0-2021-1898-8d3018cf2ebb.htm" />
@@ -34,8 +34,8 @@
         <HelpTOCNode Title="ToUInt64 Method " Url="html/f8c9ab68-ee99-5798-50cd-eb34025a01c0.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="086c8943-e666-4018-9e93-63a32103b534" Title="BinaryStreamingExtensions Class" Url="html/61137370-ecad-edbd-21b5-72bff47140b0.htm">
-      <HelpTOCNode Id="8254e38c-a750-48d1-b842-e3c6cb93be96" Title="BinaryStreamingExtensions Methods" Url="html/a6f6abd5-a4cc-401a-7f74-3fa48a6cfcd2.htm">
+    <HelpTOCNode Id="aa1a99ef-8b7d-4145-adcf-f350d3bd994f" Title="BinaryStreamingExtensions Class" Url="html/61137370-ecad-edbd-21b5-72bff47140b0.htm">
+      <HelpTOCNode Id="b5cd5098-e916-4b3e-807b-ab65d74355f6" Title="BinaryStreamingExtensions Methods" Url="html/a6f6abd5-a4cc-401a-7f74-3fa48a6cfcd2.htm">
         <HelpTOCNode Title="ReadCharEndian Method " Url="html/472153ef-db99-5278-c0d2-4b2be12330ec.htm" />
         <HelpTOCNode Title="ReadInt16Endian Method " Url="html/51ab3a4b-59f4-fd4a-e2b4-a138d72811af.htm" />
         <HelpTOCNode Title="ReadInt32Endian Method " Url="html/826da960-e220-7fe0-a342-a333fa4c481b.htm" />
@@ -43,7 +43,7 @@
         <HelpTOCNode Title="ReadUInt16Endian Method " Url="html/f3366736-e218-dc61-884e-3952eec71b71.htm" />
         <HelpTOCNode Title="ReadUInt32Endian Method " Url="html/3c10f642-82ec-5277-59b1-71ae3d58b712.htm" />
         <HelpTOCNode Title="ReadUInt64Endian Method " Url="html/daf738e1-2a95-d4f1-ecc3-d478aca1013c.htm" />
-        <HelpTOCNode Id="41eb4610-40ae-45d8-bf51-09c3021c54e7" Title="WriteEndian Method " Url="html/4c70c25e-92e5-e246-9b09-0e70ad1bdb46.htm">
+        <HelpTOCNode Id="78511f4b-fd7f-45bc-9f2c-a9248e076eb5" Title="WriteEndian Method " Url="html/4c70c25e-92e5-e246-9b09-0e70ad1bdb46.htm">
           <HelpTOCNode Title="WriteEndian Method (BinaryWriter, Char, Boolean)" Url="html/dbe2ddec-74c3-d76a-9df1-a150b6b0f9a6.htm" />
           <HelpTOCNode Title="WriteEndian Method (BinaryWriter, Int16, Boolean)" Url="html/0c53b2d3-c946-cd5d-5ed8-734aa72a53f9.htm" />
           <HelpTOCNode Title="WriteEndian Method (BinaryWriter, Int32, Boolean)" Url="html/2cf89224-fae3-954a-fbeb-14a430ceb97d.htm" />
@@ -54,9 +54,9 @@
         </HelpTOCNode>
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="d7f09483-b1de-4ba5-a976-50c02205d04a" Title="Checker Class" Url="html/21355173-9cd3-74a4-794e-a37014babe4a.htm">
-      <HelpTOCNode Id="cb842fc0-5db9-4bc4-a8df-552b8f9098f7" Title="Checker Methods" Url="html/15652cc4-2aea-6790-7f42-91af332b637d.htm">
-        <HelpTOCNode Id="21ccf570-4bb2-4264-8793-204de0c5ba18" Title="NotNegative Method " Url="html/962ba181-b685-5085-07ee-2e7d11d1568b.htm">
+    <HelpTOCNode Id="8f65c778-cc3d-4b0c-9032-c9eeaf55c2a6" Title="Checker Class" Url="html/21355173-9cd3-74a4-794e-a37014babe4a.htm">
+      <HelpTOCNode Id="1dd89b1b-52fa-4368-9b27-9d3d1b0bd065" Title="Checker Methods" Url="html/15652cc4-2aea-6790-7f42-91af332b637d.htm">
+        <HelpTOCNode Id="e3948c5d-fe60-4b20-b375-929dd08a4d7f" Title="NotNegative Method " Url="html/962ba181-b685-5085-07ee-2e7d11d1568b.htm">
           <HelpTOCNode Title="NotNegative Method (Int32, String, String)" Url="html/5e5f6dbc-ec9d-999a-488b-7475e253d85a.htm" />
           <HelpTOCNode Title="NotNegative Method (Int64, String, String)" Url="html/76e4d379-9333-81cb-3c29-abb7b7a3e85a.htm" />
         </HelpTOCNode>
@@ -65,9 +65,9 @@
         <HelpTOCNode Title="SpanInRange Method " Url="html/14394bc8-20c1-9d78-29d7-9a72a50be293.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="35d5c338-3f9b-49df-9f34-92fa404bc656" Title="ConvertOpt Class" Url="html/72b0266a-5264-19da-6dd4-4d9e52e3c889.htm">
-      <HelpTOCNode Id="5552e201-25f5-4fa0-b5a6-242017b97416" Title="ConvertOpt Methods" Url="html/0b51f63b-8730-c8c1-8dcc-89b023fe6c85.htm">
-        <HelpTOCNode Id="d7463e2a-041d-4a6f-a526-abf76219bb97" Title="ToBooleanOpt Method " Url="html/c9ce5646-4d39-a28e-4172-b875bf79022c.htm">
+    <HelpTOCNode Id="3eea047a-63a2-4cf6-8bb5-c704018fc6b6" Title="ConvertOpt Class" Url="html/72b0266a-5264-19da-6dd4-4d9e52e3c889.htm">
+      <HelpTOCNode Id="5ad0ad5b-dc82-431e-a31f-2fad066e0b51" Title="ConvertOpt Methods" Url="html/0b51f63b-8730-c8c1-8dcc-89b023fe6c85.htm">
+        <HelpTOCNode Id="082214f2-f8d6-49e1-aedb-de735842b222" Title="ToBooleanOpt Method " Url="html/c9ce5646-4d39-a28e-4172-b875bf79022c.htm">
           <HelpTOCNode Title="ToBooleanOpt Method (Boolean)" Url="html/c1538b7b-62dc-17a9-6674-b4df76bc4fb9.htm" />
           <HelpTOCNode Title="ToBooleanOpt Method (Byte)" Url="html/8afe7e0c-459f-135c-1295-67841d5d51cd.htm" />
           <HelpTOCNode Title="ToBooleanOpt Method (Char)" Url="html/9ea6e263-777b-f144-078f-528e23266811.htm" />
@@ -87,7 +87,7 @@
           <HelpTOCNode Title="ToBooleanOpt Method (Object, IFormatProvider)" Url="html/179fff1b-8f9d-3974-db1f-5c9a58924109.htm" />
           <HelpTOCNode Title="ToBooleanOpt Method (String, IFormatProvider)" Url="html/a138a44d-09ac-e3d8-1d02-7e907c0af180.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="790f668b-3b01-4719-a754-6829db62cdd6" Title="ToByteOpt Method " Url="html/9903b0bc-b50f-7f00-53c2-53a6256cd536.htm">
+        <HelpTOCNode Id="807f781c-7dd6-4d0f-8de6-e66954884038" Title="ToByteOpt Method " Url="html/9903b0bc-b50f-7f00-53c2-53a6256cd536.htm">
           <HelpTOCNode Title="ToByteOpt Method (Boolean)" Url="html/61a46cd9-c168-b458-d7f4-f5cec08dbab9.htm" />
           <HelpTOCNode Title="ToByteOpt Method (Byte)" Url="html/329b6da7-0416-a900-7824-60b8d93bbab7.htm" />
           <HelpTOCNode Title="ToByteOpt Method (Char)" Url="html/20f9d54d-d437-d7a6-3a14-dcd1beaaa027.htm" />
@@ -108,7 +108,7 @@
           <HelpTOCNode Title="ToByteOpt Method (String, IFormatProvider)" Url="html/95bea5af-464c-18f8-7360-c0e052a40027.htm" />
           <HelpTOCNode Title="ToByteOpt Method (String, Int32)" Url="html/0d7da15c-92dc-5135-b3b3-99711111164e.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="0b56ae05-7c34-4ea1-a8e8-035f02eaaad6" Title="ToCharOpt Method " Url="html/2b98cec7-8e7b-10ca-76d7-705dfb5eaaed.htm">
+        <HelpTOCNode Id="333e7af0-9d5c-43f4-afec-4f7f7dc6461e" Title="ToCharOpt Method " Url="html/2b98cec7-8e7b-10ca-76d7-705dfb5eaaed.htm">
           <HelpTOCNode Title="ToCharOpt Method (Boolean)" Url="html/e16a1511-b435-5dbf-dd43-0e609483090d.htm" />
           <HelpTOCNode Title="ToCharOpt Method (Byte)" Url="html/58a141ce-db0b-42dd-3e3a-d179a96531d7.htm" />
           <HelpTOCNode Title="ToCharOpt Method (Char)" Url="html/a3380c23-b57c-8c29-48cd-e03cb2c7431f.htm" />
@@ -128,7 +128,7 @@
           <HelpTOCNode Title="ToCharOpt Method (Object, IFormatProvider)" Url="html/bf06c535-c2ef-9ac6-a874-cdfbdd025755.htm" />
           <HelpTOCNode Title="ToCharOpt Method (String, IFormatProvider)" Url="html/39d6b8ec-4b96-639a-8953-18e563845536.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="d1382582-9c5f-45fd-aeea-c2eb18ba48a3" Title="ToDateTimeOpt Method " Url="html/6f8abd72-ef2b-ed27-e515-3e7c42e65568.htm">
+        <HelpTOCNode Id="97dfe435-9461-43da-a66d-e6c64a94c45a" Title="ToDateTimeOpt Method " Url="html/6f8abd72-ef2b-ed27-e515-3e7c42e65568.htm">
           <HelpTOCNode Title="ToDateTimeOpt Method (Boolean)" Url="html/12986cc4-1d7d-e7cd-d049-7857db7684f1.htm" />
           <HelpTOCNode Title="ToDateTimeOpt Method (Byte)" Url="html/4a01a8de-c659-f5a9-1ae6-9b7e25f7600c.htm" />
           <HelpTOCNode Title="ToDateTimeOpt Method (Char)" Url="html/897564f1-fc9f-1682-8440-7903c62ed50b.htm" />
@@ -148,7 +148,7 @@
           <HelpTOCNode Title="ToDateTimeOpt Method (Object, IFormatProvider)" Url="html/a7dd3a2b-72b1-0a26-a8df-effc367da6c7.htm" />
           <HelpTOCNode Title="ToDateTimeOpt Method (String, IFormatProvider)" Url="html/50e0b71c-e9fe-d670-b0c2-6c911aaf4632.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="bc954101-7eb4-4ba7-ba2c-7a350ff84090" Title="ToDecimalOpt Method " Url="html/a70dc2b8-0e6d-346f-c1ab-9362c9fa8eac.htm">
+        <HelpTOCNode Id="d3a45884-2b24-49a6-b150-6a281fb9d591" Title="ToDecimalOpt Method " Url="html/a70dc2b8-0e6d-346f-c1ab-9362c9fa8eac.htm">
           <HelpTOCNode Title="ToDecimalOpt Method (Boolean)" Url="html/b5dd831c-974c-38b1-2d92-b9d0c399ec87.htm" />
           <HelpTOCNode Title="ToDecimalOpt Method (Byte)" Url="html/ae80e119-9746-a3b4-116f-b08065dce8f2.htm" />
           <HelpTOCNode Title="ToDecimalOpt Method (Char)" Url="html/0eaa02ff-f484-1974-dedd-8b5307e933b9.htm" />
@@ -168,7 +168,7 @@
           <HelpTOCNode Title="ToDecimalOpt Method (Object, IFormatProvider)" Url="html/9e79ca67-baff-b134-6bc8-21e6b5627c4c.htm" />
           <HelpTOCNode Title="ToDecimalOpt Method (String, IFormatProvider)" Url="html/234b1dde-9905-1ee4-74d8-26063b562748.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="d7c43942-f0ea-4920-9954-76b6811c704d" Title="ToDoubleOpt Method " Url="html/933cab36-6623-36ae-98e6-3b48700c1767.htm">
+        <HelpTOCNode Id="64ed4380-acc4-4218-8349-ae7120c7efaf" Title="ToDoubleOpt Method " Url="html/933cab36-6623-36ae-98e6-3b48700c1767.htm">
           <HelpTOCNode Title="ToDoubleOpt Method (Boolean)" Url="html/8de0929f-f69c-ad54-8b78-94419bed668b.htm" />
           <HelpTOCNode Title="ToDoubleOpt Method (Byte)" Url="html/096de4d9-d5c2-6981-54d2-ae116fdcb08d.htm" />
           <HelpTOCNode Title="ToDoubleOpt Method (Char)" Url="html/8d9a890d-17cd-c2c4-b605-d3785b2f2398.htm" />
@@ -188,7 +188,7 @@
           <HelpTOCNode Title="ToDoubleOpt Method (Object, IFormatProvider)" Url="html/0a22bb0b-efd1-4762-4fa4-b3135f8442d2.htm" />
           <HelpTOCNode Title="ToDoubleOpt Method (String, IFormatProvider)" Url="html/9d7b92d3-45a4-2801-8ba9-27ec076a9201.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="37b39bd1-2100-4d44-851a-1b918e1986de" Title="ToInt16Opt Method " Url="html/f1f9cd2b-231d-c5f7-559c-64f351f61f36.htm">
+        <HelpTOCNode Id="2e7982f9-af8b-4373-b156-058758765b36" Title="ToInt16Opt Method " Url="html/f1f9cd2b-231d-c5f7-559c-64f351f61f36.htm">
           <HelpTOCNode Title="ToInt16Opt Method (Boolean)" Url="html/cc9a96f3-7ba9-b164-e587-a98c48a2c168.htm" />
           <HelpTOCNode Title="ToInt16Opt Method (Byte)" Url="html/d761ec07-4534-bc26-277a-170e0dec1e13.htm" />
           <HelpTOCNode Title="ToInt16Opt Method (Char)" Url="html/1f853965-2e1b-3196-bf12-1e125b791eaf.htm" />
@@ -209,7 +209,7 @@
           <HelpTOCNode Title="ToInt16Opt Method (String, IFormatProvider)" Url="html/d612cd10-c9ff-e5a6-82c8-b690f46b2203.htm" />
           <HelpTOCNode Title="ToInt16Opt Method (String, Int32)" Url="html/94e254b6-1efc-e941-7cfa-1ca83b6ea79c.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="9eaf4294-9f6a-41e3-9801-8da16b4fba3e" Title="ToInt32Opt Method " Url="html/8924fc07-0706-1126-3cd5-fedb74989fb4.htm">
+        <HelpTOCNode Id="daca8e6e-0cf9-4788-8f42-e75839a77de1" Title="ToInt32Opt Method " Url="html/8924fc07-0706-1126-3cd5-fedb74989fb4.htm">
           <HelpTOCNode Title="ToInt32Opt Method (Boolean)" Url="html/79554546-7744-c6a6-cb33-a3d0618d4622.htm" />
           <HelpTOCNode Title="ToInt32Opt Method (Byte)" Url="html/51303229-a695-535e-468d-3575b5b85f8c.htm" />
           <HelpTOCNode Title="ToInt32Opt Method (Char)" Url="html/ca270777-6c58-196c-5b7a-70801f629917.htm" />
@@ -230,7 +230,7 @@
           <HelpTOCNode Title="ToInt32Opt Method (String, IFormatProvider)" Url="html/50f0ba65-f325-9fcf-bd98-2827acab80f0.htm" />
           <HelpTOCNode Title="ToInt32Opt Method (String, Int32)" Url="html/2ff8d718-6299-cc7e-a6e6-0ebf5b241564.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="f15492b0-c51b-4952-8190-2b1c468e50cc" Title="ToInt64Opt Method " Url="html/57aee04e-f492-0e63-1e24-fd73932e17b0.htm">
+        <HelpTOCNode Id="07a65bfa-d2dc-446e-9b6c-dd01259a9f8a" Title="ToInt64Opt Method " Url="html/57aee04e-f492-0e63-1e24-fd73932e17b0.htm">
           <HelpTOCNode Title="ToInt64Opt Method (Boolean)" Url="html/575a3743-648e-1e54-5168-f70209974d2b.htm" />
           <HelpTOCNode Title="ToInt64Opt Method (Byte)" Url="html/8cb9f91d-9486-456b-2516-444406d6a6db.htm" />
           <HelpTOCNode Title="ToInt64Opt Method (Char)" Url="html/3f57b3bc-e291-ead4-c235-7361f36af6b8.htm" />
@@ -251,7 +251,7 @@
           <HelpTOCNode Title="ToInt64Opt Method (String, IFormatProvider)" Url="html/a277a1f4-febb-5193-5265-2c2d30a48fd2.htm" />
           <HelpTOCNode Title="ToInt64Opt Method (String, Int32)" Url="html/1ea03922-b6fd-a489-3253-3af6ca10b3ba.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="93dfa4fe-550f-4ec1-badf-ed7b17536d90" Title="ToSByteOpt Method " Url="html/d3860edc-a22c-550e-d59d-3bea7c50a224.htm">
+        <HelpTOCNode Id="916282d6-0f38-4b01-945f-e1c19e2d8f67" Title="ToSByteOpt Method " Url="html/d3860edc-a22c-550e-d59d-3bea7c50a224.htm">
           <HelpTOCNode Title="ToSByteOpt Method (Boolean)" Url="html/2107b46c-2e8f-fb19-0802-91315e197a23.htm" />
           <HelpTOCNode Title="ToSByteOpt Method (Byte)" Url="html/44a1b1d4-df11-1968-986b-d01de6bd5e91.htm" />
           <HelpTOCNode Title="ToSByteOpt Method (Char)" Url="html/8b3a5260-a2de-9b43-f1cd-1fe58a2284aa.htm" />
@@ -272,7 +272,7 @@
           <HelpTOCNode Title="ToSByteOpt Method (String, IFormatProvider)" Url="html/d9ba75b9-14f1-107b-2162-8315112eac3f.htm" />
           <HelpTOCNode Title="ToSByteOpt Method (String, Int32)" Url="html/3cb8def2-7dc2-7d69-746a-deb94ec1884e.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="a6691361-bb8f-41eb-9413-0b9e896f3dff" Title="ToSingleOpt Method " Url="html/168509ef-a26c-ff07-148c-4389be9d99bc.htm">
+        <HelpTOCNode Id="1273591e-e898-4686-8c66-ca7c40073e9f" Title="ToSingleOpt Method " Url="html/168509ef-a26c-ff07-148c-4389be9d99bc.htm">
           <HelpTOCNode Title="ToSingleOpt Method (Boolean)" Url="html/44825d93-4bf5-5a30-3983-bc2df7bcd460.htm" />
           <HelpTOCNode Title="ToSingleOpt Method (Byte)" Url="html/5a05586f-959e-68f3-05b1-6dc711af59fc.htm" />
           <HelpTOCNode Title="ToSingleOpt Method (Char)" Url="html/38b3ea11-680b-eb9e-92c8-7ed6c4d764eb.htm" />
@@ -292,7 +292,7 @@
           <HelpTOCNode Title="ToSingleOpt Method (Object, IFormatProvider)" Url="html/5494905d-b0e2-a582-836f-87c444297d69.htm" />
           <HelpTOCNode Title="ToSingleOpt Method (String, IFormatProvider)" Url="html/404a1148-ef35-82c7-bfe3-2519f177ef54.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="a66d9c87-3e6f-490d-9296-783e30c42a0d" Title="ToStringOpt Method " Url="html/14bc6fe4-7861-95ed-c25f-93a9d27eb4cd.htm">
+        <HelpTOCNode Id="d50eb5e0-2763-445b-acbc-212eddc0647b" Title="ToStringOpt Method " Url="html/14bc6fe4-7861-95ed-c25f-93a9d27eb4cd.htm">
           <HelpTOCNode Title="ToStringOpt Method (Boolean)" Url="html/da0d4bda-594b-32b3-4662-c3e126979594.htm" />
           <HelpTOCNode Title="ToStringOpt Method (Byte)" Url="html/e570c46d-dd78-b820-1c52-04bbcdd32774.htm" />
           <HelpTOCNode Title="ToStringOpt Method (Char)" Url="html/3b81d96a-09f7-cb18-8871-988e61cc8c9f.htm" />
@@ -330,7 +330,7 @@
           <HelpTOCNode Title="ToStringOpt Method (UInt32, IFormatProvider)" Url="html/c55a4531-c4cd-c80f-d51b-8208585f0525.htm" />
           <HelpTOCNode Title="ToStringOpt Method (UInt64, IFormatProvider)" Url="html/efe483b6-ddd4-74bd-b3a6-4b7f2a2141a3.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="d7011028-aaf9-4d36-96bc-6041e81dd5f2" Title="ToUInt16Opt Method " Url="html/2aee3f98-6c66-4617-d673-edca85f25daa.htm">
+        <HelpTOCNode Id="31d45341-22d2-497a-8d28-0826d85386c5" Title="ToUInt16Opt Method " Url="html/2aee3f98-6c66-4617-d673-edca85f25daa.htm">
           <HelpTOCNode Title="ToUInt16Opt Method (Boolean)" Url="html/951c967d-b373-62c5-cfc4-9438588a88de.htm" />
           <HelpTOCNode Title="ToUInt16Opt Method (Byte)" Url="html/073ee76d-8e0c-3be5-2130-0ffe5ed10212.htm" />
           <HelpTOCNode Title="ToUInt16Opt Method (Char)" Url="html/9d663bcc-a503-5482-0bb0-d6061ae86730.htm" />
@@ -351,7 +351,7 @@
           <HelpTOCNode Title="ToUInt16Opt Method (String, IFormatProvider)" Url="html/c3501992-9bbc-0d7e-53c1-cc942cf14856.htm" />
           <HelpTOCNode Title="ToUInt16Opt Method (String, Int32)" Url="html/24587585-0ba5-4ed9-bca8-a4fa6da7a433.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="9fb00cfa-d525-4956-8a54-181d605456d9" Title="ToUInt32Opt Method " Url="html/89a865ae-0c34-d382-8bdf-514d582192a9.htm">
+        <HelpTOCNode Id="d094de65-e1c1-4cee-9a63-0cd690c86ee6" Title="ToUInt32Opt Method " Url="html/89a865ae-0c34-d382-8bdf-514d582192a9.htm">
           <HelpTOCNode Title="ToUInt32Opt Method (Boolean)" Url="html/c163f6d7-1fc7-6537-f628-8f3d607eedb2.htm" />
           <HelpTOCNode Title="ToUInt32Opt Method (Byte)" Url="html/d48f9e3d-2269-a728-02b0-0877c15f3931.htm" />
           <HelpTOCNode Title="ToUInt32Opt Method (Char)" Url="html/90ce390c-3edb-50fc-b97f-02c61cc9d9aa.htm" />
@@ -372,7 +372,7 @@
           <HelpTOCNode Title="ToUInt32Opt Method (String, IFormatProvider)" Url="html/ae8f5f66-c71d-4afe-6f57-5978460ebbc5.htm" />
           <HelpTOCNode Title="ToUInt32Opt Method (String, Int32)" Url="html/42dd3aaf-6f0a-fe11-3c5c-7c989922cd5d.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="af0afe42-93e2-4c65-9d8e-8676511ce300" Title="ToUInt64Opt Method " Url="html/49060b0f-9c70-b63b-5e77-6e3b0bc74ad9.htm">
+        <HelpTOCNode Id="d3d50233-ed12-43f9-97a9-37eef32dd4cf" Title="ToUInt64Opt Method " Url="html/49060b0f-9c70-b63b-5e77-6e3b0bc74ad9.htm">
           <HelpTOCNode Title="ToUInt64Opt Method (Boolean)" Url="html/c603a438-d139-31d0-893b-6754e3704305.htm" />
           <HelpTOCNode Title="ToUInt64Opt Method (Byte)" Url="html/d97aa1b8-5112-37d0-5e7e-fe523c30eed8.htm" />
           <HelpTOCNode Title="ToUInt64Opt Method (Char)" Url="html/7dc10911-2ff0-f4ea-227f-69cce8d11e49.htm" />
@@ -395,126 +395,136 @@
         </HelpTOCNode>
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="fe1587fe-3b7c-4335-99be-5366697e0b38" Title="CountedOpt(T) Structure" Url="html/65871cdb-4e85-da76-f9f4-780378a331e0.htm">
-      <HelpTOCNode Id="030b3523-f9b4-4694-864f-a146adfb7e48" Title="CountedOpt(T) Properties" Url="html/097e227f-dd97-fe04-de92-9da3dcce3762.htm">
+    <HelpTOCNode Id="18899764-bfe4-4ec7-8894-792a70d3331b" Title="CountedOpt(T) Structure" Url="html/65871cdb-4e85-da76-f9f4-780378a331e0.htm">
+      <HelpTOCNode Id="60e2535b-0a2e-4263-a0eb-571e595e5734" Title="CountedOpt(T) Properties" Url="html/097e227f-dd97-fe04-de92-9da3dcce3762.htm">
         <HelpTOCNode Title="SourceCount Property " Url="html/03d3cff6-69dd-05e3-436e-5c5328ea459b.htm" />
         <HelpTOCNode Title="SourceMultiple Property " Url="html/ff511d79-e295-8468-3f03-bb11e3e9a31f.htm" />
         <HelpTOCNode Title="SourceNone Property " Url="html/680f307d-a799-8109-35fe-b41b88788010.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="78357731-43f4-466a-a4fe-1729d6bc0362" Title="CountedOpt(T) Methods" Url="html/a0613f99-0d66-8a42-247a-676fcb85806e.htm">
+      <HelpTOCNode Id="cae02be4-be5b-41e6-9597-94b5718a7ba0" Title="CountedOpt(T) Methods" Url="html/a0613f99-0d66-8a42-247a-676fcb85806e.htm">
         <HelpTOCNode Title="Fix Method " Url="html/164b250c-ae15-1b49-b094-e5174f069d24.htm" />
         <HelpTOCNode Title="GetEnumerator Method " Url="html/1d54f53a-6fe5-7958-45f0-de5b3528361c.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="5b42a59f-e8b9-4045-950d-5091080095e4" Title="DictionaryExtensions Class" Url="html/31b6409b-d244-21c5-8a4d-f6441a702526.htm">
-      <HelpTOCNode Id="bfd7116a-f075-4e46-95d3-aac04485d52e" Title="DictionaryExtensions Methods" Url="html/543d630b-805f-ad55-efd7-5a11cb6db2cb.htm">
+    <HelpTOCNode Id="a110efee-2fe5-4c51-8643-a9d1fd5169b4" Title="DictionaryExtensions Class" Url="html/31b6409b-d244-21c5-8a4d-f6441a702526.htm">
+      <HelpTOCNode Id="f1ff628a-ed53-4ac1-b989-63817767cc4a" Title="DictionaryExtensions Methods" Url="html/543d630b-805f-ad55-efd7-5a11cb6db2cb.htm">
         <HelpTOCNode Title="ValueFixOpt(TKey, TValue) Method " Url="html/fd1dd082-8e2f-0ffa-dad1-ad9f36697691.htm" />
         <HelpTOCNode Title="ValueOpt(TKey, TValue) Method " Url="html/fd93a7a1-7f08-5a89-78f3-dec9493b676e.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="1a6ac4bd-239d-4eed-8a5b-f9aae36ed12b" Title="EnumerableExtensions Class" Url="html/f9252f13-efbb-5602-b77b-6fda282237f0.htm">
-      <HelpTOCNode Id="8c9bd7da-b86f-46a6-984d-d132549b079b" Title="EnumerableExtensions Methods" Url="html/53badf20-602d-9b75-e568-8eaf7ae0d0f5.htm">
-        <HelpTOCNode Id="6240d790-f632-4ef7-bb66-2d17141fee2e" Title="BufferViaArray Method " Url="html/5705b0ce-5882-3740-8953-99b450d9159a.htm">
+    <HelpTOCNode Id="ecdc6e68-734f-4475-b27b-d54f7c36f1c7" Title="EnumerableExtensions Class" Url="html/f9252f13-efbb-5602-b77b-6fda282237f0.htm">
+      <HelpTOCNode Id="f8b5e30b-2027-45cc-bbd8-15f86a4d4f80" Title="EnumerableExtensions Methods" Url="html/53badf20-602d-9b75-e568-8eaf7ae0d0f5.htm">
+        <HelpTOCNode Id="dd021a7f-88d9-4a3b-a881-0316839c0d72" Title="BufferViaArray Method " Url="html/5705b0ce-5882-3740-8953-99b450d9159a.htm">
           <HelpTOCNode Title="BufferViaArray(T) Method (IEnumerable(T), T[])" Url="html/341f5534-d900-fae3-241f-43fd74a6ac09.htm" />
           <HelpTOCNode Title="BufferViaArray(T) Method (IEnumerable(T), Action(T[], Int32, Int32), T[])" Url="html/66aa5048-3ab3-d957-3190-b5b9a8eee29b.htm" />
           <HelpTOCNode Title="BufferViaArray(T) Method (IList(T), Int32, Int32, T[])" Url="html/919c312f-292a-45db-3e30-aa4f17b6c0ca.htm" />
           <HelpTOCNode Title="BufferViaArray(T) Method (IList(T), Int32, Int32, Action(T[], Int32, Int32), T[])" Url="html/a6663ba2-f6dd-8e44-2980-04ecbc1a36ff.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="d957d056-7f6c-4739-99a9-da27e79de78c" Title="CopyTo Method " Url="html/1eaca8db-98ea-833d-34a4-fbd75727f44e.htm">
+        <HelpTOCNode Id="2350e5db-eed6-4868-ba14-c35ed6349f52" Title="CopyTo Method " Url="html/1eaca8db-98ea-833d-34a4-fbd75727f44e.htm">
           <HelpTOCNode Title="CopyTo(T) Method (IEnumerable(T), T[], Int32, Int32)" Url="html/ed0170f6-4c3b-a0c6-71c1-9547dc2753af.htm" />
           <HelpTOCNode Title="CopyTo(T) Method (IEnumerator(T), T[], Int32, Int32)" Url="html/f9fd9d5e-3c86-f70a-9818-919948cbfad4.htm" />
           <HelpTOCNode Title="CopyTo(T) Method (IList(T), T[], Int32, Int32)" Url="html/f1c3b5d6-5629-2675-2b22-547fe3ef5d42.htm" />
           <HelpTOCNode Title="CopyTo(T) Method (IList(T), Int32, T[], Int32, Int32)" Url="html/945653d2-22ff-f1b7-ab6c-faf9ffede0a0.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="c09285cc-4609-41c9-b45f-a97614913d6a" Title="CountSingleFixOpt Method " Url="html/8883ee40-5341-0329-6b96-01a7ac6fbf5a.htm">
+        <HelpTOCNode Id="d61f01de-6e18-4f95-a34b-14b3e472396a" Title="CountSingleFixOpt Method " Url="html/8883ee40-5341-0329-6b96-01a7ac6fbf5a.htm">
           <HelpTOCNode Title="CountSingleFixOpt(T) Method (IEnumerable(T), Func(T, Boolean))" Url="html/d7228801-0a8a-04e1-bafc-e0c926b7f4ee.htm" />
           <HelpTOCNode Title="CountSingleFixOpt(T) Method (IEnumerator(T), Func(T, Boolean))" Url="html/4ed43abc-8ce0-744b-2b59-f214ab0561ba.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="CountUpTo(T) Method " Url="html/2d62c2dc-d765-595e-184a-c46b30008705.htm" />
-        <HelpTOCNode Id="afc710dc-64ff-4f57-9c86-2adbdb020fc7" Title="ElementAtFixOpt Method " Url="html/e1aea8a0-5520-89ad-e4be-ccd0390cb201.htm">
+        <HelpTOCNode Id="ed1537c3-f242-4679-a538-d4c9b71095e1" Title="ElementAtFixOpt Method " Url="html/e1aea8a0-5520-89ad-e4be-ccd0390cb201.htm">
           <HelpTOCNode Title="ElementAtFixOpt(T) Method (IEnumerable(T), Int32)" Url="html/c319467d-e9b0-7a0a-a8de-d09755c274d5.htm" />
           <HelpTOCNode Title="ElementAtFixOpt(T) Method (IEnumerator(T), Int32)" Url="html/f944307a-e861-38af-a55a-9ad29cdc5a60.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="b78f558c-1dbc-41a4-9a6a-5db3af182885" Title="ElementAtOpt Method " Url="html/b8b65749-4ed2-59bc-4ca2-452e919a5ae0.htm">
+        <HelpTOCNode Id="9716384a-9a03-4774-8db1-2249514f2c54" Title="ElementAtOpt Method " Url="html/b8b65749-4ed2-59bc-4ca2-452e919a5ae0.htm">
           <HelpTOCNode Title="ElementAtOpt(T) Method (IEnumerable(T), Int32)" Url="html/51fa07fa-3ead-27f2-3e56-6251582b27fa.htm" />
           <HelpTOCNode Title="ElementAtOpt(T) Method (IEnumerator(T), Int32)" Url="html/6e0b4546-7756-796d-2b18-9116c3c055ac.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="ElementAtOrResult(T) Method " Url="html/96fb732c-b34a-0e5c-3a3c-68f834a4a343.htm" />
         <HelpTOCNode Title="ElementAtOrValue(T) Method " Url="html/d0fb611f-57b8-ee0b-bfe5-0fa10fe48478.htm" />
-        <HelpTOCNode Id="0a485d3f-da75-4dd5-96a2-b6ff3673dd29" Title="FirstFixOpt Method " Url="html/392a3116-8363-3bc4-8245-5cd02e9329ec.htm">
+        <HelpTOCNode Id="31876bc9-bde4-4d02-83bc-93a9040c67c3" Title="FirstFixOpt Method " Url="html/392a3116-8363-3bc4-8245-5cd02e9329ec.htm">
           <HelpTOCNode Title="FirstFixOpt(T) Method (IEnumerable(T), Func(T, Boolean))" Url="html/8caa1b35-0e25-fdc3-9a08-a90756b71d22.htm" />
           <HelpTOCNode Title="FirstFixOpt(T) Method (IEnumerator(T), Func(T, Boolean))" Url="html/9cf87be9-5128-1faf-fe3f-238fe7f26f31.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="3ac6ea41-ea4f-48cc-811f-9b51d4ddecdb" Title="FirstOpt Method " Url="html/436d4a87-1249-8911-71cf-1855a7142c38.htm">
+        <HelpTOCNode Id="42ea47ab-fea6-40a1-a181-b71be13d345b" Title="FirstOpt Method " Url="html/436d4a87-1249-8911-71cf-1855a7142c38.htm">
           <HelpTOCNode Title="FirstOpt(T) Method (IEnumerable(T), Func(T, Boolean))" Url="html/f89d50c9-936e-bbfa-5bee-7e05ff3a9144.htm" />
           <HelpTOCNode Title="FirstOpt(T) Method (IEnumerator(T), Func(T, Boolean))" Url="html/2b5793a5-458c-5072-2221-e2691a17c77f.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="FirstOrResult(T) Method " Url="html/3a15061d-48fc-65d6-1a69-86626ba9a2f1.htm" />
         <HelpTOCNode Title="FirstOrValue(T) Method " Url="html/5333fa23-0a87-bdcd-186e-afbea8a6c68e.htm" />
-        <HelpTOCNode Id="6c5a4cf1-9475-46cd-87a3-64da4de627a6" Title="HardSkip Method " Url="html/c2c4da62-1a05-274a-fba0-c407df444e87.htm">
+        <HelpTOCNode Id="0c832557-c77f-471c-9518-6da2ed876b42" Title="HardSkip Method " Url="html/c2c4da62-1a05-274a-fba0-c407df444e87.htm">
           <HelpTOCNode Title="HardSkip(T) Method (IEnumerable(T), Int32)" Url="html/afcf5ca8-6e43-653c-13bf-bfe3d4f5f018.htm" />
           <HelpTOCNode Title="HardSkip(T) Method (IEnumerable(T), Int64)" Url="html/90471a61-ff40-9ce0-2223-9f8144c2f33b.htm" />
           <HelpTOCNode Title="HardSkip(T) Method (IEnumerable(T), UInt64)" Url="html/32065243-61e3-52ce-d0fc-eda779c995e5.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="86b29666-bce0-4043-bac1-f8eaecd8d962" Title="HardTake Method " Url="html/e9de844b-2175-ae32-656b-1bb76ecebf7d.htm">
+        <HelpTOCNode Id="0b5a2fac-9037-4c5f-b04e-c108cc6853a2" Title="HardTake Method " Url="html/e9de844b-2175-ae32-656b-1bb76ecebf7d.htm">
           <HelpTOCNode Title="HardTake(T) Method (IEnumerable(T), Int32)" Url="html/1a647d45-ef3e-e862-c439-11426c93a9e1.htm" />
           <HelpTOCNode Title="HardTake(T) Method (IEnumerable(T), Int64)" Url="html/6057369f-3e62-8c1b-b9d5-fb268fd77398.htm" />
           <HelpTOCNode Title="HardTake(T) Method (IEnumerable(T), UInt64)" Url="html/e5756114-d452-29fb-60d8-888f170c6e94.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="84f2bce2-3c4f-4d69-8297-c1840354751c" Title="LastFixOpt Method " Url="html/eefa64d5-8eee-7691-569e-75ed37560a19.htm">
+        <HelpTOCNode Id="7d1ec062-be41-4d40-bc08-d144a80864a4" Title="LastFixOpt Method " Url="html/eefa64d5-8eee-7691-569e-75ed37560a19.htm">
           <HelpTOCNode Title="LastFixOpt(T) Method (IEnumerable(T), Func(T, Boolean))" Url="html/311586b0-9672-af11-742e-396090a2c13a.htm" />
           <HelpTOCNode Title="LastFixOpt(T) Method (IEnumerator(T), Func(T, Boolean))" Url="html/e85d43ff-418a-6d59-a03e-90116a0bd97e.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="10d62cc0-59be-4825-9d36-52cac2885334" Title="LastOpt Method " Url="html/9c448ad4-f326-2517-d530-35b76788233a.htm">
+        <HelpTOCNode Id="81c3b103-c3dd-4bcd-8a8e-92b0acf20853" Title="LastOpt Method " Url="html/9c448ad4-f326-2517-d530-35b76788233a.htm">
           <HelpTOCNode Title="LastOpt(T) Method (IEnumerable(T), Func(T, Boolean))" Url="html/65c0a8ec-fafc-a49d-b8d9-25fbe0b093a6.htm" />
           <HelpTOCNode Title="LastOpt(T) Method (IEnumerator(T), Func(T, Boolean))" Url="html/3bab62f6-de36-44e7-388d-6a4d63135771.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="LastOrResult(T) Method " Url="html/241c03cc-939e-20a3-07b4-083a05e88f91.htm" />
         <HelpTOCNode Title="LastOrValue(T) Method " Url="html/c0744f85-9717-0bc9-1abd-ce4dba93d552.htm" />
-        <HelpTOCNode Id="4bdeaf6e-7711-4df1-b292-f31f9de34119" Title="SingleFixOpt Method " Url="html/ec5a5c59-109d-97e1-0f36-bcdfb6088398.htm">
+        <HelpTOCNode Id="3ab75a9b-4660-4ad3-bc99-b3fb3c6ff359" Title="SingleFixOpt Method " Url="html/ec5a5c59-109d-97e1-0f36-bcdfb6088398.htm">
           <HelpTOCNode Title="SingleFixOpt(T) Method (IEnumerable(T), Func(T, Boolean))" Url="html/30bcafe9-76ac-0af4-0cc6-485042ba7efc.htm" />
           <HelpTOCNode Title="SingleFixOpt(T) Method (IEnumerator(T), Func(T, Boolean))" Url="html/b41f9ec0-d291-bc20-931c-cf02a52bf48a.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="eff061f3-58fd-4b73-aa8b-eb58c2c82294" Title="SingleOpt Method " Url="html/b316d1c2-b530-23cf-d30d-d7849cc3e19a.htm">
+        <HelpTOCNode Id="146f4a83-9a4d-4a46-a82f-9fb37230dff0" Title="SingleOpt Method " Url="html/b316d1c2-b530-23cf-d30d-d7849cc3e19a.htm">
           <HelpTOCNode Title="SingleOpt(T) Method (IEnumerable(T), Func(T, Boolean))" Url="html/f2cab80d-14a4-4f54-7d62-905a34b6be64.htm" />
           <HelpTOCNode Title="SingleOpt(T) Method (IEnumerator(T), Func(T, Boolean))" Url="html/ba1cd625-22d8-2040-ffee-226fb4a45579.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="SingleOrResult(T) Method " Url="html/ea991e0a-14a7-aef7-4501-64c96f260e72.htm" />
         <HelpTOCNode Title="SingleOrValue(T) Method " Url="html/d5453f44-8068-122b-d665-898e86e9e5d0.htm" />
-        <HelpTOCNode Id="fce7a565-14c8-4b89-bc01-0ca3aa2da95f" Title="Skip Method " Url="html/01ea915d-7770-0840-48ae-b42029fcccdd.htm">
+        <HelpTOCNode Id="d7ee63ad-22f8-42dd-81ab-c68367998a78" Title="Skip Method " Url="html/01ea915d-7770-0840-48ae-b42029fcccdd.htm">
           <HelpTOCNode Title="Skip(T) Method (IEnumerable(T), Int64)" Url="html/3e5a55fa-f2e5-ef90-9af2-1f7ddf575d69.htm" />
           <HelpTOCNode Title="Skip(T) Method (IEnumerable(T), UInt64)" Url="html/0843dbbf-ba33-07bf-7474-0653636aa5f9.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="2fb473a0-5e89-40bd-a485-e14f42a23b4a" Title="Take Method " Url="html/fb9dc4af-1b5e-2f04-ef50-07343f806747.htm">
+        <HelpTOCNode Id="299bcdc2-d4ac-491e-a23d-510187b983a8" Title="Take Method " Url="html/fb9dc4af-1b5e-2f04-ef50-07343f806747.htm">
           <HelpTOCNode Title="Take(T) Method (IEnumerable(T), Int64)" Url="html/12d67d42-e382-4d88-508a-6f30bf48e684.htm" />
           <HelpTOCNode Title="Take(T) Method (IEnumerable(T), UInt64)" Url="html/d86b8125-2fd4-05da-9ad1-1913201026f7.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="97a998b7-bd9d-4871-a46a-207a8159d321" Title="TryGetElementAt Method " Url="html/148cb5ad-c788-9567-6ca7-5ba3db842cba.htm">
+        <HelpTOCNode Id="f78c4a00-da9a-48fe-a413-12ec9691a54f" Title="TryGetElementAt Method " Url="html/148cb5ad-c788-9567-6ca7-5ba3db842cba.htm">
           <HelpTOCNode Title="TryGetElementAt(T) Method (IEnumerable(T), Int32, T)" Url="html/bd2080be-ca61-d331-3a36-22547d3a6cdb.htm" />
           <HelpTOCNode Title="TryGetElementAt(T) Method (IEnumerator(T), Int32, T)" Url="html/38477bd3-f841-f0de-471a-3f8de1ff529e.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="94f97fa1-2db0-4840-b73e-930aba6f7859" Title="TryGetFirst Method " Url="html/a9d4ce5d-d9b0-1563-6702-e86edc37f064.htm">
+        <HelpTOCNode Id="e9f5406c-63e4-4ca9-8c33-c49172802280" Title="TryGetFirst Method " Url="html/a9d4ce5d-d9b0-1563-6702-e86edc37f064.htm">
           <HelpTOCNode Title="TryGetFirst(T) Method (IEnumerable(T), T, Func(T, Boolean))" Url="html/1a6a4ca0-344a-e5ee-ae4f-67269b66b11f.htm" />
           <HelpTOCNode Title="TryGetFirst(T) Method (IEnumerator(T), T, Func(T, Boolean))" Url="html/860e3aed-9a89-4d08-d3f8-c15acb6345d7.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="d9675a4f-dd3b-4df9-bcae-b5f4dd1c57f9" Title="TryGetLast Method " Url="html/1268f2ad-5cd2-3255-61ba-14cf2a969e52.htm">
+        <HelpTOCNode Id="942c6530-9b41-412d-b24a-7d8d283d8804" Title="TryGetLast Method " Url="html/1268f2ad-5cd2-3255-61ba-14cf2a969e52.htm">
           <HelpTOCNode Title="TryGetLast(T) Method (IEnumerable(T), T, Func(T, Boolean))" Url="html/e1f53bea-11b0-cd99-372e-953d07452ccc.htm" />
           <HelpTOCNode Title="TryGetLast(T) Method (IEnumerator(T), T, Func(T, Boolean))" Url="html/c2bde2fd-0830-50e4-02c1-db962fbc5416.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="5b6295c8-45dd-45de-8ba5-8631818abfc6" Title="TryGetSingle Method " Url="html/0cf7db8c-5994-bb57-143e-0e07937205cf.htm">
+        <HelpTOCNode Id="c37688e1-c7ad-4d8f-833b-a61a5b8f200d" Title="TryGetSingle Method " Url="html/0cf7db8c-5994-bb57-143e-0e07937205cf.htm">
           <HelpTOCNode Title="TryGetSingle(T) Method (IEnumerable(T), T, Func(T, Boolean))" Url="html/7c325b05-5bfb-81f2-436e-ea5a15371a67.htm" />
           <HelpTOCNode Title="TryGetSingle(T) Method (IEnumerator(T), T, Func(T, Boolean))" Url="html/46fdd5f7-8a23-fc17-b08f-142c3f1f7d64.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="20defdb8-3d01-44bb-91bc-b6f6ffcdf727" Title="IOpt(T) Interface" Url="html/91133d93-71e7-888c-e2e6-677decd302be.htm">
-      <HelpTOCNode Id="79354ca4-902e-4846-a57e-b677a0a003b0" Title="IOpt(T) Methods" Url="html/860b864a-1eae-8754-7897-1b95db218bf9.htm">
+    <HelpTOCNode Id="14a2c7f8-f73f-4dd8-b5dd-4f1ec4ba9e2b" Title="IOpt(T) Interface" Url="html/91133d93-71e7-888c-e2e6-677decd302be.htm">
+      <HelpTOCNode Id="c1743907-942c-42bf-a769-b07738611886" Title="IOpt(T) Methods" Url="html/860b864a-1eae-8754-7897-1b95db218bf9.htm">
         <HelpTOCNode Title="Fix Method " Url="html/5f506e92-ca47-6a14-c85a-759200e31857.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="20a9a259-4944-455e-b1a1-e21ee2d41f2a" Title="MathTrifles Class" Url="html/e2dfc372-ec54-dd63-8d84-81ce6b6a1db9.htm">
-      <HelpTOCNode Id="33b1f18e-276d-4116-b991-5e5ababe3982" Title="MathTrifles Methods" Url="html/6612e0f3-ae3c-6cea-1f5e-8798fb717e5d.htm">
-        <HelpTOCNode Id="e164a35d-4f4b-41c7-ad02-919058ae209f" Title="Clamp Method " Url="html/9e52e8d1-10c9-3bab-81c2-cc183dfaab3c.htm">
+    <HelpTOCNode Id="56fddc74-d899-422a-be54-e08f1810ce3f" Title="ITriflesByteReader Interface" Url="html/f5413935-57e4-3c5d-e93e-d5ec6665f19b.htm">
+      <HelpTOCNode Id="98467969-1c60-48ee-adde-422e81b24535" Title="ITriflesByteReader Methods" Url="html/11eb9b42-5c82-4a8c-ba63-5537fe9cc216.htm">
+        <HelpTOCNode Title="Read Method " Url="html/b8a9bb21-0c1f-80c5-b2a9-a475897b4e89.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="a37eb861-efb9-4d09-a57a-a2b92607f097" Title="ITriflesByteWriter Interface" Url="html/04adbf02-238d-8b8b-1609-1af75b7f0b15.htm">
+      <HelpTOCNode Id="5f428139-42b8-426d-a0e3-53a63955056a" Title="ITriflesByteWriter Methods" Url="html/e749d88c-f88a-9d3a-01b1-016441ef7c84.htm">
+        <HelpTOCNode Title="Write Method " Url="html/bdfb7303-0a9d-f0cc-aa0c-8932effa65a0.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="b2117963-2d0d-4cb0-9fd2-b391c80fae73" Title="MathTrifles Class" Url="html/e2dfc372-ec54-dd63-8d84-81ce6b6a1db9.htm">
+      <HelpTOCNode Id="1b1e50a2-7a4a-41f1-9ab7-5517028b0a8f" Title="MathTrifles Methods" Url="html/6612e0f3-ae3c-6cea-1f5e-8798fb717e5d.htm">
+        <HelpTOCNode Id="8df549ce-c969-4fa1-aa6d-d779e7b32277" Title="Clamp Method " Url="html/9e52e8d1-10c9-3bab-81c2-cc183dfaab3c.htm">
           <HelpTOCNode Title="Clamp Method (Int32, Byte, Byte)" Url="html/441ae44c-188e-491b-61f4-f30dc4b4db29.htm" />
           <HelpTOCNode Title="Clamp Method (Int32, Int16, Int16)" Url="html/bbe95530-1987-508f-3d08-eb27bbaf71bc.htm" />
           <HelpTOCNode Title="Clamp Method (Int32, Int32, Int32)" Url="html/bb308ad2-1ca7-95b3-b42c-e4e9c081f695.htm" />
@@ -538,74 +548,74 @@
           <HelpTOCNode Title="Clamp Method (UInt64, UInt32, UInt32)" Url="html/fcb84a12-0ba3-de29-05ab-a9f21697e151.htm" />
           <HelpTOCNode Title="Clamp Method (UInt64, UInt64, UInt64)" Url="html/37679053-0f2f-1047-c985-7e4318979c1c.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="abb59800-7f34-41b7-b852-37a9f8d031cb" Title="ClampToByte Method " Url="html/e2e45062-b500-3728-6a52-1775ad40cfc6.htm">
+        <HelpTOCNode Id="6791144f-e8f7-427a-b3b0-edb8ab16b39a" Title="ClampToByte Method " Url="html/e2e45062-b500-3728-6a52-1775ad40cfc6.htm">
           <HelpTOCNode Title="ClampToByte Method (Int32)" Url="html/0544f804-ddb2-60ee-be17-223e790cfcd1.htm" />
           <HelpTOCNode Title="ClampToByte Method (Int64)" Url="html/0168778d-7eb2-6f6b-dafb-53e4950a4b97.htm" />
           <HelpTOCNode Title="ClampToByte Method (UInt64)" Url="html/0ca0e590-f33d-8b10-f948-72b9dd6dce34.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="ef193cd5-dcad-472a-91e7-11bd34fd77bd" Title="ClampToInt16 Method " Url="html/b52155de-ba6e-7a16-74cf-dcb0e09aa455.htm">
+        <HelpTOCNode Id="24e735b1-1814-41e9-92b5-3fd76e4ebb7f" Title="ClampToInt16 Method " Url="html/b52155de-ba6e-7a16-74cf-dcb0e09aa455.htm">
           <HelpTOCNode Title="ClampToInt16 Method (Int32)" Url="html/b3a9eb55-7612-a923-0582-9fc47cff943b.htm" />
           <HelpTOCNode Title="ClampToInt16 Method (Int64)" Url="html/3ae8101b-bbb1-dd5d-6b77-ad3ee7b3aaf0.htm" />
           <HelpTOCNode Title="ClampToInt16 Method (UInt64)" Url="html/ca178687-b97a-6c13-3b23-0df78ea47340.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="19bc17d2-0cef-4a4a-99f5-8e0d9654380f" Title="ClampToInt32 Method " Url="html/4fecde06-47d7-5831-7b9f-d27a2c9834dd.htm">
+        <HelpTOCNode Id="01681839-0a7e-4d1a-98bf-ea35fb37c471" Title="ClampToInt32 Method " Url="html/4fecde06-47d7-5831-7b9f-d27a2c9834dd.htm">
           <HelpTOCNode Title="ClampToInt32 Method (Int64)" Url="html/8f8acd93-e62c-5482-7ce7-92a12c7b9543.htm" />
           <HelpTOCNode Title="ClampToInt32 Method (UInt64)" Url="html/bc656601-4fe2-b26e-5458-b469dda7c8d6.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="ClampToInt64 Method " Url="html/c32650ae-e8fb-7557-3040-61c2afadc1cd.htm" />
-        <HelpTOCNode Id="2206e018-e4b0-4502-8f0e-6c93e910bc4a" Title="ClampToSByte Method " Url="html/307c64b3-f14c-7212-dbb2-cfb7d2866900.htm">
+        <HelpTOCNode Id="3a175053-41a9-46f1-b565-0adb9bf31164" Title="ClampToSByte Method " Url="html/307c64b3-f14c-7212-dbb2-cfb7d2866900.htm">
           <HelpTOCNode Title="ClampToSByte Method (Int32)" Url="html/232fd75a-b514-a47c-77e0-b2b824d75652.htm" />
           <HelpTOCNode Title="ClampToSByte Method (Int64)" Url="html/369e0e72-3e34-6ad5-5a53-aa06740a2a86.htm" />
           <HelpTOCNode Title="ClampToSByte Method (UInt64)" Url="html/ac679a62-a126-9724-59e3-11adf0bcffec.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="afb37e6c-f04e-479f-92d5-ff036a97c93d" Title="ClampToUInt16 Method " Url="html/cd71e53f-c8cb-91bd-8ece-b6f2d13d08ee.htm">
+        <HelpTOCNode Id="2647cb40-5d3c-4905-80ab-2eb166dcae44" Title="ClampToUInt16 Method " Url="html/cd71e53f-c8cb-91bd-8ece-b6f2d13d08ee.htm">
           <HelpTOCNode Title="ClampToUInt16 Method (Int32)" Url="html/bc075f7c-5af5-3b05-f5ba-b8d241dcb1c9.htm" />
           <HelpTOCNode Title="ClampToUInt16 Method (Int64)" Url="html/6b789fc9-6808-1d4d-6f0f-65c010ffaf0b.htm" />
           <HelpTOCNode Title="ClampToUInt16 Method (UInt64)" Url="html/b4b0b706-76a5-e9d9-5195-3bbf91bd923d.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="43a352fe-15db-462c-9068-2b8ee0577060" Title="ClampToUInt32 Method " Url="html/618a8802-53ed-8de7-d94f-7ed6eb3cfd35.htm">
+        <HelpTOCNode Id="2781ced9-158c-427d-ba6d-b7c456cf7f55" Title="ClampToUInt32 Method " Url="html/618a8802-53ed-8de7-d94f-7ed6eb3cfd35.htm">
           <HelpTOCNode Title="ClampToUInt32 Method (Int32)" Url="html/2f4830e0-ebb2-0b49-0a66-4fd5f03580fd.htm" />
           <HelpTOCNode Title="ClampToUInt32 Method (Int64)" Url="html/59a29156-c122-994c-d0d3-9e0947895b40.htm" />
           <HelpTOCNode Title="ClampToUInt32 Method (UInt64)" Url="html/fa0dcb0e-d966-2ed3-4ce1-7cf17f469a22.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="ClampToUInt64 Method " Url="html/8dc87f48-fc78-7550-bb88-b9acbe7af4f2.htm" />
-        <HelpTOCNode Id="d144b81b-f19e-4ace-a961-a539ebd93388" Title="Compare Method " Url="html/cccc718c-bb5f-4006-ee8d-e610d5a55f55.htm">
+        <HelpTOCNode Id="0b4b509d-94b1-4c88-ba44-f59f0e5da398" Title="Compare Method " Url="html/cccc718c-bb5f-4006-ee8d-e610d5a55f55.htm">
           <HelpTOCNode Title="Compare Method (Int32, UInt64)" Url="html/ad6fb880-c2d5-6331-7a88-de2da3c48ebf.htm" />
           <HelpTOCNode Title="Compare Method (Int64, UInt64)" Url="html/7d588c5e-55ad-1612-5e2f-93afee16dc40.htm" />
           <HelpTOCNode Title="Compare Method (UInt64, Int32)" Url="html/2b729f4e-bfdf-5eb8-43eb-8d93f139470c.htm" />
           <HelpTOCNode Title="Compare Method (UInt64, Int64)" Url="html/eb4d84d3-1855-3600-c5b5-259e90397ac4.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="77d62cec-f23d-4aae-a200-8c4955361967" Title="Equality Method " Url="html/fe4182dd-fe3c-e4b7-d2d0-d1d685bf0065.htm">
+        <HelpTOCNode Id="9db79cb1-0941-4671-914d-325ad4f50ed3" Title="Equality Method " Url="html/fe4182dd-fe3c-e4b7-d2d0-d1d685bf0065.htm">
           <HelpTOCNode Title="Equality Method (Int32, UInt64)" Url="html/4a3a5f98-4779-ac30-ddc7-66d3d37c061a.htm" />
           <HelpTOCNode Title="Equality Method (Int64, UInt64)" Url="html/eff04949-903c-78b5-e5e1-5beaa02d8993.htm" />
           <HelpTOCNode Title="Equality Method (UInt64, Int32)" Url="html/03d1fddb-9119-84df-387d-78f1941b2b41.htm" />
           <HelpTOCNode Title="Equality Method (UInt64, Int64)" Url="html/79fb3594-86cf-d38c-a9ce-3ffc5d7ef690.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="5aeafe05-42c8-4b72-943d-9ec1a242a80e" Title="GreaterThan Method " Url="html/bf8e7d8d-e197-d2f5-2e5a-99324a683450.htm">
+        <HelpTOCNode Id="64b09c17-ffcb-4d50-8082-f8fd750afc8d" Title="GreaterThan Method " Url="html/bf8e7d8d-e197-d2f5-2e5a-99324a683450.htm">
           <HelpTOCNode Title="GreaterThan Method (Int32, UInt64)" Url="html/97faa92d-036f-acbd-4ac1-0148575f64c6.htm" />
           <HelpTOCNode Title="GreaterThan Method (Int64, UInt64)" Url="html/3990441b-ef53-aef8-427b-12257141dc82.htm" />
           <HelpTOCNode Title="GreaterThan Method (UInt64, Int32)" Url="html/c307f425-7443-5be1-20c4-8a413b46de8f.htm" />
           <HelpTOCNode Title="GreaterThan Method (UInt64, Int64)" Url="html/3bb43c79-77b1-6f98-504a-e97fb961f56e.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="d3e678dc-8071-4849-bc54-1a7f3500d898" Title="GreaterThanOrEqual Method " Url="html/51fd1b08-ce25-b984-113a-c9a670f526ff.htm">
+        <HelpTOCNode Id="9917543b-7047-4278-8868-ad5521dc635f" Title="GreaterThanOrEqual Method " Url="html/51fd1b08-ce25-b984-113a-c9a670f526ff.htm">
           <HelpTOCNode Title="GreaterThanOrEqual Method (Int32, UInt64)" Url="html/dcc0883f-f451-99b7-47dd-4b9bac7f6eeb.htm" />
           <HelpTOCNode Title="GreaterThanOrEqual Method (Int64, UInt64)" Url="html/9c5a580e-8bfa-cea3-cec5-7e2467edd41e.htm" />
           <HelpTOCNode Title="GreaterThanOrEqual Method (UInt64, Int32)" Url="html/046993ec-3c1a-3f54-d2ce-66625c66ec91.htm" />
           <HelpTOCNode Title="GreaterThanOrEqual Method (UInt64, Int64)" Url="html/b0abe256-7e41-7f1a-64e9-c84b91254b9e.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="30582536-8b5f-437c-a1ca-38b65e6b885b" Title="LessThan Method " Url="html/b4f69ff2-7f15-3338-f90b-cfe09e206a58.htm">
+        <HelpTOCNode Id="9b0747a0-8abd-4138-bcd6-d81cd679a9ef" Title="LessThan Method " Url="html/b4f69ff2-7f15-3338-f90b-cfe09e206a58.htm">
           <HelpTOCNode Title="LessThan Method (Int32, UInt64)" Url="html/09b4651f-62e7-5058-0376-cf2f2da159f8.htm" />
           <HelpTOCNode Title="LessThan Method (Int64, UInt64)" Url="html/78823afd-aef5-255b-7e5d-9c405b1963ea.htm" />
           <HelpTOCNode Title="LessThan Method (UInt64, Int32)" Url="html/f7e543c0-8494-cd88-abbd-5bc7c5acf47b.htm" />
           <HelpTOCNode Title="LessThan Method (UInt64, Int64)" Url="html/f5d1931a-0dd5-cb03-5444-47f573a03e1d.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="c329aaa8-ec04-482b-92f5-106231f4c9c2" Title="LessThanOrEqual Method " Url="html/b7750981-cda9-ccd8-5dce-b86227fabe30.htm">
+        <HelpTOCNode Id="216aa26a-f953-4100-86df-ea86ed81728f" Title="LessThanOrEqual Method " Url="html/b7750981-cda9-ccd8-5dce-b86227fabe30.htm">
           <HelpTOCNode Title="LessThanOrEqual Method (Int32, UInt64)" Url="html/e8443c6d-1b90-72f6-215e-b5e6badf83bc.htm" />
           <HelpTOCNode Title="LessThanOrEqual Method (Int64, UInt64)" Url="html/387d01fb-9697-428b-4935-9911e874f51f.htm" />
           <HelpTOCNode Title="LessThanOrEqual Method (UInt64, Int32)" Url="html/24b91cc4-83ac-0b4e-7d3b-4dd3d3b9076d.htm" />
           <HelpTOCNode Title="LessThanOrEqual Method (UInt64, Int64)" Url="html/93b4d662-e4b5-d4d9-6a63-4d998928a286.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="7790bd73-de1a-40ad-90e0-b023ebd19153" Title="Max Method " Url="html/8e1fe76f-0d70-bceb-e96e-8ebf2bc10b46.htm">
+        <HelpTOCNode Id="526a3999-931d-4d04-af46-6f7e98babfed" Title="Max Method " Url="html/8e1fe76f-0d70-bceb-e96e-8ebf2bc10b46.htm">
           <HelpTOCNode Title="Max Method (Byte, SByte)" Url="html/7c9b7305-f002-2fc7-9883-34d0a3279848.htm" />
           <HelpTOCNode Title="Max Method (Int16, UInt16)" Url="html/2c9709ef-e36e-108a-1728-b11df5b40cb6.htm" />
           <HelpTOCNode Title="Max Method (Int16, UInt32)" Url="html/86c15514-13fe-1465-da62-7e92c9ea5c00.htm" />
@@ -627,7 +637,7 @@
           <HelpTOCNode Title="Max Method (UInt64, Int64)" Url="html/b331b2fb-4f8e-a109-98cf-a8644e82f1bf.htm" />
           <HelpTOCNode Title="Max Method (UInt64, SByte)" Url="html/5237759d-3fe0-5d62-238c-216af9dfc0ec.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="a214c74f-0b3b-4187-a189-d3cf0ae9a84b" Title="Min Method " Url="html/0bc38a06-efca-12b9-7364-1027cac86fa1.htm">
+        <HelpTOCNode Id="f544c159-2ee9-4e4e-8d85-8276f863434b" Title="Min Method " Url="html/0bc38a06-efca-12b9-7364-1027cac86fa1.htm">
           <HelpTOCNode Title="Min Method (Byte, SByte)" Url="html/471368fb-e6cf-b4a2-5eb1-f4dea3d9719f.htm" />
           <HelpTOCNode Title="Min Method (Int16, UInt16)" Url="html/4a6c30e4-4a3b-e4f3-2e08-3dd9898d9527.htm" />
           <HelpTOCNode Title="Min Method (Int16, UInt32)" Url="html/6f8b3e1f-28ba-f1c2-a244-b808b75cde92.htm" />
@@ -651,15 +661,15 @@
         </HelpTOCNode>
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="ee451b4d-bf81-49a6-8883-e5034deb38a4" Title="Opt Class" Url="html/05847462-f7ce-e627-2dfb-e0d93bdc972f.htm">
-      <HelpTOCNode Id="ca724bd9-cdc7-49c7-87b3-ba16993f96ee" Title="Opt Methods" Url="html/253a64d1-40e6-2eb0-bed6-4751d0be39ad.htm">
+    <HelpTOCNode Id="5353183e-d07e-4fe4-abf3-880443a5e6f9" Title="Opt Class" Url="html/05847462-f7ce-e627-2dfb-e0d93bdc972f.htm">
+      <HelpTOCNode Id="75698798-fafc-4595-a3ba-d199f616b435" Title="Opt Methods" Url="html/253a64d1-40e6-2eb0-bed6-4751d0be39ad.htm">
         <HelpTOCNode Title="Create(T) Method " Url="html/87aec6fb-3b65-d598-5018-d12192717c11.htm" />
         <HelpTOCNode Title="CreateFromResult(T) Method " Url="html/2d52995f-9793-9b7f-f007-0c5b42ba3605.htm" />
         <HelpTOCNode Title="Defer(T) Method " Url="html/c38e10f2-f240-6637-ef9d-fa8446682f4e.htm" />
         <HelpTOCNode Title="Empty(T) Method " Url="html/88184cc7-97d5-1b60-919e-f68d13d76269.htm" />
         <HelpTOCNode Title="Full(T) Method " Url="html/e3240705-5305-4544-9e96-37c34450d344.htm" />
         <HelpTOCNode Title="FullIfNotNull(T) Method " Url="html/3347ed57-8f41-6e47-0714-30e4ae4823aa.htm" />
-        <HelpTOCNode Id="db298b30-cc37-4601-adf2-05f3275fa6ac" Title="Zip Method " Url="html/d99ecda2-0207-39c2-7ee5-6812960a5aa6.htm">
+        <HelpTOCNode Id="e7bfa5f8-8da0-4a8f-8796-4edc69363ad0" Title="Zip Method " Url="html/d99ecda2-0207-39c2-7ee5-6812960a5aa6.htm">
           <HelpTOCNode Title="Zip(T1) Method (IOpt(T1))" Url="html/06ea5594-8543-4599-4d5e-56d91ce6d5cf.htm" />
           <HelpTOCNode Title="Zip(T1, T2) Method (IOpt(T1), IOpt(T2))" Url="html/525a282c-ca2d-5355-b52a-5d1134321740.htm" />
           <HelpTOCNode Title="Zip(T1, TResult) Method (IOpt(T1), Func(T1, TResult))" Url="html/c231ff78-cb5f-0d17-cc02-9600d9d78bf2.htm" />
@@ -677,7 +687,7 @@
           <HelpTOCNode Title="Zip(T1, T2, T3, T4, T5, T6, T7, TResult) Method (IOpt(T1), IOpt(T2), IOpt(T3), IOpt(T4), IOpt(T5), IOpt(T6), IOpt(T7), Func(T1, T2, T3, T4, T5, T6, T7, TResult))" Url="html/65889ef4-558b-a344-dada-89bf5fd90796.htm" />
           <HelpTOCNode Title="Zip(T1, T2, T3, T4, T5, T6, T7, T8, TResult) Method (IOpt(T1), IOpt(T2), IOpt(T3), IOpt(T4), IOpt(T5), IOpt(T6), IOpt(T7), IOpt(T8), Func(T1, T2, T3, T4, T5, T6, T7, T8, TResult))" Url="html/3007c4ff-5f19-c438-718a-b0815d543d48.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="9e047277-6815-4710-872b-dbbf9383abac" Title="ZipFix Method " Url="html/66ff2177-2919-c06e-4753-a2958ca2e426.htm">
+        <HelpTOCNode Id="c10c47a5-4b75-4ac5-98c5-19818cf090ef" Title="ZipFix Method " Url="html/66ff2177-2919-c06e-4753-a2958ca2e426.htm">
           <HelpTOCNode Title="ZipFix(T1) Method (IOpt(T1))" Url="html/0c8a7321-bf67-6ecd-c391-c9b9dc1714a2.htm" />
           <HelpTOCNode Title="ZipFix(T1, T2) Method (IOpt(T1), IOpt(T2))" Url="html/9d72d45a-9ec2-ad95-779b-da840b16f1cd.htm" />
           <HelpTOCNode Title="ZipFix(T1, TResult) Method (IOpt(T1), Func(T1, TResult))" Url="html/a57c3649-2143-6c18-9c4f-2f683129d6b6.htm" />
@@ -697,17 +707,17 @@
         </HelpTOCNode>
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="0d023da7-7e6c-4255-a55a-a02100c09e91" Title="Opt(T) Structure" Url="html/9e6fddd6-4806-3f80-15f3-75aee0054e65.htm">
-      <HelpTOCNode Id="e0c92ad3-41e8-4245-9287-4b8f8f4d6a59" Title="Opt(T) Constructor " Url="html/dcf93107-697a-7c1e-6398-3038952987bd.htm">
+    <HelpTOCNode Id="912d2d0f-1977-425a-98f3-52142f5d0b9e" Title="Opt(T) Structure" Url="html/9e6fddd6-4806-3f80-15f3-75aee0054e65.htm">
+      <HelpTOCNode Id="7eb4ca0e-4910-4a70-ba9e-582bd58516a0" Title="Opt(T) Constructor " Url="html/dcf93107-697a-7c1e-6398-3038952987bd.htm">
         <HelpTOCNode Title="Opt(T) Constructor (IEnumerable(T))" Url="html/ed5b7567-9ed7-f60d-c38f-074339d6f826.htm" />
         <HelpTOCNode Title="Opt(T) Constructor (IEnumerator(T))" Url="html/32ae0991-381f-a11d-a949-c3f366af6092.htm" />
         <HelpTOCNode Title="Opt(T) Constructor (T)" Url="html/aab2901c-ca31-06cd-683a-c4d871a5804f.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="a43ff313-102d-4552-900a-5f53d5d9f128" Title="Opt(T) Methods" Url="html/ae1bf4dc-4f72-9c62-a59e-d102874b206a.htm">
+      <HelpTOCNode Id="71bdc59b-15cd-4603-a92c-645277ce0099" Title="Opt(T) Methods" Url="html/ae1bf4dc-4f72-9c62-a59e-d102874b206a.htm">
         <HelpTOCNode Title="Any Method " Url="html/e87e92a4-9214-85ea-f763-69c2084b4130.htm" />
         <HelpTOCNode Title="Count Method " Url="html/5e6970bf-c53b-0e97-040f-99df699ee4a5.htm" />
         <HelpTOCNode Title="Fix Method " Url="html/b3754496-8918-0c64-7c0e-2f6d8a90697a.htm" />
-        <HelpTOCNode Id="7a1e9234-68c3-4d19-b436-49ac79b385f0" Title="ForAny Method " Url="html/02c9dc53-bbd9-fdfb-927e-62dcc1815bc0.htm">
+        <HelpTOCNode Id="4e5c7fdf-f3c3-4798-99f8-4474a082211e" Title="ForAny Method " Url="html/02c9dc53-bbd9-fdfb-927e-62dcc1815bc0.htm">
           <HelpTOCNode Title="ForAny Method (Action(T))" Url="html/36e7bd08-9e7c-7ed8-072f-4c3c923e2df1.htm" />
           <HelpTOCNode Title="ForAny Method (Action(T), Action)" Url="html/5e821103-db3a-f7f8-cc32-0aae0ed8a9dd.htm" />
         </HelpTOCNode>
@@ -720,18 +730,18 @@
         <HelpTOCNode Title="WhereFix Method " Url="html/8ee1857e-0d0e-062a-6ad7-929d3f8d2579.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="bc833dfb-3b15-4100-b1b7-5b71172d9367" Title="OptExtensions Class" Url="html/811aba34-a2da-6065-030d-3e5e6c74d8db.htm">
-      <HelpTOCNode Id="6de5ea60-24ed-4606-a2c4-a37dac5e55c6" Title="OptExtensions Methods" Url="html/85b07969-6752-4d67-bbbf-80a01268e7ed.htm">
+    <HelpTOCNode Id="934f8e27-aae1-4044-a75b-dfb7c40e4a00" Title="OptExtensions Class" Url="html/811aba34-a2da-6065-030d-3e5e6c74d8db.htm">
+      <HelpTOCNode Id="0d3e6f00-4229-43d1-8dde-f686289373c5" Title="OptExtensions Methods" Url="html/85b07969-6752-4d67-bbbf-80a01268e7ed.htm">
         <HelpTOCNode Title="Any(T) Method " Url="html/888f3255-9757-c23d-661d-ca58dd47606f.htm" />
         <HelpTOCNode Title="Cleared(T) Method " Url="html/783b7d81-6356-d5be-9a3f-223128bcce8c.htm" />
         <HelpTOCNode Title="Count(T) Method " Url="html/a6465f18-578e-23a2-c1ec-98600f63cce7.htm" />
         <HelpTOCNode Title="ElementAt(T) Method " Url="html/8b247fd6-cdda-e11a-12b0-c686afa3cff4.htm" />
         <HelpTOCNode Title="ElementAtOrDefault(T) Method " Url="html/2d6a7000-bf48-6665-d989-e44d2cc58450.htm" />
-        <HelpTOCNode Id="194197f4-df39-412c-9eee-18b080f2d848" Title="Fallback Method " Url="html/df584d7a-7f0a-8ece-1668-467f73596b29.htm">
+        <HelpTOCNode Id="eebc0a25-a292-4a0e-8bbd-8c50771231c8" Title="Fallback Method " Url="html/df584d7a-7f0a-8ece-1668-467f73596b29.htm">
           <HelpTOCNode Title="Fallback(T) Method (IOpt(T), IOpt(T))" Url="html/fe54b196-7e97-0fd1-7a70-2e75916fd9d0.htm" />
           <HelpTOCNode Title="Fallback(T) Method (IOpt(T), Func(Opt(T)))" Url="html/f0f05df0-d0a1-72d0-1ab0-ea713a2d3f06.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="9f9620d4-f4c4-4e52-ac11-e92bce2da760" Title="FallbackFix Method " Url="html/6e773555-f902-e7df-476f-fa29bc6a3ea3.htm">
+        <HelpTOCNode Id="c8ed08a9-01a9-4bc3-9b6f-4a963d5396a0" Title="FallbackFix Method " Url="html/6e773555-f902-e7df-476f-fa29bc6a3ea3.htm">
           <HelpTOCNode Title="FallbackFix(T) Method (IOpt(T), IOpt(T))" Url="html/e8f2a699-1150-50df-089b-20ed8216a64d.htm" />
           <HelpTOCNode Title="FallbackFix(T) Method (IOpt(T), Func(Opt(T)))" Url="html/153ea777-3e8e-139f-a705-3aef49010062.htm" />
         </HelpTOCNode>
@@ -743,15 +753,15 @@
         <HelpTOCNode Title="FillWithValueFix(T) Method " Url="html/950e1a9a-b805-71c8-f80a-312d3e8eaad7.htm" />
         <HelpTOCNode Title="First(T) Method " Url="html/4699e1d9-0a6b-8ed8-898a-49a94de54f55.htm" />
         <HelpTOCNode Title="FirstOrDefault(T) Method " Url="html/eb2f45ff-e414-be7d-dd25-0e084611540a.htm" />
-        <HelpTOCNode Id="772fe747-0faf-4cf7-a99b-458cb54ae430" Title="FlattenFixOpt Method " Url="html/739f74ab-1b7d-572e-5d8b-bc8ef49eae43.htm">
+        <HelpTOCNode Id="c89cc7d3-b14d-457f-b0c3-99473e08a363" Title="FlattenFixOpt Method " Url="html/739f74ab-1b7d-572e-5d8b-bc8ef49eae43.htm">
           <HelpTOCNode Title="FlattenFixOpt(T) Method (IOpt(IOpt(T)))" Url="html/14cb2c0a-69dd-bb1d-267c-29dd21e475b0.htm" />
           <HelpTOCNode Title="FlattenFixOpt(T) Method (IOpt(Opt(T)))" Url="html/9db47112-292e-0c65-f51a-7498348f5e7d.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="72f9f8bb-c792-4a00-85b2-70de5f31f217" Title="FlattenOpt Method " Url="html/a1fcdd4b-96c2-7231-8c52-2650eb9fdd1a.htm">
+        <HelpTOCNode Id="0b8db29f-aaf0-4dfc-9044-74a447e23969" Title="FlattenOpt Method " Url="html/a1fcdd4b-96c2-7231-8c52-2650eb9fdd1a.htm">
           <HelpTOCNode Title="FlattenOpt(T) Method (IOpt(IOpt(T)))" Url="html/feeb3fa8-1bc1-5a1c-922b-ae7201d7afda.htm" />
           <HelpTOCNode Title="FlattenOpt(T) Method (IOpt(Opt(T)))" Url="html/0ce14da4-6c65-3aa6-fef7-9c31fd84ac95.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="9f45e073-da29-457a-8e8c-2ca050cc73d9" Title="ForAny Method " Url="html/69990ca3-df8e-20df-2544-0dde95bee45e.htm">
+        <HelpTOCNode Id="e89c7332-7af9-43b5-b7f3-1f555c69a6cd" Title="ForAny Method " Url="html/69990ca3-df8e-20df-2544-0dde95bee45e.htm">
           <HelpTOCNode Title="ForAny(T) Method (IOpt(T), Action(T))" Url="html/daf7f2f4-d8b6-284b-23d5-d5285d152186.htm" />
           <HelpTOCNode Title="ForAny(T) Method (IOpt(T), Action(T), Action)" Url="html/4817aa39-383c-181b-cc9d-fc886a76a6db.htm" />
         </HelpTOCNode>
@@ -766,7 +776,7 @@
         <HelpTOCNode Title="SubstituteIfEmptyFix(T) Method " Url="html/85cc0c62-8dac-3790-3b62-655aaf83f879.htm" />
         <HelpTOCNode Title="Where(T) Method " Url="html/35f1ae1e-3479-e512-c84d-c2fb6bfb58cb.htm" />
         <HelpTOCNode Title="WhereFix(T) Method " Url="html/c15e9862-8caa-db36-7c4a-5ab9cda592d5.htm" />
-        <HelpTOCNode Id="1bb07666-c913-4418-8853-fc3ff59f0ff5" Title="Zip Method " Url="html/ccfd4129-8b6e-5ceb-fde1-0cb9cb57f4fd.htm">
+        <HelpTOCNode Id="c68f6635-57c0-4f33-bf33-ba67217f8e41" Title="Zip Method " Url="html/ccfd4129-8b6e-5ceb-fde1-0cb9cb57f4fd.htm">
           <HelpTOCNode Title="Zip(T1) Method (IOpt(T1))" Url="html/92cb45e6-4ffb-d9d0-1a6d-2e2e06b555c2.htm" />
           <HelpTOCNode Title="Zip(T1, T2) Method (IOpt(T1), IOpt(T2))" Url="html/4fe909e0-5601-36da-6ae7-451d992a46a4.htm" />
           <HelpTOCNode Title="Zip(T1, TResult) Method (IOpt(T1), Func(T1, TResult))" Url="html/a255a6da-b8e8-5181-5e9b-5281def866d5.htm" />
@@ -784,7 +794,7 @@
           <HelpTOCNode Title="Zip(T1, T2, T3, T4, T5, T6, T7, TResult) Method (IOpt(T1), IOpt(T2), IOpt(T3), IOpt(T4), IOpt(T5), IOpt(T6), IOpt(T7), Func(T1, T2, T3, T4, T5, T6, T7, TResult))" Url="html/8bfdfe5c-a8ef-8b77-acee-6032fc5dd53c.htm" />
           <HelpTOCNode Title="Zip(T1, T2, T3, T4, T5, T6, T7, T8, TResult) Method (IOpt(T1), IOpt(T2), IOpt(T3), IOpt(T4), IOpt(T5), IOpt(T6), IOpt(T7), IOpt(T8), Func(T1, T2, T3, T4, T5, T6, T7, T8, TResult))" Url="html/e5a26f0a-c309-ebb4-71c3-f28056a613c8.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="a43a0463-f3a2-42e3-9561-9f90ddc6d9e1" Title="ZipFix Method " Url="html/4d2a384f-62ec-1a59-dccd-c942d53252d7.htm">
+        <HelpTOCNode Id="4349bb7b-bcf7-449c-b973-9417e4b46052" Title="ZipFix Method " Url="html/4d2a384f-62ec-1a59-dccd-c942d53252d7.htm">
           <HelpTOCNode Title="ZipFix(T1) Method (IOpt(T1))" Url="html/30b94e2d-bc3a-78fd-ca37-e5b1a4c6f85c.htm" />
           <HelpTOCNode Title="ZipFix(T1, T2) Method (IOpt(T1), IOpt(T2))" Url="html/1a2d07fd-0756-4899-2038-6e6befaf6200.htm" />
           <HelpTOCNode Title="ZipFix(T1, TResult) Method (IOpt(T1), Func(T1, TResult))" Url="html/974e611b-069a-fedb-2a8c-0481d17ede08.htm" />
@@ -804,8 +814,8 @@
         </HelpTOCNode>
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="440f3472-0925-425c-9c45-498d31a0439e" Title="SimpleTypeExtensions Class" Url="html/bd98b0bc-9710-2639-5f7d-8783a998c8e4.htm">
-      <HelpTOCNode Id="b6e5b4e7-136f-4e17-a14e-7f41a7e5da37" Title="SimpleTypeExtensions Methods" Url="html/7b579fc8-dd2c-4d76-74c4-85b7e7ca4344.htm">
+    <HelpTOCNode Id="7d121542-d4af-4d31-8d51-130c9265b529" Title="SimpleTypeExtensions Class" Url="html/bd98b0bc-9710-2639-5f7d-8783a998c8e4.htm">
+      <HelpTOCNode Id="831705a5-0fc6-4508-aa5e-53252a1d8748" Title="SimpleTypeExtensions Methods" Url="html/7b579fc8-dd2c-4d76-74c4-85b7e7ca4344.htm">
         <HelpTOCNode Title="DecimalValueOpt Method " Url="html/f86e7263-8bef-fb14-4224-5bc93c6de5b0.htm" />
         <HelpTOCNode Title="FloatingPointValueOpt Method " Url="html/6ca82ac7-0fb7-2fd8-5684-fe9eb249fa6d.htm" />
         <HelpTOCNode Title="HasSimpleType Method " Url="html/7ca0f031-ea57-2b47-fa65-f2edd5e3d927.htm" />
@@ -820,7 +830,7 @@
         <HelpTOCNode Title="NumericValueAsDecimalOpt Method " Url="html/e6c37586-4f9c-44fb-723c-576ad7604852.htm" />
         <HelpTOCNode Title="NumericValueAsDoubleOpt Method " Url="html/5dca04c0-1e95-8460-a510-be30afa9da7b.htm" />
         <HelpTOCNode Title="NumericValueToNonScientificStringOpt Method " Url="html/c8f32110-536f-a52a-89cf-610f31acafcc.htm" />
-        <HelpTOCNode Id="8c3ab578-80be-4b15-9cd3-b86d8f62989b" Title="NumericValueToStringOpt Method " Url="html/6e2663e3-01a8-63de-c474-f40085040542.htm">
+        <HelpTOCNode Id="1e7375cd-50c8-4f2f-87fa-290e3376657f" Title="NumericValueToStringOpt Method " Url="html/6e2663e3-01a8-63de-c474-f40085040542.htm">
           <HelpTOCNode Title="NumericValueToStringOpt Method (IConvertible, IFormatProvider)" Url="html/39c4824b-9097-8d11-4ace-370685919948.htm" />
           <HelpTOCNode Title="NumericValueToStringOpt Method (IConvertible, String)" Url="html/7ee88e48-52af-0328-1474-7e91f9df2688.htm" />
           <HelpTOCNode Title="NumericValueToStringOpt Method (IConvertible, String, IFormatProvider)" Url="html/0b286ec2-9a43-5283-198a-576b897707d7.htm" />
@@ -829,43 +839,65 @@
         <HelpTOCNode Title="UnsignedIntegralValueOpt Method " Url="html/e85520e9-c034-eb84-a558-3802b859adf9.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="d01cac45-2d12-4aa1-b193-19c912b9be4a" Title="StreamExtensions Class" Url="html/51411086-e380-53b9-cf9d-77023dad6a4d.htm">
-      <HelpTOCNode Id="84db7aa2-773b-40d7-8170-d3737fca699d" Title="StreamExtensions Methods" Url="html/af883869-aeb1-2fdd-12ae-2a89acf5c003.htm">
-        <HelpTOCNode Id="88597e9a-e6bd-47ec-b364-c208145413f7" Title="ReadFully Method " Url="html/1b22f1ff-ea66-5ca9-afe7-72deacf21cf5.htm">
+    <HelpTOCNode Id="59928943-b3bd-41e2-b0a3-2e26bd4ab9a0" Title="StreamExtensions Class" Url="html/51411086-e380-53b9-cf9d-77023dad6a4d.htm">
+      <HelpTOCNode Id="a1afa49d-1cba-4bf8-9247-1bc88fe36960" Title="StreamExtensions Methods" Url="html/af883869-aeb1-2fdd-12ae-2a89acf5c003.htm">
+        <HelpTOCNode Id="ddd16fc6-5d3d-4dcc-bcf8-7ef9b06c91a6" Title="ReadFully Method " Url="html/1b22f1ff-ea66-5ca9-afe7-72deacf21cf5.htm">
           <HelpTOCNode Title="ReadFully Method (BinaryReader, Byte[], Int32, Int32)" Url="html/1c3377ad-204e-3ddd-2fc0-685bb9056b8d.htm" />
           <HelpTOCNode Title="ReadFully Method (Stream, Byte[], Int32, Int32)" Url="html/eb850fdb-ad81-e0f1-1196-27dc8d9d5c0f.htm" />
+          <HelpTOCNode Title="ReadFully Method (ITriflesByteReader, Byte[], Int32, Int32)" Url="html/c9b51bdf-bf21-7c1b-fc8f-64572b4c2be7.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="c0c42b02-06b4-4d0b-a0d7-25f75b4a3211" Title="ReadViaArray Method " Url="html/ddb3e5c8-9644-244c-d24a-26175718de64.htm">
+        <HelpTOCNode Id="520da555-0a28-40ac-b66a-509bda129b50" Title="ReadViaArray Method " Url="html/ddb3e5c8-9644-244c-d24a-26175718de64.htm">
           <HelpTOCNode Title="ReadViaArray Method (BinaryReader, Byte[])" Url="html/a4029f7f-8678-5363-1fab-e32864aa39e1.htm" />
           <HelpTOCNode Title="ReadViaArray Method (Stream, Byte[])" Url="html/312d87f0-71d5-33f8-f3c5-2212177efcc8.htm" />
+          <HelpTOCNode Title="ReadViaArray Method (ITriflesByteReader, Byte[])" Url="html/08ebcfe2-6e6c-cc25-92ac-66b4544bc162.htm" />
           <HelpTOCNode Title="ReadViaArray Method (BinaryReader, Action(Byte[], Int32, Int32), Byte[])" Url="html/88c8465e-60f7-230d-0660-74bd9aa8c854.htm" />
           <HelpTOCNode Title="ReadViaArray Method (Stream, Action(Byte[], Int32, Int32), Byte[])" Url="html/f01608d8-58fa-211a-a84e-6e30def6cca6.htm" />
+          <HelpTOCNode Title="ReadViaArray Method (ITriflesByteReader, Action(Byte[], Int32, Int32), Byte[])" Url="html/52f39b86-04fb-3b62-157a-3f696e7a7c2f.htm" />
           <HelpTOCNode Title="ReadViaArray Method (BinaryReader, Int32, Byte[], Boolean)" Url="html/3ac38692-815d-8c90-8951-8990d27e462d.htm" />
           <HelpTOCNode Title="ReadViaArray Method (BinaryReader, Int64, Byte[], Boolean)" Url="html/76bd68d6-8ed1-c4b6-5ced-7f3fe3a2bb8d.htm" />
           <HelpTOCNode Title="ReadViaArray Method (BinaryReader, UInt64, Byte[], Boolean)" Url="html/1ba7dd86-c185-c2b4-23d7-b62b3596f2d6.htm" />
           <HelpTOCNode Title="ReadViaArray Method (Stream, Int32, Byte[], Boolean)" Url="html/c36278bf-3909-3de6-0abc-bafa29a9a135.htm" />
           <HelpTOCNode Title="ReadViaArray Method (Stream, Int64, Byte[], Boolean)" Url="html/83923264-854b-e87f-b3ca-0fa4fa1b01bd.htm" />
           <HelpTOCNode Title="ReadViaArray Method (Stream, UInt64, Byte[], Boolean)" Url="html/eedf5377-4375-94f2-4bab-bf34618e8f4b.htm" />
-          <HelpTOCNode Title="ReadViaArray Method (BinaryReader, Action(Byte[], Int32, Int32), Int32, Byte[], Boolean)" Url="html/b0b4a264-3a4e-d1c7-03d5-151af0bc89c2.htm" />
-          <HelpTOCNode Title="ReadViaArray Method (BinaryReader, Action(Byte[], Int32, Int32), Int64, Byte[], Boolean)" Url="html/a737fbe8-3782-6869-abbb-36bb739c0497.htm" />
-          <HelpTOCNode Title="ReadViaArray Method (BinaryReader, Action(Byte[], Int32, Int32), UInt64, Byte[], Boolean)" Url="html/8efad62c-0ff0-b4e7-499b-72c598a59783.htm" />
-          <HelpTOCNode Title="ReadViaArray Method (Stream, Action(Byte[], Int32, Int32), Int32, Byte[], Boolean)" Url="html/eafe87d6-fb4b-29f6-9e93-13ea860ec1ca.htm" />
-          <HelpTOCNode Title="ReadViaArray Method (Stream, Action(Byte[], Int32, Int32), Int64, Byte[], Boolean)" Url="html/43b26ad3-2ef9-c53b-7331-6927b283eb7b.htm" />
-          <HelpTOCNode Title="ReadViaArray Method (Stream, Action(Byte[], Int32, Int32), UInt64, Byte[], Boolean)" Url="html/1bce47a8-f54a-b6b7-265d-e1c7b7f0a4c3.htm" />
+          <HelpTOCNode Title="ReadViaArray Method (ITriflesByteReader, Int32, Byte[], Boolean)" Url="html/b96508a6-1d25-55a2-e75c-8c547feb5cb8.htm" />
+          <HelpTOCNode Title="ReadViaArray Method (ITriflesByteReader, Int64, Byte[], Boolean)" Url="html/e71549e2-1377-0356-b746-70400575da07.htm" />
+          <HelpTOCNode Title="ReadViaArray Method (ITriflesByteReader, UInt64, Byte[], Boolean)" Url="html/ca6f3d03-d5b3-bc5e-9d1a-ba75c214c50f.htm" />
+          <HelpTOCNode Title="ReadViaArray Method (BinaryReader, Int32, Action(Byte[], Int32, Int32), Byte[], Boolean)" Url="html/0480b498-36b0-210a-c97c-511a8504fa23.htm" />
+          <HelpTOCNode Title="ReadViaArray Method (BinaryReader, Int64, Action(Byte[], Int32, Int32), Byte[], Boolean)" Url="html/b451d3df-0a44-88b3-cc8b-e2b0b8fca75e.htm" />
+          <HelpTOCNode Title="ReadViaArray Method (BinaryReader, UInt64, Action(Byte[], Int32, Int32), Byte[], Boolean)" Url="html/17765229-ffd7-65f2-ce48-c61ec5531b32.htm" />
+          <HelpTOCNode Title="ReadViaArray Method (Stream, Int32, Action(Byte[], Int32, Int32), Byte[], Boolean)" Url="html/aef641c4-82e2-00a6-1f3c-98888d6133fa.htm" />
+          <HelpTOCNode Title="ReadViaArray Method (Stream, Int64, Action(Byte[], Int32, Int32), Byte[], Boolean)" Url="html/3cf01116-c760-9c96-8781-51c1ea36b7f5.htm" />
+          <HelpTOCNode Title="ReadViaArray Method (Stream, UInt64, Action(Byte[], Int32, Int32), Byte[], Boolean)" Url="html/7bc629f3-874c-2efd-067d-0b146d9affb9.htm" />
+          <HelpTOCNode Title="ReadViaArray Method (ITriflesByteReader, Int32, Action(Byte[], Int32, Int32), Byte[], Boolean)" Url="html/6b2571db-4ead-9889-bbc2-fe64d62f3eb1.htm" />
+          <HelpTOCNode Title="ReadViaArray Method (ITriflesByteReader, Int64, Action(Byte[], Int32, Int32), Byte[], Boolean)" Url="html/6708b303-8a63-3b0d-d05c-9478d883031e.htm" />
+          <HelpTOCNode Title="ReadViaArray Method (ITriflesByteReader, UInt64, Action(Byte[], Int32, Int32), Byte[], Boolean)" Url="html/54eefac1-b46a-7cfa-9098-73440c2d84e2.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="63382011-4a42-4724-8333-f185380b98c5" Title="Write Method " Url="html/3e2329f6-947a-0927-366e-76f67fd48875.htm">
+        <HelpTOCNode Id="92615aad-8503-43ca-9844-0684a524304c" Title="ToTriflesByteReader Method " Url="html/17f475a6-2bf4-ee68-e63f-79467d189d2f.htm">
+          <HelpTOCNode Title="ToTriflesByteReader Method (BinaryReader)" Url="html/de1f2523-4d7b-5509-27a3-e420d01c16dd.htm" />
+          <HelpTOCNode Title="ToTriflesByteReader Method (Stream)" Url="html/213b7b63-d3e3-3760-e75e-82fc24fd1ee7.htm" />
+          <HelpTOCNode Title="ToTriflesByteReader Method (ITriflesByteReader)" Url="html/ef54bc93-efa4-9305-1b01-8c5386b51d51.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="8a8c5719-8f54-4787-95cd-00443131b662" Title="ToTriflesByteWriter Method " Url="html/4783ba89-7d47-37b4-dea3-3137f7aa69b0.htm">
+          <HelpTOCNode Title="ToTriflesByteWriter Method (BinaryWriter)" Url="html/4d451cd5-2307-7ac5-5240-f55a997d766a.htm" />
+          <HelpTOCNode Title="ToTriflesByteWriter Method (Stream)" Url="html/a379f0da-810b-bf19-d04b-3cf87862cc22.htm" />
+          <HelpTOCNode Title="ToTriflesByteWriter Method (ITriflesByteWriter)" Url="html/260a219b-5392-6f64-5745-6f6241021a9f.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="6acbb8d6-fd9b-4b5e-a539-dce8145de9d3" Title="Write Method " Url="html/3e2329f6-947a-0927-366e-76f67fd48875.htm">
           <HelpTOCNode Title="Write Method (BinaryWriter, IEnumerable(Byte), Int32)" Url="html/db5701cc-33d9-643c-18fe-57f5f5e6b6b4.htm" />
           <HelpTOCNode Title="Write Method (BinaryWriter, IList(Byte), Int32)" Url="html/f8f657b2-c5fc-57ad-c9f0-e056b40c9a96.htm" />
           <HelpTOCNode Title="Write Method (Stream, IEnumerable(Byte), Int32)" Url="html/9c18cc3f-0ece-bc2e-47b0-f9d29b5d8a0c.htm" />
           <HelpTOCNode Title="Write Method (Stream, IList(Byte), Int32)" Url="html/f940564d-4681-606d-3988-ae81a20a39a9.htm" />
+          <HelpTOCNode Title="Write Method (ITriflesByteWriter, IEnumerable(Byte), Int32)" Url="html/948b2e77-0547-60c4-71ed-a9fa1bc32242.htm" />
+          <HelpTOCNode Title="Write Method (ITriflesByteWriter, IList(Byte), Int32)" Url="html/6892b8ab-1eb4-7cf5-4b72-49f7a17d80a0.htm" />
           <HelpTOCNode Title="Write Method (BinaryWriter, IList(Byte), Int32, Int32, Int32)" Url="html/638259f3-4e1a-aa76-5174-b3f86fc97fb6.htm" />
           <HelpTOCNode Title="Write Method (Stream, IList(Byte), Int32, Int32, Int32)" Url="html/7def6338-7e33-5c6e-f2fd-914acabf82a6.htm" />
+          <HelpTOCNode Title="Write Method (ITriflesByteWriter, IList(Byte), Int32, Int32, Int32)" Url="html/e9b2431e-ab0e-d499-c56a-b3c2963e4fae.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="375cb32b-33ee-4a85-b49c-bf64b937ec60" Title="StringExtensions Class" Url="html/aa324065-dc67-8b0e-84fe-f377f9e0229a.htm">
-      <HelpTOCNode Id="23aa47e1-098b-403f-bd3b-0716e1deffeb" Title="StringExtensions Methods" Url="html/ca735c41-dd1d-53ab-5f93-cde08f948226.htm">
-        <HelpTOCNode Id="c9773dec-49ae-44c7-b72f-f4c9890183f1" Title="FormatStr Method " Url="html/a16fd571-89a1-c131-0b7b-2537fcf669d3.htm">
+    <HelpTOCNode Id="3e445fa8-5c47-4133-9314-0addae336d4d" Title="StringExtensions Class" Url="html/aa324065-dc67-8b0e-84fe-f377f9e0229a.htm">
+      <HelpTOCNode Id="0b7b4f5a-4078-4de9-82ee-b73776110014" Title="StringExtensions Methods" Url="html/ca735c41-dd1d-53ab-5f93-cde08f948226.htm">
+        <HelpTOCNode Id="bdebb20c-dce8-42da-bc32-59f2cde9e3a3" Title="FormatStr Method " Url="html/a16fd571-89a1-c131-0b7b-2537fcf669d3.htm">
           <HelpTOCNode Title="FormatStr Method (String, Object)" Url="html/4b898829-7a7e-4507-923b-ee5ddc98cff3.htm" />
           <HelpTOCNode Title="FormatStr Method (String, Object[])" Url="html/5e8dbf97-7fc4-0e8e-a488-2121b4d1155c.htm" />
           <HelpTOCNode Title="FormatStr Method (String, IFormatProvider, Object[])" Url="html/fcc231dd-3fea-52c5-0494-b95738c883f2.htm" />
@@ -876,14 +908,14 @@
         <HelpTOCNode Title="IsInternedStr Method " Url="html/aff53f93-5a6d-2a9f-5f63-25af594b809c.htm" />
         <HelpTOCNode Title="IsNullOrEmptyStr Method " Url="html/f8488887-9077-1212-1fc1-caaab5cb8add.htm" />
         <HelpTOCNode Title="IsNullOrWhiteSpaceStr Method " Url="html/2b93e651-ea41-ff39-40d9-69dc90ed7c4d.htm" />
-        <HelpTOCNode Id="bbb22c3a-677a-4415-b05f-0d38b8ef399e" Title="JoinStr Method " Url="html/5b417080-bfb0-864e-084c-27649d3fed97.htm">
+        <HelpTOCNode Id="abc9f62b-1e8a-4ec7-aaa1-3a1ebef104e3" Title="JoinStr Method " Url="html/5b417080-bfb0-864e-084c-27649d3fed97.htm">
           <HelpTOCNode Title="JoinStr Method (String, IEnumerable(String))" Url="html/d21ec839-d634-9e25-546d-b342f7a6c8a3.htm" />
           <HelpTOCNode Title="JoinStr(T) Method (String, IEnumerable(T))" Url="html/f20eada3-ea9f-6aad-5c41-e3ceddbaa796.htm" />
           <HelpTOCNode Title="JoinStr Method (String, Object[])" Url="html/94e66ddd-6e04-a076-c0dc-6c249bda301c.htm" />
           <HelpTOCNode Title="JoinStr Method (String, String[])" Url="html/4ff83fcf-071c-69ae-1984-dba5df95b093.htm" />
           <HelpTOCNode Title="JoinStr Method (String, String[], Int32, Int32)" Url="html/9146586a-f3a2-6e7b-dd65-c6010a8171af.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="a6d3db78-2836-4d65-9ad1-66cc732aff7f" Title="JoinWithStr Method " Url="html/93146d17-3ffe-59f0-a7cc-bd85064d9893.htm">
+        <HelpTOCNode Id="b7643f78-f326-46f5-8c5b-84401506db84" Title="JoinWithStr Method " Url="html/93146d17-3ffe-59f0-a7cc-bd85064d9893.htm">
           <HelpTOCNode Title="JoinWithStr Method (IEnumerable(String), String)" Url="html/8c77cdcc-00bd-9939-a878-52096d8834c2.htm" />
           <HelpTOCNode Title="JoinWithStr(T) Method (IEnumerable(T), String)" Url="html/a59fb815-9d02-2320-6683-e6beab8389c6.htm" />
           <HelpTOCNode Title="JoinWithStr Method (Object[], String)" Url="html/d2c1bd58-f9e1-3c66-815b-5dce972c8340.htm" />
@@ -892,22 +924,22 @@
       </HelpTOCNode>
     </HelpTOCNode>
   </HelpTOCNode>
-  <HelpTOCNode Id="0fcf1c0d-04cd-4ea9-83fb-f81cb8c92f98" Title="FallDave.Trifles.Xml" Url="html/c881a15a-904a-7265-ea9d-e434bf89ca04.htm">
-    <HelpTOCNode Id="f15f5227-cb57-4105-a5e7-d8f12ced9178" Title="XmlExtensions Class" Url="html/735a5823-1e77-c795-a503-6975c4d69a58.htm">
-      <HelpTOCNode Id="f65b0b8e-34dd-4717-89bc-a00004659ad2" Title="XmlExtensions Methods" Url="html/a4aacfcc-09b9-08b5-2749-189822767273.htm">
+  <HelpTOCNode Id="ca7f7478-024d-4e2b-bc0d-a37fa884fae2" Title="FallDave.Trifles.Xml" Url="html/c881a15a-904a-7265-ea9d-e434bf89ca04.htm">
+    <HelpTOCNode Id="ed9bb1f6-660f-4150-a342-19262d482075" Title="XmlExtensions Class" Url="html/735a5823-1e77-c795-a503-6975c4d69a58.htm">
+      <HelpTOCNode Id="bf1d1e2a-e9a3-4fdc-ba30-6ac0d0e42805" Title="XmlExtensions Methods" Url="html/a4aacfcc-09b9-08b5-2749-189822767273.htm">
         <HelpTOCNode Title="AbsolutePath Method " Url="html/fa0f491e-ef69-53a2-0e43-083b15ca8a77.htm" />
         <HelpTOCNode Title="AsEnumerable Method " Url="html/c26957da-1da5-cac7-86c3-0781bdb81bec.htm" />
-        <HelpTOCNode Id="950ebccf-a0c5-47a9-9aec-76066e0b6416" Title="AsXPathNavigable Method " Url="html/468ad033-20af-40d4-90ce-64ea5fc050e5.htm">
+        <HelpTOCNode Id="00f386cb-0d1c-4dcf-bbd1-165e909d2a61" Title="AsXPathNavigable Method " Url="html/468ad033-20af-40d4-90ce-64ea5fc050e5.htm">
           <HelpTOCNode Title="AsXPathNavigable Method (Func(XPathNavigator))" Url="html/024e31a3-1679-1ee9-7478-f589d77524ff.htm" />
           <HelpTOCNode Title="AsXPathNavigable Method (XNode)" Url="html/24180204-184c-1609-a18f-7a1910b663b5.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="AttributeOpt Method " Url="html/8174c078-6f21-0aee-f68e-4a95725942c4.htm" />
-        <HelpTOCNode Id="a99e7aed-30ce-48f3-920c-1c18022e8f98" Title="AttributeValue Method " Url="html/bc4ab484-4707-bfd9-e49d-542ba4730b20.htm">
+        <HelpTOCNode Id="8c20cef8-621f-4928-9f29-d81f5e3abbca" Title="AttributeValue Method " Url="html/bc4ab484-4707-bfd9-e49d-542ba4730b20.htm">
           <HelpTOCNode Title="AttributeValue Method (XElement, XName)" Url="html/50c646ea-7310-0d18-3c03-f397a60cf215.htm" />
           <HelpTOCNode Title="AttributeValue Method (XmlElement, XName)" Url="html/7ee08715-e559-dbf6-5a94-b836ef97e514.htm" />
           <HelpTOCNode Title="AttributeValue Method (IXPathNavigable, XName)" Url="html/6db59525-c51e-01e2-c5b9-06c32420b7f7.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="603d40d6-5ca2-47a5-ba29-2d98218f4745" Title="AttributeValueOpt Method " Url="html/ba2aacb9-5180-d3fc-a654-d396f72ec03b.htm">
+        <HelpTOCNode Id="a1051428-30a6-427d-a364-52e8999203e7" Title="AttributeValueOpt Method " Url="html/ba2aacb9-5180-d3fc-a654-d396f72ec03b.htm">
           <HelpTOCNode Title="AttributeValueOpt Method (XElement, XName)" Url="html/8ca305c3-725c-9cb3-7beb-dd7290b973d8.htm" />
           <HelpTOCNode Title="AttributeValueOpt Method (XmlElement, XName)" Url="html/180d006c-67e9-6358-9672-3864f389aa15.htm" />
           <HelpTOCNode Title="AttributeValueOpt Method (IXPathNavigable, XName)" Url="html/9a80ada0-be2c-e918-6e29-d2f03f6e156b.htm" />
@@ -916,13 +948,13 @@
         <HelpTOCNode Title="GetRequiredXNamespace Method " Url="html/742214ad-d674-89fd-7618-b5f47b869ae4.htm" />
         <HelpTOCNode Title="GetXNameOpt Method " Url="html/3b4b4549-01db-e98f-39c5-e521bdeff845.htm" />
         <HelpTOCNode Title="GetXNamespaceOpt Method " Url="html/7a2dee8f-b3d2-483c-ac0e-94fd18b2879b.htm" />
-        <HelpTOCNode Id="b4547640-0c89-4a7f-952a-1d134bd2cd26" Title="HasAttribute Method " Url="html/3311cb00-f1d7-9a52-6c1d-a958b3b263e6.htm">
+        <HelpTOCNode Id="65752e29-5668-4a9f-a5f7-b1e67c351040" Title="HasAttribute Method " Url="html/3311cb00-f1d7-9a52-6c1d-a958b3b263e6.htm">
           <HelpTOCNode Title="HasAttribute Method (XmlElement, XName)" Url="html/900b32bc-3e66-bfe6-1bd4-8bc25df52299.htm" />
           <HelpTOCNode Title="HasAttribute Method (IXPathNavigable, XName)" Url="html/cde39708-f10b-b298-ea62-e99ec37e13a9.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="LookupNamespaceOpt Method " Url="html/6c4c741f-d5ff-e394-6347-8c0d6c0b20b1.htm" />
         <HelpTOCNode Title="LookupPrefixOpt Method " Url="html/e36ce78f-01d5-a46c-c060-cfb383c362c9.htm" />
-        <HelpTOCNode Id="c059fb0e-4836-4999-83fb-bc6e72ee529a" Title="ParseXsdBooleanAttribute Method " Url="html/3b878fd8-873e-6975-08f5-ec9c92ed04b5.htm">
+        <HelpTOCNode Id="db0fa9de-c62a-42a8-92b9-4df4acc2a853" Title="ParseXsdBooleanAttribute Method " Url="html/3b878fd8-873e-6975-08f5-ec9c92ed04b5.htm">
           <HelpTOCNode Title="ParseXsdBooleanAttribute Method (XElement, XName)" Url="html/851415a2-44a2-abf6-7b27-44901f92e034.htm" />
           <HelpTOCNode Title="ParseXsdBooleanAttribute Method (XmlElement, XName)" Url="html/32180471-4ea8-7537-df17-0a4997733c54.htm" />
           <HelpTOCNode Title="ParseXsdBooleanAttribute Method (IXPathNavigable, XName)" Url="html/2975d79e-beb9-dda7-874c-30e048447852.htm" />
@@ -930,28 +962,28 @@
           <HelpTOCNode Title="ParseXsdBooleanAttribute Method (XmlElement, XName, Boolean)" Url="html/6a25d415-58d0-4ed5-4a79-6eef1e516385.htm" />
           <HelpTOCNode Title="ParseXsdBooleanAttribute Method (IXPathNavigable, XName, Boolean)" Url="html/dc95b5a2-ae20-8885-db2d-e96e591ef578.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="20d44d8b-1312-4f9d-8c83-2614390ab1a7" Title="ParseXsdBooleanValue Method " Url="html/27b8e4bb-9ab4-3095-708d-c4a8d0b34562.htm">
+        <HelpTOCNode Id="bc3dd11f-faa3-469b-95bd-0a37c354c17d" Title="ParseXsdBooleanValue Method " Url="html/27b8e4bb-9ab4-3095-708d-c4a8d0b34562.htm">
           <HelpTOCNode Title="ParseXsdBooleanValue Method (String)" Url="html/15036cd6-5511-ed24-c8ab-f39e0748f273.htm" />
           <HelpTOCNode Title="ParseXsdBooleanValue Method (String, Boolean)" Url="html/3997f9b3-6cd4-f550-5e65-80f845645d52.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="6ca68abc-e21b-46ab-b903-de4dd079050d" Title="RemoveAttribute Method " Url="html/79226096-9fd6-ca3a-bec5-e96782effdfe.htm">
+        <HelpTOCNode Id="90053467-31b1-4aed-ae5d-144a2cbc3cad" Title="RemoveAttribute Method " Url="html/79226096-9fd6-ca3a-bec5-e96782effdfe.htm">
           <HelpTOCNode Title="RemoveAttribute Method (XmlElement, XName)" Url="html/1d648f0a-a5a7-c93f-fe9c-d9a0c1addf24.htm" />
           <HelpTOCNode Title="RemoveAttribute Method (IXPathNavigable, XName)" Url="html/3bd4c1b9-e71e-015b-df3f-ca61ced94a4c.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="2c49d152-74f9-4dea-9a05-ff33ba054d86" Title="SetAttributeValue Method " Url="html/7c668236-0d24-0238-cea0-ef9287aeb98b.htm">
+        <HelpTOCNode Id="8123ba5c-2f78-44d8-a1f7-a168c9dd3d04" Title="SetAttributeValue Method " Url="html/7c668236-0d24-0238-cea0-ef9287aeb98b.htm">
           <HelpTOCNode Title="SetAttributeValue Method (XmlElement, XName, Object)" Url="html/d4f8926f-81b5-01be-b55f-90c42ba65897.htm" />
           <HelpTOCNode Title="SetAttributeValue Method (IXPathNavigable, XName, Object)" Url="html/51002f43-2aee-1776-7e91-23e1b4f2721f.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="83af1996-71e1-4d0f-a9bc-196b7e62fc52" Title="ToXElementOpt Method " Url="html/1592884b-e534-e0bb-8510-0db2045a01d1.htm">
+        <HelpTOCNode Id="66e71bdb-7d43-4022-a3f7-f102aefae8d3" Title="ToXElementOpt Method " Url="html/1592884b-e534-e0bb-8510-0db2045a01d1.htm">
           <HelpTOCNode Title="ToXElementOpt Method (XNode)" Url="html/d816aaf3-d89f-b158-2453-13f595641a9f.htm" />
           <HelpTOCNode Title="ToXElementOpt Method (IXPathNavigable)" Url="html/787f8ec1-1271-7309-b346-a9db284e9cea.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="ToXNode Method " Url="html/d49eda35-0aae-8065-248a-009d80e4fd69.htm" />
-        <HelpTOCNode Id="387a4095-78ab-4e4d-86e8-8da37387d8fe" Title="TryParseXsdBooleanValue Method " Url="html/8b670f3a-fe28-ca44-739b-c6df1fe5f310.htm">
+        <HelpTOCNode Id="185aac53-5406-4980-8f26-36a6a276a833" Title="TryParseXsdBooleanValue Method " Url="html/8b670f3a-fe28-ca44-739b-c6df1fe5f310.htm">
           <HelpTOCNode Title="TryParseXsdBooleanValue Method (String, Nullable(Boolean))" Url="html/b5df3f51-8470-7a91-c0f4-a2e1dc5fbf35.htm" />
           <HelpTOCNode Title="TryParseXsdBooleanValue Method (String, Boolean, Boolean)" Url="html/1eba7eeb-d323-fba2-e791-e677a3703dd9.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="ae73cb39-fd21-4382-ba0c-c66570927271" Title="XsiNil Method " Url="html/875cd116-38cb-1bec-39c5-5de709802ae0.htm">
+        <HelpTOCNode Id="9dd97f42-656e-4826-92f7-dd8bf1f4e422" Title="XsiNil Method " Url="html/875cd116-38cb-1bec-39c5-5de709802ae0.htm">
           <HelpTOCNode Title="XsiNil Method (XElement)" Url="html/421a15b6-1e12-cc05-de18-a6b5c0215903.htm" />
           <HelpTOCNode Title="XsiNil Method (XmlElement)" Url="html/21226868-ba63-69de-b3f0-953e16b31f0b.htm" />
           <HelpTOCNode Title="XsiNil Method (IXPathNavigable)" Url="html/ba804e7b-f456-900c-d639-96c94a119911.htm" />
@@ -960,23 +992,23 @@
           <HelpTOCNode Title="XsiNil Method (IXPathNavigable, Boolean)" Url="html/592ee473-cbb9-64de-af59-36d72a64cb9b.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="708c95d1-b598-4775-b7f1-81bf92e5e0f1" Title="XmlExtensions Fields" Url="html/4f016234-9d90-f607-de7a-3027ca5abab1.htm">
+      <HelpTOCNode Id="b11e0931-9fbe-4cb6-9b1f-27b109b19416" Title="XmlExtensions Fields" Url="html/4f016234-9d90-f607-de7a-3027ca5abab1.htm">
         <HelpTOCNode Title="XsiNamespace Field" Url="html/c3cc6da8-43f7-1b68-0e62-fde3c6ae9fbb.htm" />
         <HelpTOCNode Title="XsiNilName Field" Url="html/2fcd41aa-ebe7-2a24-4777-8172ca8fb281.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
   </HelpTOCNode>
-  <HelpTOCNode Id="2f37949d-dd3c-4696-9add-fcd678fe7f88" Title="FallDave.Trifles.Xml.XPath" Url="html/340f8679-8029-7d98-231f-69a489781c09.htm">
-    <HelpTOCNode Id="6d233bb4-27b9-4d0c-854e-673339de7198" Title="TriflesXPathContext Class" Url="html/d4ce2664-4a33-058a-c1ca-7885b500c0a2.htm">
-      <HelpTOCNode Id="d832fad2-78db-45a9-8a86-72ab297ce353" Title="TriflesXPathContext Constructor " Url="html/e38263b0-3d73-b644-b3e6-2725935588a7.htm">
+  <HelpTOCNode Id="0a469b16-3dab-4902-a5da-16f21db2d404" Title="FallDave.Trifles.Xml.XPath" Url="html/340f8679-8029-7d98-231f-69a489781c09.htm">
+    <HelpTOCNode Id="83d4cd18-de5a-43ef-9580-101557111079" Title="TriflesXPathContext Class" Url="html/d4ce2664-4a33-058a-c1ca-7885b500c0a2.htm">
+      <HelpTOCNode Id="a67c7160-1677-4ab3-a35f-b38df0317174" Title="TriflesXPathContext Constructor " Url="html/e38263b0-3d73-b644-b3e6-2725935588a7.htm">
         <HelpTOCNode Title="TriflesXPathContext Constructor (TriflesXPathContext)" Url="html/9f114897-f463-be3e-c759-705636e1864e.htm" />
         <HelpTOCNode Title="TriflesXPathContext Constructor (NameTable, TriflesXPathContext)" Url="html/3800cda3-8a81-a90a-bd4a-3166451256c2.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="0e62e061-d292-4b36-aad0-14cfc0ebe03e" Title="TriflesXPathContext Properties" Url="html/57ff1200-193b-b13d-b96b-875c7de57b52.htm">
+      <HelpTOCNode Id="89603396-4467-4c87-93d0-cb0f3c76d323" Title="TriflesXPathContext Properties" Url="html/57ff1200-193b-b13d-b96b-875c7de57b52.htm">
         <HelpTOCNode Title="Table Property " Url="html/597ab18b-afe7-832f-1d00-95116cb9aff7.htm" />
         <HelpTOCNode Title="Whitespace Property " Url="html/0de41e3b-7d79-22a2-7f6e-bc2169af913e.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="89f7817c-3c7b-4fac-8f30-8780ca4c1d79" Title="TriflesXPathContext Methods" Url="html/adac2b8c-734f-8d07-e320-18fb9779a639.htm">
+      <HelpTOCNode Id="666bc383-bb77-4af4-b80d-fadc8452f935" Title="TriflesXPathContext Methods" Url="html/adac2b8c-734f-8d07-e320-18fb9779a639.htm">
         <HelpTOCNode Title="AddVariable Method " Url="html/07989356-34fd-90b0-67ac-1e614e8d2bb7.htm" />
         <HelpTOCNode Title="CompareDocument Method " Url="html/1a65cf02-a1aa-a66c-184d-6db5d8f927b4.htm" />
         <HelpTOCNode Title="PreserveWhitespace Method " Url="html/a846a266-5c3e-ebca-b66e-76095bd977a8.htm" />
@@ -984,10 +1016,10 @@
         <HelpTOCNode Title="ResolveVariable Method " Url="html/bc26ce35-c538-667e-36ac-115db8a8d896.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="164c2563-a42d-45d2-8c22-c1fbf7ebdc3d" Title="TriflesXPathData Class" Url="html/549ff4c3-2418-5ce8-be30-da7b91b69565.htm">
-      <HelpTOCNode Id="3ff5d011-641d-47d4-9aad-2e77a1a3f50c" Title="TriflesXPathData Methods" Url="html/6e543e09-a363-7f0d-462b-1ba3193ab98a.htm">
+    <HelpTOCNode Id="49d3c2a7-ca61-410d-952f-f6234fe99032" Title="TriflesXPathData Class" Url="html/549ff4c3-2418-5ce8-be30-da7b91b69565.htm">
+      <HelpTOCNode Id="b613ffc3-a098-4c3a-8a10-acd6dc68bcf7" Title="TriflesXPathData Methods" Url="html/6e543e09-a363-7f0d-462b-1ba3193ab98a.htm">
         <HelpTOCNode Title="EnsureNavigator Method " Url="html/430fad38-e08c-2bcc-396d-76f515a85286.htm" />
-        <HelpTOCNode Id="57a6a24a-3c46-4465-a05e-5b70c409f80a" Title="Evaluate Method " Url="html/1cf292b0-d130-fd39-089a-6fa7ff113701.htm">
+        <HelpTOCNode Id="9389ddb2-be9a-4626-ab1d-215e74981bf4" Title="Evaluate Method " Url="html/1cf292b0-d130-fd39-089a-6fa7ff113701.htm">
           <HelpTOCNode Title="Evaluate Method (String, Object[])" Url="html/69e258de-227f-6227-6926-562b156b592f.htm" />
           <HelpTOCNode Title="Evaluate Method (XPathNavigator, String, Object[])" Url="html/dfbf02c3-77c6-36ca-2eeb-e046c29ee5d9.htm" />
         </HelpTOCNode>
@@ -1001,41 +1033,41 @@
         <HelpTOCNode Title="WrapValueInElementOpt Method " Url="html/40634607-af75-5ca0-7138-016b3b1bfea9.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="b119d075-2d16-408d-a95d-bed45856810f" Title="TriflesXPathExtensionFunction Class" Url="html/05e53650-7fc0-9957-5af1-7ab3199332da.htm">
+    <HelpTOCNode Id="2a82e357-bf9b-4e16-b128-a282d3a2a33b" Title="TriflesXPathExtensionFunction Class" Url="html/05e53650-7fc0-9957-5af1-7ab3199332da.htm">
       <HelpTOCNode Title="TriflesXPathExtensionFunction Constructor " Url="html/641c5224-ce6e-d82c-1947-21d1c4811107.htm" />
-      <HelpTOCNode Id="e6c56b25-e95d-40a8-a766-a50626b723af" Title="TriflesXPathExtensionFunction Properties" Url="html/3c661119-dfee-cf7e-149c-027f5b2ca037.htm">
+      <HelpTOCNode Id="5de84c9f-f662-4953-b603-047ff3f8bb39" Title="TriflesXPathExtensionFunction Properties" Url="html/3c661119-dfee-cf7e-149c-027f5b2ca037.htm">
         <HelpTOCNode Title="ArgTypes Property " Url="html/99923ba8-5a51-11b7-43f2-bbf0e99977d3.htm" />
         <HelpTOCNode Title="FunctionName Property " Url="html/79a304e0-5d97-f3ef-6dcd-67acb24d78ee.htm" />
         <HelpTOCNode Title="Maxargs Property " Url="html/cc0827fd-d333-5770-0f0b-358c4092a404.htm" />
         <HelpTOCNode Title="Minargs Property " Url="html/085701df-c38a-7f8a-21ce-b1a991656e5b.htm" />
         <HelpTOCNode Title="ReturnType Property " Url="html/0c653659-2f7a-5a8a-24a0-927540045d5d.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="ff52e936-93ba-4420-9033-bf4e10a8dcd6" Title="TriflesXPathExtensionFunction Methods" Url="html/aef6eaea-2cd9-8f92-1939-c5eb7af0180d.htm">
+      <HelpTOCNode Id="0a1e8fe2-cca5-45d9-ad1c-12384779796b" Title="TriflesXPathExtensionFunction Methods" Url="html/aef6eaea-2cd9-8f92-1939-c5eb7af0180d.htm">
         <HelpTOCNode Title="Invoke Method " Url="html/1a40bf9e-d3a5-2ed6-be9f-55d4dfd90e4f.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="849f7047-7360-44b7-b31d-4e519433aeec" Title="TriflesXPathExtensionVariable Class" Url="html/066f4580-7efe-8c74-63ac-4a14629e371b.htm">
+    <HelpTOCNode Id="4c179b0e-5a12-41e3-b059-32728b4e9820" Title="TriflesXPathExtensionVariable Class" Url="html/066f4580-7efe-8c74-63ac-4a14629e371b.htm">
       <HelpTOCNode Title="TriflesXPathExtensionVariable Constructor " Url="html/f807b4f3-0df7-009b-8cd7-4cdbd6c9b39e.htm" />
-      <HelpTOCNode Id="a389aa6c-461c-4605-8a24-9e2fe9dc07ee" Title="TriflesXPathExtensionVariable Properties" Url="html/53a3d38e-9a55-7bb9-d353-388a4d24473c.htm">
+      <HelpTOCNode Id="b2602095-d5c5-453c-be92-f1d47b25c62a" Title="TriflesXPathExtensionVariable Properties" Url="html/53a3d38e-9a55-7bb9-d353-388a4d24473c.htm">
         <HelpTOCNode Title="IsLocal Property " Url="html/369fe8cb-8c19-2858-0f19-00cc18877ae9.htm" />
         <HelpTOCNode Title="IsParam Property " Url="html/2ba520ee-87ac-6713-ddc8-6f86bf0bd3bc.htm" />
         <HelpTOCNode Title="Value Property " Url="html/7d838920-51a9-e5ce-1985-241c29190fe2.htm" />
         <HelpTOCNode Title="VariableName Property " Url="html/c8ca416e-38df-0b45-489e-fe927996f8b5.htm" />
         <HelpTOCNode Title="VariableType Property " Url="html/b4ca12b6-e243-d05f-6d77-eb0c5c2794ee.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="a2dfa380-ea7b-4665-b0f2-afba0bbebcf8" Title="TriflesXPathExtensionVariable Methods" Url="html/6ac78c0e-9c0b-52fd-acbd-64c55d998b8b.htm">
+      <HelpTOCNode Id="a9bf346b-4895-4e88-95fa-72ca13bb46c4" Title="TriflesXPathExtensionVariable Methods" Url="html/6ac78c0e-9c0b-52fd-acbd-64c55d998b8b.htm">
         <HelpTOCNode Title="Evaluate Method " Url="html/b5fdb25a-2db0-da99-e58d-5f7d2edf455c.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
     <HelpTOCNode Title="TriflesXPathInvokable Delegate" Url="html/4f190da7-c56b-8640-0b39-0379e413afa5.htm" />
-    <HelpTOCNode Id="e14331d8-145e-428e-9a70-efea3b98484d" Title="XPathXNamesTable Class" Url="html/dc879961-68ec-0eaf-03b0-a5e2aa1091b9.htm">
+    <HelpTOCNode Id="eb50e9f7-e621-48b2-a863-d6fc30e81756" Title="XPathXNamesTable Class" Url="html/dc879961-68ec-0eaf-03b0-a5e2aa1091b9.htm">
       <HelpTOCNode Title="XPathXNamesTable Constructor " Url="html/35e1fbbb-d184-0e5b-e528-c1aaab72cfb2.htm" />
-      <HelpTOCNode Id="cc1be288-ad4f-4c25-8db4-997a6cafed20" Title="XPathXNamesTable Methods" Url="html/dd651f15-66f5-f169-3bda-7618aecc2ad0.htm">
-        <HelpTOCNode Id="f2f36b98-a7be-4374-8270-6c81b5d46040" Title="AddFunction Method " Url="html/3fff1373-a50a-f119-5ac5-6b8c7632c685.htm">
+      <HelpTOCNode Id="cb896def-a1b8-4222-9d3a-b95aaad952d7" Title="XPathXNamesTable Methods" Url="html/dd651f15-66f5-f169-3bda-7618aecc2ad0.htm">
+        <HelpTOCNode Id="c16393b9-4138-4400-a34d-e66695938391" Title="AddFunction Method " Url="html/3fff1373-a50a-f119-5ac5-6b8c7632c685.htm">
           <HelpTOCNode Title="AddFunction Method (TriflesXPathExtensionFunction)" Url="html/fc20e1c6-89c6-6e3e-976c-cd3ce07fa9fa.htm" />
           <HelpTOCNode Title="AddFunction Method (XName, TriflesXPathExtensionFunction)" Url="html/bac685f2-068c-f444-0e1d-baced6805144.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="67f0778e-cbba-47c1-b5b7-584d76333eed" Title="AddVariable Method " Url="html/17d75c15-1edc-c742-9aaa-d9282a0b9708.htm">
+        <HelpTOCNode Id="c5e3e716-a53a-4cbd-b0f2-dbb25be11878" Title="AddVariable Method " Url="html/17d75c15-1edc-c742-9aaa-d9282a0b9708.htm">
           <HelpTOCNode Title="AddVariable Method (TriflesXPathExtensionVariable)" Url="html/d1b3acee-e15f-0e7d-bf33-fead6fbfa35d.htm" />
           <HelpTOCNode Title="AddVariable Method (XName, TriflesXPathExtensionVariable)" Url="html/784fea6c-4fe9-9a1f-a984-3f8246561766.htm" />
         </HelpTOCNode>

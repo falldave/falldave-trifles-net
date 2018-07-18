@@ -216,6 +216,8 @@
   <HelpKINode Title="FallDave.Trifles.EnumerableExtensions class" Url="html/f9252f13-efbb-5602-b77b-6fda282237f0.htm" />
   <HelpKINode Title="FallDave.Trifles.IOpt(Of T) interface" Url="html/91133d93-71e7-888c-e2e6-677decd302be.htm" />
   <HelpKINode Title="FallDave.Trifles.IOpt&lt;T&gt; interface" Url="html/91133d93-71e7-888c-e2e6-677decd302be.htm" />
+  <HelpKINode Title="FallDave.Trifles.ITriflesByteReader interface" Url="html/f5413935-57e4-3c5d-e93e-d5ec6665f19b.htm" />
+  <HelpKINode Title="FallDave.Trifles.ITriflesByteWriter interface" Url="html/04adbf02-238d-8b8b-1609-1af75b7f0b15.htm" />
   <HelpKINode Title="FallDave.Trifles.MathTrifles class" Url="html/e2dfc372-ec54-dd63-8d84-81ce6b6a1db9.htm" />
   <HelpKINode Title="FallDave.Trifles.Opt class" Url="html/05847462-f7ce-e627-2dfb-e0d93bdc972f.htm" />
   <HelpKINode Title="FallDave.Trifles.Opt(Of T) structure" Url="html/9e6fddd6-4806-3f80-15f3-75aee0054e65.htm" />
@@ -319,6 +321,18 @@
   <HelpKINode Title="IsSignedIntegral method" Url="html/80a2c1fd-c83e-2ec2-b219-16ea0c026b06.htm" />
   <HelpKINode Title="IsUnsignedIntegral method" Url="html/4e1ffc97-bb61-2d90-a29f-794197795f9c.htm" />
   <HelpKINode Title="IsUnsignedIntegralAndNotChar method" Url="html/4c64502c-729f-56ea-75e2-072320757544.htm" />
+  <HelpKINode Title="ITriflesByteReader interface">
+    <HelpKINode Title="ITriflesByteReader Interface" Url="html/f5413935-57e4-3c5d-e93e-d5ec6665f19b.htm" />
+    <HelpKINode Title="about ITriflesByteReader interface" Url="html/f5413935-57e4-3c5d-e93e-d5ec6665f19b.htm" />
+    <HelpKINode Title="methods" Url="html/11eb9b42-5c82-4a8c-ba63-5537fe9cc216.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ITriflesByteReader.Read method" Url="html/b8a9bb21-0c1f-80c5-b2a9-a475897b4e89.htm" />
+  <HelpKINode Title="ITriflesByteWriter interface">
+    <HelpKINode Title="ITriflesByteWriter Interface" Url="html/04adbf02-238d-8b8b-1609-1af75b7f0b15.htm" />
+    <HelpKINode Title="about ITriflesByteWriter interface" Url="html/04adbf02-238d-8b8b-1609-1af75b7f0b15.htm" />
+    <HelpKINode Title="methods" Url="html/e749d88c-f88a-9d3a-01b1-016441ef7c84.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ITriflesByteWriter.Write method" Url="html/bdfb7303-0a9d-f0cc-aa0c-8932effa65a0.htm" />
   <HelpKINode Title="JoinStr method" Url="html/5b417080-bfb0-864e-084c-27649d3fed97.htm" />
   <HelpKINode Title="JoinWithStr method" Url="html/93146d17-3ffe-59f0-a7cc-bd85064d9893.htm" />
   <HelpKINode Title="Last(Of T) method" Url="html/43c983a9-8030-40bb-dd09-4f09892515f0.htm" />
@@ -492,6 +506,7 @@
   <HelpKINode Title="ParseXsdBooleanAttribute method" Url="html/3b878fd8-873e-6975-08f5-ec9c92ed04b5.htm" />
   <HelpKINode Title="ParseXsdBooleanValue method" Url="html/27b8e4bb-9ab4-3095-708d-c4a8d0b34562.htm" />
   <HelpKINode Title="PreserveWhitespace method" Url="html/a846a266-5c3e-ebca-b66e-76095bd977a8.htm" />
+  <HelpKINode Title="Read method" Url="html/b8a9bb21-0c1f-80c5-b2a9-a475897b4e89.htm" />
   <HelpKINode Title="ReadCharEndian method" Url="html/472153ef-db99-5278-c0d2-4b2be12330ec.htm" />
   <HelpKINode Title="ReadFully method" Url="html/1b22f1ff-ea66-5ca9-afe7-72deacf21cf5.htm" />
   <HelpKINode Title="ReadInt16Endian method" Url="html/51ab3a4b-59f4-fd4a-e2b4-a138d72811af.htm" />
@@ -560,6 +575,8 @@
   </HelpKINode>
   <HelpKINode Title="StreamExtensions.ReadFully method" Url="html/1b22f1ff-ea66-5ca9-afe7-72deacf21cf5.htm" />
   <HelpKINode Title="StreamExtensions.ReadViaArray method" Url="html/ddb3e5c8-9644-244c-d24a-26175718de64.htm" />
+  <HelpKINode Title="StreamExtensions.ToTriflesByteReader method" Url="html/17f475a6-2bf4-ee68-e63f-79467d189d2f.htm" />
+  <HelpKINode Title="StreamExtensions.ToTriflesByteWriter method" Url="html/4783ba89-7d47-37b4-dea3-3137f7aa69b0.htm" />
   <HelpKINode Title="StreamExtensions.Write method" Url="html/3e2329f6-947a-0927-366e-76f67fd48875.htm" />
   <HelpKINode Title="StringExtensions class">
     <HelpKINode Title="StringExtensions Class" Url="html/aa324065-dc67-8b0e-84fe-f377f9e0229a.htm" />
@@ -603,6 +620,8 @@
   <HelpKINode Title="ToSingleOpt method" Url="html/168509ef-a26c-ff07-148c-4389be9d99bc.htm" />
   <HelpKINode Title="ToString method" Url="html/8aac93bb-035d-e0ea-b33d-8cb5f97f06bd.htm" />
   <HelpKINode Title="ToStringOpt method" Url="html/14bc6fe4-7861-95ed-c25f-93a9d27eb4cd.htm" />
+  <HelpKINode Title="ToTriflesByteReader method" Url="html/17f475a6-2bf4-ee68-e63f-79467d189d2f.htm" />
+  <HelpKINode Title="ToTriflesByteWriter method" Url="html/4783ba89-7d47-37b4-dea3-3137f7aa69b0.htm" />
   <HelpKINode Title="ToUInt16 method" Url="html/c7e2da8e-439e-8390-f9d2-103c183b298a.htm" />
   <HelpKINode Title="ToUInt16Opt method" Url="html/2aee3f98-6c66-4617-d673-edca85f25daa.htm" />
   <HelpKINode Title="ToUInt32 method" Url="html/429c9870-aa35-4677-c20b-0efa26a2c73c.htm" />
@@ -699,7 +718,10 @@
   <HelpKINode Title="Whitespace property" Url="html/0de41e3b-7d79-22a2-7f6e-bc2169af913e.htm" />
   <HelpKINode Title="WrapValueInElement method" Url="html/95896b9e-4231-fe47-eef5-2536c72e9820.htm" />
   <HelpKINode Title="WrapValueInElementOpt method" Url="html/40634607-af75-5ca0-7138-016b3b1bfea9.htm" />
-  <HelpKINode Title="Write method" Url="html/3e2329f6-947a-0927-366e-76f67fd48875.htm" />
+  <HelpKINode Title="Write method">
+    <HelpKINode Title="ITriflesByteWriter.Write Method " Url="html/bdfb7303-0a9d-f0cc-aa0c-8932effa65a0.htm" />
+    <HelpKINode Title="StreamExtensions.Write Method " Url="html/3e2329f6-947a-0927-366e-76f67fd48875.htm" />
+  </HelpKINode>
   <HelpKINode Title="WriteEndian method" Url="html/4c70c25e-92e5-e246-9b09-0e70ad1bdb46.htm" />
   <HelpKINode Title="XmlExtensions class">
     <HelpKINode Title="XmlExtensions Class" Url="html/735a5823-1e77-c795-a503-6975c4d69a58.htm" />
