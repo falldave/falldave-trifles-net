@@ -1,0 +1,219 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+
+//-----------------------------------------------------------------------
+// <copyright file="StreamExtensions.TrifleByteReader.generated.cs" company="falldave">
+//
+// Written in 2018 by David McFall
+//
+// To the extent possible under law, the author(s) have dedicated all copyright
+// and related and neighboring rights to this software to the public domain
+// worldwide. This software is distributed without any warranty.
+//
+// You should have received a copy of the CC0 Public Domain Dedication along
+// with this software. If not, see
+// [http://creativecommons.org/publicdomain/zero/1.0/].
+//
+// </copyright>
+//-----------------------------------------------------------------------
+
+using System;
+using System.Collections.Generic;
+using System.Collections.Immutable;
+using System.IO;
+using System.Linq;
+
+namespace FallDave.Trifles
+{
+    public static partial class StreamExtensions
+    {
+<#
+foreach(var sourceType in new [] { "ITriflesByteReader", "Stream", "BinaryReader" })
+{
+	
+#>
+		#region <#= sourceType #>
+
+		#region ReadFully
+
+        /// <summary>
+        /// Reads the entire specified buffer segment or throws an exception.
+        /// </summary>
+        /// <remarks>
+        /// The buffer is filled by reading the source repeatedly until the buffer is full, which may
+        /// require multiple reads. The stream position is not restored after an unsuccessful read.
+        /// </remarks>
+        /// <param name="source">The source to be read</param>
+        /// <param name="buffer">The buffer to read data into</param>
+        /// <param name="offset">The starting point in the buffer</param>
+        /// <param name="count">The number of bytes to read</param>
+        /// <exception cref="EndOfStreamException">
+        /// The end of the stream was reached before the read could be fully completed.
+        /// </exception>
+        public static void ReadFully(this <#= sourceType #> source, byte[] buffer, int offset, int count)
+        {
+            TriflesByteReaderImpl.ReadFully(source.ToTriflesByteReader(), buffer, offset, count);
+        }
+
+		#endregion
+
+
+		#region ReadViaArray
+
+        /// <summary>
+        /// Reads bytes repeatedly from a source stream until the stream ends.
+        /// </summary>
+        /// <remarks>
+        /// As long as the end of the source has not been reached, <paramref name="buffer"/> will be
+        /// repeatedly filled with data read from the source, with the returned enumerable producing
+        /// the number of bytes read each time.
+        /// </remarks>
+        /// <param name="source">A stream to read data from.</param>
+        /// <param name="buffer">An array to receive data from the source.</param>
+        /// <returns>An enumerable that produces the number of bytes read each pass.</returns>
+        /// <exception cref="ArgumentException"><paramref name="buffer"/> is 0-length.</exception>
+        public static IEnumerable<int> ReadViaArray(this <#= sourceType #> source, byte[] buffer)
+        {
+            return TriflesByteReaderImpl.ReadViaArray(source.ToTriflesByteReader(), buffer);
+        }
+
+        /// <summary>
+        /// Reads bytes repeatedly from a source stream until the stream ends, calling the given
+        /// action each time the buffer is filled.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// As long as the end of the source has not been reached, the buffer will be repeatedly
+        /// filled with data read from the source, with <paramref name="fillAction"/> being called
+        /// with the buffer, an offset, and a length as parameters each time the buffer is filled.
+        /// </para>
+        /// <para>
+        /// If <paramref name="buffer"/> is present, it is used as the buffer. If <paramref
+        /// name="buffer"/> is omitted or <c>null</c>, a new array is allocated.
+        /// </para>
+        /// </remarks>
+        /// <param name="source">A stream to read data from.</param>
+        /// <param name="fillAction">
+        /// An action with buffer, offset, and length parameters that is called each time the buffer
+        /// is filled.
+        /// </param>
+        /// <param name="buffer">An array to receive data from the source (may be omitted).</param>
+        /// <exception cref="ArgumentException"><paramref name="buffer"/> is 0-length.</exception>
+        public static void ReadViaArray(this <#= sourceType #> source, Action<byte[], int, int> fillAction, byte[] buffer = null)
+        {
+            TriflesByteReaderImpl.ReadViaArray(source.ToTriflesByteReader(), fillAction, buffer);
+        }
+
+<#
+foreach(var maxCountType in new [] { "int", "long", "ulong" })
+{
+	var maxCountSigned = (maxCountType == "int") || (maxCountType == "long");
+#>
+        /// <summary>
+        /// Reads bytes repeatedly from a source stream until the stream ends or a given count has
+        /// been read, whichever happens first.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// As long as the end of the source has not been reached and <paramref name="maxCount"/>
+        /// bytes have not yet been read, <paramref name="buffer"/> will be repeatedly filled with
+        /// data read from the source, with the returned enumerable producing the number of bytes
+        /// read each time.
+        /// </para>
+        /// <para>
+        /// If <paramref name="requireFullCount"/> is <c>true</c>, the enumeration will throw an <see
+        /// cref="EndOfStreamException"/> if the end of the source has been reached before <paramref
+        /// name="maxCount"/> bytes have been read. If <c>false</c>, reaching the end of the source
+        /// simply causes the enumeration to end early.
+        /// </para>
+        /// </remarks>
+        /// <param name="source">A stream to read data from.</param>
+        /// <param name="maxCount">The maximum total number of bytes to read from <paramref name="source"/>.</param>
+        /// <param name="buffer">An array to receive data from the source.</param>
+        /// <param name="requireFullCount">
+        /// If <c>true</c>, <see cref="EndOfStreamException"/> will be thrown if the end of the
+        /// source is reached before <paramref name="maxCount"/> bytes are read.
+        /// </param>
+        /// <returns>An enumerable that produces the number of bytes read each pass.</returns>
+		<# if(maxCountSigned) { #>/// <exception cref="ArgumentOutOfRangeException"><paramref name="maxCount"/> is negative.</exception>
+<# } #>
+        /// <exception cref="ArgumentException">
+        /// <paramref name="buffer"/> is 0-length while <paramref name="maxCount"/> is greater than 0.
+        /// </exception>
+        /// <exception cref="EndOfStreamException">
+        /// The end of the source was reached before <paramref name="maxCount"/> bytes could be read
+        /// while <paramref name="requireFullCount"/> is <c>true</c>. (Thrown from enumeration.)
+        /// </exception>
+        public static IEnumerable<int> ReadViaArray(this <#= sourceType #> source, <#= maxCountType #> maxCount, byte[] buffer, bool requireFullCount = false)
+        {
+            return TriflesByteReaderImpl.ReadViaArray(source.ToTriflesByteReader(), maxCount, buffer, requireFullCount);
+        }
+
+
+        /// <summary>
+        /// Reads bytes repeatedly from a source stream until the stream ends or a given count has
+        /// been read, whichever happens first, calling the given action each time the buffer is filled.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// As long as the end of the source has not been reached and <paramref name="maxCount"/>
+        /// bytes have not yet been read, the buffer will be repeatedly filled with data read from
+        /// the source, with <paramref name="fillAction"/> being called with the buffer, an offset,
+        /// and a length as parameters each time the buffer is filled.
+        /// </para>
+        /// <para>
+        /// If <paramref name="buffer"/> is present, it is used as the buffer. If <paramref
+        /// name="buffer"/> is omitted or <c>null</c>, a new array is allocated.
+        /// </para>
+        /// <para>
+        /// If <paramref name="requireFullCount"/> is <c>true</c>, the enumeration will throw an <see
+        /// cref="EndOfStreamException"/> if the end of the source has been reached before <paramref
+        /// name="maxCount"/> bytes have been read. If <c>false</c>, reaching the end of the source
+        /// simply causes the enumeration to end early.
+        /// </para>
+        /// </remarks>
+        /// <param name="source">A stream to read data from.</param>
+        /// <param name="maxCount">The maximum total number of bytes to read from <paramref name="source"/>.</param>
+        /// <param name="fillAction">
+        /// An action with buffer, offset, and length parameters that is called each time the buffer
+        /// is filled.
+        /// </param>
+        /// <param name="buffer">An array to receive data from the source (may be omitted).</param>
+        /// <param name="requireFullCount">
+        /// If <c>true</c>, <see cref="EndOfStreamException"/> will be thrown if the end of the
+        /// source is reached before <paramref name="maxCount"/> bytes are read.
+        /// </param>
+        /// <returns>An enumerable that produces the number of bytes read each pass.</returns>
+		<# if(maxCountSigned) { #>/// <exception cref="ArgumentOutOfRangeException"><paramref name="maxCount"/> is negative.</exception>
+<# } #>
+        /// <exception cref="ArgumentException">
+        /// <paramref name="buffer"/> is 0-length while <paramref name="maxCount"/> is greater than 0.
+        /// </exception>
+        /// <exception cref="EndOfStreamException">
+        /// The end of the source was reached before <paramref name="maxCount"/> bytes could be read
+        /// while <paramref name="requireFullCount"/> is <c>true</c>. (Thrown from enumeration.)
+        /// </exception>
+        public static void ReadViaArray(this <#= sourceType #> source, <#= maxCountType #> maxCount, Action<byte[], int, int> fillAction, byte[] buffer = null, bool requireFullCount = false)
+        {
+            TriflesByteReaderImpl.ReadViaArray(source.ToTriflesByteReader(), maxCount, fillAction, buffer, requireFullCount);
+        }
+
+
+<#
+}
+#>
+
+
+		#endregion
+
+
+		#endregion
+<#
+}
+#>
+	}
+}
