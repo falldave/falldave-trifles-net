@@ -55,6 +55,11 @@
     <Compile Include="EnumerableExtensions.cs" />
     <Compile Include="SimpleTypeExtensions.cs" />
     <Compile Include="StreamExtensions.cs" />
+    <Compile Include="StreamExtensions.TriflesByteReader.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StreamExtensions.TriflesByteReader.generated.tt</DependentUpon>
+    </Compile>
     <Compile Include="StringExtensions.cs" />
     <Compile Include="TriflesByteReaderImpl.cs" />
   </ItemGroup>
@@ -66,6 +71,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="StreamExtensions.TriflesByteReader.generated.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>StreamExtensions.TriflesByteReader.generated.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
